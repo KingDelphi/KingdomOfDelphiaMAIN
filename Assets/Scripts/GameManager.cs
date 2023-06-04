@@ -6,6 +6,9 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
     public PlayerInventory playerInventory;
+    public GameObject inventoryCanvas;
+    public GameObject slot;
+
 
     public static GameManager Instance { get; private set; }
     public GameObject circle;
@@ -49,6 +52,20 @@ public class GameManager : MonoBehaviour
         //character = GameObject.FindGameObjectWithTag("Player");
         //player = character.GetComponent<Player>();
     }
+
+    private void Update() {
+           if(Input.GetKeyDown(KeyCode.I)) {
+            if(inventoryCanvas.active) {
+                foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
+                        Destroy(t.gameObject);
+                    }
+              inventoryCanvas.SetActive(false);} else {
+              inventoryCanvas.SetActive(true);
+              playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
+              }
+            }
+    }
+            
 
     public void ChangeScene(string targetSceneName, Vector3 entryPosition)
     {

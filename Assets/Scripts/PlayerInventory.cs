@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using TMPro;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -23,6 +24,14 @@ public class PlayerInventory : MonoBehaviour
         inventory = new List<GearItem>();
         gold = 0;
         gear = new Gear();
+    }
+
+    public void ListItems(List<GearItem> inventory, GameObject slot, GameObject inventoryContent) {
+        foreach(GearItem inventoryItem in inventory) {
+            GameObject obj = Instantiate(slot, inventoryContent.transform);
+            var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
+            itemName.text = inventoryItem.itemName;
+        }
     }
 
     public void AddItemToInventory(GearItem item)

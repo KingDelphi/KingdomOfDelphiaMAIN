@@ -5730,6 +5730,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   mapObject: {fileID: 0}
   animator: {fileID: 4040935078592450177}
+  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &4125810248141258432
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27624,6 +27624,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   mapObject: {fileID: 0}
   animator: {fileID: 3654537725484033240}
+  lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &3100420336527906575
 MonoBehaviour:
   m_ObjectHideFlags: 0
