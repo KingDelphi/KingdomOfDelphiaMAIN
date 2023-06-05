@@ -23110,6 +23110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gearItemManager: {fileID: 0}
+  gearMenu: {fileID: 0}
   inventory: []
   gear:
     holder:

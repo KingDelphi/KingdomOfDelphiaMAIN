@@ -37487,6 +37487,10 @@ PrefabInstance:
       value: Cerebrito
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490136, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
+      propertyPath: gearMenu
+      value: 
+      objectReference: {fileID: 1881448288}
+    - target: {fileID: 6000402490477490136, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: inventory.Array.size
       value: 0
       objectReference: {fileID: 0}

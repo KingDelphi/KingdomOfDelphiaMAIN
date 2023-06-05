@@ -6,6 +6,7 @@ using TMPro;
 public class PlayerInventory : MonoBehaviour
 {
     public GearItemManager gearItemManager;
+    public GearMenu gearMenu;
     
     // Inventario
     public List<GearItem> inventory;
@@ -27,10 +28,16 @@ public class PlayerInventory : MonoBehaviour
     }
 
     public void ListItems(List<GearItem> inventory, GameObject slot, GameObject inventoryContent) {
+        //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
         foreach(GearItem inventoryItem in inventory) {
-            GameObject obj = Instantiate(slot, inventoryContent.transform);
-            var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
-            itemName.text = inventoryItem.itemName;
+            if(gearMenu.equippedGear.Contains(inventoryItem)) {
+
+            } else {
+             GameObject obj = Instantiate(slot, inventoryContent.transform);
+             var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
+             itemName.text = inventoryItem.itemName + " x" + inventoryItem.quantity;
+            }
+            
         }
     }
 
