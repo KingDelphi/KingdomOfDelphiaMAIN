@@ -202,10 +202,11 @@ public class Gear
 public class GearItem
 {
     public enum Rarity { Gold, Common, Uncommon, SemiRare, Rare, SuperRare, UltraRare, Hero, Epic, Mythological, Legendary, Dreamer }
-
+    public enum ArmorType { Helmet, Armor, Legs, Boots, Weapon, Shield, Ring, Amulet, Holder }
     public int quantity;
     public string itemName;
     public Rarity rarity;
+    public ArmorType armorType;
     public int hp;
     public int mana;
     public float movementSpeed;
@@ -223,10 +224,11 @@ public class GearItem
     public float effectDuration;
 
     public GearItem(string itemName, Rarity rarity, int hp, int mana, float movementSpeed, float criticalChance, float criticalBonus,
-        int physicalAttack, int demonAttack, int hollyAttack, int physicalDefense, int demonDefense, int hollyDefense, float weight, int hpRegen, int manaRegen, float effectDuration)
+        int physicalAttack, int demonAttack, int hollyAttack, int physicalDefense, int demonDefense, int hollyDefense, float weight, int hpRegen, int manaRegen, float effectDuration, ArmorType armorType = ArmorType.Helmet)
     {
         this.itemName = itemName;
         this.rarity = rarity;
+        this.armorType = armorType;
         this.hp = hp;
         this.mana = mana;
         this.movementSpeed = movementSpeed;

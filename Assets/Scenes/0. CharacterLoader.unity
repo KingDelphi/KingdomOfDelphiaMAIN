@@ -4423,7 +4423,7 @@ GameObject:
   - component: {fileID: 208234304}
   - component: {fileID: 208234303}
   m_Layer: 0
-  m_Name: Holder
+  m_Name: HolderSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7464,7 +7464,7 @@ GameObject:
   - component: {fileID: 333767812}
   - component: {fileID: 333767811}
   m_Layer: 0
-  m_Name: Ring
+  m_Name: RingSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16754,7 +16754,7 @@ GameObject:
   - component: {fileID: 749912853}
   - component: {fileID: 749912852}
   m_Layer: 0
-  m_Name: Amulet
+  m_Name: AmuletSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19770,42 +19770,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934177295}
   m_CullTransparentMesh: 1
---- !u!1 &946605523
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 946605524}
-  m_Layer: 0
-  m_Name: Gear
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &946605524
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 946605523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1077048576}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &947273165
 GameObject:
   m_ObjectHideFlags: 0
@@ -22793,107 +22757,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: La Quimera Delphi
   vocation: 59
---- !u!1 &1077048575
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1077048576}
-  - component: {fileID: 1077048579}
-  - component: {fileID: 1077048578}
-  - component: {fileID: 1077048577}
-  m_Layer: 0
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1077048576
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077048575}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 946605524}
-  m_Father: {fileID: 1966990870}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1077048577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077048575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1077048578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077048575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &1077048579
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1077048575}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &1082770582
 GameObject:
   m_ObjectHideFlags: 0
@@ -31865,7 +31728,7 @@ GameObject:
   - component: {fileID: 1548158738}
   - component: {fileID: 1548158737}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: WeaponSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33597,6 +33460,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Gold
       rarity: 0
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33615,6 +33479,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Nugget (50 Gold)
       rarity: 0
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33633,6 +33498,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Lingot (1,000 Gold)
       rarity: 0
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33653,6 +33519,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Chicken Leg
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33671,6 +33538,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Pork Ham
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33689,6 +33557,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Bacon
       rarity: 2
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33707,6 +33576,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Honey-Infused Bacon
       rarity: 8
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33727,6 +33597,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Health Potion
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33745,6 +33616,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Mana Potion
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33763,6 +33635,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Health Potion
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33781,6 +33654,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Mana Potion
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33799,6 +33673,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Health Potion
       rarity: 2
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33817,6 +33692,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Mana Potion
       rarity: 2
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33835,6 +33711,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Health Potion
       rarity: 3
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33853,6 +33730,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Mana Potion
       rarity: 3
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33871,6 +33749,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Health Potion
       rarity: 4
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33889,6 +33768,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Mana Potion
       rarity: 4
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33907,6 +33787,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Exp Potion
       rarity: 2
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33925,6 +33806,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Exp Potion
       rarity: 3
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33943,6 +33825,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Exp Potion
       rarity: 4
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33961,6 +33844,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Exp Potion
       rarity: 5
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33979,6 +33863,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Exp Potion
       rarity: 6
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -33997,6 +33882,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Loot Potion
       rarity: 2
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34015,6 +33901,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Loot Potion
       rarity: 3
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34033,6 +33920,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Loot Potion
       rarity: 4
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34051,6 +33939,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Loot Potion
       rarity: 5
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34069,6 +33958,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Loot Potion
       rarity: 6
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34089,6 +33979,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Backpack
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34109,6 +34000,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Helmet
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34127,6 +34019,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Helmet
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34147,6 +34040,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Armor
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34165,6 +34059,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Armor
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34185,6 +34080,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Legs
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34203,6 +34099,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Legs
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34223,6 +34120,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Boots
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34243,6 +34141,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Stick
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34261,6 +34160,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Dagger
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34281,6 +34181,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Shield
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34299,6 +34200,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Shield
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34319,6 +34221,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Ring
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34337,6 +34240,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Ring
       rarity: 1
+      armorType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34357,6 +34261,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Amulet
       rarity: 1
+      armorType: 0
       hp: 10
       mana: 20
       movementSpeed: 0
@@ -34375,6 +34280,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Old Pendant
       rarity: 7
+      armorType: 0
       hp: 25
       mana: 35
       movementSpeed: 0
@@ -34404,7 +34310,7 @@ GameObject:
   - component: {fileID: 1620496778}
   - component: {fileID: 1620496777}
   m_Layer: 0
-  m_Name: Shield
+  m_Name: ShieldSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37580,6 +37486,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cerebrito
       objectReference: {fileID: 0}
+    - target: {fileID: 6000402490477490136, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
+      propertyPath: inventory.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
 --- !u!1 &1800837159
@@ -39541,6 +39451,178 @@ MonoBehaviour:
   m_NewData:
     m_Text: 
     m_Image: {fileID: 0}
+  equippedGear:
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - quantity: 0
+    itemName: 
+    rarity: 0
+    armorType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
 --- !u!1 &1887010010
 GameObject:
   m_ObjectHideFlags: 0
@@ -41360,38 +41442,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Luis, el Angel 666
   vocation: 47
---- !u!1 &1966990869
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1966990870}
-  m_Layer: 0
-  m_Name: UI (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1966990870
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1966990869}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.967327, y: -26.921053, z: 0.038887527}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1077048576}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983360151
 GameObject:
   m_ObjectHideFlags: 0
