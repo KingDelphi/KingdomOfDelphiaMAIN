@@ -5417,6 +5417,7 @@ GameObject:
   - component: {fileID: 257716407}
   - component: {fileID: 257716409}
   - component: {fileID: 257716408}
+  - component: {fileID: 257716410}
   m_Layer: 0
   m_Name: MovementSpeed
   m_TagString: Untagged
@@ -5541,6 +5542,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257716406}
   m_CullTransparentMesh: 1
+--- !u!114 &257716410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257716406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc8f7a8f093b7140a7c49e9a54b8afd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &258033962
 GameObject:
   m_ObjectHideFlags: 0
@@ -21265,6 +21278,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985920469}
   m_CullTransparentMesh: 1
+--- !u!114 &993150336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6000402490477490136, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
+  m_PrefabInstance: {fileID: 1796949575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae57b4bdc2aa4e87a4d5726ed5b6f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &999249296
 GameObject:
   m_ObjectHideFlags: 0
@@ -32897,6 +32921,7 @@ GameObject:
   - component: {fileID: 1588485849}
   - component: {fileID: 1588485848}
   - component: {fileID: 1588485847}
+  - component: {fileID: 1588485850}
   m_Layer: 0
   m_Name: HelmetSelect
   m_TagString: Untagged
@@ -33021,6 +33046,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588485845}
   m_CullTransparentMesh: 1
+--- !u!114 &1588485850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588485845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703c1b28770941b47a92e7afeecb495c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInventory: {fileID: 993150336}
+  selectedItem: {fileID: 747961294}
+  gearMenu: {fileID: 1881448288}
+  index: 0
 --- !u!1 &1591377898
 GameObject:
   m_ObjectHideFlags: 0
@@ -33437,6 +33478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 0}
   inventoryCanvas: {fileID: 1415402310}
+  anotherInv: {fileID: 1321867716}
   slot: {fileID: 3365299569123761645, guid: f75038d0c19772548b08138941b7cedf, type: 3}
   circle: {fileID: 126809757}
   player: {fileID: 0}
@@ -37491,6 +37533,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1881448288}
     - target: {fileID: 6000402490477490136, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1613417167}
+    - target: {fileID: 6000402490477490136, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
+      propertyPath: placeholder
+      value: 
+      objectReference: {fileID: 1220940196}
+    - target: {fileID: 6000402490477490136, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: inventory.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -39627,6 +39677,15 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
+  moveSpeed: {fileID: 257716408}
+  critChance: {fileID: 672599413}
+  critBonus: {fileID: 1288252902}
+  physAtt: {fileID: 762024094}
+  demAtt: {fileID: 1393466437}
+  holAtt: {fileID: 1944255263}
+  physDef: {fileID: 295570352}
+  demDef: {fileID: 1848775989}
+  holDef: {fileID: 547360153}
 --- !u!1 &1887010010
 GameObject:
   m_ObjectHideFlags: 0

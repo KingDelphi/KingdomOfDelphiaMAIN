@@ -15334,6 +15334,7 @@ MonoBehaviour:
       manaRegen: 0
       effectDuration: 0
   counter: {fileID: 8469826154448238938}
+  gameManager: {fileID: 0}
 --- !u!114 &8469826154448238938
 MonoBehaviour:
   m_ObjectHideFlags: 0

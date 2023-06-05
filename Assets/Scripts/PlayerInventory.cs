@@ -18,7 +18,7 @@ public class PlayerInventory : MonoBehaviour
     public Gear gear;
 
     public Counter counter;
-
+    public GameManager gameManager;
     private void Start()
     {
         // Inicializar inventario, oro y gear
@@ -38,6 +38,21 @@ public class PlayerInventory : MonoBehaviour
              itemName.text = inventoryItem.itemName + " x" + inventoryItem.quantity;
             }
             
+        }
+    }
+        public void ListItem(GearItem gearItem, GameObject slot, GameObject inventoryContent) {
+        //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
+             GameObject obj = Instantiate(slot, inventoryContent.transform);
+             var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
+             itemName.text = gearItem.itemName + " x" + gearItem.quantity;
+            
+        }
+    public void CheckForItem(string item, int index) {
+        foreach(GearItem inventoryItem in inventory) {
+            if(inventoryItem.itemName == item){
+             ListItem(gearMenu.equippedGear[index], gameManager.slot, gameManager.inventoryCanvas.transform.GetChild(0).gameObject);
+             gearMenu.equippedGear[index] = inventoryItem;
+            }
         }
     }
 

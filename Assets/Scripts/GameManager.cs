@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public PlayerInventory playerInventory;
     public GameObject inventoryCanvas;
+    public GameObject anotherInv;
     public GameObject slot;
 
 
