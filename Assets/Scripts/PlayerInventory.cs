@@ -30,9 +30,8 @@ public class PlayerInventory : MonoBehaviour
     void Awake() {
         gearItemManager = FindObjectOfType<GearItemManager>();
         gameManager = FindObjectOfType<GameManager>();
-        gearMenu = FindObjectOfType<GearMenu>();
+        gearMenu = FindObjectOfType<GearMenu>(true);
     }
-
     public void ListItems(List<GearItem> inventory, GameObject slot, GameObject inventoryContent) {
         //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
         foreach(GearItem inventoryItem in inventory) {
