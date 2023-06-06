@@ -6099,7 +6099,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Backpack
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6119,7 +6119,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Leather Helmet
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6139,7 +6139,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Leather Armor
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6159,7 +6159,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Leather Legs
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6179,7 +6179,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Leather Boots
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6199,7 +6199,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Wooden Stick
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6219,7 +6219,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Wooden Shield
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6239,7 +6239,7 @@ MonoBehaviour:
       quantity: 1
       itemName: Wooden Ring
       rarity: 1
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6259,7 +6259,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6323,7 +6323,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6343,7 +6343,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6363,7 +6363,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6383,7 +6383,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6403,7 +6403,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6423,7 +6423,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6443,7 +6443,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6463,7 +6463,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -6483,7 +6483,7 @@ MonoBehaviour:
       quantity: 0
       itemName: 
       rarity: 0
-      armorType: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
