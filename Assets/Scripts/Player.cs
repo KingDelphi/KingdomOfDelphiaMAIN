@@ -80,6 +80,7 @@ public class Player : MonoBehaviour
         {
             gear = new Gear();
         }
+        gearItemManager = FindObjectOfType<GearItemManager>();
         
         // Calcular las estadísticas iniciales del jugador
         CalculatePlayerStats();

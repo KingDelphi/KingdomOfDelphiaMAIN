@@ -41,7 +41,7 @@ public class GearMenu : MonoBehaviour
             CheckEquipped();
             CheckInvGear();
     }
-    void CheckGear(PlayerInventory inventory, Gear gear, GearItem.ArmorType newArmorType, string gearType, int index) {
+    void CheckGear(PlayerInventory inventory, Gear gear, GearItem.ItemType newArmorType, string gearType, int index) {
         dropdownList[index].ClearOptions();
         TMP_Dropdown.OptionData oldData = new TMP_Dropdown.OptionData();
         oldData.text = "None";
@@ -50,7 +50,7 @@ public class GearMenu : MonoBehaviour
          if(equippedGear[index].quantity == 0) {
             
          } else {
-        if(newArmorType == equippedGear[index].armorType) {
+        if(newArmorType == equippedGear[index].itemType) {
             TMP_Dropdown.OptionData newData = new TMP_Dropdown.OptionData();
             newData.text = equippedGear[index].itemName;
             dropdownList[index].options.Add(newData);
@@ -58,7 +58,7 @@ public class GearMenu : MonoBehaviour
          }
         
         foreach(GearItem inventoryItem in inventory.inventory) {
-            if(inventoryItem.armorType.ToString() == gearType) {
+            if(inventoryItem.itemType.ToString() == gearType) {
                 TMP_Dropdown.OptionData newData = new TMP_Dropdown.OptionData();
                 newData.text = inventoryItem.itemName;
               dropdownList[index].options.Add(newData); 
@@ -97,14 +97,14 @@ public class GearMenu : MonoBehaviour
     }
 
     void CheckInvGear() {
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Helmet, "Helmet", 0);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Armor, "armor", 1);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Legs, "legs",2);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Boots, "boots", 3);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Weapon, "weapon", 4);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Shield, "shield", 5);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Ring, "ring", 6);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Amulet, "amulet", 7);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ArmorType.Holder, "holder", 8);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Helmet, "Helmet", 0);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Armor, "armor", 1);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Legs, "legs",2);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Boots, "boots", 3);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Weapon, "weapon", 4);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Shield, "shield", 5);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Ring, "ring", 6);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Amulet, "amulet", 7);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Holder, "holder", 8);
     }
 }

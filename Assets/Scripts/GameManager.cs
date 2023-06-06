@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void Update() {
            if(Input.GetKeyDown(KeyCode.I)) {
+            playerInventory = FindObjectOfType<PlayerInventory>();
             if(inventoryCanvas.active) {
                 foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
                         Destroy(t.gameObject);
