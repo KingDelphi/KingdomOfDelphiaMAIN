@@ -14,7 +14,7 @@ public class GearMenu : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-          
+          playerInventory = FindObjectOfType<PlayerInventory>();    
     }
 
     // Update is called once per frame
@@ -37,9 +37,11 @@ public class GearMenu : MonoBehaviour
     }
 
     public void UpdateGearMenu() {
+        
+
         playerInventory = FindObjectOfType<PlayerInventory>();    
-            CheckEquipped();
-            CheckInvGear();
+        CheckEquipped();
+        CheckInvGear();
     }
     void CheckGear(PlayerInventory inventory, Gear gear, GearItem.ItemType newArmorType, string gearType, int index) {
         dropdownList[index].ClearOptions();

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class CharacterSelectorButton : MonoBehaviour
 {
     public Canvas characterSelectionCanvas; // Referencia al canvas que se activará
@@ -28,9 +28,8 @@ public class CharacterSelectorButton : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
     }
 
     // Update is called once per frame

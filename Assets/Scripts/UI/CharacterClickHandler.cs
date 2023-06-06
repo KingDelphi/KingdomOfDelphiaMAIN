@@ -13,9 +13,10 @@ public class CharacterClickHandler : MonoBehaviour
     public GameObject characterVocationTextObject;
     private TextMeshProUGUI characterNameText;
     private TextMeshProUGUI characterVocationText;
-    
-    void Start() {
+
+    void Awake() {
         characterSelectorButton = FindObjectOfType<CharacterSelectorButton>();
+
     }
 
     public void OnClick()
@@ -93,10 +94,12 @@ public class CharacterClickHandler : MonoBehaviour
                 }
             }
         }
-
-        foreach(DropdownBehaviour dropdownItem in characterSelectorButton.dropdownList) {
-            dropdownItem.UpdateInventory();
-        }
         characterSelectorButton.gearMenu.UpdateGearMenu();
+          foreach(DropdownBehaviour dropdownItem in characterSelectorButton.dropdownList) {
+            dropdownItem.UpdateInventory();
+            
+        }
+
+        
     }
 }

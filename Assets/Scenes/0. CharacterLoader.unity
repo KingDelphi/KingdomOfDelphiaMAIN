@@ -677,7 +677,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa22cb5e6873240a7929b76c23b8088a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2bc6c8a236fee4e18b2d7539592c0649, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4574,6 +4574,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 0}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 1068074449}
   gearMenu: {fileID: 1881448288}
   index: 8
@@ -7651,6 +7654,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 0}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 1011468711}
   gearMenu: {fileID: 1881448288}
   index: 6
@@ -12484,6 +12490,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 545802755}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 2086456020}
   gearMenu: {fileID: 1881448288}
   index: 2
@@ -17007,6 +17016,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 0}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 1013555237}
   gearMenu: {fileID: 1881448288}
   index: 7
@@ -29221,6 +29233,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 0}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 1044785797}
   gearMenu: {fileID: 1881448288}
   index: 3
@@ -32061,6 +32076,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 0}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 2072925292}
   gearMenu: {fileID: 1881448288}
   index: 4
@@ -33251,6 +33269,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 1588485847}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 747961294}
   gearMenu: {fileID: 1881448288}
   index: 0
@@ -34683,6 +34704,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 0}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 405386602}
   gearMenu: {fileID: 1881448288}
   index: 5
@@ -42167,6 +42191,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  dropdown: {fileID: 1997919611}
+  character: {fileID: 28880390}
+  previousInv: 
   selectedItem: {fileID: 967985636}
   gearMenu: {fileID: 1881448288}
   index: 1
