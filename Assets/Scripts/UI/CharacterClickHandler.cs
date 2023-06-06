@@ -7,11 +7,16 @@ public class CharacterClickHandler : MonoBehaviour
     public Canvas characterSelectionCanvas;
     public Canvas selectedCharacterInfoCanvas;
     public Image characterImage;
+    public CharacterSelectorButton characterSelectorButton;
 
     public GameObject characterNameTextObject;
     public GameObject characterVocationTextObject;
     private TextMeshProUGUI characterNameText;
     private TextMeshProUGUI characterVocationText;
+    
+    void Start() {
+        characterSelectorButton = FindObjectOfType<CharacterSelectorButton>();
+    }
 
     public void OnClick()
     {
@@ -88,5 +93,10 @@ public class CharacterClickHandler : MonoBehaviour
                 }
             }
         }
+
+        foreach(DropdownBehaviour dropdownItem in characterSelectorButton.dropdownList) {
+            dropdownItem.UpdateInventory();
+        }
+        characterSelectorButton.gearMenu.UpdateGearMenu();
     }
 }

@@ -24,4 +24,8 @@ public class DropdownBehaviour : MonoBehaviour
             playerInventory.CheckForItem(selectedItem.text, index);
         }
     }
+
+    public void UpdateInventory() {
+      playerInventory = FindObjectOfType<PlayerInventory>();  
+    }
 }

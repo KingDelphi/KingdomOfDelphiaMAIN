@@ -6,7 +6,8 @@ public class CharacterSelectorButton : MonoBehaviour
 {
     public Canvas characterSelectionCanvas; // Referencia al canvas que se activará
     public Canvas selectedCharacterInfoCanvas;
-
+    public List<DropdownBehaviour> dropdownList;
+    public GearMenu gearMenu;
     // Método que se llama cuando se hace clic en el objeto
     public void OnClick()
     {

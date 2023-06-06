@@ -21,7 +21,7 @@ public class GearMenu : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.K)){
-            //playerInventory = FindObjectOfType<PlayerInventory>();    
+            playerInventory = FindObjectOfType<PlayerInventory>();    
             CheckEquipped();
             CheckInvGear();
             }
@@ -31,11 +31,16 @@ public class GearMenu : MonoBehaviour
             physAtt.text = "Physical Attack: " + equippedGear[0].physicalAttack.ToString();
             demAtt.text = "Demon Attack: " + equippedGear[0].demonAttack.ToString();
             holAtt.text = "Holy Attack: " + equippedGear[0].hollyAttack.ToString();
-            physDef.text = "Physical Def: " + equippedGear[0].physicalAttack.ToString();
+            physDef.text = "Physical Def: " + equippedGear[0].physicalDefense.ToString();
             demDef.text = "Demon Def: " + equippedGear[0].demonDefense.ToString();
             holDef.text = "Holy Def: " + equippedGear[0].hollyDefense.ToString();
     }
 
+    public void UpdateGearMenu() {
+        playerInventory = FindObjectOfType<PlayerInventory>();    
+            CheckEquipped();
+            CheckInvGear();
+    }
     void CheckGear(PlayerInventory inventory, Gear gear, GearItem.ArmorType newArmorType, string gearType, int index) {
         dropdownList[index].ClearOptions();
         TMP_Dropdown.OptionData oldData = new TMP_Dropdown.OptionData();
