@@ -40841,6 +40841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedCharacterInfoCanvas: {fileID: 132724986}
+  gameManager: {fileID: 1613417167}
 --- !u!114 &1876985778
 MonoBehaviour:
   m_ObjectHideFlags: 0

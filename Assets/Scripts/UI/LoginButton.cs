@@ -12,6 +12,8 @@ public class LoginButton : MonoBehaviour
     public GameObject selectedCharacterInfoCanvas; // Referencia al canvas "SelectedCharacterInfo"
 
     private CinemachineVirtualCamera virtualCamera;
+    
+    public GameManager gameManager;
 
     public void OnClick()
     {
@@ -96,6 +98,7 @@ public class LoginButton : MonoBehaviour
         {
             Debug.LogError("SelectedCharacterInfoCanvas not assigned.");
         }
+        gameManager.playerInventory = FindObjectOfType<PlayerInventory>();
     }
 
     private GameObject FindActiveCharacter()
