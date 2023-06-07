@@ -12,7 +12,7 @@ public class PlayerInventory : MonoBehaviour
     public List<GearItem> inventory;
 
     // Oro
-    private int gold;
+    public int gold;
 
     // Gear
     public Gear gear;

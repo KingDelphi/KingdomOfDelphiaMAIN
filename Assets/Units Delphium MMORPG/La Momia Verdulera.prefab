@@ -23112,6 +23112,7 @@ MonoBehaviour:
   gearItemManager: {fileID: 0}
   gearMenu: {fileID: 0}
   inventory: []
+  gold: 0
   gear:
     holder:
       quantity: 0
