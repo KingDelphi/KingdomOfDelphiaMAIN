@@ -159,6 +159,7 @@ public class TioJuancho : MonoBehaviour
     // Lógica de la tienda
     public void OpenShop()
     {
+        
         // Abrir o cerrar la tienda según su estado actual
         shopOpen = !shopOpen;
 
@@ -219,7 +220,8 @@ public class TioJuancho : MonoBehaviour
             // Reducir el dinero del jugador y agregar el objeto al inventario
             ReduceMoney(GetItemPrice(gearItem));
             //AddItemToInventory(gearItem);
-
+            playerInventory = FindObjectOfType<PlayerInventory>();
+            playerInventory.inventory.Add(gearItem);
             Debug.Log("Purchase successful!");
 
             // Aquí puedes agregar la lógica adicional para mostrar una confirmación de compra al jugador.

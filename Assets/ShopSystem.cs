@@ -37,9 +37,9 @@ public class ShopSystem : MonoBehaviour
         foreach(Transform transform in ts) {
             if(transform.gameObject.name != "Background") {
              Destroy(transform.gameObject);
-            }
-            
+            }   
         }
+
         foreach(KeyValuePair<GearItem, int> item in currentShop){
          GearItem gearItem = item.Key;
          int itemPrice = item.Value;
@@ -47,6 +47,7 @@ public class ShopSystem : MonoBehaviour
          var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
          itemName.text = gearItem.itemName + " x" + gearItem.quantity + " (Price:" + itemPrice + ")";
          shopSlot.GetComponent<ShopButton>().itemToPurchase = gearItem;
+         shopSlot.GetComponent<ShopButton>().price = itemPrice;
         }
     }
 }

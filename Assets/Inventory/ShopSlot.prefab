@@ -385,6 +385,7 @@ MonoBehaviour:
     manaRegen: 0
     effectDuration: 0
   playerInventory: {fileID: 0}
+  itemShopName: {fileID: 533055397330896002}
 --- !u!1 &6960693602903570279
 GameObject:
   m_ObjectHideFlags: 0
