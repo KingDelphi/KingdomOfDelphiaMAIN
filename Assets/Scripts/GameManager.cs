@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject inventoryCanvas;
     public GameObject anotherInv;
     public GameObject slot;
+    public GearMenu gearMenu;
 
 
     public static GameManager Instance { get; private set; }
@@ -57,12 +58,25 @@ public class GameManager : MonoBehaviour
     private void Update() {
            if(Input.GetKeyDown(KeyCode.I)) {
             playerInventory = FindObjectOfType<PlayerInventory>();
+            int newIndex = new int();
+            foreach(GearItem item in playerInventory.inventory) {
+            if(gearMenu.equippedGear[0].itemName == item.itemName) {    
+                playerInventory.inventory.RemoveAt(newIndex);
+                break;
+            }
+            newIndex += 1;
+            }
+
             if(inventoryCanvas.active) {
                 foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
                         Destroy(t.gameObject);
                     }
-              inventoryCanvas.SetActive(false);} else {
+              inventoryCanvas.SetActive(false);
+              } else {
               inventoryCanvas.SetActive(true);
+              foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
+                        Destroy(t.gameObject);
+                    }
               playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
               }
             }

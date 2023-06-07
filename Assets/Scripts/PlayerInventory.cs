@@ -32,7 +32,7 @@ public class PlayerInventory : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         gearMenu = FindObjectOfType<GearMenu>(true);
     }
-
+    
     public void ListItems(List<GearItem> inventory, GameObject slot, GameObject inventoryContent) {
         //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
         List<string> strings = new List<String>();

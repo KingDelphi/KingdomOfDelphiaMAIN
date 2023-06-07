@@ -37,30 +37,37 @@ public class GearMenu : MonoBehaviour
     }
 
     public void UpdateGearMenu() {
-        
-
         playerInventory = FindObjectOfType<PlayerInventory>();    
         CheckEquipped();
         CheckInvGear();
     }
+
     void CheckGear(PlayerInventory inventory, Gear gear, GearItem.ItemType newArmorType, string gearType, int index) {
+        
         dropdownList[index].ClearOptions();
         TMP_Dropdown.OptionData oldData = new TMP_Dropdown.OptionData();
-        oldData.text = "None";
-        dropdownList[index].options.Add(oldData);
-
-         if(equippedGear[index].quantity == 0) {
+        TMP_Dropdown.OptionData noneData = new TMP_Dropdown.OptionData();
+        noneData.text = "None";
+        oldData.text = equippedGear[index].itemName;
+        dropdownList[index].gameObject.GetComponent<DropdownBehaviour>().selectedItem.text = equippedGear[index].itemName;
+        dropdownList[index].options.Add(noneData);
+        if(oldData.text != ""){
+            dropdownList[index].options.Add(oldData);
+        }
+        
+        dropdownList[index].value = 0;
+        if(equippedGear[index].quantity == 0) {
             
          } else {
-        if(newArmorType == equippedGear[index].itemType) {
-            TMP_Dropdown.OptionData newData = new TMP_Dropdown.OptionData();
-            newData.text = equippedGear[index].itemName;
-            dropdownList[index].options.Add(newData);
-        }
+         if(newArmorType == equippedGear[index].itemType) {
+            //TMP_Dropdown.OptionData newData = new TMP_Dropdown.OptionData();
+            //newData.text = equippedGear[index].itemName;
+            //dropdownList[index].options.Add(newData);
          }
-        
+        }   
+
         foreach(GearItem inventoryItem in inventory.inventory) {
-            if(inventoryItem.itemType.ToString() == gearType) {
+            if(inventoryItem.itemType.ToString() == gearType && inventoryItem.itemName != equippedGear[index].itemName) {
                 TMP_Dropdown.OptionData newData = new TMP_Dropdown.OptionData();
                 newData.text = inventoryItem.itemName;
               dropdownList[index].options.Add(newData); 
@@ -69,7 +76,7 @@ public class GearMenu : MonoBehaviour
     }
 
     void CheckEquipped() {
-         if(playerInventory.gear.helmet != null) {
+         if(equippedGear[0].itemName == null) {
           equippedGear[0] = playerInventory.gear.helmet;
          }
          if(playerInventory.gear.armor != null) {
@@ -100,13 +107,38 @@ public class GearMenu : MonoBehaviour
 
     void CheckInvGear() {
         CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Helmet, "Helmet", 0);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Armor, "armor", 1);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Legs, "legs",2);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Boots, "boots", 3);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Weapon, "weapon", 4);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Shield, "shield", 5);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Ring, "ring", 6);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Amulet, "amulet", 7);
-        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Holder, "holder", 8);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Armor, "Armor", 1);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Legs, "Legs",2);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Boots, "Boots", 3);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Weapon, "Weapon", 4);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Shield, "Shield", 5);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Ring, "Ring", 6);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Amulet, "Amulet", 7);
+        CheckGear(playerInventory, playerInventory.gear, GearItem.ItemType.Holder, "Holder", 8);
     }
+
+   /* void Placeholder() {
+        if(dropdownList[index].value.ToString() == "None") {
+         //dropdownList[index].ClearOptions();
+        } else {
+         int itemValue = dropdownList[index].value;
+         string currentItem = dropdownList[index].gameObject.GetComponent<DropdownBehaviour>().selectedItem.text;   
+         List<TMP_Dropdown.OptionData> dataList = dropdownList[index].options;
+         int newIndex = new int();
+         Debug.Log(dropdownList[index].options);
+         foreach(TMP_Dropdown.OptionData name in dataList) {
+            
+            
+            if(name.text == currentItem) {
+             Debug.Log("idk");
+            } else {
+                
+                dropdownList[index].options.RemoveAt(newIndex);
+                //dropdownList[index].value = 0;
+                
+            }
+            newIndex += 1;
+         }
+        }
+    }*/
 }

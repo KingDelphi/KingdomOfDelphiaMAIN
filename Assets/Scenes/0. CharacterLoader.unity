@@ -34760,6 +34760,7 @@ MonoBehaviour:
   inventoryCanvas: {fileID: 1415402310}
   anotherInv: {fileID: 1321867716}
   slot: {fileID: 3365299569123761645, guid: f75038d0c19772548b08138941b7cedf, type: 3}
+  gearMenu: {fileID: 1881448288}
   circle: {fileID: 126809757}
   player: {fileID: 925369129}
   UI: {fileID: 506983668}
