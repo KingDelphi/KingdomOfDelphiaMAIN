@@ -32,15 +32,29 @@ public class PlayerInventory : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         gearMenu = FindObjectOfType<GearMenu>(true);
     }
+
     public void ListItems(List<GearItem> inventory, GameObject slot, GameObject inventoryContent) {
         //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
+        List<string> strings = new List<String>();
+        List<GameObject> gameObjects = new List<GameObject>();
         foreach(GearItem inventoryItem in inventory) {
+            
             if(gearMenu.equippedGear.Contains(inventoryItem)) {
 
             } else {
              GameObject obj = Instantiate(slot, inventoryContent.transform);
+             
+             
              var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
              itemName.text = inventoryItem.itemName + " x" + inventoryItem.quantity;
+             foreach(string newItemName in strings) {
+                if(newItemName == inventoryItem.itemName) {
+                    Destroy(obj);
+                    itemName.text = inventoryItem.itemName + " x" + inventoryItem.quantity + 1;
+                }
+             }
+             gameObjects.Add(obj);
+             strings.Add(inventoryItem.itemName);
             }
             
         }

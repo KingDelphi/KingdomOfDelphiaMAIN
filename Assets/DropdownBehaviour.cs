@@ -9,15 +9,14 @@ public class DropdownBehaviour : MonoBehaviour
     public PlayerInventory playerInventory;
     public TMP_Dropdown dropdown;
     public GameObject character;
-    public string previousInv;
     public TMP_Text selectedItem;
     public GearMenu gearMenu;
     public int index;
     // Start is called before the first frame update
     void Start()
     {
+        playerInventory = FindObjectOfType<PlayerInventory>();
         dropdown = this.gameObject.GetComponent<TMP_Dropdown>();
-        previousInv = character.GetComponent<Image>().sprite.name;
     }
 
     // Update is called once per frame
