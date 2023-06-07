@@ -4748,7 +4748,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 1068074449}
   gearMenu: {fileID: 1881448288}
   index: 8
@@ -7840,7 +7839,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 1011468711}
   gearMenu: {fileID: 1881448288}
   index: 6
@@ -12740,7 +12738,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 545802755}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 2086456020}
   gearMenu: {fileID: 1881448288}
   index: 2
@@ -17318,7 +17315,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 1013555237}
   gearMenu: {fileID: 1881448288}
   index: 7
@@ -30306,7 +30302,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 1044785797}
   gearMenu: {fileID: 1881448288}
   index: 3
@@ -33149,7 +33144,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 2072925292}
   gearMenu: {fileID: 1881448288}
   index: 4
@@ -34342,7 +34336,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 1588485847}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 747961294}
   gearMenu: {fileID: 1881448288}
   index: 0
@@ -35842,7 +35835,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 405386602}
   gearMenu: {fileID: 1881448288}
   index: 5
@@ -40842,6 +40834,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectedCharacterInfoCanvas: {fileID: 132724986}
   gameManager: {fileID: 1613417167}
+  dropdownList:
+  - {fileID: 1588485850}
+  - {fileID: 1997919614}
+  - {fileID: 545802758}
+  - {fileID: 1339949555}
+  - {fileID: 1548158740}
+  - {fileID: 1620496780}
+  - {fileID: 333767814}
+  - {fileID: 749912855}
+  - {fileID: 208234306}
 --- !u!114 &1876985778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43558,7 +43560,6 @@ MonoBehaviour:
   playerInventory: {fileID: 993150336}
   dropdown: {fileID: 1997919611}
   character: {fileID: 28880390}
-  previousInv: 
   selectedItem: {fileID: 967985636}
   gearMenu: {fileID: 1881448288}
   index: 1

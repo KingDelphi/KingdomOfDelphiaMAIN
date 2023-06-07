@@ -15,6 +15,8 @@ public class LoginButton : MonoBehaviour
     
     public GameManager gameManager;
 
+    public List<DropdownBehaviour> dropdownList;
+
     public void OnClick()
     {
         // Obtener el objeto CharacterNameText
@@ -99,6 +101,9 @@ public class LoginButton : MonoBehaviour
             Debug.LogError("SelectedCharacterInfoCanvas not assigned.");
         }
         gameManager.playerInventory = FindObjectOfType<PlayerInventory>();
+        foreach(DropdownBehaviour drop in dropdownList) {
+            drop.UpdateInventory();
+        }
     }
 
     private GameObject FindActiveCharacter()
