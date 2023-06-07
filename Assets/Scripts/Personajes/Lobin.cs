@@ -31,6 +31,7 @@ public class Lobin : MonoBehaviour
     private Player player; // Referencia al script "Player"
 
     public GameObject nextCharacter;
+    public GameObject nextCharacter2;
 
     private GameObject lvlTextObject;
     public GameObject lvlTextPrefab;
@@ -79,6 +80,7 @@ public class Lobin : MonoBehaviour
         if (currentLevel >= unlockNextCharacterLevel && nextCharacter != null)
         {
             nextCharacter.SetActive(true);
+            nextCharacter2.SetActive(true);
         }
     }
 

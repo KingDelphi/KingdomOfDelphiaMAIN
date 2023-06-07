@@ -15442,6 +15442,7 @@ MonoBehaviour:
     minIncreaseAmount: 0
     maxIncreaseAmount: 0
   nextCharacter: {fileID: 0}
+  nextCharacter2: {fileID: 0}
   lvlTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
   animator: {fileID: 0}
   eatMeatTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
