@@ -36,6 +36,7 @@ public class PlayerInventory : MonoBehaviour
     public void ListItems(List<GearItem> inventory, GameObject slot, GameObject inventoryContent) {
         //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
         List<string> strings = new List<String>();
+        List<GearItem> gearItems = new List<GearItem>();
         List<GameObject> gameObjects = new List<GameObject>();
         foreach(GearItem inventoryItem in inventory) {
             
@@ -47,13 +48,20 @@ public class PlayerInventory : MonoBehaviour
              
              var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
              itemName.text = inventoryItem.itemName + " x" + inventoryItem.quantity;
-             foreach(string newItemName in strings) {
-                if(newItemName == inventoryItem.itemName) {
-                    Destroy(obj);
-                    itemName.text = inventoryItem.itemName + " x" + inventoryItem.quantity + 1;
+             foreach(GearItem newItem in gearItems) {
+                if(newItem.itemName == inventoryItem.itemName) {
+                    foreach(GameObject go in gameObjects) {
+                        if(newItem.itemName + " x1" == go.transform.Find("ItemName").GetComponent<TMP_Text>().text) {
+                            Destroy(go);
+                        }
+                    }
+                    inventory.Remove(newItem);
+                    inventoryItem.quantity += 1;
+                    itemName.text = inventoryItem.itemName + " x" + inventoryItem.quantity;
                 }
              }
              gameObjects.Add(obj);
+             gearItems.Add(inventoryItem);
              strings.Add(inventoryItem.itemName);
             }
             
