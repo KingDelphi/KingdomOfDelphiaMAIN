@@ -36,13 +36,9 @@ public class ElClerigoDeLaCruz : MonoBehaviour
 
     public Animator animator;
 
-    private float vomitTimer = 0f;
-    private GameObject vomitTextObject;
-    public GameObject vomitTextPrefab;
-
-    private float zombieBreathTimer = 0f;
-    private GameObject zombieBreathTextObject;
-    public GameObject zombieBreathTextPrefab;
+    private float littlePrayerTimer = 0f;
+    private GameObject littlePrayerTextObject;
+    public GameObject littlePrayerTextPrefab;
 
     [SerializeField]
     private GameObject particleSystem1;
@@ -91,149 +87,42 @@ public class ElClerigoDeLaCruz : MonoBehaviour
             Debug.Log("La experiencia actual del jugador es: " + playerExperience);
         }
 
-        // Vomit
-        if (Input.GetKeyDown(KeyCode.Alpha1) && vomitTimer <= 0)
+        // Little Prayer
+        if (Input.GetKeyDown(KeyCode.Alpha1) && littlePrayerTimer <= 0)
         {
-            Vomit();
-        }
-
-        // Actualizar el temporizador de cooldown de Vomit
-        if (vomitTimer > 0f)
-        {
-            vomitTimer -= Time.deltaTime;
-
-            if (vomitTimer <= 0f)
-            {
-                Debug.Log("El cooldown de Vomit ha finalizado.");
-            }
-        }
-
-        // Zombie Breath
-        if (Input.GetKeyDown(KeyCode.Alpha2) && zombieBreathTimer <= 0)
-        {
-            ZombieBreath();
+            LittlePrayer();
         }
 
         // Actualizar el temporizador de cooldown de Zombie Breath
-        if (zombieBreathTimer > 0f)
+        if (littlePrayerTimer > 0f)
         {
-            zombieBreathTimer -= Time.deltaTime;
+            littlePrayerTimer -= Time.deltaTime;
 
-            if (zombieBreathTimer <= 0f)
+            if (littlePrayerTimer <= 0f)
             {
-                Debug.Log("El cooldown de Zombie Breath ha finalizado.");
+                Debug.Log("El cooldown de Little Prayer ha finalizado.");
             }
         }
     }
 
-    private void Vomit()
+    private void LittlePrayer()
     {
         // Obtener el componente Player del jugador
         Player player = GetComponent<Player>();
         PlayerAttack playerAttack = GetComponent<PlayerAttack>();
 
-        if (player.currentMana >= 8 && playerAttack.selectedMonster != null)
+        if (player.currentMana >= 12 && playerAttack.selectedMonster != null)
         {
-            player.ConsumeMana(8);
+            player.ConsumeMana(12);
         }
         else
         {
             return;
         }
 
-        if (vomitTimer > 0f)
+        if (littlePrayerTimer > 0f)
         {
-            Debug.Log("Vomit aún está en cooldown!");
-            return;
-        }
-
-        // Obtener todos los objetos con la etiqueta "Monster" en la escena
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Monster");
-
-        // Realizar el ataque a cada enemigo en el rango
-        foreach (GameObject enemyObject in enemies)
-        {
-            Monsters enemy = enemyObject.GetComponent<Monsters>();
-            if (enemy != null)
-            {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, enemy.transform.position);
-                if (distanceToEnemy <= playerAttack.attackRange)
-                {
-                    Debug.Log("Enemigo seleccionado: " + enemy.name);
-                    VomitAttack(enemy);
-                }
-            }
-        }
-
-        // Establecer el cooldown de Vomit a 5 segundos
-        vomitTimer = 5f;
-
-        Debug.Log("Vomit ha sido utilizado! Cerebrito vomita sobre sus enemigos.");
-
-        StartCoroutine(ResetVomitCooldown());
-
-        // Calcular la posición vertical del texto de nivel por encima del personaje
-            Vector3 characterHeight = player.transform.localScale;
-            float yOffset = characterHeight.y;
-            Vector3 vomitTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
-
-            // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            vomitTextObject = Instantiate(vomitTextPrefab, vomitTextPosition, Quaternion.identity);
-
-            // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro vomitText = vomitTextObject.GetComponent<TextMeshPro>();
-
-            // Establecer el color del texto de nivel
-            vomitText.color = Color.red;
-
-            // Mostrar el nivel en el texto
-            vomitText.text = ("¡Wacala!");
-
-            // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveVomitText(vomitTextObject, vomitTextPosition + Vector3.up));
-    }
-
-    private void VomitAttack(Monsters enemy)
-    {
-        if (enemy != null)
-        {
-            PlayerAttack playerAttack = GetComponent<PlayerAttack>();
-
-            // Realizar el ataque directamente en el enemigo
-            playerAttack.selectedMonster = enemy.gameObject;
-            playerAttack.PerformAttack();
-        }
-        else
-        {
-            Debug.Log("El enemigo es nulo. No se puede realizar el ataque.");
-        }
-    }
-
-    private IEnumerator ResetVomitCooldown()
-    {
-        yield return new WaitForSeconds(vomitTimer);
-
-        Debug.Log("El cooldown de Vomit ha finalizado.");
-    }
-
-    private void ZombieBreath()
-    {
-        // Obtener el componente Player del jugador
-        Player player = GetComponent<Player>();
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
-
-        if (player.currentMana >= 6 && playerAttack.selectedMonster != null)
-        {
-            player.ConsumeMana(6);
-        }
-        else
-        {
-            return;
-        }
-
-        if (zombieBreathTimer > 0f)
-        {
-            Debug.Log("Zombie Breath aún está en cooldown!");
+            Debug.Log("Little Prayer aún está en cooldown!");
             return;
         }
 
@@ -245,49 +134,49 @@ public class ElClerigoDeLaCruz : MonoBehaviour
         {
             if (playerObject != null)
             {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, playerObject.transform.position);
+                float distanceToEnemy = Vector3.Distance(player.transform.position, playerObject.transform.position);
                 if (distanceToEnemy <= playerAttack.attackRange)
                 {
                     Debug.Log("Jugador seleccionado: " + player.name);
-                    ZombieBreathAttack(playerObject.gameObject);
+                    LittlePrayerAttack(playerObject.gameObject);
                 }
             }
         }
 
-        // Establecer el cooldown de Zombie Breath a 5 segundos
-        zombieBreathTimer = 5f;
+        // Establecer el cooldown de Little Prayer a 6 segundos
+        littlePrayerTimer = 6f;
 
-        Debug.Log("Zombie Breath ha sido utilizado! El olor de Cerebrito cura a sus aliados.");
+        Debug.Log("Little Prayer ha sido utilizado! El Clerigo de la Cruz cura a su alrededor.");
 
-        StartCoroutine(ResetZombieBreathCooldown());
+        StartCoroutine(ResetLittlePrayerCooldown());
 
         // Calcular la posición vertical del texto de nivel por encima del personaje
             Vector3 characterHeight = player.transform.localScale;
             float yOffset = characterHeight.y;
-            Vector3 zombieBreathTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
+            Vector3 littlePrayerTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
 
             // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            zombieBreathTextObject = Instantiate(zombieBreathTextPrefab, zombieBreathTextPosition, Quaternion.identity);
+            littlePrayerTextObject = Instantiate(littlePrayerTextPrefab, littlePrayerTextPosition, Quaternion.identity);
 
             // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro zombieBreathText = zombieBreathTextObject.GetComponent<TextMeshPro>();
+            TextMeshPro littlePrayerText = littlePrayerTextObject.GetComponent<TextMeshPro>();
 
             // Establecer el color del texto de nivel
-            zombieBreathText.color = Color.green;
+            littlePrayerText.color = Color.green;
 
             // Mostrar el nivel en el texto
-            zombieBreathText.text = ("Chicle de menta!");
+            littlePrayerText.text = ("¡Aleluya!");
 
             // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveZombieBreathText(zombieBreathTextObject, zombieBreathTextPosition + Vector3.up));
+            StartCoroutine(MoveLittlePrayerText(littlePrayerTextObject, littlePrayerTextPosition + Vector3.up));
     }
 
-    private void ZombieBreathAttack(GameObject playerObject)
+    private void LittlePrayerAttack(GameObject playerObject)
     {
         Player player = playerObject.GetComponent<Player>();
         if (player != null)
         {
-            player.Heal(8);
+            player.Heal(20);
             
         }
         else
@@ -296,11 +185,11 @@ public class ElClerigoDeLaCruz : MonoBehaviour
         }
     }
 
-    private IEnumerator ResetZombieBreathCooldown()
+    private IEnumerator ResetLittlePrayerCooldown()
     {
-        yield return new WaitForSeconds(zombieBreathTimer);
+        yield return new WaitForSeconds(littlePrayerTimer);
 
-        Debug.Log("El cooldown de ZombieBreath ha finalizado.");
+        Debug.Log("El cooldown de Little Prayer ha finalizado.");
     }
 
     private void HandleLevelUp(int level)
@@ -445,45 +334,24 @@ private void IncreaseStats<T>(ref T playerStat, StatIncreaseSettings<T> settings
         }
     }
 
-    private IEnumerator MoveVomitText(GameObject vomitTextObject, Vector3 targetPosition)
+    private IEnumerator MoveLittlePrayerText(GameObject littlePrayerTextObject, Vector3 targetPosition)
     {
         float elapsedTime = 0f;
         float duration = .8f;
-        Vector3 initialPosition = vomitTextObject.transform.position;
+        Vector3 initialPosition = littlePrayerTextObject.transform.position;
 
-        while (elapsedTime < duration && vomitTextObject != null) // Verificar si el objeto aún existe
+        while (elapsedTime < duration && littlePrayerTextObject != null) // Verificar si el objeto aún existe
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            vomitTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+            littlePrayerTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
             yield return null;
         }
 
         // Destruir el objeto clonado después de 1 segundo
-        if (vomitTextObject != null)
+        if (littlePrayerTextObject != null)
         {
-            Destroy(vomitTextObject, .8f);
-        }
-    }
-
-    private IEnumerator MoveZombieBreathText(GameObject zombieBreathTextObject, Vector3 targetPosition)
-    {
-        float elapsedTime = 0f;
-        float duration = .8f;
-        Vector3 initialPosition = zombieBreathTextObject.transform.position;
-
-        while (elapsedTime < duration && zombieBreathTextObject != null) // Verificar si el objeto aún existe
-        {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / duration;
-            zombieBreathTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
-            yield return null;
-        }
-
-        // Destruir el objeto clonado después de 1 segundo
-        if (zombieBreathTextObject != null)
-        {
-            Destroy(zombieBreathTextObject, .8f);
+            Destroy(littlePrayerTextObject, .8f);
         }
     }
 

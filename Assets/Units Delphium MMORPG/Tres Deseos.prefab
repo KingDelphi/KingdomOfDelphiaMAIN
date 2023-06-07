@@ -6141,8 +6141,8 @@ MonoBehaviour:
   nextCharacter: {fileID: 0}
   lvlTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
   animator: {fileID: 0}
-  vomitTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
-  zombieBreathTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
+  firstWishTextPrefab: {fileID: 0}
+  secondWishTextPrefab: {fileID: 0}
   particleSystem1: {fileID: 2030405834304160472}
   particleSystem2: {fileID: 2029759973455850786}
   particleSystem3: {fileID: 2030466719263538565}

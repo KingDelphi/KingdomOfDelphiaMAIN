@@ -25,7 +25,7 @@ public class FoodSystem : MonoBehaviour
         }
     }
 
-    private void ConsumeFood()
+    public void ConsumeFood()
     {
         GearItem chickenLeg = inventory.GetGearItemByName("Chicken Leg");
         GearItem porkHam = inventory.GetGearItemByName("Pork Ham");

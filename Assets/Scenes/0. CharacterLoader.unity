@@ -9945,7 +9945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 228380502601174890, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 233149946121116184, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: m_RootOrder
@@ -9997,39 +9997,39 @@ PrefabInstance:
       objectReference: {fileID: 2072864625}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[1]
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[2]
-      value: 3
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[3]
-      value: 4
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[4]
-      value: 5
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[5]
-      value: 6
+      value: 2600
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[6]
-      value: 7
+      value: 4200
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[7]
-      value: 8
+      value: 6400
       objectReference: {fileID: 0}
     - target: {fileID: 691663945141147712, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[8]
-      value: 9
+      value: 9300
       objectReference: {fileID: 0}
     - target: {fileID: 1141280338904051395, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: currentMana
@@ -16756,7 +16756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3004650861264318570, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: nextCharacter
@@ -16768,39 +16768,39 @@ PrefabInstance:
       objectReference: {fileID: 964491810}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[1]
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[2]
-      value: 3
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[3]
-      value: 4
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[4]
-      value: 5
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[5]
-      value: 6
+      value: 2600
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[6]
-      value: 7
+      value: 4200
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[7]
-      value: 8
+      value: 6400
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[8]
-      value: 9
+      value: 9300
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238941, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: currentMana
@@ -18142,39 +18142,39 @@ PrefabInstance:
       objectReference: {fileID: 2072864625}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[1]
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[2]
-      value: 3
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[3]
-      value: 4
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[4]
-      value: 5
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[5]
-      value: 6
+      value: 2600
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[6]
-      value: 7
+      value: 4200
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[7]
-      value: 8
+      value: 6400
       objectReference: {fileID: 0}
     - target: {fileID: 1770238613987700214, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[8]
-      value: 9
+      value: 9300
       objectReference: {fileID: 0}
     - target: {fileID: 9011450021607665303, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: m_Name
@@ -18182,7 +18182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9011450021607665303, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9013977141150497765, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: m_RootOrder
@@ -39076,7 +39076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3337753112215678051, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490118, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: currentMana
@@ -39112,39 +39112,39 @@ PrefabInstance:
       objectReference: {fileID: 1084206967}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[1]
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[2]
-      value: 3
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[3]
-      value: 4
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[4]
-      value: 5
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[5]
-      value: 6
+      value: 2600
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[6]
-      value: 7
+      value: 4200
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[7]
-      value: 8
+      value: 6400
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490139, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[8]
-      value: 9
+      value: 9300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
@@ -46814,7 +46814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3375151379221393682, guid: bad1558f8f06e44d0a696ee25e76b23a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3376090808509081348, guid: bad1558f8f06e44d0a696ee25e76b23a, type: 3}
       propertyPath: m_RootOrder
@@ -47007,7 +47007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1417365045707989787, guid: ce446c6ebb3d64c648ab2b21fc50cf0c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421403680472326669, guid: ce446c6ebb3d64c648ab2b21fc50cf0c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47196,7 +47196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537413354294791703, guid: 5db22a0c96a5c4dffac72605002c4eb4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943541276273527885, guid: 5db22a0c96a5c4dffac72605002c4eb4, type: 3}
       propertyPath: mapObject
@@ -47245,8 +47245,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572329979587953912, guid: 0ba88341136964276928401a946898b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 572329979587953913, guid: 0ba88341136964276928401a946898b4, type: 3}
+      propertyPath: firstWishTextPrefab
+      value: 
+      objectReference: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
+    - target: {fileID: 572329979587953913, guid: 0ba88341136964276928401a946898b4, type: 3}
+      propertyPath: secondWishTextPrefab
+      value: 
+      objectReference: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
     - target: {fileID: 572329979587953917, guid: 0ba88341136964276928401a946898b4, type: 3}
       propertyPath: gameManager
       value: 
@@ -47331,7 +47339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2194721791532184594, guid: dd63e31a6921d4f55a9d641d3b9669fd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2195941499111842308, guid: dd63e31a6921d4f55a9d641d3b9669fd, type: 3}
       propertyPath: m_RootOrder
@@ -47454,6 +47462,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4173882262969724382, guid: 9c2777bbdff8b412a84c3f7adb489f1a, type: 3}
+      propertyPath: littlePrayerTextPrefab
+      value: 
+      objectReference: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
+    - target: {fileID: 4173882262969724382, guid: 9c2777bbdff8b412a84c3f7adb489f1a, type: 3}
       propertyPath: hpIncreaseSettings.probability
       value: 0.35
       objectReference: {fileID: 0}
@@ -47539,7 +47551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8465076641521547842, guid: 9c2777bbdff8b412a84c3f7adb489f1a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c2777bbdff8b412a84c3f7adb489f1a, type: 3}
@@ -47600,7 +47612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009719269741701955, guid: 9a6051ff76b6d426980c2ae0dc547bac, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2009719269741701955, guid: 9a6051ff76b6d426980c2ae0dc547bac, type: 3}
       propertyPath: m_TagString
@@ -47676,100 +47688,108 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
+      propertyPath: roarTextPrefab
+      value: 
+      objectReference: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
+    - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
+      propertyPath: lickWhiskersTextPrefab
+      value: 
+      objectReference: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
+    - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[0]
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[1]
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[2]
-      value: 3
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[3]
-      value: 4
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[4]
-      value: 5
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[5]
-      value: 6
+      value: 2600
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[6]
-      value: 7
+      value: 4200
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[7]
-      value: 8
+      value: 6400
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[8]
-      value: 9
+      value: 9300
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[9]
-      value: 10
+      value: 13000
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[10]
-      value: 11
+      value: 17600
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[11]
-      value: 12
+      value: 23200
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[12]
-      value: 13
+      value: 29900
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[13]
-      value: 14
+      value: 37800
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[14]
-      value: 15
+      value: 47000
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[15]
-      value: 16
+      value: 57600
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[16]
-      value: 17
+      value: 69700
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[17]
-      value: 18
+      value: 83400
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[18]
-      value: 19
+      value: 98800
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[19]
-      value: 20
+      value: 116000
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[20]
-      value: 21
+      value: 135100
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[21]
-      value: 22
+      value: 156200
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[22]
-      value: 23
+      value: 179400
       objectReference: {fileID: 0}
     - target: {fileID: 2797737791275643743, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[23]
-      value: 24
+      value: 204800
       objectReference: {fileID: 0}
     - target: {fileID: 6054487474121553264, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: m_RootOrder
@@ -47821,7 +47841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055484116300538726, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540547475632821012, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: currentMana
@@ -47924,7 +47944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668520801863399354, guid: 28888fcf053844c4f97d1f4678eede33, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6716256642219443618, guid: 28888fcf053844c4f97d1f4678eede33, type: 3}
       propertyPath: mapObject
@@ -48037,7 +48057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8487968080412557301, guid: 81ebcce419e8344fcb97be24b777c4f0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ebcce419e8344fcb97be24b777c4f0, type: 3}
@@ -48090,7 +48110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2621414318188368006, guid: d3c865107ed2a438dabdcd7b9ddc9b5d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2624921906560730768, guid: d3c865107ed2a438dabdcd7b9ddc9b5d, type: 3}
       propertyPath: m_RootOrder
@@ -48197,7 +48217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125810248141258441, guid: 7b276164350f345e387565f4f088c2b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4125810248141258446, guid: 7b276164350f345e387565f4f088c2b4, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[0]
@@ -48430,7 +48450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740237400162158830, guid: 5176459c9d35b419d86c2d561e915f67, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3741159673236545272, guid: 5176459c9d35b419d86c2d561e915f67, type: 3}
       propertyPath: m_RootOrder

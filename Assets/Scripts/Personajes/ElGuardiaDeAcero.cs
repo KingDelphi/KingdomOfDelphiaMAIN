@@ -36,13 +36,10 @@ public class ElGuardiaDeAcero : MonoBehaviour
 
     public Animator animator;
 
-    private float vomitTimer = 0f;
-    private GameObject vomitTextObject;
-    public GameObject vomitTextPrefab;
-
-    private float zombieBreathTimer = 0f;
-    private GameObject zombieBreathTextObject;
-    public GameObject zombieBreathTextPrefab;
+    private float drinkBeerCooldown = 8f;
+    private float drinkBeerTimer = 0f;
+    private GameObject drinkBeerTextObject;
+    public GameObject drinkBeerTextPrefab;
 
     [SerializeField]
     private GameObject particleSystem1;
@@ -52,6 +49,8 @@ public class ElGuardiaDeAcero : MonoBehaviour
 
     [SerializeField]
     private GameObject particleSystem3;
+
+    private FoodSystem foodSystem;
 
     public int[] experienceRequiredPerLevel = {
         100, 200, 400, 800, 1500, 2600, 4200, 6400, 9300, 13000, 17600, 23200, 29900, 37800,
@@ -64,6 +63,7 @@ public class ElGuardiaDeAcero : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<Player>(); // Busca el objeto con el script "Player"
+        foodSystem = GetComponent<FoodSystem>();
 
         // Suscribirse al evento OnAddExperience del script Player
         if (player != null)
@@ -91,48 +91,32 @@ public class ElGuardiaDeAcero : MonoBehaviour
             Debug.Log("La experiencia actual del jugador es: " + playerExperience);
         }
 
-        // Vomit
-        if (Input.GetKeyDown(KeyCode.Alpha1) && vomitTimer <= 0)
+        // Drink Beer
+        if (Input.GetKeyDown(KeyCode.Alpha1) && drinkBeerTimer <= 0)
         {
-            Vomit();
+            DrinkBeer();
         }
 
-        // Actualizar el temporizador de cooldown de Vomit
-        if (vomitTimer > 0f)
+        // Actualizar el temporizador de cooldown de Eat Meat
+        if (drinkBeerTimer > 0f)
         {
-            vomitTimer -= Time.deltaTime;
+            drinkBeerTimer -= Time.deltaTime;
 
-            if (vomitTimer <= 0f)
+            if (drinkBeerTimer <= 0f)
             {
-                Debug.Log("El cooldown de Vomit ha finalizado.");
-            }
-        }
-
-        // Zombie Breath
-        if (Input.GetKeyDown(KeyCode.Alpha2) && zombieBreathTimer <= 0)
-        {
-            ZombieBreath();
-        }
-
-        // Actualizar el temporizador de cooldown de Zombie Breath
-        if (zombieBreathTimer > 0f)
-        {
-            zombieBreathTimer -= Time.deltaTime;
-
-            if (zombieBreathTimer <= 0f)
-            {
-                Debug.Log("El cooldown de Zombie Breath ha finalizado.");
+                Debug.Log("El cooldown de Drink Beer ha finalizado.");
             }
         }
     }
 
-    private void Vomit()
+    private void DrinkBeer()
     {
+        foodSystem.ConsumeFood();
+        
         // Obtener el componente Player del jugador
         Player player = GetComponent<Player>();
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
 
-        if (player.currentMana >= 8 && playerAttack.selectedMonster != null)
+        if (player.currentMana >= 8)
         {
             player.ConsumeMana(8);
         }
@@ -140,167 +124,49 @@ public class ElGuardiaDeAcero : MonoBehaviour
         {
             return;
         }
-
-        if (vomitTimer > 0f)
+        
+        if (drinkBeerTimer > 0f)
         {
-            Debug.Log("Vomit aún está en cooldown!");
+            Debug.Log("¡Drink Beer aún está en cooldown!");
             return;
         }
 
-        // Obtener todos los objetos con la etiqueta "Monster" en la escena
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Monster");
+        // Llamar al método Heal del jugador para curar el HP
+        player.Heal(16);
 
-        // Realizar el ataque a cada enemigo en el rango
-        foreach (GameObject enemyObject in enemies)
-        {
-            Monsters enemy = enemyObject.GetComponent<Monsters>();
-            if (enemy != null)
-            {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, enemy.transform.position);
-                if (distanceToEnemy <= playerAttack.attackRange)
-                {
-                    Debug.Log("Enemigo seleccionado: " + enemy.name);
-                    VomitAttack(enemy);
-                }
-            }
-        }
+        // Establecer el cooldown de Lick Whiskers a 8 segundos
+        drinkBeerTimer = 8f;
 
-        // Establecer el cooldown de Vomit a 5 segundos
-        vomitTimer = 5f;
+        Debug.Log("¡Drink Beer ha sido utilizado! Se ha curado 16 de vida.");
 
-        Debug.Log("Vomit ha sido utilizado! Cerebrito vomita sobre sus enemigos.");
-
-        StartCoroutine(ResetVomitCooldown());
+        StartCoroutine(ResetDrinkBeerCooldown());
 
         // Calcular la posición vertical del texto de nivel por encima del personaje
             Vector3 characterHeight = player.transform.localScale;
             float yOffset = characterHeight.y;
-            Vector3 vomitTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
+            Vector3 drinkBeerTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
 
             // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            vomitTextObject = Instantiate(vomitTextPrefab, vomitTextPosition, Quaternion.identity);
+            drinkBeerTextObject = Instantiate(drinkBeerTextPrefab, drinkBeerTextPosition, Quaternion.identity);
 
             // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro vomitText = vomitTextObject.GetComponent<TextMeshPro>();
+            TextMeshPro drinkBeerText = drinkBeerTextObject.GetComponent<TextMeshPro>();
 
             // Establecer el color del texto de nivel
-            vomitText.color = Color.red;
+            drinkBeerText.color = Color.green;
 
             // Mostrar el nivel en el texto
-            vomitText.text = ("¡Wacala!");
+            drinkBeerText.text = ("¡Solo me he servado dos tomesas!");
 
             // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveVomitText(vomitTextObject, vomitTextPosition + Vector3.up));
+            StartCoroutine(MoveDrinkBeerText(drinkBeerTextObject, drinkBeerTextPosition + Vector3.up));
     }
 
-    private void VomitAttack(Monsters enemy)
+    private IEnumerator ResetDrinkBeerCooldown()
     {
-        if (enemy != null)
-        {
-            PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+        yield return new WaitForSeconds(drinkBeerCooldown);
 
-            // Realizar el ataque directamente en el enemigo
-            playerAttack.selectedMonster = enemy.gameObject;
-            playerAttack.PerformAttack();
-        }
-        else
-        {
-            Debug.Log("El enemigo es nulo. No se puede realizar el ataque.");
-        }
-    }
-
-    private IEnumerator ResetVomitCooldown()
-    {
-        yield return new WaitForSeconds(vomitTimer);
-
-        Debug.Log("El cooldown de Vomit ha finalizado.");
-    }
-
-    private void ZombieBreath()
-    {
-        // Obtener el componente Player del jugador
-        Player player = GetComponent<Player>();
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
-
-        if (player.currentMana >= 6 && playerAttack.selectedMonster != null)
-        {
-            player.ConsumeMana(6);
-        }
-        else
-        {
-            return;
-        }
-
-        if (zombieBreathTimer > 0f)
-        {
-            Debug.Log("Zombie Breath aún está en cooldown!");
-            return;
-        }
-
-        // Obtener todos los objetos con la etiqueta "Monster" en la escena
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-        // Realizar el ataque a cada jugador en el rango
-        foreach (GameObject playerObject in players)
-        {
-            if (playerObject != null)
-            {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, playerObject.transform.position);
-                if (distanceToEnemy <= playerAttack.attackRange)
-                {
-                    Debug.Log("Jugador seleccionado: " + player.name);
-                    ZombieBreathAttack(playerObject.gameObject);
-                }
-            }
-        }
-
-        // Establecer el cooldown de Zombie Breath a 5 segundos
-        zombieBreathTimer = 5f;
-
-        Debug.Log("Zombie Breath ha sido utilizado! El olor de Cerebrito cura a sus aliados.");
-
-        StartCoroutine(ResetZombieBreathCooldown());
-
-        // Calcular la posición vertical del texto de nivel por encima del personaje
-            Vector3 characterHeight = player.transform.localScale;
-            float yOffset = characterHeight.y;
-            Vector3 zombieBreathTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
-
-            // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            zombieBreathTextObject = Instantiate(zombieBreathTextPrefab, zombieBreathTextPosition, Quaternion.identity);
-
-            // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro zombieBreathText = zombieBreathTextObject.GetComponent<TextMeshPro>();
-
-            // Establecer el color del texto de nivel
-            zombieBreathText.color = Color.green;
-
-            // Mostrar el nivel en el texto
-            zombieBreathText.text = ("Chicle de menta!");
-
-            // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveZombieBreathText(zombieBreathTextObject, zombieBreathTextPosition + Vector3.up));
-    }
-
-    private void ZombieBreathAttack(GameObject playerObject)
-    {
-        Player player = playerObject.GetComponent<Player>();
-        if (player != null)
-        {
-            player.Heal(8);
-            
-        }
-        else
-        {
-            Debug.Log("El jugador es nulo. No se puede realizar el ataque.");
-        }
-    }
-
-    private IEnumerator ResetZombieBreathCooldown()
-    {
-        yield return new WaitForSeconds(zombieBreathTimer);
-
-        Debug.Log("El cooldown de ZombieBreath ha finalizado.");
+        Debug.Log("El cooldown de Drink Beer ha finalizado.");
     }
 
     private void HandleLevelUp(int level)
@@ -445,45 +311,24 @@ private void IncreaseStats<T>(ref T playerStat, StatIncreaseSettings<T> settings
         }
     }
 
-    private IEnumerator MoveVomitText(GameObject vomitTextObject, Vector3 targetPosition)
+    private IEnumerator MoveDrinkBeerText(GameObject drinkBeerTextObject, Vector3 targetPosition)
     {
         float elapsedTime = 0f;
         float duration = .8f;
-        Vector3 initialPosition = vomitTextObject.transform.position;
+        Vector3 initialPosition = drinkBeerTextObject.transform.position;
 
-        while (elapsedTime < duration && vomitTextObject != null) // Verificar si el objeto aún existe
+        while (elapsedTime < duration && drinkBeerTextObject != null) // Verificar si el objeto aún existe
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            vomitTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+            drinkBeerTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
             yield return null;
         }
 
         // Destruir el objeto clonado después de 1 segundo
-        if (vomitTextObject != null)
+        if (drinkBeerTextObject != null)
         {
-            Destroy(vomitTextObject, .8f);
-        }
-    }
-
-    private IEnumerator MoveZombieBreathText(GameObject zombieBreathTextObject, Vector3 targetPosition)
-    {
-        float elapsedTime = 0f;
-        float duration = .8f;
-        Vector3 initialPosition = zombieBreathTextObject.transform.position;
-
-        while (elapsedTime < duration && zombieBreathTextObject != null) // Verificar si el objeto aún existe
-        {
-            elapsedTime += Time.deltaTime;
-            float t = elapsedTime / duration;
-            zombieBreathTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
-            yield return null;
-        }
-
-        // Destruir el objeto clonado después de 1 segundo
-        if (zombieBreathTextObject != null)
-        {
-            Destroy(zombieBreathTextObject, .8f);
+            Destroy(drinkBeerTextObject, .8f);
         }
     }
 

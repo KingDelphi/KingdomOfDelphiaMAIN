@@ -36,13 +36,15 @@ public class TresDeseos : MonoBehaviour
 
     public Animator animator;
 
-    private float vomitTimer = 0f;
-    private GameObject vomitTextObject;
-    public GameObject vomitTextPrefab;
+    private bool isFirstWishActive;
+    private float firstWishEffectTimer;
+    private GameObject firstWishTextObject;
+    public GameObject firstWishTextPrefab;
 
-    private float zombieBreathTimer = 0f;
-    private GameObject zombieBreathTextObject;
-    public GameObject zombieBreathTextPrefab;
+    private bool isSecondWishActive;
+    private float secondWishEffectTimer;
+    private GameObject secondWishTextObject;
+    public GameObject secondWishTextPrefab;
 
     [SerializeField]
     private GameObject particleSystem1;
@@ -96,216 +98,181 @@ public class TresDeseos : MonoBehaviour
             Debug.Log("La experiencia actual del jugador es: " + playerExperience);
         }
 
-        // Vomit
-        if (Input.GetKeyDown(KeyCode.Alpha1) && vomitTimer <= 0)
+        // Cast "First Wish"
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !isFirstWishActive)
         {
-            Vomit();
+            FirstWish();
         }
 
-        // Actualizar el temporizador de cooldown de Vomit
-        if (vomitTimer > 0f)
+        // Actualizar el temporizador de cooldown de Bad Words
+        if (isFirstWishActive)
         {
-            vomitTimer -= Time.deltaTime;
+            firstWishEffectTimer -= Time.deltaTime;
 
-            if (vomitTimer <= 0f)
+            if (firstWishEffectTimer <= 0f)
             {
-                Debug.Log("El cooldown de Vomit ha finalizado.");
+                // Restablecer el cooldown de PlayerAttack
+                PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
+                playerAttack.attackCooldown = 2f;
+
+                // Reiniciar el temporizador de cooldown
+                firstWishEffectTimer = 0f;
+                isFirstWishActive = false;
+
+                Debug.Log("El cooldown de First Wish ha finalizado.");
             }
         }
 
-        // Zombie Breath
-        if (Input.GetKeyDown(KeyCode.Alpha2) && zombieBreathTimer <= 0)
+        // Cast "Second Wish"
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !isSecondWishActive)
         {
-            ZombieBreath();
+            SecondWish();
         }
 
-        // Actualizar el temporizador de cooldown de Zombie Breath
-        if (zombieBreathTimer > 0f)
+        // Actualizar el temporizador de cooldown de Bad Words
+        if (isSecondWishActive)
         {
-            zombieBreathTimer -= Time.deltaTime;
+            secondWishEffectTimer -= Time.deltaTime;
 
-            if (zombieBreathTimer <= 0f)
+            if (secondWishEffectTimer <= 0f)
             {
-                Debug.Log("El cooldown de Zombie Breath ha finalizado.");
+                // Restablecer el cooldown de PlayerAttack
+                PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
+                playerAttack.attackCooldown = 2f;
+
+                // Reiniciar el temporizador de cooldown
+                secondWishEffectTimer = 0f;
+                isSecondWishActive = false;
+
+                Debug.Log("El cooldown de Second Wish ha finalizado.");
             }
         }
     }
 
-    private void Vomit()
+    private void FirstWish()
     {
-        // Obtener el componente Player del jugador
-        Player player = GetComponent<Player>();
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
-
-        if (player.currentMana >= 8 && playerAttack.selectedMonster != null)
+        if (player.currentMana >= 12)
         {
-            player.ConsumeMana(8);
+            player.ConsumeMana(12);
         }
         else
         {
             return;
         }
 
-        if (vomitTimer > 0f)
+        // Verificar si el cooldown de Bad Words está activo
+        if (isFirstWishActive)
         {
-            Debug.Log("Vomit aún está en cooldown!");
+            Debug.Log("¡First Wish aún está en cooldown!");
             return;
         }
+        
+        // Obtener el componente PlayerAttack del jugador
+        PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
 
-        // Obtener todos los objetos con la etiqueta "Monster" en la escena
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Monster");
+        // Reducir el cooldown de PlayerAttack a 1.5f por 6 segundos
+        playerAttack.attackCooldown = 1.5f;
+        firstWishEffectTimer = 6f;
 
-        // Realizar el ataque a cada enemigo en el rango
-        foreach (GameObject enemyObject in enemies)
-        {
-            Monsters enemy = enemyObject.GetComponent<Monsters>();
-            if (enemy != null)
-            {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, enemy.transform.position);
-                if (distanceToEnemy <= playerAttack.attackRange)
-                {
-                    Debug.Log("Enemigo seleccionado: " + enemy.name);
-                    VomitAttack(enemy);
-                }
-            }
-        }
+        // Activar el flag de Bad Words activo
+        isFirstWishActive = true;
 
-        // Establecer el cooldown de Vomit a 5 segundos
-        vomitTimer = 5f;
+        StartCoroutine(ResetFirstWishCooldown(firstWishEffectTimer));
 
-        Debug.Log("Vomit ha sido utilizado! Cerebrito vomita sobre sus enemigos.");
-
-        StartCoroutine(ResetVomitCooldown());
+        Debug.Log("¡First Wish ha sido lanzado! El ataque se ha incrementado por 6 segundos.");
 
         // Calcular la posición vertical del texto de nivel por encima del personaje
             Vector3 characterHeight = player.transform.localScale;
             float yOffset = characterHeight.y;
-            Vector3 vomitTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
+            Vector3 firstWishTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
 
             // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            vomitTextObject = Instantiate(vomitTextPrefab, vomitTextPosition, Quaternion.identity);
+            firstWishTextObject = Instantiate(firstWishTextPrefab, firstWishTextPosition, Quaternion.identity);
 
             // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro vomitText = vomitTextObject.GetComponent<TextMeshPro>();
+            TextMeshPro firstWishText = firstWishTextObject.GetComponent<TextMeshPro>();
 
             // Establecer el color del texto de nivel
-            vomitText.color = Color.red;
+            firstWishText.color = Color.red;
 
             // Mostrar el nivel en el texto
-            vomitText.text = ("¡Wacala!");
+            firstWishText.text = ("¡Deseo ATK!");
 
             // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveVomitText(vomitTextObject, vomitTextPosition + Vector3.up));
+            StartCoroutine(MoveFirstWishText(firstWishTextObject, firstWishTextPosition + Vector3.up));
     }
 
-    private void VomitAttack(Monsters enemy)
+    private IEnumerator ResetFirstWishCooldown(float cooldown)
     {
-        if (enemy != null)
-        {
-            PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+        yield return new WaitForSeconds(cooldown);
 
-            // Realizar el ataque directamente en el enemigo
-            playerAttack.selectedMonster = enemy.gameObject;
-            playerAttack.PerformAttack();
-        }
-        else
-        {
-            Debug.Log("El enemigo es nulo. No se puede realizar el ataque.");
-        }
+        // Restablecer el cooldown de Bad Words
+        isFirstWishActive = false;
+
+        Debug.Log("El cooldown de First Wish ha finalizado.");
     }
 
-    private IEnumerator ResetVomitCooldown()
+    private void SecondWish()
     {
-        yield return new WaitForSeconds(vomitTimer);
-
-        Debug.Log("El cooldown de Vomit ha finalizado.");
-    }
-
-    private void ZombieBreath()
-    {
-        // Obtener el componente Player del jugador
-        Player player = GetComponent<Player>();
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
-
-        if (player.currentMana >= 6 && playerAttack.selectedMonster != null)
+        if (player.currentMana >= 16)
         {
-            player.ConsumeMana(6);
+            player.ConsumeMana(16);
         }
         else
         {
             return;
         }
 
-        if (zombieBreathTimer > 0f)
+        // Verificar si el cooldown de Bad Words está activo
+        if (isSecondWishActive)
         {
-            Debug.Log("Zombie Breath aún está en cooldown!");
+            Debug.Log("¡Second Wish aún está en cooldown!");
             return;
         }
+        
+        // Obtener el componente PlayerAttack del jugador
+        PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
 
-        // Obtener todos los objetos con la etiqueta "Monster" en la escena
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        // Reducir el cooldown de PlayerAttack a 1.5f por 6 segundos
+        playerAttack.attackCooldown = 1.5f;
+        secondWishEffectTimer = 6f;
 
-        // Realizar el ataque a cada jugador en el rango
-        foreach (GameObject playerObject in players)
-        {
-            if (playerObject != null)
-            {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, playerObject.transform.position);
-                if (distanceToEnemy <= playerAttack.attackRange)
-                {
-                    Debug.Log("Jugador seleccionado: " + player.name);
-                    ZombieBreathAttack(playerObject.gameObject);
-                }
-            }
-        }
+        // Activar el flag de Bad Words activo
+        isSecondWishActive = true;
 
-        // Establecer el cooldown de Zombie Breath a 5 segundos
-        zombieBreathTimer = 5f;
+        StartCoroutine(ResetSecondWishCooldown(secondWishEffectTimer));
 
-        Debug.Log("Zombie Breath ha sido utilizado! El olor de Cerebrito cura a sus aliados.");
-
-        StartCoroutine(ResetZombieBreathCooldown());
+        Debug.Log("¡Second Wish ha sido lanzado! El cooldown de PlayerAttack se ha reducido a 1.5f por 6 segundos.");
 
         // Calcular la posición vertical del texto de nivel por encima del personaje
             Vector3 characterHeight = player.transform.localScale;
             float yOffset = characterHeight.y;
-            Vector3 zombieBreathTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
+            Vector3 secondWishTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
 
             // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            zombieBreathTextObject = Instantiate(zombieBreathTextPrefab, zombieBreathTextPosition, Quaternion.identity);
+            secondWishTextObject = Instantiate(secondWishTextPrefab, secondWishTextPosition, Quaternion.identity);
 
             // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro zombieBreathText = zombieBreathTextObject.GetComponent<TextMeshPro>();
+            TextMeshPro secondWishText = secondWishTextObject.GetComponent<TextMeshPro>();
 
             // Establecer el color del texto de nivel
-            zombieBreathText.color = Color.green;
+            secondWishText.color = Color.red;
 
             // Mostrar el nivel en el texto
-            zombieBreathText.text = ("Chicle de menta!");
+            secondWishText.text = ("¡Deseo ATK SPD!");
 
             // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveZombieBreathText(zombieBreathTextObject, zombieBreathTextPosition + Vector3.up));
+            StartCoroutine(MoveSecondWishText(secondWishTextObject, secondWishTextPosition + Vector3.up));
     }
 
-    private void ZombieBreathAttack(GameObject playerObject)
+    private IEnumerator ResetSecondWishCooldown(float cooldown)
     {
-        Player player = playerObject.GetComponent<Player>();
-        if (player != null)
-        {
-            player.Heal(8);
-            
-        }
-        else
-        {
-            Debug.Log("El jugador es nulo. No se puede realizar el ataque.");
-        }
-    }
+        yield return new WaitForSeconds(cooldown);
 
-    private IEnumerator ResetZombieBreathCooldown()
-    {
-        yield return new WaitForSeconds(zombieBreathTimer);
+        // Restablecer el cooldown de Bad Words
+        isSecondWishActive = false;
 
-        Debug.Log("El cooldown de ZombieBreath ha finalizado.");
+        Debug.Log("El cooldown de Second Wish ha finalizado.");
     }
 
     private void HandleLevelUp(int level)
@@ -450,45 +417,45 @@ private void IncreaseStats<T>(ref T playerStat, StatIncreaseSettings<T> settings
         }
     }
 
-    private IEnumerator MoveVomitText(GameObject vomitTextObject, Vector3 targetPosition)
+    private IEnumerator MoveFirstWishText(GameObject firstWishTextObject, Vector3 targetPosition)
     {
         float elapsedTime = 0f;
         float duration = .8f;
-        Vector3 initialPosition = vomitTextObject.transform.position;
+        Vector3 initialPosition = firstWishTextObject.transform.position;
 
-        while (elapsedTime < duration && vomitTextObject != null) // Verificar si el objeto aún existe
+        while (elapsedTime < duration && firstWishTextObject != null) // Verificar si el objeto aún existe
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            vomitTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+            firstWishTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
             yield return null;
         }
 
         // Destruir el objeto clonado después de 1 segundo
-        if (vomitTextObject != null)
+        if (firstWishTextObject != null)
         {
-            Destroy(vomitTextObject, .8f);
+            Destroy(firstWishTextObject, .8f);
         }
     }
 
-    private IEnumerator MoveZombieBreathText(GameObject zombieBreathTextObject, Vector3 targetPosition)
+    private IEnumerator MoveSecondWishText(GameObject secondWishTextObject, Vector3 targetPosition)
     {
         float elapsedTime = 0f;
         float duration = .8f;
-        Vector3 initialPosition = zombieBreathTextObject.transform.position;
+        Vector3 initialPosition = secondWishTextObject.transform.position;
 
-        while (elapsedTime < duration && zombieBreathTextObject != null) // Verificar si el objeto aún existe
+        while (elapsedTime < duration && secondWishTextObject != null) // Verificar si el objeto aún existe
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            zombieBreathTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+            secondWishTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
             yield return null;
         }
 
         // Destruir el objeto clonado después de 1 segundo
-        if (zombieBreathTextObject != null)
+        if (secondWishTextObject != null)
         {
-            Destroy(zombieBreathTextObject, .8f);
+            Destroy(secondWishTextObject, .8f);
         }
     }
 

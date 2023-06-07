@@ -117,7 +117,7 @@ public class Lobin : MonoBehaviour
             Roar();
         }
 
-        // Actualizar el temporizador de cooldown de Eat Meat
+        // Actualizar el temporizador de cooldown de Roar
         if (roarTimer > 0f)
         {
             roarTimer -= Time.deltaTime;

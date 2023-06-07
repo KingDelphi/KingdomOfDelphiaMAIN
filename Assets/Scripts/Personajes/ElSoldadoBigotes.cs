@@ -36,13 +36,14 @@ public class ElSoldadoBigotes : MonoBehaviour
 
     public Animator animator;
 
-    private float vomitTimer = 0f;
-    private GameObject vomitTextObject;
-    public GameObject vomitTextPrefab;
+    private float lickWhiskersCooldown = 8f;
+    private float lickWhiskersTimer = 0f;
+    private GameObject lickWhiskersTextObject;
+    public GameObject lickWhiskersTextPrefab;
 
-    private float zombieBreathTimer = 0f;
-    private GameObject zombieBreathTextObject;
-    public GameObject zombieBreathTextPrefab;
+    private float roarTimer = 0f;
+    private GameObject roarTextObject;
+    public GameObject roarTextPrefab;
 
     [SerializeField]
     private GameObject particleSystem1;
@@ -91,48 +92,99 @@ public class ElSoldadoBigotes : MonoBehaviour
             Debug.Log("La experiencia actual del jugador es: " + playerExperience);
         }
 
-        // Vomit
-        if (Input.GetKeyDown(KeyCode.Alpha1) && vomitTimer <= 0)
+        // Lick Whiskers
+        if (Input.GetKeyDown(KeyCode.Alpha1) && lickWhiskersTimer <= 0)
         {
-            Vomit();
+            LickWhiskers();
         }
 
-        // Actualizar el temporizador de cooldown de Vomit
-        if (vomitTimer > 0f)
+        // Actualizar el temporizador de cooldown de Eat Meat
+        if (lickWhiskersTimer > 0f)
         {
-            vomitTimer -= Time.deltaTime;
+            lickWhiskersTimer -= Time.deltaTime;
 
-            if (vomitTimer <= 0f)
+            if (lickWhiskersTimer <= 0f)
             {
-                Debug.Log("El cooldown de Vomit ha finalizado.");
+                Debug.Log("El cooldown de Lick Whiskers ha finalizado.");
             }
         }
 
-        // Zombie Breath
-        if (Input.GetKeyDown(KeyCode.Alpha2) && zombieBreathTimer <= 0)
+        // Roar
+        if (Input.GetKeyDown(KeyCode.Alpha2) && roarTimer <= 0)
         {
-            ZombieBreath();
+            Roar();
         }
 
-        // Actualizar el temporizador de cooldown de Zombie Breath
-        if (zombieBreathTimer > 0f)
+        // Actualizar el temporizador de cooldown de Roar
+        if (roarTimer > 0f)
         {
-            zombieBreathTimer -= Time.deltaTime;
+            roarTimer -= Time.deltaTime;
 
-            if (zombieBreathTimer <= 0f)
+            if (roarTimer <= 0f)
             {
-                Debug.Log("El cooldown de Zombie Breath ha finalizado.");
+                Debug.Log("El cooldown de Roar ha finalizado.");
             }
         }
     }
 
-    private void Vomit()
+    private void LickWhiskers()
+    {
+        // Obtener el componente Player del jugador
+        Player player = GetComponent<Player>();
+
+        if (player.currentMana >= 6)
+        {
+            player.ConsumeMana(6);
+        }
+        else
+        {
+            return;
+        }
+        
+        if (lickWhiskersTimer > 0f)
+        {
+            Debug.Log("¡Lick Whiskers aún está en cooldown!");
+            return;
+        }
+
+        // Llamar al método Heal del jugador para curar el HP
+        player.Heal(12);
+
+        // Establecer el cooldown de Lick Whiskers a 8 segundos
+        lickWhiskersTimer = 8f;
+
+        Debug.Log("¡Lick Whiskers ha sido utilizado! Se ha curado 12 de vida.");
+
+        StartCoroutine(ResetLickWhiskersCooldown());
+
+        // Calcular la posición vertical del texto de nivel por encima del personaje
+            Vector3 characterHeight = player.transform.localScale;
+            float yOffset = characterHeight.y;
+            Vector3 lickWhiskersTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
+
+            // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
+            lickWhiskersTextObject = Instantiate(lickWhiskersTextPrefab, lickWhiskersTextPosition, Quaternion.identity);
+
+            // Obtener el componente TextMeshPro del objeto de texto de nivel
+            TextMeshPro lickWhiskersText = lickWhiskersTextObject.GetComponent<TextMeshPro>();
+
+            // Establecer el color del texto de nivel
+            lickWhiskersText.color = Color.green;
+
+            // Mostrar el nivel en el texto
+            lickWhiskersText.text = ("(Se chupa los bigotes...)");
+
+            // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
+            StartCoroutine(MoveLickWhiskersText(lickWhiskersTextObject, lickWhiskersTextPosition + Vector3.up));
+    }
+
+    private void Roar()
     {
         // Obtener el componente Player del jugador
         Player player = GetComponent<Player>();
         PlayerAttack playerAttack = GetComponent<PlayerAttack>();
 
-        if (player.currentMana >= 8 && playerAttack.selectedMonster != null)
+        if (player.currentMana >= 8)
         {
             player.ConsumeMana(8);
         }
@@ -141,9 +193,9 @@ public class ElSoldadoBigotes : MonoBehaviour
             return;
         }
 
-        if (vomitTimer > 0f)
+        if (roarTimer > 0f)
         {
-            Debug.Log("Vomit aún está en cooldown!");
+            Debug.Log("¡Roar aún está en cooldown!");
             return;
         }
 
@@ -156,44 +208,44 @@ public class ElSoldadoBigotes : MonoBehaviour
             Monsters enemy = enemyObject.GetComponent<Monsters>();
             if (enemy != null)
             {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, enemy.transform.position);
+                float distanceToEnemy = Vector3.Distance(player.transform.position, enemy.transform.position);
                 if (distanceToEnemy <= playerAttack.attackRange)
                 {
                     Debug.Log("Enemigo seleccionado: " + enemy.name);
-                    VomitAttack(enemy);
+                    RoarAttack(enemy);
                 }
             }
         }
 
-        // Establecer el cooldown de Vomit a 5 segundos
-        vomitTimer = 5f;
+        // Establecer el cooldown de Roar a 5 segundos
+        roarTimer = 5f;
 
-        Debug.Log("Vomit ha sido utilizado! Cerebrito vomita sobre sus enemigos.");
+        Debug.Log("¡Roar ha sido utilizado! El Soldado Bigotes golpea a todos a su alrededor.");
 
-        StartCoroutine(ResetVomitCooldown());
+        StartCoroutine(ResetRoarCooldown());
 
         // Calcular la posición vertical del texto de nivel por encima del personaje
             Vector3 characterHeight = player.transform.localScale;
             float yOffset = characterHeight.y;
-            Vector3 vomitTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
+            Vector3 roarTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
 
             // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            vomitTextObject = Instantiate(vomitTextPrefab, vomitTextPosition, Quaternion.identity);
+            roarTextObject = Instantiate(roarTextPrefab, roarTextPosition, Quaternion.identity);
 
             // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro vomitText = vomitTextObject.GetComponent<TextMeshPro>();
+            TextMeshPro roarText = roarTextObject.GetComponent<TextMeshPro>();
 
             // Establecer el color del texto de nivel
-            vomitText.color = Color.red;
+            roarText.color = Color.red;
 
             // Mostrar el nivel en el texto
-            vomitText.text = ("¡Wacala!");
+            roarText.text = ("¡Roaaar!");
 
             // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveVomitText(vomitTextObject, vomitTextPosition + Vector3.up));
+            StartCoroutine(MoveRoarText(roarTextObject, roarTextPosition + Vector3.up));
     }
 
-    private void VomitAttack(Monsters enemy)
+    private void RoarAttack(Monsters enemy)
     {
         if (enemy != null)
         {
@@ -209,98 +261,18 @@ public class ElSoldadoBigotes : MonoBehaviour
         }
     }
 
-    private IEnumerator ResetVomitCooldown()
+    private IEnumerator ResetLickWhiskersCooldown()
     {
-        yield return new WaitForSeconds(vomitTimer);
+        yield return new WaitForSeconds(lickWhiskersCooldown);
 
-        Debug.Log("El cooldown de Vomit ha finalizado.");
+        Debug.Log("El cooldown de Lick Whiskers ha finalizado.");
     }
 
-    private void ZombieBreath()
+    private IEnumerator ResetRoarCooldown()
     {
-        // Obtener el componente Player del jugador
-        Player player = GetComponent<Player>();
-        PlayerAttack playerAttack = GetComponent<PlayerAttack>();
+        yield return new WaitForSeconds(roarTimer);
 
-        if (player.currentMana >= 6 && playerAttack.selectedMonster != null)
-        {
-            player.ConsumeMana(6);
-        }
-        else
-        {
-            return;
-        }
-
-        if (zombieBreathTimer > 0f)
-        {
-            Debug.Log("Zombie Breath aún está en cooldown!");
-            return;
-        }
-
-        // Obtener todos los objetos con la etiqueta "Monster" en la escena
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-        // Realizar el ataque a cada jugador en el rango
-        foreach (GameObject playerObject in players)
-        {
-            if (playerObject != null)
-            {
-                float distanceToEnemy = Vector3.Distance(playerAttack.selectedMonster.transform.position, playerObject.transform.position);
-                if (distanceToEnemy <= playerAttack.attackRange)
-                {
-                    Debug.Log("Jugador seleccionado: " + player.name);
-                    ZombieBreathAttack(playerObject.gameObject);
-                }
-            }
-        }
-
-        // Establecer el cooldown de Zombie Breath a 5 segundos
-        zombieBreathTimer = 5f;
-
-        Debug.Log("Zombie Breath ha sido utilizado! El olor de Cerebrito cura a sus aliados.");
-
-        StartCoroutine(ResetZombieBreathCooldown());
-
-        // Calcular la posición vertical del texto de nivel por encima del personaje
-            Vector3 characterHeight = player.transform.localScale;
-            float yOffset = characterHeight.y;
-            Vector3 zombieBreathTextPosition = player.transform.position + Vector3.up * yOffset + new Vector3(0f, 2.5f, 0f);
-
-            // Instanciar el objeto de texto de nivel y almacenar la referencia en lvlTextObject
-            zombieBreathTextObject = Instantiate(zombieBreathTextPrefab, zombieBreathTextPosition, Quaternion.identity);
-
-            // Obtener el componente TextMeshPro del objeto de texto de nivel
-            TextMeshPro zombieBreathText = zombieBreathTextObject.GetComponent<TextMeshPro>();
-
-            // Establecer el color del texto de nivel
-            zombieBreathText.color = Color.green;
-
-            // Mostrar el nivel en el texto
-            zombieBreathText.text = ("Chicle de menta!");
-
-            // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
-            StartCoroutine(MoveZombieBreathText(zombieBreathTextObject, zombieBreathTextPosition + Vector3.up));
-    }
-
-    private void ZombieBreathAttack(GameObject playerObject)
-    {
-        Player player = playerObject.GetComponent<Player>();
-        if (player != null)
-        {
-            player.Heal(8);
-            
-        }
-        else
-        {
-            Debug.Log("El jugador es nulo. No se puede realizar el ataque.");
-        }
-    }
-
-    private IEnumerator ResetZombieBreathCooldown()
-    {
-        yield return new WaitForSeconds(zombieBreathTimer);
-
-        Debug.Log("El cooldown de ZombieBreath ha finalizado.");
+        Debug.Log("El cooldown de Roar ha finalizado.");
     }
 
     private void HandleLevelUp(int level)
@@ -445,45 +417,45 @@ private void IncreaseStats<T>(ref T playerStat, StatIncreaseSettings<T> settings
         }
     }
 
-    private IEnumerator MoveVomitText(GameObject vomitTextObject, Vector3 targetPosition)
+    private IEnumerator MoveLickWhiskersText(GameObject lickWhiskersTextObject, Vector3 targetPosition)
     {
         float elapsedTime = 0f;
         float duration = .8f;
-        Vector3 initialPosition = vomitTextObject.transform.position;
+        Vector3 initialPosition = lickWhiskersTextObject.transform.position;
 
-        while (elapsedTime < duration && vomitTextObject != null) // Verificar si el objeto aún existe
+        while (elapsedTime < duration && lickWhiskersTextObject != null) // Verificar si el objeto aún existe
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            vomitTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+            lickWhiskersTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
             yield return null;
         }
 
         // Destruir el objeto clonado después de 1 segundo
-        if (vomitTextObject != null)
+        if (lickWhiskersTextObject != null)
         {
-            Destroy(vomitTextObject, .8f);
+            Destroy(lickWhiskersTextObject, .8f);
         }
     }
 
-    private IEnumerator MoveZombieBreathText(GameObject zombieBreathTextObject, Vector3 targetPosition)
+    private IEnumerator MoveRoarText(GameObject roarTextObject, Vector3 targetPosition)
     {
         float elapsedTime = 0f;
         float duration = .8f;
-        Vector3 initialPosition = zombieBreathTextObject.transform.position;
+        Vector3 initialPosition = roarTextObject.transform.position;
 
-        while (elapsedTime < duration && zombieBreathTextObject != null) // Verificar si el objeto aún existe
+        while (elapsedTime < duration && roarTextObject != null) // Verificar si el objeto aún existe
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            zombieBreathTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
+            roarTextObject.transform.position = Vector3.Lerp(initialPosition, targetPosition, t);
             yield return null;
         }
 
         // Destruir el objeto clonado después de 1 segundo
-        if (zombieBreathTextObject != null)
+        if (roarTextObject != null)
         {
-            Destroy(zombieBreathTextObject, .8f);
+            Destroy(roarTextObject, .8f);
         }
     }
 
