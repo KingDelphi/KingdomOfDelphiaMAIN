@@ -20,7 +20,7 @@ public class TioJuancho : MonoBehaviour
     private bool taskAssigned;
 
     // Productos de la tienda
-    private Dictionary<GearItem, int> itemPrices;
+    public Dictionary<GearItem, int> itemPrices;
 
     PlayerInventory playerInventory;
 
@@ -43,6 +43,19 @@ public class TioJuancho : MonoBehaviour
         // Inicializar variable de regalos
         firstClick = true;
         taskAssigned = false;
+        itemPrices = new Dictionary<GearItem, int>()
+            {
+                { new GearItem("Small Health Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 20, 0, .01f), 15 },
+                { new GearItem("Small Mana Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 20, .01f), 20 },
+                { new GearItem("Backpack", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 12f, 0, 0, 0f), 25 },
+                { new GearItem("Small Dagger", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 2, 0, 0, 0, 0, 0, 6f, 0, 0, 0f), 50 },
+                { new GearItem("Brass Shield", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 32f, 0, 0, 0f), 75 },
+                { new GearItem("Brass Armor", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 99f, 0, 0, 0f), 120 },
+                { new GearItem("Brass Legs", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 45f, 0, 0, 0f), 200 },
+                { new GearItem("Brass Helmet", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 16f, 0, 0, 0f), 175 },
+                { new GearItem("Brass Ring", GearItem.Rarity.Common, 0, 0, 0f, .05f, .05f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 0, 0f), 350 },
+                { new GearItem("Brass Amulet", GearItem.Rarity.Common, 10, 20, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 5f, 0, 0, 0f), 350 }
+            };
     }
 
     private void OnMouseDown()
@@ -136,7 +149,13 @@ public class TioJuancho : MonoBehaviour
             // Aquí puedes agregar la lógica adicional para otorgar la recompensa al jugador.
         }
     }
-
+    
+    public void Update() {
+        if(Input.GetKeyDown(KeyCode.R)) {
+         OpenShop();
+        }
+        
+    }
     // Lógica de la tienda
     public void OpenShop()
     {
@@ -146,7 +165,7 @@ public class TioJuancho : MonoBehaviour
         if (shopOpen)
         {
             // Inicializar precios de los productos
-            itemPrices = new Dictionary<GearItem, int>()
+            /*itemPrices = new Dictionary<GearItem, int>()
             {
                 { new GearItem("Small Health Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 20, 0, .01f), 15 },
                 { new GearItem("Small Mana Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 20, .01f), 20 },
@@ -158,7 +177,7 @@ public class TioJuancho : MonoBehaviour
                 { new GearItem("Brass Helmet", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 16f, 0, 0, 0f), 175 },
                 { new GearItem("Brass Ring", GearItem.Rarity.Common, 0, 0, 0f, .05f, .05f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 0, 0f), 350 },
                 { new GearItem("Brass Amulet", GearItem.Rarity.Common, 10, 20, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 5f, 0, 0, 0f), 350 }
-            };
+            };*/
             
             // Mostrar los productos disponibles en la tienda
             Debug.Log("Welcome to my shop! Here are my products:");
@@ -199,7 +218,7 @@ public class TioJuancho : MonoBehaviour
         {
             // Reducir el dinero del jugador y agregar el objeto al inventario
             ReduceMoney(GetItemPrice(gearItem));
-            AddItemToInventory(gearItem);
+            //AddItemToInventory(gearItem);
 
             Debug.Log("Purchase successful!");
 
@@ -211,7 +230,7 @@ public class TioJuancho : MonoBehaviour
         }
     }
 
-    private bool CanAfford(GearItem gearItem)
+    public bool CanAfford(GearItem gearItem)
     {
         int itemPrice = GetItemPrice(gearItem);
 
