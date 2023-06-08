@@ -37,7 +37,7 @@ public class PlayerInventory : MonoBehaviour
         //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
         List<string> strings = new List<String>();
         List<GearItem> gearItems = new List<GearItem>();
-        List<GameObject> gameObjects = new List<GameObject>();
+        List<GameObject> gameObjects = new List<GameObject>(); 
         foreach(GearItem inventoryItem in inventory) {
             
             if(gearMenu.equippedGear.Contains(inventoryItem)) {
@@ -69,15 +69,35 @@ public class PlayerInventory : MonoBehaviour
     }
         public void ListItem(GearItem gearItem, GameObject slot, GameObject inventoryContent) {
         //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
+        List<string> strings = new List<String>();
+        List<GearItem> gearItems = new List<GearItem>();
+        List<GameObject> gameObjects = new List<GameObject>(); 
              GameObject obj = Instantiate(slot, inventoryContent.transform);
              var itemName = obj.transform.Find("ItemName").GetComponent<TMP_Text>();
              itemName.text = gearItem.itemName + " x" + gearItem.quantity;
+             foreach(GearItem newItem in gearItems) {
+                if(newItem.itemName == gearItem.itemName) {
+                    foreach(GameObject go in gameObjects) {
+                        if(newItem.itemName + " x1" == go.transform.Find("ItemName").GetComponent<TMP_Text>().text) {
+                            Destroy(go);
+                        }
+                    }
+                    inventory.Remove(newItem);
+                    gearItem.quantity += 1;
+                    itemName.text = gearItem.itemName + " x" + gearItem.quantity;
+                }
+                gameObjects.Add(obj);
+             gearItems.Add(gearItem);
+             strings.Add(gearItem.itemName);
+             }
+             
+            
             
         }
     public void CheckForItem(string item, int index) {
         foreach(GearItem inventoryItem in inventory) {
             if(inventoryItem.itemName == item){
-             ListItem(gearMenu.equippedGear[index], gameManager.slot, gameManager.inventoryCanvas.transform.GetChild(0).gameObject);
+             //ListItem(gearMenu.equippedGear[index], gameManager.slot, gameManager.inventoryCanvas.transform.GetChild(0).gameObject);
              gearMenu.equippedGear[index] = inventoryItem;
             }
         }
