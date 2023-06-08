@@ -4746,9 +4746,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
   selectedItem: {fileID: 1068074449}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 8
 --- !u!1 &216688138
@@ -7837,9 +7879,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
   selectedItem: {fileID: 1011468711}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 6
 --- !u!1 &334827758
@@ -12736,9 +12820,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 545802755}
   character: {fileID: 28880390}
   selectedItem: {fileID: 2086456020}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 2
 --- !u!1 &547360151
@@ -17313,9 +17439,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
   selectedItem: {fileID: 1013555237}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 7
 --- !u!1 &762024092
@@ -30300,9 +30468,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
   selectedItem: {fileID: 1044785797}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 3
 --- !u!1 &1354225588
@@ -33142,9 +33352,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
   selectedItem: {fileID: 2072925292}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 4
 --- !u!1 &1553979363
@@ -34334,9 +34586,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 1588485847}
   character: {fileID: 28880390}
   selectedItem: {fileID: 747961294}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 0
 --- !u!1 &1591377898
@@ -35834,9 +36128,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 0}
   character: {fileID: 28880390}
   selectedItem: {fileID: 405386602}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 5
 --- !u!1 &1625947461
@@ -43559,9 +43895,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 993150336}
+  gameManager: {fileID: 0}
   dropdown: {fileID: 1997919611}
   character: {fileID: 28880390}
   selectedItem: {fileID: 967985636}
+  previousItem: 
+  gearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  previousGearItem:
+    quantity: 0
+    itemName: 
+    rarity: 0
+    itemType: 0
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
   gearMenu: {fileID: 1881448288}
   index: 1
 --- !u!1 &2000806106

@@ -4350,7 +4350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dc7fd2b5b6e42c39e26935e93e1ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: 6. (0,2,0) Entrada al Castillo de Delphia
+  targetSceneName: 6. (0,2,0) Camino lleno de Destroyers
   entryPosition: {x: 23, y: -135, z: 0}
 --- !u!58 &1740463495
 CircleCollider2D:
