@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/5. (0,-1,0) Casa del Tio Juancho.unity
     guid: 15be58e44fba04d1e8d0055e33407463
+  - enabled: 1
+    path: Assets/Scenes/6. (0,2,0) Entrada al Castillo de Delphia.unity
+    guid: 385d8b18f660144b6919d9fb66e58fce
   m_configObjects: {}

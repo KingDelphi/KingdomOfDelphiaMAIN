@@ -34783,7 +34783,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Gold
       rarity: 0
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34802,7 +34802,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Nugget (50 Gold)
       rarity: 0
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34821,7 +34821,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Lingot (1,000 Gold)
       rarity: 0
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34842,7 +34842,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Chicken Leg
       rarity: 1
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34854,14 +34854,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 4
-      hpRegen: 1
-      manaRegen: 1
-      effectDuration: 20
+      weight: 0
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
     - quantity: 0
       itemName: Pork Ham
       rarity: 1
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34873,14 +34873,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 10
-      hpRegen: 1
-      manaRegen: 1
-      effectDuration: 60
+      weight: 0
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
     - quantity: 0
       itemName: Bacon
       rarity: 2
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34892,14 +34892,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.05
-      hpRegen: 2
-      manaRegen: 2
-      effectDuration: 20
+      weight: 0
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
     - quantity: 0
       itemName: Honey-Infused Bacon
       rarity: 8
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34911,16 +34911,16 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.05
-      hpRegen: 2
-      manaRegen: 2
-      effectDuration: 120
+      weight: 0
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
   - categoryName: Potions
     gearItems:
     - quantity: 0
       itemName: Small Health Potion
       rarity: 1
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34932,14 +34932,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.1
-      hpRegen: 20
+      weight: 0
+      hpRegen: 0
       manaRegen: 0
-      effectDuration: 0.01
+      effectDuration: 0
     - quantity: 0
       itemName: Small Mana Potion
       rarity: 1
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34951,14 +34951,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.1
+      weight: 0
       hpRegen: 0
-      manaRegen: 20
-      effectDuration: 0.01
+      manaRegen: 0
+      effectDuration: 0
     - quantity: 0
       itemName: Medium Health Potion
       rarity: 1
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34977,7 +34977,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Mana Potion
       rarity: 1
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -34996,7 +34996,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Health Potion
       rarity: 2
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35015,7 +35015,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Mana Potion
       rarity: 2
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35034,7 +35034,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Health Potion
       rarity: 3
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35053,7 +35053,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Mana Potion
       rarity: 3
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35072,7 +35072,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Health Potion
       rarity: 4
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35091,7 +35091,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Mana Potion
       rarity: 4
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35110,7 +35110,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Exp Potion
       rarity: 2
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35122,14 +35122,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.1
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 300
+      effectDuration: 0
     - quantity: 0
       itemName: Medium Exp Potion
       rarity: 3
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35141,14 +35141,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.25
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 900
+      effectDuration: 0
     - quantity: 0
       itemName: Big Exp Potion
       rarity: 4
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35160,14 +35160,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.5
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 1800
+      effectDuration: 0
     - quantity: 0
       itemName: Great Exp Potion
       rarity: 5
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35179,14 +35179,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 1
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 3600
+      effectDuration: 0
     - quantity: 0
       itemName: Ultimate Exp Potion
       rarity: 6
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35198,14 +35198,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 2
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 7200
+      effectDuration: 0
     - quantity: 0
       itemName: Small Loot Potion
       rarity: 2
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35217,14 +35217,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.1
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 300
+      effectDuration: 0
     - quantity: 0
       itemName: Medium Loot Potion
       rarity: 3
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35236,14 +35236,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.25
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 900
+      effectDuration: 0
     - quantity: 0
       itemName: Big Loot Potion
       rarity: 4
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35255,14 +35255,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 0.5
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 1800
+      effectDuration: 0
     - quantity: 0
       itemName: Great Loot Potion
       rarity: 5
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35274,14 +35274,14 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 1
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 3600
+      effectDuration: 0
     - quantity: 0
       itemName: Ultimate Loot Potion
       rarity: 6
-      itemType: 0
+      itemType: 9
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35293,16 +35293,16 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 2
+      weight: 0
       hpRegen: 0
       manaRegen: 0
-      effectDuration: 7200
+      effectDuration: 0
   - categoryName: Holder
     gearItems:
     - quantity: 0
       itemName: Backpack
       rarity: 1
-      itemType: 0
+      itemType: 8
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35363,7 +35363,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Armor
       rarity: 1
-      itemType: 0
+      itemType: 1
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35382,7 +35382,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Armor
       rarity: 1
-      itemType: 0
+      itemType: 1
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35403,7 +35403,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Legs
       rarity: 1
-      itemType: 0
+      itemType: 2
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35422,7 +35422,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Legs
       rarity: 1
-      itemType: 0
+      itemType: 2
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35443,7 +35443,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Boots
       rarity: 1
-      itemType: 0
+      itemType: 3
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35464,7 +35464,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Stick
       rarity: 1
-      itemType: 0
+      itemType: 4
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35483,7 +35483,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Dagger
       rarity: 1
-      itemType: 0
+      itemType: 4
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35504,7 +35504,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Shield
       rarity: 1
-      itemType: 0
+      itemType: 5
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35523,7 +35523,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Shield
       rarity: 1
-      itemType: 0
+      itemType: 5
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35544,7 +35544,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Ring
       rarity: 1
-      itemType: 0
+      itemType: 6
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35563,7 +35563,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Ring
       rarity: 1
-      itemType: 0
+      itemType: 6
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -35584,7 +35584,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Amulet
       rarity: 1
-      itemType: 0
+      itemType: 7
       hp: 10
       mana: 20
       movementSpeed: 0
@@ -35603,7 +35603,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Old Pendant
       rarity: 7
-      itemType: 0
+      itemType: 7
       hp: 25
       mana: 35
       movementSpeed: 0
@@ -47245,7 +47245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572329979587953912, guid: 0ba88341136964276928401a946898b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 572329979587953913, guid: 0ba88341136964276928401a946898b4, type: 3}
       propertyPath: firstWishTextPrefab
@@ -47562,6 +47562,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 216996045242594472, guid: 9a6051ff76b6d426980c2ae0dc547bac, type: 3}
+      propertyPath: drinkBeerTextPrefab
+      value: 
+      objectReference: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
     - target: {fileID: 216996045242594481, guid: 9a6051ff76b6d426980c2ae0dc547bac, type: 3}
       propertyPath: animator
       value: 
