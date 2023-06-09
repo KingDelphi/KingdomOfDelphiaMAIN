@@ -434,10 +434,10 @@ MonoBehaviour:
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Pork Ham
-    rarity: 2
-    dropProbability: 0.6
+    rarity: 1
+    dropProbability: 0.55
     minQuantity: 1
-    maxQuantity: 3
+    maxQuantity: 2
     hp: 0
     mana: 0
     movementSpeed: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Bacon
-    rarity: 3
+    rarity: 1
     dropProbability: 0.2
     minQuantity: 1
     maxQuantity: 2
@@ -476,7 +476,7 @@ MonoBehaviour:
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Honey-Infused Bacon
-    rarity: 9
+    rarity: 1
     dropProbability: 0.05
     minQuantity: 1
     maxQuantity: 1

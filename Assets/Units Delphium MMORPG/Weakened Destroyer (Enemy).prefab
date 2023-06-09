@@ -24589,8 +24589,8 @@ GameObject:
   - component: {fileID: 8095227986989696440}
   - component: {fileID: 8095227986989696447}
   - component: {fileID: 8095227986989696446}
-  - component: {fileID: 8095227986989696445}
   - component: {fileID: -1156884738520134888}
+  - component: {fileID: 2569219927845726518}
   m_Layer: 9
   m_Name: Weakened Destroyer (Enemy)
   m_TagString: Monster
@@ -24996,189 +24996,6 @@ MonoBehaviour:
   monsterName: Weakened Destroyer
   expReward: 24
   counter: {fileID: 0}
---- !u!114 &8095227986989696445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190742136947212681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d175cc442472d4ebba8afc6527cf60f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootItems:
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Gold
-    rarity: 0
-    dropProbability: 1
-    minQuantity: 5
-    maxQuantity: 10
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Helmet
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Armor
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Legs
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Shield
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Ring
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Amulet
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Backpack
-    rarity: 1
-    dropProbability: 1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  lootTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
-  lootTextColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &-1156884738520134888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25197,6 +25014,189 @@ MonoBehaviour:
   disappearanceEffect: {fileID: 4052147887382748316, guid: a3ed7b637f70445e4b149619403abbad, type: 3}
   stoppingDistance: 1.5
   monsterName: Weakened Destroyer
+--- !u!114 &2569219927845726518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190742136947212681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d175cc442472d4ebba8afc6527cf60f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootItems:
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Gold
+    rarity: 0
+    dropProbability: 1
+    minQuantity: 7
+    maxQuantity: 15
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Brass Helmet
+    rarity: 2
+    dropProbability: 0.15
+    minQuantity: 1
+    maxQuantity: 1
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 2
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 16
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Brass Armor
+    rarity: 2
+    dropProbability: 0.15
+    minQuantity: 1
+    maxQuantity: 1
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 2
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 99
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Brass Legs
+    rarity: 2
+    dropProbability: 0.15
+    minQuantity: 1
+    maxQuantity: 1
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 2
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 45
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Brass Shield
+    rarity: 2
+    dropProbability: 0.15
+    minQuantity: 1
+    maxQuantity: 1
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 2
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 32
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Brass Ring
+    rarity: 2
+    dropProbability: 0.15
+    minQuantity: 1
+    maxQuantity: 1
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0.05
+    criticalBonus: 0.05
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 0.1
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Brass Amulet
+    rarity: 2
+    dropProbability: 0.15
+    minQuantity: 1
+    maxQuantity: 1
+    hp: 10
+    mana: 20
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: 5
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemName: Great Backpack
+    rarity: 3
+    dropProbability: 0.1
+    minQuantity: 1
+    maxQuantity: 1
+    hp: 0
+    mana: 0
+    movementSpeed: 0
+    criticalChance: 0
+    criticalBonus: 0
+    physicalAttack: 0
+    demonAttack: 0
+    hollyAttack: 0
+    physicalDefense: 0
+    demonDefense: 0
+    hollyDefense: 0
+    weight: -350
+    hpRegen: 0
+    manaRegen: 0
+    effectDuration: 0
+  lootTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
+  lootTextColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1190761522284851375
 GameObject:
   m_ObjectHideFlags: 0

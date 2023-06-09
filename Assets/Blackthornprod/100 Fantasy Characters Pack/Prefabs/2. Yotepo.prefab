@@ -704,7 +704,7 @@ MonoBehaviour:
     rarity: 1
     dropProbability: 0.7
     minQuantity: 1
-    maxQuantity: 3
+    maxQuantity: 2
     hp: 0
     mana: 0
     movementSpeed: 0

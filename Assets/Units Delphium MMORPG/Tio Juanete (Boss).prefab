@@ -3482,7 +3482,7 @@ MonoBehaviour:
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Brass Helmet
-    rarity: 1
+    rarity: 2
     dropProbability: 0.1
     minQuantity: 1
     maxQuantity: 1
@@ -3494,16 +3494,16 @@ MonoBehaviour:
     physicalAttack: 0
     demonAttack: 0
     hollyAttack: 0
-    physicalDefense: 0
+    physicalDefense: 2
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: 16
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Brass Armor
-    rarity: 1
+    rarity: 2
     dropProbability: 0.1
     minQuantity: 1
     maxQuantity: 1
@@ -3515,16 +3515,16 @@ MonoBehaviour:
     physicalAttack: 0
     demonAttack: 0
     hollyAttack: 0
-    physicalDefense: 0
+    physicalDefense: 2
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: 99
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Brass Legs
-    rarity: 1
+    rarity: 2
     dropProbability: 0.1
     minQuantity: 1
     maxQuantity: 1
@@ -3536,16 +3536,16 @@ MonoBehaviour:
     physicalAttack: 0
     demonAttack: 0
     hollyAttack: 0
-    physicalDefense: 0
+    physicalDefense: 2
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: 45
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Brass Shield
-    rarity: 1
+    rarity: 2
     dropProbability: 0.1
     minQuantity: 1
     maxQuantity: 1
@@ -3557,42 +3557,42 @@ MonoBehaviour:
     physicalAttack: 0
     demonAttack: 0
     hollyAttack: 0
-    physicalDefense: 0
+    physicalDefense: 2
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: 32
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Brass Ring
-    rarity: 1
+    rarity: 2
     dropProbability: 0.1
     minQuantity: 1
     maxQuantity: 1
     hp: 0
     mana: 0
     movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
+    criticalChance: 0.05
+    criticalBonus: 0.05
     physicalAttack: 0
     demonAttack: 0
     hollyAttack: 0
     physicalDefense: 0
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: 0.1
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Brass Amulet
-    rarity: 1
+    rarity: 2
     dropProbability: 0.1
     minQuantity: 1
     maxQuantity: 1
-    hp: 0
-    mana: 0
+    hp: 10
+    mana: 20
     movementSpeed: 0
     criticalChance: 0
     criticalBonus: 0
@@ -3602,13 +3602,13 @@ MonoBehaviour:
     physicalDefense: 0
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: 5
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Backpack
-    rarity: 1
+    rarity: 2
     dropProbability: 1
     minQuantity: 1
     maxQuantity: 1
@@ -3623,7 +3623,7 @@ MonoBehaviour:
     physicalDefense: 0
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: -200
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0

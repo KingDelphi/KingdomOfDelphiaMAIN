@@ -35209,6 +35209,25 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+    - quantity: 0
+      itemName: Squash
+      rarity: 1
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
   - categoryName: Potions
     gearItems:
     - quantity: 0
@@ -35608,7 +35627,26 @@ MonoBehaviour:
       physicalDefense: 0
       demonDefense: 0
       hollyDefense: 0
-      weight: 12
+      weight: -200
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Great Backpack
+      rarity: 2
+      itemType: 8
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: -350
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
