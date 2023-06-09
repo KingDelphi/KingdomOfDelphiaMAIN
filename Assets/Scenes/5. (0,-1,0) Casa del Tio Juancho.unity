@@ -1871,6 +1871,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Gold
       rarity: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1889,6 +1890,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Nugget (50 Gold)
       rarity: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1907,6 +1909,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Lingot (1,000 Gold)
       rarity: 0
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1927,6 +1930,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Chicken Leg
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1945,6 +1949,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Pork Ham
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1963,6 +1968,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Bacon
       rarity: 2
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1981,6 +1987,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Honey-Infused Bacon
       rarity: 8
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2001,6 +2008,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Health Potion
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2019,6 +2027,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Mana Potion
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2037,6 +2046,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Health Potion
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2055,6 +2065,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Mana Potion
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2073,6 +2084,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Health Potion
       rarity: 2
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2091,6 +2103,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Mana Potion
       rarity: 2
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2109,6 +2122,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Health Potion
       rarity: 3
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2127,6 +2141,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Mana Potion
       rarity: 3
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2145,6 +2160,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Health Potion
       rarity: 4
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2163,6 +2179,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Mana Potion
       rarity: 4
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2181,6 +2198,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Exp Potion
       rarity: 2
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2199,6 +2217,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Exp Potion
       rarity: 3
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2217,6 +2236,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Exp Potion
       rarity: 4
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2235,6 +2255,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Exp Potion
       rarity: 5
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2253,6 +2274,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Exp Potion
       rarity: 6
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2271,6 +2293,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Loot Potion
       rarity: 2
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2289,6 +2312,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Medium Loot Potion
       rarity: 3
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2307,6 +2331,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Big Loot Potion
       rarity: 4
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2325,6 +2350,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Great Loot Potion
       rarity: 5
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2343,6 +2369,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Ultimate Loot Potion
       rarity: 6
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2363,6 +2390,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Backpack
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2383,6 +2411,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Helmet
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2401,6 +2430,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Helmet
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2421,6 +2451,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Armor
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2439,6 +2470,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Armor
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2459,6 +2491,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Legs
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2477,6 +2510,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Legs
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2497,6 +2531,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Leather Boots
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2517,6 +2552,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Stick
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2535,6 +2571,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Small Dagger
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2555,6 +2592,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Shield
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2573,6 +2611,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Shield
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2593,6 +2632,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Wooden Ring
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2611,6 +2651,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Ring
       rarity: 1
+      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2631,6 +2672,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Brass Amulet
       rarity: 1
+      itemType: 0
       hp: 10
       mana: 20
       movementSpeed: 0
@@ -2649,6 +2691,7 @@ MonoBehaviour:
     - quantity: 0
       itemName: Old Pendant
       rarity: 7
+      itemType: 0
       hp: 25
       mana: 35
       movementSpeed: 0
@@ -2678,9 +2721,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 0}
+  inventoryCanvas: {fileID: 0}
+  anotherInv: {fileID: 0}
+  slot: {fileID: 0}
+  gearMenu: {fileID: 0}
   circle: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
+  characters: []
 --- !u!4 &427846596
 Transform:
   m_ObjectHideFlags: 0
@@ -3895,7 +3943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516679763493239, guid: 596b55b62466445f7afda407e6a11960, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7099464204092645, guid: 596b55b62466445f7afda407e6a11960, type: 3}
       propertyPath: m_RootOrder
@@ -4446,8 +4494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dc7fd2b5b6e42c39e26935e93e1ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: 
-  entryPosition: {x: 0, y: 0, z: 0}
+  targetSceneName: 10. (0,-2,0) Campamento a las afueras del Castillo de Delphia
+  entryPosition: {x: -43, y: 35, z: 0}
 --- !u!58 &901401314
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -4381,7 +4381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516679763493239, guid: 596b55b62466445f7afda407e6a11960, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7099464204092645, guid: 596b55b62466445f7afda407e6a11960, type: 3}
       propertyPath: m_RootOrder
@@ -4459,8 +4459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dc7fd2b5b6e42c39e26935e93e1ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: 
-  entryPosition: {x: 0, y: 0, z: 0}
+  targetSceneName: 8. (1,1,0) Batalla en el Campamento
+  entryPosition: {x: -96, y: -3, z: 0}
 --- !u!58 &1786310049
 CircleCollider2D:
   m_ObjectHideFlags: 0
