@@ -171,6 +171,11 @@ public class Player : NetworkBehaviour
         if(HasStateAuthority)
         {
             GameManager.Instance.SetupSceneForPlayer(this);
+            SceneManager.sceneLoaded += GameManager.Instance.OnSceneLoaded;
+        }
+        else
+        {
+            GetComponent<CharacterController>().Initiate();
         }
     }
 

@@ -95,7 +95,7 @@ public class TresDeseos : MonoBehaviour
         {
             int playerExperience = player.experience;
             // Realiza las acciones necesarias con la experiencia del jugador obtenida
-            Debug.Log("La experiencia actual del jugador es: " + playerExperience);
+            // Debug.Log("La experiencia actual del jugador es: " + playerExperience);
         }
 
         // Cast "First Wish"

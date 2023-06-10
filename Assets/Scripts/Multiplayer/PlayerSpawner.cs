@@ -13,10 +13,19 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
         Debug.Log("PlayerJoined called." + _player);
         if (_player == Runner.LocalPlayer)
         {
-            Debug.Log("Is local");
-            player = _player;
-            SceneManager.sceneLoaded += SpawnPlayer;
-            Runner.SetActiveScene("1. (0,0,0) La Taberna del Tio Juancho");
+
+            if (SceneManager.GetActiveScene().name != "0. CharacterLoader")
+            {
+                StartCoroutine(SpawnWithDelay());
+            }
+            else
+            {
+                Debug.Log("Is local");
+                player = _player;
+                SceneManager.sceneLoaded += SpawnPlayer;
+                Runner.SetActiveScene("1. (0,0,0) La Taberna del Tio Juancho");
+            }
+
         }
     }
 

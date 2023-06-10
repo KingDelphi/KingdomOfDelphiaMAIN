@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(UI);
+            DontDestroyOnLoad(circle);
         }
         else
         {
@@ -87,8 +89,8 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string targetSceneName, Vector3 entryPosition)
     {
         //DontDestroyOnLoad(player.gameObject);
-        DontDestroyOnLoad(circle);
-        DontDestroyOnLoad(UI);
+        // DontDestroyOnLoad(circle);
+        // DontDestroyOnLoad(UI);
         
         // Guardar los datos del inventario y la vida del personaje
         //savedPlayerInventory = new List<GearItem>(playerInventory.inventory);
@@ -101,6 +103,11 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string targetSceneName)
     {
         ChangeScene(targetSceneName, Vector3.zero);
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SetupSceneForPlayer(player);
     }
 
     // private void OnEnable()
