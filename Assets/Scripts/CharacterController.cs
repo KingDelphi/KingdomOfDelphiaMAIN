@@ -23,6 +23,11 @@ public class CharacterController : MonoBehaviour
     public Vector3 lastPosition;
     private bool hasLastPosition = false;
 
+    // private void Start()
+    // {
+    //     Initiate();
+    // }
+
     public void Initiate()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,7 +56,9 @@ public class CharacterController : MonoBehaviour
         minY = mapBottom;
         maxY = mapTop;
 
-        Debug.Log("Map Bounds - Min X: " + mapLeft + ", Max X: " + mapRight + ", Min Y: " + mapBottom + ", Max Y: " + mapTop);
+        // GameManager.Instance.OnSceneLoaded();
+
+        // Debug.Log("Map Bounds - Min X: " + mapLeft + ", Max X: " + mapRight + ", Min Y: " + mapBottom + ", Max Y: " + mapTop);
     }
 
     private void Update()

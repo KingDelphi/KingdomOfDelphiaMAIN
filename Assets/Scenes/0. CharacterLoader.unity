@@ -10029,7 +10029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 228380502601174890, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 233149946121116184, guid: 99976a4252774450a8cc2415f8a692ca, type: 3}
       propertyPath: m_RootOrder
@@ -16882,7 +16882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3004650861264318570, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8469826154448238939, guid: 21c3f570a1e3f4989a8e92c284b2568d, type: 3}
       propertyPath: nextCharacter
@@ -18350,7 +18350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9011450021607665303, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9013977141150497765, guid: 98ce6b1372b54413781042618d52deb6, type: 3}
       propertyPath: m_RootOrder
@@ -31535,6 +31535,125 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1427631253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427631257}
+  - component: {fileID: 1427631254}
+  - component: {fileID: 1427631256}
+  - component: {fileID: 1427631255}
+  m_Layer: 0
+  m_Name: NetworkRunner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1427631254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427631253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1199893898, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1427631255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427631253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029685a169d014ec7aa97dacf839429b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPrefab: {fileID: 572329979587953912, guid: 149c841302f7f4928be5f076b13f78e8, type: 3}
+--- !u!114 &1427631256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427631253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -232609262, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInput:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInputMissing:
+    m_PersistentCalls:
+      m_Calls: []
+  OnConnectedToServer:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDisconnectedFromServer:
+    m_PersistentCalls:
+      m_Calls: []
+  OnConnectRequest:
+    m_PersistentCalls:
+      m_Calls: []
+  OnConnectFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerJoined:
+    m_PersistentCalls:
+      m_Calls: []
+  PlayerLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSimulationMessage:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShutdown:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSessionListUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCustomAuthenticationResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHostMigration:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSceneLoadDone:
+    m_PersistentCalls:
+      m_Calls: []
+  OnSceneLoadStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReliableData:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &1427631257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427631253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.397656, y: 15.994664, z: -0.4177306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1427805140
 GameObject:
   m_ObjectHideFlags: 0
@@ -35951,6 +36070,350 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+  - categoryName: Letters
+    gearItems:
+    - quantity: 0
+      itemName: Letter from "Delphi, King of Delphia"
+      rarity: 11
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphito, el Bonito"
+      rarity: 11
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphito, el Bebito"
+      rarity: 11
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "The Delphi Gods"
+      rarity: 11
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Darth Ante, the Golden Knight"
+      rarity: 11
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "The Delphi Alliance"
+      rarity: 10
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Luis, the Angel 666"
+      rarity: 10
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, the Liberator"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Tao, el Generalissimo Delphi"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphita, la Pinga"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphina, la Emperatriz Fenix"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, the Metamagician Creator of Worlds"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, King of Time"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, King of the Worlds"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, the Supreme"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, the Mythological"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, Phantom Valkyrie"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
+    - quantity: 0
+      itemName: Letter from "Delphi, Universal Guardian"
+      rarity: 9
+      itemType: 9
+      hp: 0
+      mana: 0
+      movementSpeed: 0
+      criticalChance: 0
+      criticalBonus: 0
+      physicalAttack: 0
+      demonAttack: 0
+      hollyAttack: 0
+      physicalDefense: 0
+      demonDefense: 0
+      hollyDefense: 0
+      weight: 0.1
+      hpRegen: 0
+      manaRegen: 0
+      effectDuration: 0
   gearItems: []
 --- !u!114 &1613417169
 MonoBehaviour:
@@ -39450,7 +39913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3337753112215678051, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6000402490477490118, guid: cf12607a85796440da912e0f3a1cba27, type: 3}
       propertyPath: currentMana
@@ -39674,6 +40137,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802550309}
   m_CullTransparentMesh: 1
+--- !u!1 &1805047256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805047259}
+  - component: {fileID: 1805047258}
+  - component: {fileID: 1805047257}
+  m_Layer: 0
+  m_Name: NetworkStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1805047257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805047256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba5764f4714bd64ab9efab127938e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnableHotkeys: 0
+  BaseSkin: {fileID: 11400000, guid: e59b35dfeb4b6f54e9b2791b2a40a510, type: 2}
+--- !u!114 &1805047258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805047256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88230848386761045af440d808ee3efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunnerPrefab: {fileID: 1427631254}
+  StartMode: 0
+  AutoStartAs: 2
+  AutoHideGUI: 1
+  AutoClients: 1
+  ServerPort: 27015
+  DefaultRoomName: 
+  AlwaysShowStats: 0
+  InitialScenePath: 
+  _currentStage: 0
+--- !u!4 &1805047259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805047256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.397656, y: 15.994664, z: -0.4177306}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822465028
 GameObject:
   m_ObjectHideFlags: 0
@@ -47230,7 +47762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3375151379221393682, guid: bad1558f8f06e44d0a696ee25e76b23a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3376090808509081348, guid: bad1558f8f06e44d0a696ee25e76b23a, type: 3}
       propertyPath: m_RootOrder
@@ -47423,7 +47955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1417365045707989787, guid: ce446c6ebb3d64c648ab2b21fc50cf0c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1421403680472326669, guid: ce446c6ebb3d64c648ab2b21fc50cf0c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47612,7 +48144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4537413354294791703, guid: 5db22a0c96a5c4dffac72605002c4eb4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5943541276273527885, guid: 5db22a0c96a5c4dffac72605002c4eb4, type: 3}
       propertyPath: mapObject
@@ -47661,7 +48193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572329979587953912, guid: 0ba88341136964276928401a946898b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 572329979587953913, guid: 0ba88341136964276928401a946898b4, type: 3}
       propertyPath: firstWishTextPrefab
@@ -47755,7 +48287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2194721791532184594, guid: dd63e31a6921d4f55a9d641d3b9669fd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2195941499111842308, guid: dd63e31a6921d4f55a9d641d3b9669fd, type: 3}
       propertyPath: m_RootOrder
@@ -47967,7 +48499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8465076641521547842, guid: 9c2777bbdff8b412a84c3f7adb489f1a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c2777bbdff8b412a84c3f7adb489f1a, type: 3}
@@ -48032,7 +48564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009719269741701955, guid: 9a6051ff76b6d426980c2ae0dc547bac, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2009719269741701955, guid: 9a6051ff76b6d426980c2ae0dc547bac, type: 3}
       propertyPath: m_TagString
@@ -48261,7 +48793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055484116300538726, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7540547475632821012, guid: 8c6ac65798c0342f9918769c0cb90333, type: 3}
       propertyPath: currentMana
@@ -48364,7 +48896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668520801863399354, guid: 28888fcf053844c4f97d1f4678eede33, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6716256642219443618, guid: 28888fcf053844c4f97d1f4678eede33, type: 3}
       propertyPath: mapObject
@@ -48477,7 +49009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8487968080412557301, guid: 81ebcce419e8344fcb97be24b777c4f0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ebcce419e8344fcb97be24b777c4f0, type: 3}
@@ -48530,7 +49062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2621414318188368006, guid: d3c865107ed2a438dabdcd7b9ddc9b5d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2624921906560730768, guid: d3c865107ed2a438dabdcd7b9ddc9b5d, type: 3}
       propertyPath: m_RootOrder
@@ -48637,7 +49169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125810248141258441, guid: 7b276164350f345e387565f4f088c2b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4125810248141258446, guid: 7b276164350f345e387565f4f088c2b4, type: 3}
       propertyPath: experienceRequiredPerLevel.Array.data[0]
@@ -48870,7 +49402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740237400162158830, guid: 5176459c9d35b419d86c2d561e915f67, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3741159673236545272, guid: 5176459c9d35b419d86c2d561e915f67, type: 3}
       propertyPath: m_RootOrder

@@ -3,8 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using Fusion;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
     public int maxHealth = 0;
     public int currentHealth;
@@ -123,29 +124,29 @@ public class Player : MonoBehaviour
     */
     }
     
-    private void Start()
-    {
-        if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "0. CharacterLoader")
-        {
-            // Buscar todos los objetos de personaje en la escena
-            GameObject[] characterObjects = GameObject.FindGameObjectsWithTag("Player");
+    // private void Start()
+    // {
+    //     if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "0. CharacterLoader")
+    //     {
+    //         // Buscar todos los objetos de personaje en la escena
+    //         GameObject[] characterObjects = GameObject.FindGameObjectsWithTag("Player");
 
-            // Desactivar los personajes que no sean el actual
-            foreach (GameObject characterObject in characterObjects)
-            {
-                GameManager.Instance.characters.Add(characterObject);
-                if (characterObject != gameObject)
-                {
-                    characterObject.SetActive(false);
-                }
-            }
+    //         // Desactivar los personajes que no sean el actual
+    //         // foreach (GameObject characterObject in characterObjects)
+    //         // {
+    //         //     GameManager.Instance.characters.Add(characterObject);
+    //         //     if (characterObject != gameObject)
+    //         //     {
+    //         //         characterObject.SetActive(false);
+    //         //     }
+    //         // }
             
-            //GameManager.Instance.character = gameObject;
-            GameManager.Instance.player = GetComponent<Player>();
-            //SceneManager.LoadScene("1. (0,0,0) La Taberna del Tio Juancho");
-            GameManager.Instance.ChangeScene("1. (0,0,0) La Taberna del Tio Juancho", new Vector3 (-36.3f, -28.4f, 0f));
-        }
-    }
+    //         //GameManager.Instance.character = gameObject;
+    //         //GameManager.Instance.player = GetComponent<Player>();
+    //         //SceneManager.LoadScene("1. (0,0,0) La Taberna del Tio Juancho");
+    //         // GameManager.Instance.ChangeScene("1. (0,0,0) La Taberna del Tio Juancho", new Vector3 (-36.3f, -28.4f, 0f));
+    //     }
+    // }
 
     private void Update()
     {
@@ -162,6 +163,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             ConsumeManaPotion();
+        }
+    }
+
+    public override void Spawned()
+    {
+        if(HasStateAuthority)
+        {
+            GameManager.Instance.SetupSceneForPlayer(this);
         }
     }
 

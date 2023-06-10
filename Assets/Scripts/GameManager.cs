@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 using System.Collections.Generic;
+using Fusion;
 
 public class GameManager : MonoBehaviour
 {
@@ -94,31 +95,39 @@ public class GameManager : MonoBehaviour
         //savedPlayerHealth = player.currentHealth;
         savedEntryPosition = entryPosition;
         SceneManager.LoadScene(targetSceneName);
+        
     }
 
-    private void OnEnable()
+    public void ChangeScene(string targetSceneName)
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        ChangeScene(targetSceneName, Vector3.zero);
     }
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    // private void OnEnable()
+    // {
+    //     SceneManager.sceneLoaded += OnSceneLoaded;
+    // }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // private void OnDisable()
+    // {
+    //     SceneManager.sceneLoaded -= OnSceneLoaded;
+    // }
+
+    public void SetupSceneForPlayer(Player _player)
     {
-        player = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Player>();
+        player = _player;
         //circle = GameObject.FindGameObjectWithTag("Circle");
         //playerInventory = FindObjectOfType<PlayerInventory>();
         //UI = GameObject.FindGameObjectWithTag("UI");
-        player.GetComponent<CharacterController>().Initiate();
+        // player.GetComponent<CharacterController>().Initiate();
         
         if (player == null /*|| playerInventory == null*/)
         {
             Debug.Log("Player or PlayerInventory not found in the scene.");
             return;
         }
+        
+        player.GetComponent<CharacterController>().Initiate();
 
         // Restaurar los datos del inventario y la vida del personaje en la nueva escena
         player.currentHealth = savedPlayerHealth; // Restaurar la vida
@@ -129,7 +138,7 @@ public class GameManager : MonoBehaviour
         if (virtualCamera == null)
         {
             Debug.Log("CinemachineVirtualCamera not found in the scene.");
-            //return;
+            return;
         }
 
         if (savedEntryPosition != Vector3.zero)
@@ -156,7 +165,7 @@ public class GameManager : MonoBehaviour
             //return;
         }
 
-        virtualCamera.m_Lens.OrthographicSize = confinerCollider.bounds.extents.y;
+        // virtualCamera.m_Lens.OrthographicSize = confinerCollider.bounds.extents.y;
 
         if (player == null || circle == null)
         {
