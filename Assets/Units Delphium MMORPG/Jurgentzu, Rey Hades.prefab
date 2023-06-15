@@ -23383,7 +23383,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ab7331f16214668aa062511ba2d0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
   maxHealth: 12
   currentHealth: 0
   healthBar: {fileID: 4435606327119294516}
@@ -23606,6 +23605,8 @@ MonoBehaviour:
   inventory: {fileID: 4199658256966420785}
   gearItemManager: {fileID: 0}
   sceneName: 
+  clientId:
+    Raw: 0
 --- !u!114 &7150754372756796615
 MonoBehaviour:
   m_ObjectHideFlags: 0

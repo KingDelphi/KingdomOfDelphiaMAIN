@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
+public class ClientSpawner : SimulationBehaviour, IPlayerJoined
 {
-    public GameObject PlayerPrefab;
-    private PlayerRef player;
+    public GameObject clientPrefab;
+    private PlayerRef clientRef;
 
     public void PlayerJoined(PlayerRef _player)
     {
@@ -21,23 +21,23 @@ public class PlayerSpawner : SimulationBehaviour, IPlayerJoined
             else
             {
                 Debug.Log("Is local");
-                player = _player;
-                SceneManager.sceneLoaded += SpawnPlayer;
+                clientRef = _player;
+                SceneManager.sceneLoaded += SpawnClient;
                 Runner.SetActiveScene("1. (0,0,0) La Taberna del Tio Juancho");
             }
 
         }
     }
 
-    public void SpawnPlayer(Scene scene, LoadSceneMode mode)
+    public void SpawnClient(Scene scene, LoadSceneMode mode)
     {
         StartCoroutine(SpawnWithDelay());
-        SceneManager.sceneLoaded -= SpawnPlayer;
+        SceneManager.sceneLoaded -= SpawnClient;
     }
 
     IEnumerator SpawnWithDelay()
     {
         yield return new WaitForSeconds(0.5f);
-        Runner.Spawn(PlayerPrefab, new Vector3(0, 1, 0), Quaternion.identity, player);
+        Runner.Spawn(clientPrefab, new Vector3(0, 1, 0), Quaternion.identity, clientRef);
     }
 }

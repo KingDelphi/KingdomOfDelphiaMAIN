@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> characters; // Agrega los personajes en el Inspector
 
-    public List<Client> client = new List<Client>();
+    public List<Client> clients = new List<Client>();
 
     private void Awake()
     {
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
             newIndex += 1;
             }
 
-            if(inventoryCanvas.active) {
+            if(inventoryCanvas.activeInHierarchy) {
                 foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
                         Destroy(t.gameObject);
                     }

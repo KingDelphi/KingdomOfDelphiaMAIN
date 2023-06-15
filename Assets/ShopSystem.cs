@@ -16,7 +16,7 @@ public class ShopSystem : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.L)) {
-            if(shopCanvas.active) {
+            if(shopCanvas.activeInHierarchy) {
              shopCanvas.SetActive(false);
             } else {
              currentShop = FindObjectOfType<TioJuancho>().itemPrices;
@@ -26,7 +26,7 @@ public class ShopSystem : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            if(shopCanvas.active) {
+            if(shopCanvas.activeInHierarchy) {
                 shopCanvas.SetActive(false);
             }
         }

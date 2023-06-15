@@ -4,6 +4,7 @@ using TMPro;
 using System;
 using UnityEngine.SceneManagement;
 using Fusion;
+using System.Collections;
 
 public class Player : NetworkBehaviour
 {
@@ -66,6 +67,9 @@ public class Player : NetworkBehaviour
     public GearItemManager gearItemManager;
 
     public string sceneName;
+
+    [Networked]
+    public NetworkId clientId {get; set;}
 
     private void Awake()
     {
@@ -158,40 +162,7 @@ public class Player : NetworkBehaviour
         }
     }
 
-    public override void Spawned()
-    {
-        if(HasStateAuthority)
-        {
-            GameManager.Instance.SetupSceneForPlayer(this);
-            SceneManager.sceneLoaded += GameManager.Instance.OnSceneLoaded;
-        }
-        else
-        {
-            GetComponent<CharacterController>().Initiate();
-        }
-
-        //GameObject.FindObjectOfType<LoginButton>().characters.Add(gameObject);
-        if(HasStateAuthority)
-        {
-            DontDestroyOnLoad(gameObject);
-
-            if (gear == null)
-            {
-                gear = new Gear();
-            }
-            gearItemManager = FindObjectOfType<GearItemManager>();
-
-            // Calcular las estadísticas iniciales del jugador
-            CalculatePlayerStats();
-
-            // Escuchar los eventos de cambio de equipo
-            gear.OnEquipmentChanged += CalculatePlayerStats;
-        }
-        else
-        {
-            gameObject.tag = "Untagged";
-        }
-    }
+    
 
     public void TakeDamage(int damageAmount)
     {
@@ -443,6 +414,53 @@ public class Player : NetworkBehaviour
         else
         {
             Debug.Log("You don't have any Mana Potion");
+        }
+    }
+
+    public void SetupLocalPlayer()
+    {
+        GameManager.Instance.SetupSceneForPlayer(this);
+        SceneManager.sceneLoaded += GameManager.Instance.OnSceneLoaded;
+        
+        DontDestroyOnLoad(gameObject);
+
+            if (gear == null)
+            {
+                gear = new Gear();
+            }
+            gearItemManager = FindObjectOfType<GearItemManager>();
+
+            // Calcular las estadísticas iniciales del jugador
+            CalculatePlayerStats();
+
+            // Escuchar los eventos de cambio de equipo
+            gear.OnEquipmentChanged += CalculatePlayerStats;
+    }
+
+    public void SetupOtherPlayer()
+    {
+        GetComponent<CharacterController>().Initiate();
+        gameObject.tag = "Untagged";
+    }
+
+    public override void Spawned()
+    {
+        StartCoroutine(FindClient());
+    }
+
+    IEnumerator FindClient()
+    {
+        while (true)
+        {
+            foreach (Client client in GameManager.Instance.clients)
+            {
+                if(client.GetComponent<NetworkObject>().Id == clientId)
+                {
+                    client.SetActivePlayer(this);
+                    yield break;
+                }
+            }
+            yield return null;
         }
     }
 }

@@ -5857,6 +5857,8 @@ MonoBehaviour:
   inventory: {fileID: 4933591907228549127}
   gearItemManager: {fileID: 0}
   sceneName: 
+  _clientId:
+    Raw: 0
 --- !u!114 &4933591907228549126
 MonoBehaviour:
   m_ObjectHideFlags: 0
