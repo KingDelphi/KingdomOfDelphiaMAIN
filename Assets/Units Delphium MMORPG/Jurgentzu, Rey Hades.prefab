@@ -23383,6 +23383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ab7331f16214668aa062511ba2d0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interpolationDataSource: 0
   maxHealth: 12
   currentHealth: 0
   healthBar: {fileID: 4435606327119294516}

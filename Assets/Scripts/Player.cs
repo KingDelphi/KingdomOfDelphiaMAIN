@@ -69,25 +69,17 @@ public class Player : NetworkBehaviour
 
     private void Awake()
     {
-        //GameObject.FindObjectOfType<LoginButton>().characters.Add(gameObject);
-        DontDestroyOnLoad(gameObject);
+        
+        
         sceneName = "1. (0,0,0) La Taberna del Tio Juancho";
 
         textMeshPro = GetComponentInChildren<TextMeshPro>();
 
         experience = 0;
 
-        if (gear == null)
-        {
-            gear = new Gear();
-        }
-        gearItemManager = FindObjectOfType<GearItemManager>();
         
-        // Calcular las estadísticas iniciales del jugador
-        CalculatePlayerStats();
-
-        // Escuchar los eventos de cambio de equipo
-        gear.OnEquipmentChanged += CalculatePlayerStats;
+        
+        
 
         currentHealth = hp;
         healthBar.color = Color.green;
@@ -176,6 +168,28 @@ public class Player : NetworkBehaviour
         else
         {
             GetComponent<CharacterController>().Initiate();
+        }
+
+        //GameObject.FindObjectOfType<LoginButton>().characters.Add(gameObject);
+        if(HasStateAuthority)
+        {
+            DontDestroyOnLoad(gameObject);
+
+            if (gear == null)
+            {
+                gear = new Gear();
+            }
+            gearItemManager = FindObjectOfType<GearItemManager>();
+
+            // Calcular las estadísticas iniciales del jugador
+            CalculatePlayerStats();
+
+            // Escuchar los eventos de cambio de equipo
+            gear.OnEquipmentChanged += CalculatePlayerStats;
+        }
+        else
+        {
+            gameObject.tag = "Untagged";
         }
     }
 

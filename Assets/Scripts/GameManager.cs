@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> characters; // Agrega los personajes en el Inspector
 
+    public List<Client> client = new List<Client>();
+
     private void Awake()
     {
         if (Instance == null)
