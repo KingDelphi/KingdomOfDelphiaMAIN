@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2462235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2462236}
+  m_Layer: 0
+  m_Name: ClientHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2462236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2462235}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.062782, y: 41.76061, z: 1.7230296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8569344
 GameObject:
   m_ObjectHideFlags: 0
@@ -26986,6 +27017,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193284318}
   m_CullTransparentMesh: 1
+--- !u!1 &1195019952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195019953}
+  m_Layer: 0
+  m_Name: CharacterHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1195019953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195019952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.062782, y: 41.76061, z: 1.7230296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1198162593
 GameObject:
   m_ObjectHideFlags: 0
@@ -35137,7 +35199,7 @@ GameObject:
   - component: {fileID: 1613417169}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Game Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35179,6 +35241,24 @@ MonoBehaviour:
   UI: {fileID: 506983668}
   characters: []
   clients: []
+  scenes:
+  - {fileID: 102900000, guid: 3129a69e2a076407197796ea6dfae799, type: 3}
+  - {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  - {fileID: 102900000, guid: e6420f5240a6e484e85ce97d2e61cd12, type: 3}
+  - {fileID: 102900000, guid: 882f754d4947e4f9bab834efab647465, type: 3}
+  - {fileID: 102900000, guid: 7c40e7efa44f649bda43dc2c23c9cdfa, type: 3}
+  - {fileID: 102900000, guid: 15be58e44fba04d1e8d0055e33407463, type: 3}
+  - {fileID: 102900000, guid: 385d8b18f660144b6919d9fb66e58fce, type: 3}
+  - {fileID: 102900000, guid: b492169e410414ba0b45e9e84c2c9307, type: 3}
+  - {fileID: 102900000, guid: 94c4bcc46b25343a1aa94d84514436fd, type: 3}
+  - {fileID: 102900000, guid: 0a133baac99f4479b9b79b3c0531fae7, type: 3}
+  - {fileID: 102900000, guid: 673e63d41d9ce4aeb922352ed2cd7464, type: 3}
+  - {fileID: 102900000, guid: 8b81309e78699440891c3ef479c78cd9, type: 3}
+  - {fileID: 102900000, guid: a9ee3044d7e224669b0c0d5c49d98fca, type: 3}
+  - {fileID: 102900000, guid: c0f3aad930cba4191b2dcda9a07bebd2, type: 3}
+  - {fileID: 102900000, guid: b8ab936aad4334c6b97b319fca5ce17f, type: 3}
+  clientHolder: {fileID: 2462236}
+  characterHolder: {fileID: 1195019953}
 --- !u!114 &1613417168
 MonoBehaviour:
   m_ObjectHideFlags: 0

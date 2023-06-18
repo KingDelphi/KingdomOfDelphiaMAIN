@@ -2826,6 +2826,10 @@ MonoBehaviour:
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
+  clients: []
+  scenes: []
+  clientHolder: {fileID: 0}
+  characterHolder: {fileID: 0}
 --- !u!4 &427846596
 Transform:
   m_ObjectHideFlags: 0
@@ -4592,6 +4596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 10. (0,-2,0) Campamento a las afueras del Castillo de Delphia
+  targetSceneIndex: 10
   entryPosition: {x: -43, y: 35, z: 0}
 --- !u!58 &901401314
 CircleCollider2D:
@@ -5179,6 +5184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &1002953016
 CircleCollider2D:
@@ -6178,6 +6184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &1464931810
 CircleCollider2D:
@@ -6213,6 +6220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 1. (0,0,0) La Taberna del Tio Juancho
+  targetSceneIndex: 1
   entryPosition: {x: -36.5, y: -45, z: 0}
 --- !u!58 &1496392282
 CircleCollider2D:
@@ -9163,6 +9171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &2128624296
 CircleCollider2D:

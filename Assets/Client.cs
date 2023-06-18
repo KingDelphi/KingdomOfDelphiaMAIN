@@ -9,6 +9,9 @@ public class Client : NetworkBehaviour
     List<Player> characters;
     public Player activePlayer;
     public GameObject playerPrefab;
+
+    [Networked]
+    public int activePlayerSceneIndex {get; set;}
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,11 @@ public class Client : NetworkBehaviour
 
     public override void Spawned()
     {
+        activePlayerSceneIndex = 1;
+        DontDestroyOnLoad(gameObject);
+        transform.SetParent(GameManager.Instance.clientHolder);
+        gameObject.name = "Client " + GetComponent<NetworkObject>().Id.ToString();
+        
         if (GameManager.Instance.clients.Contains(this))
         {
             GameManager.Instance.clients.Remove(this);
@@ -43,7 +51,7 @@ public class Client : NetworkBehaviour
                 new Vector3(0, 1, 0), 
                 Quaternion.identity, 
                 Runner.LocalPlayer,
-                InitializeObjBeforeSpawn
+                InitializeCharacterBeforeSpawn
                 );
                 
             // activePlayer.SetupLocalPlayer();
@@ -55,10 +63,11 @@ public class Client : NetworkBehaviour
         }
     }
 
-    private void InitializeObjBeforeSpawn(NetworkRunner runner, NetworkObject obj)
+    private void InitializeCharacterBeforeSpawn(NetworkRunner runner, NetworkObject obj)
     {
         Player player = obj.GetComponent<Player>();
         player.clientId = GetComponent<NetworkObject>().Id;
+        // player.gameObject.name = "Character " + player.GetComponent<NetworkObject>().Id.ToString();
         Debug.Log("Player ClientID = " + player.clientId);
         Debug.Log("Object Name = " + player.name);
     }

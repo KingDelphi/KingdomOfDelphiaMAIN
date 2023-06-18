@@ -12,6 +12,7 @@ TagManager:
   - Circle
   - Map
   - UI
+  - Game Manager
   layers:
   - Default
   - TransparentFX

@@ -9142,9 +9142,10 @@ MonoBehaviour:
       effectDuration: 0
   inventory: {fileID: 2421405175982000663}
   gearItemManager: {fileID: 0}
-  sceneName: 
+  _sceneIndex: 0
   _clientId:
     Raw: 0
+  client: {fileID: 0}
 --- !u!114 &2770991983732661517
 MonoBehaviour:
   m_ObjectHideFlags: 0

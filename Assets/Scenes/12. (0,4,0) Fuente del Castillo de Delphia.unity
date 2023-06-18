@@ -1987,6 +1987,10 @@ MonoBehaviour:
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
+  clients: []
+  scenes: []
+  clientHolder: {fileID: 0}
+  characterHolder: {fileID: 0}
 --- !u!4 &427846596
 Transform:
   m_ObjectHideFlags: 0
@@ -2727,6 +2731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 7. (0,3,0) Entrada del Castillo de Delphia
+  targetSceneIndex: 7
   entryPosition: {x: 0, y: 58, z: 0}
 --- !u!58 &901401314
 CircleCollider2D:
@@ -2846,6 +2851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 0
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &1464931810
 CircleCollider2D:
@@ -2881,6 +2887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 13. (0,5,0) Portal del Balance Universal
+  targetSceneIndex: 13
   entryPosition: {x: 0, y: -127, z: 0}
 --- !u!58 &1496392282
 CircleCollider2D:
@@ -4015,6 +4022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 0
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &2128624296
 CircleCollider2D:

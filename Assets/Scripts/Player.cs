@@ -66,16 +66,19 @@ public class Player : NetworkBehaviour
 
     public GearItemManager gearItemManager;
 
-    public string sceneName;
+    [Networked]
+    public int sceneIndex {get; set;}
 
     [Networked]
     public NetworkId clientId {get; set;}
+
+    public Client client;
 
     private void Awake()
     {
         
         
-        sceneName = "1. (0,0,0) La Taberna del Tio Juancho";
+        
 
         textMeshPro = GetComponentInChildren<TextMeshPro>();
 
@@ -421,20 +424,18 @@ public class Player : NetworkBehaviour
     {
         GameManager.Instance.SetupSceneForPlayer(this);
         SceneManager.sceneLoaded += GameManager.Instance.OnSceneLoaded;
-        
-        DontDestroyOnLoad(gameObject);
 
-            if (gear == null)
-            {
-                gear = new Gear();
-            }
-            gearItemManager = FindObjectOfType<GearItemManager>();
+        if (gear == null)
+        {
+            gear = new Gear();
+        }
+        gearItemManager = FindObjectOfType<GearItemManager>();
 
-            // Calcular las estadísticas iniciales del jugador
-            CalculatePlayerStats();
+        // Calcular las estadísticas iniciales del jugador
+        CalculatePlayerStats();
 
-            // Escuchar los eventos de cambio de equipo
-            gear.OnEquipmentChanged += CalculatePlayerStats;
+        // Escuchar los eventos de cambio de equipo
+        gear.OnEquipmentChanged += CalculatePlayerStats;
     }
 
     public void SetupOtherPlayer()
@@ -445,6 +446,10 @@ public class Player : NetworkBehaviour
 
     public override void Spawned()
     {
+        sceneIndex = 1;
+        DontDestroyOnLoad(gameObject);
+        transform.SetParent(GameManager.Instance.characterHolder);
+        gameObject.name = "Character " + GetComponent<NetworkObject>().Id.ToString();
         StartCoroutine(FindClient());
     }
 
@@ -452,11 +457,13 @@ public class Player : NetworkBehaviour
     {
         while (true)
         {
-            foreach (Client client in GameManager.Instance.clients)
+            foreach (Client c in GameManager.Instance.clients)
             {
-                if(client.GetComponent<NetworkObject>().Id == clientId)
+                if(c.GetComponent<NetworkObject>().Id == clientId)
                 {
-                    client.SetActivePlayer(this);
+                    client = c;
+                    c.SetActivePlayer(this);
+                    GameManager.Instance.RpcUpdatePlayers();
                     yield break;
                 }
             }

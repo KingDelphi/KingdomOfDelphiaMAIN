@@ -137,16 +137,16 @@ namespace Assets.HeroEditor.Common.CommonScripts
 
 		public static IEnumerator OpenFile(string title, string directory, string extension, Action<bool, string, byte[]> callback)
 		{
-			var extensions = new[] { new SFB.ExtensionFilter("Image Files", extension.Split(',')) };
+			// var extensions = new[] { new SFB.ExtensionFilter("Image Files", extension.Split(',')) };
 
-            // Import StandaloneFileBrowser asset for standalone builds!
-			SFB.StandaloneFileBrowser.OpenFilePanelAsync(title, directory, extensions, false, paths =>
-			{
-				if (paths != null && paths.Length == 1)
-				{
-					callback(true, paths[0], System.IO.File.ReadAllBytes(paths[0]));
-				}
-			});
+            // // Import StandaloneFileBrowser asset for standalone builds!
+			// SFB.StandaloneFileBrowser.OpenFilePanelAsync(title, directory, extensions, false, paths =>
+			// {
+			// 	if (paths != null && paths.Length == 1)
+			// 	{
+			// 		callback(true, paths[0], System.IO.File.ReadAllBytes(paths[0]));
+			// 	}
+			// });
 
 			yield break;
 		}
@@ -154,18 +154,18 @@ namespace Assets.HeroEditor.Common.CommonScripts
 		public static IEnumerator SaveFile(string title, string directory, string defaultName, string extension, byte[] bytes, Action<bool, string> callback)
 		{
             // Import StandaloneFileBrowser asset for standalone builds!
-			SFB.StandaloneFileBrowser.SaveFilePanelAsync(title, directory, defaultName, extension, path =>
-			{
-				if (string.IsNullOrEmpty(path))
-				{
-					callback(false, path);
-				}
-				else
-				{
-					System.IO.File.WriteAllBytes(path, bytes);
-					callback(true, path);
-				}
-			});
+			// SFB.StandaloneFileBrowser.SaveFilePanelAsync(title, directory, defaultName, extension, path =>
+			// {
+			// 	if (string.IsNullOrEmpty(path))
+			// 	{
+			// 		callback(false, path);
+			// 	}
+			// 	else
+			// 	{
+			// 		System.IO.File.WriteAllBytes(path, bytes);
+			// 		callback(true, path);
+			// 	}
+			// });
 
 			yield break;
 		}

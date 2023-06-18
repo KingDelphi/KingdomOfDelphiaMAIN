@@ -13,19 +13,18 @@ public class ClientSpawner : SimulationBehaviour, IPlayerJoined
         Debug.Log("PlayerJoined called." + _player);
         if (_player == Runner.LocalPlayer)
         {
-
-            if (SceneManager.GetActiveScene().name != "0. CharacterLoader")
+            Debug.Log("Is local");
+            if (SceneManager.GetActiveScene().buildIndex != 0)
             {
                 StartCoroutine(SpawnWithDelay());
             }
             else
             {
-                Debug.Log("Is local");
                 clientRef = _player;
                 SceneManager.sceneLoaded += SpawnClient;
-                Runner.SetActiveScene("1. (0,0,0) La Taberna del Tio Juancho");
+                Debug.Log(GameManager.GetScene(1));
+                Runner.SetActiveScene(GameManager.GetScene(1));
             }
-
         }
     }
 
@@ -38,6 +37,11 @@ public class ClientSpawner : SimulationBehaviour, IPlayerJoined
     IEnumerator SpawnWithDelay()
     {
         yield return new WaitForSeconds(0.5f);
-        Runner.Spawn(clientPrefab, new Vector3(0, 1, 0), Quaternion.identity, clientRef);
+        Runner.Spawn(clientPrefab, new Vector3(0, 1, 0), Quaternion.identity, clientRef, InitializeClientBeforeSpawn);
+    }
+
+    private void InitializeClientBeforeSpawn(NetworkRunner runner, NetworkObject obj)
+    {
+        // obj.gameObject.name = "Client " + obj.Id.ToString();
     }
 }

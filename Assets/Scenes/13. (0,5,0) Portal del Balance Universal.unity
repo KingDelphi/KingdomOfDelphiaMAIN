@@ -698,6 +698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 0
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &366289524
 CircleCollider2D:
@@ -1542,6 +1543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 0
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &832212810
 CircleCollider2D:
@@ -2006,6 +2008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 12. (0,4,0) Fuente del Castillo de Delphia
+  targetSceneIndex: 12
   entryPosition: {x: 0, y: 85, z: 0}
 --- !u!58 &1266042642
 CircleCollider2D:
@@ -3055,6 +3058,10 @@ MonoBehaviour:
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
+  clients: []
+  scenes: []
+  clientHolder: {fileID: 0}
+  characterHolder: {fileID: 0}
 --- !u!4 &1328092855
 Transform:
   m_ObjectHideFlags: 0
@@ -4498,6 +4505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 0
+  targetSceneIndex: 0
   entryPosition: {x: 0, y: 0, z: 0}
 --- !u!58 &1941756283
 CircleCollider2D:

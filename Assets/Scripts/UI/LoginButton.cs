@@ -57,11 +57,11 @@ public class LoginButton : MonoBehaviour
                     if (gameManager != null)
                     {
                             gameManager.player = selectedCharacter.GetComponent<Player>();
-        
-                            if(selectedCharacter.GetComponent<Player>().sceneName != UnityEngine.SceneManagement.SceneManager.GetActiveScene().name)
+                            // TO-DO: Use the activePlayerSceneIndex from Client instead of sceneIndex
+                            if(selectedCharacter.GetComponent<Player>().sceneIndex != SceneManager.GetActiveScene().buildIndex)
                             {
                                 Debug.Log("TEST: Scene is Loading from LoginButton script.");
-                                GameManager.Instance.ChangeScene(selectedCharacter.GetComponent<Player>().sceneName, Vector3.zero);
+                                GameManager.Instance.ChangeScene(selectedCharacter.GetComponent<Player>().sceneIndex, Vector3.zero);
                                 //SceneManager.LoadScene(selectedCharacter.GetComponent<Player>().sceneName);
                             }
                             else

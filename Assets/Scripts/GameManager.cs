@@ -13,7 +13,24 @@ public class GameManager : MonoBehaviour
     public GearMenu gearMenu;
 
 
-    public static GameManager Instance { get; private set; }
+    private static GameManager _instance;
+    public static GameManager Instance 
+    { 
+        get
+        {
+            if(_instance == null)
+            {
+                _instance = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
+                _instance.Initiate();
+            }
+            return _instance;
+        }    
+        private set
+        {
+            _instance = value;
+        } 
+    }
+
     public GameObject circle;
 
     private CinemachineVirtualCamera virtualCamera;
@@ -31,26 +48,23 @@ public class GameManager : MonoBehaviour
 
     public List<Client> clients = new List<Client>();
 
+    public List<Object> scenes;
+
+    public Transform clientHolder;
+    public Transform characterHolder;
+
     private void Awake()
-    {
+    {   
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-            DontDestroyOnLoad(UI);
-            DontDestroyOnLoad(circle);
+            Initiate();
         }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        playerInventory = FindObjectOfType<PlayerInventory>();
-        if (playerInventory == null)
-        {
-            Debug.LogError("PlayerInventory component not found.");
-        }
+        // else
+        // {
+        //     Destroy(gameObject);
+        //     return;
+        // }
     }
 
     private void Start()
@@ -58,6 +72,23 @@ public class GameManager : MonoBehaviour
         //circle = GameObject.FindGameObjectWithTag("Circle");
         //character = GameObject.FindGameObjectWithTag("Player");
         //player = character.GetComponent<Player>();
+        
+    }
+
+    private void Initiate()
+    {
+        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(UI);
+        DontDestroyOnLoad(circle);
+
+        playerInventory = FindObjectOfType<PlayerInventory>();
+        if (playerInventory == null)
+        {
+            Debug.LogError("PlayerInventory component not found.");
+        }
+
+        DontDestroyOnLoad(clientHolder);
+        DontDestroyOnLoad(characterHolder);
     }
 
     private void Update() {
@@ -88,7 +119,7 @@ public class GameManager : MonoBehaviour
     }
             
 
-    public void ChangeScene(string targetSceneName, Vector3 entryPosition)
+    public void ChangeScene(int targetSceneIndex, Vector3 entryPosition)
     {
         //DontDestroyOnLoad(player.gameObject);
         // DontDestroyOnLoad(circle);
@@ -98,18 +129,23 @@ public class GameManager : MonoBehaviour
         //savedPlayerInventory = new List<GearItem>(playerInventory.inventory);
         //savedPlayerHealth = player.currentHealth;
         savedEntryPosition = entryPosition;
-        SceneManager.LoadScene(targetSceneName);
+        
+        SceneManager.LoadScene(targetSceneIndex);
         
     }
 
-    public void ChangeScene(string targetSceneName)
+    public void ChangeScene(int targetSceneIndex)
     {
-        ChangeScene(targetSceneName, Vector3.zero);
+        ChangeScene(targetSceneIndex, Vector3.zero);
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("OnSceneLoaded");
+        
         SetupSceneForPlayer(player);
+        Debug.Log("Before RPC");
+        RpcUpdatePlayers();
     }
 
     // private void OnEnable()
@@ -194,4 +230,80 @@ public class GameManager : MonoBehaviour
     {
         return playerInventory;
     }
+
+    public void ActivatePlayersInScene()
+    {
+        Debug.Log("Activating Players in Scene.");
+        foreach(Client client in clients)
+        {
+            Player player = client.activePlayer;
+            if(player != null)
+            {
+                player.gameObject.SetActive(GameManager.GetScene(client.activePlayerSceneIndex) == SceneManager.GetActiveScene().path);
+            }
+               
+        }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RpcUpdatePlayers()
+    {
+        ActivatePlayersInScene();
+    }
+
+    public static string GetScene(int index)
+    {
+        // Debug.Log("Getting Scene...");
+        // foreach(Object scene in GameManager.Instance.scenes)
+        // {
+        //     Debug.Log("Scene Name = " + scene.name);
+        // }
+        // Debug.Log("Afterprint");
+        return SceneUtility.GetScenePathByBuildIndex(index);
+        // return GameManager.Instance.scenes[index].name;
+    }
+
+
+
+
+
+    //#if !UNITY_EDITOR
+            static string myLog = "";
+            private string output;
+            private string stack;
+
+            void OnEnable()
+            {
+                Application.logMessageReceivedThreaded += Log;
+            }
+
+            void OnDisable()
+            {
+                Application.logMessageReceivedThreaded -= Log;
+            }
+
+            public void Log(string logString, string stackTrace, UnityEngine.LogType type)
+            {
+                output = logString;
+                stack = stackTrace;
+                myLog = output + "\n" + stack + "\n" + myLog;
+                if (myLog.Length > 5000)
+                {
+                myLog = myLog.Substring(0, 4000);
+                }
+            }
+            void OnGUI()
+            {
+                //if (!Application.isEditor) //Do not display in editor ( or you can use the UNITY_EDITOR macro to also disable the rest)
+                {
+                    myLog = GUI.TextArea(new Rect(30, 30, Screen.width / 2, Screen.height - 30), myLog);
+                }
+            }
+    //#endif
+        
+
+
+
+
+
 }

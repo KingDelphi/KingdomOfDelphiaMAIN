@@ -1314,6 +1314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 5. (0,-1,0) Casa del Tio Juancho
+  targetSceneIndex: 5
   entryPosition: {x: -8.3, y: 46, z: 0}
 --- !u!58 &276886701
 CircleCollider2D:
@@ -6584,6 +6585,10 @@ MonoBehaviour:
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
+  clients: []
+  scenes: []
+  clientHolder: {fileID: 0}
+  characterHolder: {fileID: 0}
 --- !u!114 &1613417168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9550,6 +9555,10 @@ PrefabInstance:
     - target: {fileID: 1324527201680757797, guid: 4b15f30a135694f8eab00a6987f6282d, type: 3}
       propertyPath: targetSceneName
       value: 2. (0,1,0) Al Norte de la Taberna del Tio Juancho
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324527201680757797, guid: 4b15f30a135694f8eab00a6987f6282d, type: 3}
+      propertyPath: targetSceneIndex
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1324527201680757797, guid: 4b15f30a135694f8eab00a6987f6282d, type: 3}
       propertyPath: entryPositionIdentifier

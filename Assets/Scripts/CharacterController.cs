@@ -141,11 +141,11 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
-            // Print collisions
-            foreach (RaycastHit2D hit in castCollisions)
-            {
-                print(hit.ToString());
-            }
+            // // Print collisions
+            // foreach (RaycastHit2D hit in castCollisions)
+            // {
+            //     print(hit.ToString());
+            // }
 
             return false;
         }

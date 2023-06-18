@@ -955,6 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 8. (1,1,0) Batalla en el Campamento
+  targetSceneIndex: 8
   entryPosition: {x: 90, y: -80, z: 0}
 --- !u!58 &366289524
 CircleCollider2D:
@@ -1345,6 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 8. (1,1,0) Batalla en el Campamento
+  targetSceneIndex: 8
   entryPosition: {x: 92, y: 30, z: 0}
 --- !u!61 &541628062
 BoxCollider2D:
@@ -3597,6 +3599,10 @@ MonoBehaviour:
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
+  clients: []
+  scenes: []
+  clientHolder: {fileID: 0}
+  characterHolder: {fileID: 0}
 --- !u!4 &1328092855
 Transform:
   m_ObjectHideFlags: 0

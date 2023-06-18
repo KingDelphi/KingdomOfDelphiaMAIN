@@ -5691,7 +5691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8431431295e4d0d8d38cb4570083f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 20
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0
@@ -5944,9 +5944,10 @@ MonoBehaviour:
       effectDuration: 0
   inventory: {fileID: 572329979587953917}
   gearItemManager: {fileID: 0}
-  sceneName: 
+  _sceneIndex: 0
   _clientId:
     Raw: 0
+  client: {fileID: 0}
 --- !u!114 &572329979587953906
 MonoBehaviour:
   m_ObjectHideFlags: 0

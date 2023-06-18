@@ -1075,6 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 6. (0,2,0) Camino lleno de Destroyers
+  targetSceneIndex: 6
   entryPosition: {x: 6.3, y: 100, z: 0}
 --- !u!58 &366289524
 CircleCollider2D:
@@ -4125,6 +4126,10 @@ MonoBehaviour:
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
+  clients: []
+  scenes: []
+  clientHolder: {fileID: 0}
+  characterHolder: {fileID: 0}
 --- !u!4 &1328092855
 Transform:
   m_ObjectHideFlags: 0
@@ -5115,6 +5120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 12. (0,4,0) Fuente del Castillo de Delphia
+  targetSceneIndex: 12
   entryPosition: {x: 0, y: -88, z: 0}
 --- !u!58 &1849463145
 CircleCollider2D:

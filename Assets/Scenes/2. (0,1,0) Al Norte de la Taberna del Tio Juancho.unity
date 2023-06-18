@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 1. (0,0,0) La Taberna del Tio Juancho
+  targetSceneIndex: 1
   entryPosition: {x: -24, y: 44, z: 0}
 --- !u!58 &276886701
 CircleCollider2D:
@@ -2332,6 +2333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 4. (-1,1,0) Aldea Rebollo
+  targetSceneIndex: 4
   entryPosition: {x: 62.5, y: -22, z: 0}
 --- !u!58 &899221384
 CircleCollider2D:
@@ -4280,6 +4282,10 @@ MonoBehaviour:
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
+  clients: []
+  scenes: []
+  clientHolder: {fileID: 0}
+  characterHolder: {fileID: 0}
 --- !u!4 &1702248002
 Transform:
   m_ObjectHideFlags: 0
@@ -4448,6 +4454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 6. (0,2,0) Camino lleno de Destroyers
+  targetSceneIndex: 6
   entryPosition: {x: 23, y: -135, z: 0}
 --- !u!58 &1740463495
 CircleCollider2D:
@@ -4557,6 +4564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 8. (1,1,0) Batalla en el Campamento
+  targetSceneIndex: 8
   entryPosition: {x: -96, y: -3, z: 0}
 --- !u!58 &1786310049
 CircleCollider2D:
@@ -4653,6 +4661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 3. (0,1,-1) La Escotilla de la Taberna del Tio Juancho
+  targetSceneIndex: 0
   entryPosition: {x: 48, y: 6, z: 0}
 --- !u!61 &1890587302
 BoxCollider2D:
