@@ -22838,6 +22838,9 @@ MonoBehaviour:
   mapObject: {fileID: 0}
   animator: {fileID: 179931878394024438}
   lastPosition: {x: 0, y: 0, z: 0}
+  hasLastPosition: 0
+  circle: {fileID: 0}
+  body: {fileID: 0}
 --- !u!114 &1141280338904051395
 MonoBehaviour:
   m_ObjectHideFlags: 0

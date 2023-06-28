@@ -71,4 +71,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
   activePlayer: {fileID: 0}
-  playerPrefab: {fileID: 572329979587953912, guid: 149c841302f7f4928be5f076b13f78e8, type: 3}
+  playerPrefab: {fileID: 596420276270763164, guid: 0a19df56bd44647e4b3c7999ca9f7a96, type: 3}
+  _activePlayerSceneIndex: 0

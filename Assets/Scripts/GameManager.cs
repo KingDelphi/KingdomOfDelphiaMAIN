@@ -171,8 +171,11 @@ public class GameManager : MonoBehaviour
             Debug.Log("Player or PlayerInventory not found in the scene.");
             return;
         }
-        
-        player.GetComponent<CharacterController>().Initiate();
+
+        CharacterController characterController = player.GetComponent<CharacterController>();
+        characterController.hasLastPosition = false;
+        characterController.circle = circle;
+        characterController.Initiate();
 
         // Restaurar los datos del inventario y la vida del personaje en la nueva escena
         player.currentHealth = savedPlayerHealth; // Restaurar la vida
@@ -188,6 +191,7 @@ public class GameManager : MonoBehaviour
 
         if (savedEntryPosition != Vector3.zero)
         {
+            Debug.Log("Setting Position to " + savedEntryPosition);
             player.transform.position = savedEntryPosition;
             circle.transform.position = savedEntryPosition;
         }
@@ -267,7 +271,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    //#if !UNITY_EDITOR
+    #if !UNITY_EDITOR
             static string myLog = "";
             private string output;
             private string stack;
@@ -299,7 +303,7 @@ public class GameManager : MonoBehaviour
                     myLog = GUI.TextArea(new Rect(30, 30, Screen.width / 2, Screen.height - 30), myLog);
                 }
             }
-    //#endif
+    #endif
         
 
 
