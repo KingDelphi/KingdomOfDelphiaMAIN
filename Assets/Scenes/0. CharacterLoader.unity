@@ -35232,12 +35232,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fce2569a17944be9f727b29973206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
   playerInventory: {fileID: 925369127}
   inventoryCanvas: {fileID: 1415402310}
   anotherInv: {fileID: 1321867716}
   slot: {fileID: 3365299569123761645, guid: f75038d0c19772548b08138941b7cedf, type: 3}
   gearMenu: {fileID: 1881448288}
+  networkManager: {fileID: 0}
   circle: {fileID: 126809757}
   player: {fileID: 925369129}
   UI: {fileID: 506983668}
@@ -36583,8 +36583,7 @@ MonoBehaviour:
   NetworkGuid:
     RawGuidValue: 2f52982f8c6043f18c12847938df9e5a
   NestedObjects: []
-  NetworkedBehaviours:
-  - {fileID: 1613417167}
+  NetworkedBehaviours: []
   SimulationBehaviours: []
 --- !u!1 &1620496775
 GameObject:

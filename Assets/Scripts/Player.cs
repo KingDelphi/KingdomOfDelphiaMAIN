@@ -463,12 +463,19 @@ public class Player : NetworkBehaviour
                 {
                     client = c;
                     c.SetActivePlayer(this);
-                    GameManager.Instance.RpcUpdatePlayers();
+                    RpcUpdatePlayers();
                     yield break;
                 }
             }
             yield return null;
         }
+    }
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void RpcUpdatePlayers()
+    {
+        Debug.Log("RpcUpdatePlayers");
+        GameManager.Instance.ActivatePlayersInScene();
     }
 }
 

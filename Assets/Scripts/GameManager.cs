@@ -4,13 +4,15 @@ using Cinemachine;
 using System.Collections.Generic;
 using Fusion;
 
-public class GameManager : NetworkBehaviour
+public class GameManager : MonoBehaviour
 {
     public PlayerInventory playerInventory;
     public GameObject inventoryCanvas;
     public GameObject anotherInv;
     public GameObject slot;
     public GearMenu gearMenu;
+
+    public NetworkManager networkManager;
 
 
     private static GameManager _instance;
@@ -145,7 +147,7 @@ public class GameManager : NetworkBehaviour
         
         SetupSceneForPlayer(player);
         Debug.Log("Before RPC");
-        GameManager.Instance.RpcUpdatePlayers();
+        player.RpcUpdatePlayers();
     }
 
     // private void OnEnable()
@@ -249,12 +251,12 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    [Rpc(RpcSources.All, RpcTargets.All)]
-    public void RpcUpdatePlayers()
-    {
-        Debug.Log("RpcUpdatePlayers");
-        ActivatePlayersInScene();
-    }
+    // [Rpc(RpcSources.All, RpcTargets.All)]
+    // public void RpcUpdatePlayers()
+    // {
+    //     Debug.Log("RpcUpdatePlayers");
+    //     ActivatePlayersInScene();
+    // }
 
     public static string GetScene(int index)
     {
