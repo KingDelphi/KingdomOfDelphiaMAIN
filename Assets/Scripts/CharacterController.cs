@@ -71,7 +71,7 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (!player.HasStateAuthority)
+        if (player == null || !player.HasStateAuthority)
             return;
         
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -119,7 +119,7 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!player.HasStateAuthority)
+        if (player == null || !player.HasStateAuthority)
             return;
         
         Debug.Log("Fixed Update " + Time.fixedDeltaTime);

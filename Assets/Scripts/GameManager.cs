@@ -247,7 +247,7 @@ public class GameManager : MonoBehaviour
             Player player = client.activePlayer;
             if(player != null)
             {
-                player.gameObject.SetActive(GameManager.GetScene(client.activePlayerSceneIndex) == SceneManager.GetActiveScene().path);
+                player.gameObject.SetActive(client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex);
             }
                
         }

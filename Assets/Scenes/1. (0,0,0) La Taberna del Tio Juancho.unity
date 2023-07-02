@@ -6581,6 +6581,7 @@ MonoBehaviour:
   anotherInv: {fileID: 0}
   slot: {fileID: 3365299569123761645, guid: f75038d0c19772548b08138941b7cedf, type: 3}
   gearMenu: {fileID: 0}
+  networkManager: {fileID: 0}
   circle: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
