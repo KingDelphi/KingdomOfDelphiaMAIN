@@ -177,6 +177,8 @@ public class GameManager : MonoBehaviour
         CharacterController characterController = player.GetComponent<CharacterController>();
         characterController.hasLastPosition = false;
         characterController.circle = circle;
+        circle.transform.SetParent(player.transform);
+        circle.transform.localPosition = Vector3.zero;
         characterController.Initiate();
 
         // Restaurar los datos del inventario y la vida del personaje en la nueva escena

@@ -106,7 +106,7 @@ public class CharacterController : MonoBehaviour
         lastPosition = transform.position;
         if (circle != null)
         {
-            circle.transform.position = transform.position;
+            // circle.transform.position = transform.position;
             circle.transform.LookAt(transform.position + new Vector3 (moveInput.x, moveInput.y, 0));
             if (circle.transform.localEulerAngles.y == 0)
             {
@@ -122,8 +122,10 @@ public class CharacterController : MonoBehaviour
         if (!player.HasStateAuthority)
             return;
         
+        Debug.Log("Fixed Update " + Time.fixedDeltaTime);
         // Try to move player in input direction, followed by left right and up down input if failed
-        MovePlayer(moveInput);
+        if (moveInput != Vector2.zero)
+            MovePlayer(moveInput);
 
         if (moveInput.x > 0)
         {
@@ -208,7 +210,7 @@ public class CharacterController : MonoBehaviour
 
     private void MovePlayer(Vector2 direction)
     {
-        Vector2 moveVector = direction * moveSpeed * Time.fixedDeltaTime;
+        Vector2 moveVector = direction.normalized * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + moveVector);
     }
 }
