@@ -71,10 +71,8 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (!player.HasStateAuthority))
-        {
+        if (!player.HasStateAuthority)
             return;
-        }
         
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -121,10 +119,8 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!player.HasStateAuthority))
-        {
+        if (!player.HasStateAuthority)
             return;
-        }
         
         // Try to move player in input direction, followed by left right and up down input if failed
         MovePlayer(moveInput);
