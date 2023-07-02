@@ -27,6 +27,8 @@ public class CharacterController : MonoBehaviour
 
     public Transform body;
 
+    private Player player;
+
     // private void Start()
     // {
     //     Initiate();
@@ -34,6 +36,8 @@ public class CharacterController : MonoBehaviour
 
     public void Initiate()
     {
+        player = GetComponent<Player>();
+        
         rb = GetComponent<Rigidbody2D>();
         //characterTransform = transform;
         if (hasLastPosition)
@@ -67,6 +71,11 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        if (!player.HasStateAuthority))
+        {
+            return;
+        }
+        
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -112,6 +121,11 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!player.HasStateAuthority))
+        {
+            return;
+        }
+        
         // Try to move player in input direction, followed by left right and up down input if failed
         MovePlayer(moveInput);
 
