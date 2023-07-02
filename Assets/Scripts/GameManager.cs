@@ -4,7 +4,7 @@ using Cinemachine;
 using System.Collections.Generic;
 using Fusion;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public PlayerInventory playerInventory;
     public GameObject inventoryCanvas;
@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         
         SetupSceneForPlayer(player);
         Debug.Log("Before RPC");
-        RpcUpdatePlayers();
+        GameManager.Instance.RpcUpdatePlayers();
     }
 
     // private void OnEnable()
@@ -252,6 +252,7 @@ public class GameManager : MonoBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void RpcUpdatePlayers()
     {
+        Debug.Log("RpcUpdatePlayers");
         ActivatePlayersInScene();
     }
 

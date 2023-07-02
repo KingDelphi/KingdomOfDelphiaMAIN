@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 596420276270763165}
   - component: {fileID: 6293411494376298564}
   - component: {fileID: 8273779142042092763}
+  - component: {fileID: 4430056228260075440}
   m_Layer: 8
   m_Name: Tres Deseos (NEW)
   m_TagString: Player
@@ -1215,6 +1216,22 @@ MonoBehaviour:
     RotTeleportRadians: 1.5
   UseLegacySharedModeInterpolation: 0
   TargetInterpolationDelay: 0.03
+--- !u!58 &4430056228260075440
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596420276270763164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &624861357711550296
 GameObject:
   m_ObjectHideFlags: 0
@@ -57244,7 +57261,6 @@ GameObject:
   - component: {fileID: 3350265061972280451}
   - component: {fileID: 4324192189176607044}
   - component: {fileID: 7639726757146076253}
-  - component: {fileID: 2051462909711514047}
   m_Layer: 8
   m_Name: BodyVisuals
   m_TagString: Player
@@ -57583,22 +57599,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!58 &2051462909711514047
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3433814802623908549}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &3450504388203117193
 GameObject:
   m_ObjectHideFlags: 0
