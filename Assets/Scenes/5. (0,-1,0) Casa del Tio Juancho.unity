@@ -2822,6 +2822,7 @@ MonoBehaviour:
   anotherInv: {fileID: 0}
   slot: {fileID: 0}
   gearMenu: {fileID: 0}
+  networkManager: {fileID: 0}
   circle: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
@@ -7057,7 +7058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516679763493239, guid: 596b55b62466445f7afda407e6a11960, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7099464204092645, guid: 596b55b62466445f7afda407e6a11960, type: 3}
       propertyPath: m_RootOrder
@@ -9170,9 +9171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7dc7fd2b5b6e42c39e26935e93e1ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: 
-  targetSceneIndex: 0
-  entryPosition: {x: 0, y: 0, z: 0}
+  targetSceneName: 14. (1,-1,0) Bosque de Delphia
+  targetSceneIndex: 14
+  entryPosition: {x: -90, y: 50, z: 0}
 --- !u!58 &2128624296
 CircleCollider2D:
   m_ObjectHideFlags: 0

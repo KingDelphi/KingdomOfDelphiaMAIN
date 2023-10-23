@@ -229,7 +229,7 @@ SpriteRenderer:
   m_SortingLayerID: -1684428927
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b303e2275501f4ca1bf04c62ba3b5c51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85bcb3b38a19340caab4db965ea952b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3595,6 +3595,7 @@ MonoBehaviour:
   anotherInv: {fileID: 0}
   slot: {fileID: 0}
   gearMenu: {fileID: 0}
+  networkManager: {fileID: 0}
   circle: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}

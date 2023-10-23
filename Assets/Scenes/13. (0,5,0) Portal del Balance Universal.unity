@@ -401,7 +401,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202375562}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3e78bfd562fb047ce864c399a8c91077, type: 3}
@@ -3054,6 +3054,7 @@ MonoBehaviour:
   anotherInv: {fileID: 0}
   slot: {fileID: 0}
   gearMenu: {fileID: 0}
+  networkManager: {fileID: 0}
   circle: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}

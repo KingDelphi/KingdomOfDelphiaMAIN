@@ -4278,6 +4278,7 @@ MonoBehaviour:
   anotherInv: {fileID: 0}
   slot: {fileID: 0}
   gearMenu: {fileID: 0}
+  networkManager: {fileID: 0}
   circle: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
@@ -4661,7 +4662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: 3. (0,1,-1) La Escotilla de la Taberna del Tio Juancho
-  targetSceneIndex: 0
+  targetSceneIndex: 3
   entryPosition: {x: 48, y: 6, z: 0}
 --- !u!61 &1890587302
 BoxCollider2D:
