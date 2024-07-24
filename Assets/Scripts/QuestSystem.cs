@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -88,9 +89,17 @@ public class QuestReward
     }
 }
 
-public class QuestSystem : MonoBehaviour
+public class QuestSystem : MonoBehaviour, ISaveable
 {
+    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public Type SaveType => typeof(QuestSystemSaveData);
+
+
     public List<Quest> quests = new List<Quest>();
+
+    // Quest Zero
+    Quest quest0 = new Quest(0, "Initial Gift from Tio Juancho", "Receive initial items from Tio Juancho.", true);
+    public bool zeroQuestFinished;
 
     Quest quest1 = new Quest(1, "Getting Meat for Tio Juancho", "Tio Juancho needs A LOT of meat to serve the customers of the Tavern!", false);
 
@@ -113,6 +122,17 @@ public class QuestSystem : MonoBehaviour
     public bool secondQuestKillFinished;
 
     public int tioJuaneteCount;
+
+    private void Start()
+    {
+        quests.Add(quest0);
+        zeroQuestFinished = false;
+    }
+
+    public void CompleteQuestZero()
+    {
+        zeroQuestFinished = true;
+    }
 
     public void AddFirstQuest()
     {
@@ -338,5 +358,121 @@ public class QuestSystem : MonoBehaviour
                 // Realizar cualquier acción adicional requerida al recoger la recompensa
             }
         }
+    }
+
+    public object SaveState()
+{
+    QuestSystemSaveData saveData = new QuestSystemSaveData();
+
+    // Guardar datos de quests
+    foreach (Quest quest in quests)
+    {
+        QuestSaveData questData = new QuestSaveData(quest.questID, quest.isCompleted, quest.hasCollectedReward);
+        saveData.quests.Add(questData);
+    }
+
+    // Guardar otras variables
+    saveData.zeroQuestFinished = zeroQuestFinished;
+    saveData.firstQuestActive = firstQuestActive;
+    saveData.firstQuestKillFinished = firstQuestKillFinished;
+    saveData.firstQuestItemFinished = firstQuestItemFinished;
+    saveData.yitopoCount = yitopoCount;
+    saveData.yotepoCount = yotepoCount;
+    saveData.ranitomaCount = ranitomaCount;
+    saveData.ranotemaCount = ranotemaCount;
+    saveData.chickenLegCount = chickenLegCount;
+    saveData.porkHamCount = porkHamCount;
+    saveData.baconCount = baconCount;
+    saveData.honeyInfusedBaconCount = honeyInfusedBaconCount;
+    saveData.secondQuestActive = secondQuestActive;
+    saveData.secondQuestKillFinished = secondQuestKillFinished;
+    saveData.tioJuaneteCount = tioJuaneteCount;
+
+    return saveData;
+}
+
+
+    public void LoadState(object state)
+{
+    if (state is QuestSystemSaveData saveData)
+    {
+        // Cargar datos de quests
+        foreach (QuestSaveData questData in saveData.quests)
+        {
+            Quest quest = GetQuestByID(questData.questID);
+            if (quest != null)
+            {
+                quest.isCompleted = questData.isCompleted;
+                quest.hasCollectedReward = questData.hasCollectedReward;
+            }
+        }
+
+        // Cargar otras variables
+        zeroQuestFinished = saveData.zeroQuestFinished;
+        firstQuestActive = saveData.firstQuestActive;
+        firstQuestKillFinished = saveData.firstQuestKillFinished;
+        firstQuestItemFinished = saveData.firstQuestItemFinished;
+        yitopoCount = saveData.yitopoCount;
+        yotepoCount = saveData.yotepoCount;
+        ranitomaCount = saveData.ranitomaCount;
+        ranotemaCount = saveData.ranotemaCount;
+        chickenLegCount = saveData.chickenLegCount;
+        porkHamCount = saveData.porkHamCount;
+        baconCount = saveData.baconCount;
+        honeyInfusedBaconCount = saveData.honeyInfusedBaconCount;
+        secondQuestActive = saveData.secondQuestActive;
+        secondQuestKillFinished = saveData.secondQuestKillFinished;
+        tioJuaneteCount = saveData.tioJuaneteCount;
+    }
+    else
+    {
+        Debug.LogError("Failed to load QuestSystem state: Invalid save data type");
+
+    }
+    
+}
+
+}
+
+[Serializable]
+public class QuestSystemSaveData
+{
+    public List<QuestSaveData> quests;
+    public bool zeroQuestFinished;
+    public bool firstQuestActive;
+    public bool firstQuestKillFinished;
+    public bool firstQuestItemFinished;
+    public int yitopoCount;
+    public int yotepoCount;
+    public int ranitomaCount;
+    public int ranotemaCount;
+    public int chickenLegCount;
+    public int porkHamCount;
+    public int baconCount;
+    public int honeyInfusedBaconCount;
+    public bool secondQuestActive;
+    public bool secondQuestKillFinished;
+    public int tioJuaneteCount;
+
+    // Constructor vacío
+    public QuestSystemSaveData()
+    {
+        quests = new List<QuestSaveData>();
+    }
+}
+
+[Serializable]
+public class QuestSaveData
+{
+    public int questID;
+    public bool isCompleted;
+    public bool hasCollectedReward;
+
+    // Constructor
+    public QuestSaveData(int id, bool completed, bool collectedReward)
+    {
+        questID = id;
+        isCompleted = completed;
+        hasCollectedReward = collectedReward;
     }
 }

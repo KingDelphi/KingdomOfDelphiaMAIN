@@ -7,7 +7,7 @@ public class NetworkManager : NetworkBehaviour
 {   
     void Awake()
     {
-        GameManager.Instance.networkManager = this;
+        //GameManager.Instance.networkManager = this;
     }
 
     public override void Spawned()

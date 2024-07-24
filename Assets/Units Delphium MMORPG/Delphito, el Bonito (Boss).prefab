@@ -5418,31 +5418,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootItems:
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Gold
-    rarity: 0
-    dropProbability: 1
-    minQuantity: 5
-    maxQuantity: 10
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Helmet
-    rarity: 1
-    dropProbability: 0.1
+  - rarityColor: {r: 0.75, g: 0.5, b: 0.25, a: 0}
+    itemName: Lucy Shield
+    rarity: 11
+    dropProbability: 0.001
     minQuantity: 1
     maxQuantity: 1
     hp: 0
@@ -5453,139 +5432,36 @@ MonoBehaviour:
     physicalAttack: 0
     demonAttack: 0
     hollyAttack: 0
-    physicalDefense: 0
+    physicalDefense: 10
     demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
+    hollyDefense: 10
+    weight: 6
+    hpRegen: 1
     manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Armor
-    rarity: 1
-    dropProbability: 0.1
+    effectDuration: 1
+    itemType: 1
+  - rarityColor: {r: 0.75, g: 0.5, b: 0.25, a: 0}
+    itemName: Faith Staff
+    rarity: 11
+    dropProbability: 0.001
     minQuantity: 1
     maxQuantity: 1
     hp: 0
-    mana: 0
+    mana: 20
     movementSpeed: 0
     criticalChance: 0
     criticalBonus: 0
     physicalAttack: 0
     demonAttack: 0
-    hollyAttack: 0
+    hollyAttack: 6
     physicalDefense: 0
     demonDefense: 0
     hollyDefense: 0
-    weight: 0
+    weight: 9
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Legs
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Shield
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Ring
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Brass Amulet
-    rarity: 1
-    dropProbability: 0.1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
-    itemName: Backpack
-    rarity: 1
-    dropProbability: 1
-    minQuantity: 1
-    maxQuantity: 1
-    hp: 0
-    mana: 0
-    movementSpeed: 0
-    criticalChance: 0
-    criticalBonus: 0
-    physicalAttack: 0
-    demonAttack: 0
-    hollyAttack: 0
-    physicalDefense: 0
-    demonDefense: 0
-    hollyDefense: 0
-    weight: 0
-    hpRegen: 0
-    manaRegen: 0
-    effectDuration: 0
+    itemType: 0
   lootTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
   lootTextColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &8033441096870566968

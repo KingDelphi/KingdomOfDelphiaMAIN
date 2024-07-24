@@ -5656,9 +5656,10 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemType: 9
+  - rarityColor: {r: 1, g: 0, b: 0, a: 0}
     itemName: Tolyn's Hat
-    rarity: 11
+    rarity: 8
     dropProbability: 0.01
     minQuantity: 1
     maxQuantity: 1
@@ -5677,9 +5678,10 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemType: 2
+  - rarityColor: {r: 1, g: 0, b: 0, a: 0}
     itemName: Tolyn's Dagger
-    rarity: 11
+    rarity: 8
     dropProbability: 0.01
     minQuantity: 1
     maxQuantity: 1
@@ -5698,9 +5700,10 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemType: 0
+  - rarityColor: {r: 1, g: 0, b: 0, a: 0}
     itemName: Tolyn's Cape
-    rarity: 11
+    rarity: 8
     dropProbability: 0.01
     minQuantity: 1
     maxQuantity: 1
@@ -5719,7 +5722,8 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
-  - rarityColor: {r: 0, g: 0, b: 0, a: 0}
+    itemType: 3
+  - rarityColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
     itemName: Great Backpack
     rarity: 3
     dropProbability: 0.15
@@ -5740,6 +5744,7 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
+    itemType: 8
   lootTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
   lootTextColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1148429847025930

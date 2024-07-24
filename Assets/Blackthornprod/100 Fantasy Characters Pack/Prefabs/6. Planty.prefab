@@ -344,6 +344,7 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
+    itemType: 9
   - rarityColor: {r: 0, g: 0, b: 0, a: 0}
     itemName: Squash
     rarity: 1
@@ -365,5 +366,6 @@ MonoBehaviour:
     hpRegen: 0
     manaRegen: 0
     effectDuration: 0
+    itemType: 9
   lootTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
   lootTextColor: {r: 1, g: 1, b: 1, a: 1}

@@ -4,14 +4,11 @@ using System.Collections.Generic;
 public class TioJuancho : MonoBehaviour
 {
     // Tarea
+    
+    private bool zeroTaskCompleted;
     private bool firstTaskCompleted;
     private bool secondTaskCompleted;
-/*
-    private int yitopoCount;
-    private int yotepoCount;
-    private int ranitomaCount;
-    private int ranotemaCount;
-*/
+
     // Tienda
     private bool shopOpen;
 
@@ -29,14 +26,10 @@ public class TioJuancho : MonoBehaviour
     private void Start()
     {
         // Inicializar variables de tarea
+        zeroTaskCompleted = false;
         firstTaskCompleted = false;
         secondTaskCompleted = false;
-/*
-        yitopoCount = 0;
-        yotepoCount = 0;
-        ranitomaCount = 0;
-        ranotemaCount = 0;
-*/
+
         // Inicializar variable de tienda
         shopOpen = false;
 
@@ -45,16 +38,16 @@ public class TioJuancho : MonoBehaviour
         taskAssigned = false;
         itemPrices = new Dictionary<GearItem, int>()
             {
-                { new GearItem("Small Health Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 20, 0, .01f), 15 },
-                { new GearItem("Small Mana Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 20, .01f), 20 },
-                { new GearItem("Backpack", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 12f, 0, 0, 0f), 25 },
-                { new GearItem("Small Dagger", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 2, 0, 0, 0, 0, 0, 6f, 0, 0, 0f), 50 },
-                { new GearItem("Brass Shield", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 32f, 0, 0, 0f), 75 },
-                { new GearItem("Brass Armor", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 99f, 0, 0, 0f), 120 },
-                { new GearItem("Brass Legs", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 45f, 0, 0, 0f), 200 },
-                { new GearItem("Brass Helmet", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 16f, 0, 0, 0f), 175 },
-                { new GearItem("Brass Ring", GearItem.Rarity.Common, 0, 0, 0f, .05f, .05f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 0, 0f), 350 },
-                { new GearItem("Brass Amulet", GearItem.Rarity.Common, 10, 20, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 5f, 0, 0, 0f), 350 }
+                { new GearItem("Small Health Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 20, 0, .01f, GearItem.ItemType.Consumable), 15 },
+                { new GearItem("Small Mana Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 20, .01f, GearItem.ItemType.Consumable), 20 },
+                { new GearItem("Backpack", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 12f, 0, 0, 0f, GearItem.ItemType.Holder), 25 },
+                { new GearItem("Small Dagger", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 2, 0, 0, 0, 0, 0, 6f, 0, 0, 0f, GearItem.ItemType.Weapon), 50 },
+                { new GearItem("Brass Shield", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 32f, 0, 0, 0f, GearItem.ItemType.Shield), 75 },
+                { new GearItem("Brass Armor", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 99f, 0, 0, 0f, GearItem.ItemType.Armor), 120 },
+                { new GearItem("Brass Legs", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 45f, 0, 0, 0f, GearItem.ItemType.Legs), 200 },
+                { new GearItem("Brass Helmet", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 16f, 0, 0, 0f, GearItem.ItemType.Helmet), 175 },
+                { new GearItem("Brass Ring", GearItem.Rarity.Common, 0, 0, 0f, .05f, .05f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 0, 0f, GearItem.ItemType.Ring), 350 },
+                { new GearItem("Brass Amulet", GearItem.Rarity.Common, 10, 20, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 5f, 0, 0, 0f, GearItem.ItemType.Amulet), 350 }
             };
     }
 
@@ -87,42 +80,10 @@ public class TioJuancho : MonoBehaviour
     }
 }
 
-/*
-    // Lógica de las tareas
-    public void TaskCompleted(string enemyType)
-    {
-        // Verificar qué tipo de enemigo se ha derrotado y actualizar el contador correspondiente
-        switch (enemyType)
-        {
-            case "Yitopo":
-                yitopoCount++;
-                break;
-            case "Yotepo":
-                yotepoCount++;
-                break;
-            case "Ranitoma":
-                ranitomaCount++;
-                break;
-            case "Ranotema":
-                ranotemaCount++;
-                break;
-        }
-
-        // Verificar si se ha completado la primera tarea
-        if (!firstTaskCompleted && yitopoCount >= 12 && yotepoCount >= 8 && ranitomaCount >= 10 && ranotemaCount >= 6)
-        {
-            firstTaskCompleted = true;
-            StartSecondTask();
-        }
-    }
-*/
-
     private void StartSecondTask()
     {
         // Encargar la segunda tarea (matar al jefe)
         Debug.Log("Well done! Now you have a new task. Defeat my brother 'Tio Juanete' to earn a reward.");
-
-        // Aquí puedes agregar la lógica adicional para la segunda tarea, como activar al jefe en el juego.
         
         // Obtener el componente "QuestSystem" del GameObject del jugador
         QuestSystem questSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestSystem>();
@@ -145,8 +106,6 @@ public class TioJuancho : MonoBehaviour
             secondTaskCompleted = true;
             GiveOldPendant();
             Debug.Log("Congratulations! You have completed all tasks.");
-
-            // Aquí puedes agregar la lógica adicional para otorgar la recompensa al jugador.
         }
     }
     
@@ -164,22 +123,7 @@ public class TioJuancho : MonoBehaviour
         shopOpen = !shopOpen;
 
         if (shopOpen)
-        {
-            // Inicializar precios de los productos
-            /*itemPrices = new Dictionary<GearItem, int>()
-            {
-                { new GearItem("Small Health Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 20, 0, .01f), 15 },
-                { new GearItem("Small Mana Potion", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 20, .01f), 20 },
-                { new GearItem("Backpack", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 12f, 0, 0, 0f), 25 },
-                { new GearItem("Small Dagger", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 2, 0, 0, 0, 0, 0, 6f, 0, 0, 0f), 50 },
-                { new GearItem("Brass Shield", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 32f, 0, 0, 0f), 75 },
-                { new GearItem("Brass Armor", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 99f, 0, 0, 0f), 120 },
-                { new GearItem("Brass Legs", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 45f, 0, 0, 0f), 200 },
-                { new GearItem("Brass Helmet", GearItem.Rarity.Common, 0, 0, 0f, 0f, 0f, 0, 0, 0, 2, 0, 0, 16f, 0, 0, 0f), 175 },
-                { new GearItem("Brass Ring", GearItem.Rarity.Common, 0, 0, 0f, .05f, .05f, 0, 0, 0, 0, 0, 0, 0.1f, 0, 0, 0f), 350 },
-                { new GearItem("Brass Amulet", GearItem.Rarity.Common, 10, 20, 0f, 0f, 0f, 0, 0, 0, 0, 0, 0, 5f, 0, 0, 0f), 350 }
-            };*/
-            
+        {   
             // Mostrar los productos disponibles en la tienda
             Debug.Log("Welcome to my shop! Here are my products:");
 
@@ -219,12 +163,9 @@ public class TioJuancho : MonoBehaviour
         {
             // Reducir el dinero del jugador y agregar el objeto al inventario
             ReduceMoney(GetItemPrice(gearItem));
-            //AddItemToInventory(gearItem);
             playerInventory = FindObjectOfType<PlayerInventory>();
             playerInventory.inventory.Add(gearItem);
             Debug.Log("Purchase successful!");
-
-            // Aquí puedes agregar la lógica adicional para mostrar una confirmación de compra al jugador.
         }
         else
         {
@@ -236,10 +177,8 @@ public class TioJuancho : MonoBehaviour
     {
         int itemPrice = GetItemPrice(gearItem);
 
-        // Obtener una referencia al componente PlayerInventory del jugador
         PlayerInventory playerInventory = FindObjectOfType<PlayerInventory>();
 
-        // Verificar si se encontró el componente PlayerInventory y si el jugador tiene suficiente dinero para comprar el objeto
         if (playerInventory != null)
         {
             return playerInventory.GetGoldAmount() >= itemPrice;
@@ -253,10 +192,8 @@ public class TioJuancho : MonoBehaviour
 
     private void ReduceMoney(int amount)
     {
-        // Obtener una referencia al componente PlayerInventory del jugador
         PlayerInventory playerInventory = FindObjectOfType<PlayerInventory>();
 
-        // Verificar si se encontró el componente PlayerInventory y reducir la cantidad de dinero del jugador después de una compra
         if (playerInventory != null)
         {
             playerInventory.RemoveGold(amount);
@@ -269,19 +206,14 @@ public class TioJuancho : MonoBehaviour
 
     private void AddItemToInventory(GearItem gearItem)
     {
-        // Obtener una referencia al componente GameManager
         GameManager gameManager = FindObjectOfType<GameManager>();
 
-        // Verificar si se encontró el componente GameManager
         if (gameManager != null)
         {
-            // Obtener la referencia al componente PlayerInventory a través del GameManager
             PlayerInventory playerInventory = gameManager.GetPlayerInventory();
 
-            // Verificar si se encontró el componente PlayerInventory
             if (playerInventory != null)
             {
-                // Agregar el objeto al inventario del jugador
                 playerInventory.AddItemToInventory(gearItem);
             }
             else
@@ -297,7 +229,6 @@ public class TioJuancho : MonoBehaviour
 
     private int GetItemPrice(GearItem gearItem)
     {
-        // Obtener el precio de un objeto de la tienda según su nombre
         if (itemPrices.ContainsKey(gearItem))
         {
             return itemPrices[gearItem];
@@ -306,22 +237,22 @@ public class TioJuancho : MonoBehaviour
         return 0;
     }
 
-    // Lógica de los regalos
     public void StartDialog()
     {
         QuestSystem questSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestSystem>();
-        if (firstClick && isClickable)
+        if (firstClick && isClickable && !questSystem.zeroQuestFinished)
         {
             Debug.Log("Tio Juancho: Hey there, adventurer! Welcome to my humble tavern. Looking for a drink or a quest, perhaps? Well, you're in luck! I have a special gift for you, just because you caught my attention. Take a look at what I've got:");
 
-            // Aquí puedes agregar la lógica para mostrar los objetos que el Tio Juancho le regala al jugador en la consola.
             GiveGift();
             firstClick = false;
+            zeroTaskCompleted = true;
+            questSystem.zeroQuestFinished = true;
         }
         else
         {
             Debug.Log("Tio Juancho: Oh, it's you again!");
-            if (!taskAssigned)
+            if (!taskAssigned && !questSystem.firstQuestActive)
             {
                 AssignFirstTask();
                 taskAssigned = true;
@@ -344,9 +275,7 @@ public class TioJuancho : MonoBehaviour
     private void AssignFirstTask()
     {
         Debug.Log("Tio Juancho: I have a task for you, adventurer. Help me defeat the monsters that have been causing trouble around here. I need you to defeat 12 Yitopos, 8 Yotepos, 10 Ranitomas, and 6 Ranotemas. Once you complete this task, come back to me for a reward.");
-        // Aquí puedes agregar la lógica adicional para iniciar la tarea en tu juego, como activar a los monstruos en el juego.
         
-        // Obtener el componente "QuestSystem" del GameObject del jugador
         QuestSystem questSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestSystem>();
         if (questSystem != null)
         {
@@ -376,12 +305,10 @@ public class TioJuancho : MonoBehaviour
     private void GiveOldPendant()
     {
         Debug.Log("- Old Pendant");
-        // Obtener el objeto GearItem del GearItemManager por su nombre
         GearItem gearItem = GearItemManager.Instance.GetGearItemByName("Old Pendant");
         
         if (gearItem != null)
         {
-            // Agregar el GearItem al inventario del jugador
             playerInventory.AddItemToInventory(gearItem);
         }
         else
@@ -396,7 +323,7 @@ public class TioJuancho : MonoBehaviour
             LootSystem lootSystem = GetComponent<LootSystem>();
             if (lootSystem != null)
             {
-                lootSystem.OnMonsterDeath(); // Llamar al método OnMonsterDeath del LootSystem
+                lootSystem.OnMonsterDeath();
                 isClickable = false;
                 return;
             }

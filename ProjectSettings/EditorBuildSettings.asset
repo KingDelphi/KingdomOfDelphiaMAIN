@@ -38,4 +38,29 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/10. (0,-2,0) Campamento a las afueras del Castillo de Delphia.unity
     guid: 673e63d41d9ce4aeb922352ed2cd7464
+  - enabled: 1
+    path: Assets/Scenes/11. (0,-3,0) Campamento a las afueras del Castillo de Delphia
+      (Noche).unity
+    guid: 8b81309e78699440891c3ef479c78cd9
+  - enabled: 1
+    path: Assets/Scenes/12. (0,4,0) Fuente del Castillo de Delphia.unity
+    guid: a9ee3044d7e224669b0c0d5c49d98fca
+  - enabled: 1
+    path: Assets/Scenes/13. (0,5,0) Portal del Balance Universal.unity
+    guid: c0f3aad930cba4191b2dcda9a07bebd2
+  - enabled: 1
+    path: Assets/Scenes/14. (1,-1,0) Bosque de Delphia.unity
+    guid: b8ab936aad4334c6b97b319fca5ce17f
+  - enabled: 1
+    path: Assets/Scenes/15. (1,-1,1) Portal del Bosque de Delphia.unity
+    guid: f77eacf1a59c94cf28bff1bf998fc3c4
+  - enabled: 1
+    path: Assets/Scenes/16. (1,-1,-1) Boda Secreta.unity
+    guid: c519e4638447846aebce3a9a4b8de083
+  - enabled: 1
+    path: Assets/Scenes/17. (0,-4,0) Aldea Samma.unity
+    guid: 535cb72c0fd794ed7b1009022daac01a
+  - enabled: 1
+    path: Assets/Scenes/18. (-1,-4,0) Arena El Pozo.unity
+    guid: 1c3fd84a4b6014e598f459bcefaaecd5
   m_configObjects: {}

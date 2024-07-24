@@ -5623,7 +5623,6 @@ MonoBehaviour:
   animator: {fileID: 1367692771507064621}
   lastPosition: {x: 0, y: 0, z: 0}
   hasLastPosition: 0
-  circle: {fileID: 0}
   body: {fileID: 0}
 --- !u!114 &4933591907228549125
 MonoBehaviour:
@@ -5681,7 +5680,6 @@ MonoBehaviour:
       quantity: 1
       itemName: Backpack
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5697,11 +5695,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     helmet:
       quantity: 1
       itemName: Leather Helmet
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5717,11 +5715,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     armor:
       quantity: 1
       itemName: Leather Armor
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5737,11 +5735,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     legs:
       quantity: 1
       itemName: Leather Legs
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5757,11 +5755,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     boots:
       quantity: 1
       itemName: Leather Boots
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5777,11 +5775,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     weapon:
       quantity: 1
       itemName: Wooden Stick
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5797,11 +5795,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     shield:
       quantity: 1
       itemName: Wooden Shield
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5817,11 +5815,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     ring:
       quantity: 1
       itemName: Wooden Ring
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5837,11 +5835,11 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     amulet:
       quantity: 0
       itemName: 
       rarity: 0
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -5857,6 +5855,7 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   inventory: {fileID: 4933591907228549127}
   gearItemManager: {fileID: 0}
   _sceneIndex: 0
@@ -5904,187 +5903,6 @@ MonoBehaviour:
   gearMenu: {fileID: 0}
   inventory: []
   gold: 0
-  gear:
-    holder:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    helmet:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    armor:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    legs:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    boots:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    weapon:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    shield:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    ring:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
-    amulet:
-      quantity: 0
-      itemName: 
-      rarity: 0
-      itemType: 0
-      hp: 0
-      mana: 0
-      movementSpeed: 0
-      criticalChance: 0
-      criticalBonus: 0
-      physicalAttack: 0
-      demonAttack: 0
-      hollyAttack: 0
-      physicalDefense: 0
-      demonDefense: 0
-      hollyDefense: 0
-      weight: 0
-      hpRegen: 0
-      manaRegen: 0
-      effectDuration: 0
   counter: {fileID: 4933591907228549120}
   gameManager: {fileID: 0}
 --- !u!114 &4933591907228549120
@@ -6128,6 +5946,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quests: []
+  zeroQuestFinished: 0
   firstQuestActive: 0
   firstQuestKillFinished: 0
   firstQuestItemFinished: 0

@@ -43,19 +43,6 @@ public class CharacterClickHandler : MonoBehaviour
                 // Obtiene el nombre y la vocación del CharacterInformation
                 string characterName = characterInformation.characterName;
                 string characterVocation = characterInformation.vocation.ToString().Replace("_", " ");
-                // int characterLevel = 
-                // int characterHP = 
-                // int characterMana =
-                // float characterMovementSpeed = 
-                // float characterCriticalChance =
-                // float characterCriticalBonus =
-                // int characterPhysicalAttack =
-                // int characterDemonAttack =
-                // int characterHollyAttack =
-                // int characterPhysicalDefense =
-                // int characterDemonDefense =
-                // int characterHollyDefense =
-                // float characterCapacity =
 
                 // Busca el componente TextMeshProUGUI en el objeto "CharacterNameText" si no se ha asignado antes
                 if (characterNameText == null)

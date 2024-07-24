@@ -632,53 +632,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.44857207
---- !u!1 &126809757
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 126809759}
-  - component: {fileID: 126809758}
-  m_Layer: 9
-  m_Name: CursorObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &126809758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126809757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb58c9189291a44dc9ad4bbf5aa8cf26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followSpeed: 45
---- !u!4 &126809759
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126809757}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 47.4, y: -1.8999996, z: -15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 825421595}
-  - {fileID: 1866403790}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &183915418
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,90 +3091,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &536159913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 536159914}
-  - component: {fileID: 536159915}
-  m_Layer: 9
-  m_Name: Circle2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &536159914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536159913}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15}
-  m_LocalScale: {x: 2.65, y: 2.65, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 825421595}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &536159915
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536159913}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441835713
-  m_SortingLayer: -2
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &589786982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,90 +3869,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &767240561
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 767240562}
-  - component: {fileID: 767240563}
-  m_Layer: 9
-  m_Name: Circle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &767240562
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767240561}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 15}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 825421595}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &767240563
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767240561}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441835713
-  m_SortingLayer: -2
-  m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &772794998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4350,39 +4135,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &825421594
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 825421595}
-  m_Layer: 9
-  m_Name: Circle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &825421595
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 825421594}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 767240562}
-  - {fileID: 536159914}
-  m_Father: {fileID: 126809759}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &879833091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,90 +5985,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1191219975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1191219976}
-  - component: {fileID: 1191219977}
-  m_Layer: 9
-  m_Name: Isometric Diamond
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1191219976
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191219975}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 15}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1866403790}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1191219977
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191219975}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441835713
-  m_SortingLayer: -2
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1191870497
 GameObject:
   m_ObjectHideFlags: 0
@@ -7388,7 +7056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1328092853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7407,7 +7075,6 @@ MonoBehaviour:
     - quantity: 0
       itemName: Gold
       rarity: 0
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7423,10 +7090,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Nugget (50 Gold)
       rarity: 0
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7442,10 +7109,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Lingot (1,000 Gold)
       rarity: 0
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7461,12 +7128,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Food
     gearItems:
     - quantity: 0
       itemName: Chicken Leg
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7482,10 +7149,10 @@ MonoBehaviour:
       hpRegen: 1
       manaRegen: 1
       effectDuration: 20
+      itemType: 0
     - quantity: 0
       itemName: Pork Ham
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7501,10 +7168,10 @@ MonoBehaviour:
       hpRegen: 1
       manaRegen: 1
       effectDuration: 60
+      itemType: 0
     - quantity: 0
       itemName: Bacon
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7520,10 +7187,10 @@ MonoBehaviour:
       hpRegen: 2
       manaRegen: 2
       effectDuration: 20
+      itemType: 0
     - quantity: 0
       itemName: Honey-Infused Bacon
       rarity: 8
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7539,12 +7206,12 @@ MonoBehaviour:
       hpRegen: 2
       manaRegen: 2
       effectDuration: 120
+      itemType: 0
   - categoryName: Potions
     gearItems:
     - quantity: 0
       itemName: Small Health Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7560,10 +7227,10 @@ MonoBehaviour:
       hpRegen: 20
       manaRegen: 0
       effectDuration: 0.01
+      itemType: 0
     - quantity: 0
       itemName: Small Mana Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7579,10 +7246,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 20
       effectDuration: 0.01
+      itemType: 0
     - quantity: 0
       itemName: Medium Health Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7598,10 +7265,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Medium Mana Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7617,10 +7284,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Big Health Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7636,10 +7303,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Big Mana Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7655,10 +7322,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Great Health Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7674,10 +7341,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Great Mana Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7693,10 +7360,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Health Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7712,10 +7379,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Mana Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7731,10 +7398,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Small Exp Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7750,10 +7417,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 300
+      itemType: 0
     - quantity: 0
       itemName: Medium Exp Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7769,10 +7436,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 900
+      itemType: 0
     - quantity: 0
       itemName: Big Exp Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7788,10 +7455,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 1800
+      itemType: 0
     - quantity: 0
       itemName: Great Exp Potion
       rarity: 5
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7807,10 +7474,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 3600
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Exp Potion
       rarity: 6
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7826,10 +7493,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 7200
+      itemType: 0
     - quantity: 0
       itemName: Small Loot Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7845,10 +7512,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 300
+      itemType: 0
     - quantity: 0
       itemName: Medium Loot Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7864,10 +7531,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 900
+      itemType: 0
     - quantity: 0
       itemName: Big Loot Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7883,10 +7550,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 1800
+      itemType: 0
     - quantity: 0
       itemName: Great Loot Potion
       rarity: 5
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7902,10 +7569,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 3600
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Loot Potion
       rarity: 6
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7921,12 +7588,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 7200
+      itemType: 0
   - categoryName: Holder
     gearItems:
     - quantity: 0
       itemName: Backpack
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7942,12 +7609,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Helmet
     gearItems:
     - quantity: 0
       itemName: Leather Helmet
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7963,10 +7630,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Helmet
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -7982,12 +7649,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Armor
     gearItems:
     - quantity: 0
       itemName: Leather Armor
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8003,10 +7670,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Armor
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8022,12 +7689,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Legs
     gearItems:
     - quantity: 0
       itemName: Leather Legs
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8043,10 +7710,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Legs
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8062,12 +7729,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Boots
     gearItems:
     - quantity: 0
       itemName: Leather Boots
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8083,12 +7750,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Weapon
     gearItems:
     - quantity: 0
       itemName: Wooden Stick
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8104,10 +7771,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Small Dagger
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8123,12 +7790,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Shield
     gearItems:
     - quantity: 0
       itemName: Wooden Shield
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8144,10 +7811,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Shield
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8163,12 +7830,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Ring
     gearItems:
     - quantity: 0
       itemName: Wooden Ring
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8184,10 +7851,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Ring
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -8203,12 +7870,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Amulet
     gearItems:
     - quantity: 0
       itemName: Brass Amulet
       rarity: 1
-      itemType: 0
       hp: 10
       mana: 20
       movementSpeed: 0
@@ -8224,10 +7891,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Old Pendant
       rarity: 7
-      itemType: 0
       hp: 25
       mana: 35
       movementSpeed: 0
@@ -8243,6 +7910,7 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   gearItems: []
 --- !u!114 &1328092854
 MonoBehaviour:
@@ -8256,13 +7924,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fce2569a17944be9f727b29973206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
+  spawnPosition: {x: 0, y: 0, z: 0}
+  runner: {fileID: 0}
   playerInventory: {fileID: 0}
   inventoryCanvas: {fileID: 0}
-  anotherInv: {fileID: 0}
   slot: {fileID: 0}
   gearMenu: {fileID: 0}
-  networkManager: {fileID: 0}
-  circle: {fileID: 0}
+  playerNetworkObject: {fileID: 0}
+  existingPlayer: {fileID: 0}
+  existingNetworkObject: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
@@ -8283,7 +7954,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333801376
 GameObject:
@@ -10339,7 +10010,7 @@ Transform:
   m_Children:
   - {fileID: 458712919}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1596302900
 MonoBehaviour:
@@ -10524,90 +10195,6 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &1685770438
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1685770439}
-  - component: {fileID: 1685770440}
-  m_Layer: 9
-  m_Name: Isometric Diamond2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1685770439
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685770438}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 15}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1866403790}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1685770440
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685770438}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 441835713
-  m_SortingLayer: -2
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -11063,39 +10650,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1866403789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1866403790}
-  m_Layer: 9
-  m_Name: Arrow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1866403790
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866403789}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1191219976}
-  - {fileID: 1685770439}
-  m_Father: {fileID: 126809759}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881127435
 GameObject:
   m_ObjectHideFlags: 0
@@ -12228,7 +11782,7 @@ Transform:
   - {fileID: 512085687}
   - {fileID: 1421250738}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2079449534
 GameObject:
@@ -12296,7 +11850,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2093819686
 GameObject:

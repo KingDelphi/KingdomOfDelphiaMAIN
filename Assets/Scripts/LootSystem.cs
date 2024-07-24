@@ -23,10 +23,10 @@ public enum Rarity
 [System.Serializable]
 public class LootItem
 {
-    public Color rarityColor; // Color de la rareza
+    public Color rarityColor;
     public string itemName;
     public Rarity rarity;
-    public float dropProbability; // Probabilidad de que el ítem sea tirado
+    public float dropProbability;
     public int minQuantity;
     public int maxQuantity;
     public int hp;
@@ -44,6 +44,7 @@ public class LootItem
     public int hpRegen;
     public int manaRegen;
     public float effectDuration;
+    public GearItem.ItemType itemType;
 }
 
 public class LootSystem : MonoBehaviour
@@ -85,7 +86,7 @@ public class LootSystem : MonoBehaviour
                     GearItem gearItem = new GearItem(lootItem.itemName, (GearItem.Rarity)lootItem.rarity, lootItem.hp, lootItem.mana, lootItem.movementSpeed,
                         lootItem.criticalChance, lootItem.criticalBonus, lootItem.physicalAttack, lootItem.demonAttack, lootItem.hollyAttack,
                         lootItem.physicalDefense, lootItem.demonDefense, lootItem.hollyDefense, lootItem.weight, lootItem.hpRegen,
-                        lootItem.manaRegen, lootItem.effectDuration);
+                        lootItem.manaRegen, lootItem.effectDuration, (GearItem.ItemType)lootItem.itemType);
 
                     inventory.AddItemToInventory(gearItem);
                     Debug.Log("inventory.AddItemToInventory(gearItem); llamado exitosamente");

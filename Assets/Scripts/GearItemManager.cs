@@ -75,7 +75,8 @@ public class GearItemManager : MonoBehaviour
             gearItem.weight,
             gearItem.hpRegen,
             gearItem.manaRegen,
-            gearItem.effectDuration
+            gearItem.effectDuration,
+            gearItem.itemType
             );
             // Asignar las estadísticas predeterminadas al nuevo GearItem
             defaultItem.hp = gearItem.hp;
@@ -93,6 +94,7 @@ public class GearItemManager : MonoBehaviour
             defaultItem.hpRegen = gearItem.hpRegen;
             defaultItem.manaRegen = gearItem.manaRegen;
             defaultItem.effectDuration = gearItem.effectDuration;
+            defaultItem.itemType = gearItem.itemType;
 
             return defaultItem;
         }

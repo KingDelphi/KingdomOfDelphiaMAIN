@@ -41,7 +41,6 @@ public class CharactersUnlockedManager : MonoBehaviour
     // Método para desbloquear un personaje
     public void UnlockCharacter(string characterName)
     {
-        Debug.Log("UnlockCharacter succesffully called: " + characterName);
         if (unlockedCharacters.ContainsKey(characterName))
         {
             unlockedCharacters[characterName] = true;
@@ -50,7 +49,6 @@ public class CharactersUnlockedManager : MonoBehaviour
             GameObject characterObject = GetCharacterObject(characterName);
             if (characterObject != null)
             {
-                Debug.Log("Desbloqueado: " + characterName);
                 characterObject.SetActive(true);
             }
             else

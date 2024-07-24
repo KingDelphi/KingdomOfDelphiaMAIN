@@ -3,28 +3,147 @@ using System.Collections.Generic;
 using System;
 using TMPro;
 
-public class PlayerInventory : MonoBehaviour
+public class PlayerInventory : MonoBehaviour, ISaveable
 {
+    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public Type SaveType => typeof(PlayerInventorySaveData); // Tipo de estado guardado
+
+
+    [System.Serializable]
+    public class PlayerInventorySaveData
+    {
+        public List<GearItemSaveData> inventoryItems;
+        public int gold;
+    }
+
     public GearItemManager gearItemManager;
     public GearMenu gearMenu;
     
     // Inventario
     public List<GearItem> inventory;
 
+    // Define un delegado para el evento
+    public Action InventoryUpdated;
+
     // Oro
     public int gold;
 
-    // Gear
-    public Gear gear;
-
     public Counter counter;
     public GameManager gameManager;
+
+// Comienza Implementación de ISaveable en el script PlayerInventory
+
+    [System.Serializable]
+    public class GearItemSaveData
+    {
+        public string itemName;
+        public GearItem.Rarity itemRarity;
+        public int hp;
+        public int mana;
+        public float movementSpeed;
+        public float criticalChance;
+        public float criticalBonus;
+        public int physicalAttack;
+        public int demonAttack;
+        public int hollyAttack;
+        public int physicalDefense;
+        public int demonDefense;
+        public int hollyDefense;
+        public float weight;
+        public int hpRegen;
+        public int manaRegen;
+        public float effectDuration;
+        public GearItem.ItemType itemType;
+    }
+
+
+
+    public object SaveState()
+    {
+        var saveData = new PlayerInventorySaveData
+        {
+            gold = this.gold,
+            inventoryItems = this.inventory.ConvertAll(item => ConvertGearItemToSaveData(item))
+        };
+
+        return saveData;
+    }
+
+    public void LoadState(object state)
+{
+    if (state is PlayerInventorySaveData saveData)
+    {
+        this.gold = saveData.gold;
+        this.inventory = saveData.inventoryItems.ConvertAll(item => ConvertSaveDataToGearItem(item));
+        InventoryUpdated?.Invoke();
+    }
+    else
+    {
+        Debug.LogError($"Estado de carga inválido para PlayerInventory. Tipo recibido: {state.GetType()}");
+    }
+}
+
+    private GearItemSaveData ConvertGearItemToSaveData(GearItem gearItem)
+    {
+        if (gearItem == null) return null;
+
+        return new GearItemSaveData
+        {
+            itemName = gearItem.itemName,
+            itemRarity = gearItem.rarity,
+            hp = gearItem.hp,
+            mana = gearItem.mana,
+            movementSpeed = gearItem.movementSpeed,
+            criticalChance = gearItem.criticalChance,
+            criticalBonus = gearItem.criticalBonus,
+            physicalAttack = gearItem.physicalAttack,
+            demonAttack = gearItem.demonAttack,
+            hollyAttack = gearItem.hollyAttack,
+            physicalDefense = gearItem.physicalDefense,
+            demonDefense = gearItem.demonDefense,
+            hollyDefense = gearItem.hollyDefense,
+            weight = gearItem.weight,
+            hpRegen = gearItem.hpRegen,
+            manaRegen = gearItem.manaRegen,
+            effectDuration = gearItem.effectDuration,
+            itemType = gearItem.itemType
+        };
+    }
+
+    private GearItem ConvertSaveDataToGearItem(GearItemSaveData saveData)
+    {
+        if (saveData == null) return null;
+
+        return new GearItem(
+            saveData.itemName,
+            saveData.itemRarity,
+            saveData.hp,
+            saveData.mana,
+            saveData.movementSpeed,
+            saveData.criticalChance,
+            saveData.criticalBonus,
+            saveData.physicalAttack,
+            saveData.demonAttack,
+            saveData.hollyAttack,
+            saveData.physicalDefense,
+            saveData.demonDefense,
+            saveData.hollyDefense,
+            saveData.weight,
+            saveData.hpRegen,
+            saveData.manaRegen,
+            saveData.effectDuration,
+            saveData.itemType
+        );
+    }
+
+        // Termina Implementación de ISaveable en el script PlayerInventory
+
+
     private void Start()
     {
         // Inicializar inventario, oro y gear
         inventory = new List<GearItem>();
         gold = 0;
-        gear = new Gear();
     }
     
     void Awake() {
@@ -34,7 +153,6 @@ public class PlayerInventory : MonoBehaviour
     }
     
     public void ListItems(List<GearItem> inventory, GameObject slot, GameObject inventoryContent) {
-        //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
         List<string> strings = new List<String>();
         List<GearItem> gearItems = new List<GearItem>();
         List<GameObject> gameObjects = new List<GameObject>(); 
@@ -68,7 +186,6 @@ public class PlayerInventory : MonoBehaviour
         }
     }
         public void ListItem(GearItem gearItem, GameObject slot, GameObject inventoryContent) {
-        //gearMenu = GameObject.Find("Gears").GetComponent<GearMenu>();
         List<string> strings = new List<String>();
         List<GearItem> gearItems = new List<GearItem>();
         List<GameObject> gameObjects = new List<GameObject>(); 
@@ -97,7 +214,6 @@ public class PlayerInventory : MonoBehaviour
     public void CheckForItem(string item, int index) {
         foreach(GearItem inventoryItem in inventory) {
             if(inventoryItem.itemName == item){
-             //ListItem(gearMenu.equippedGear[index], gameManager.slot, gameManager.inventoryCanvas.transform.GetChild(0).gameObject);
              gearMenu.equippedGear[index] = inventoryItem;
             }
         }
@@ -105,6 +221,9 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItemToInventory(GearItem item)
     {
+        Debug.Log("Attempting to add item to inventory: " + item.itemName);
+
+        
         // Buscar si el objeto ya existe en el inventario
         foreach (GearItem inventoryItem in inventory)
         {
@@ -122,7 +241,8 @@ public class PlayerInventory : MonoBehaviour
         item.quantity = 1; // Establecer la cantidad inicial en 1
         inventory.Add(item);
         Debug.Log("Item '" + item.itemName + "' added to inventory.");
-        //counter.ItemCollected(item);
+        
+        InventoryUpdated?.Invoke();
     }
 
     public void RemoveItemFromInventory(GearItem item)
@@ -137,6 +257,8 @@ public class PlayerInventory : MonoBehaviour
         {
             Debug.Log("Item '" + item.itemName + "' not found in inventory.");
         }
+
+        InventoryUpdated?.Invoke();
     }
 
     public bool HasItem(GearItem item)
@@ -244,38 +366,14 @@ public class PlayerInventory : MonoBehaviour
 }
 
 [System.Serializable]
-public class Gear
-{
-    public GearItem holder;
-    public GearItem helmet;
-    public GearItem armor;
-    public GearItem legs;
-    public GearItem boots;
-    public GearItem weapon;
-    public GearItem shield;
-    public GearItem ring;
-    public GearItem amulet;
-
-    public event Action OnEquipmentChanged;
-
-    public void EquipmentChanged()
-    {
-        if (OnEquipmentChanged != null)
-        {
-            OnEquipmentChanged.Invoke();
-        }
-    }
-}
-
-[System.Serializable]
 public class GearItem
 {
     public enum Rarity { Gold, Common, Uncommon, SemiRare, Rare, SuperRare, UltraRare, Hero, Epic, Mythological, Legendary, Dreamer }
-    public enum ItemType { Helmet, Armor, Legs, Boots, Weapon, Shield, Ring, Amulet, Holder, Consumable }
+    public enum ItemType { Weapon, Shield, Helmet, Armor, Legs, Boots, Ring, Amulet, Holder, Consumable }
+
     public int quantity;
     public string itemName;
     public Rarity rarity;
-    public ItemType itemType;
     public int hp;
     public int mana;
     public float movementSpeed;
@@ -291,13 +389,13 @@ public class GearItem
     public int hpRegen;
     public int manaRegen;
     public float effectDuration;
+    public ItemType itemType;
 
     public GearItem(string itemName, Rarity rarity, int hp, int mana, float movementSpeed, float criticalChance, float criticalBonus,
-        int physicalAttack, int demonAttack, int hollyAttack, int physicalDefense, int demonDefense, int hollyDefense, float weight, int hpRegen, int manaRegen, float effectDuration, ItemType itemType = ItemType.Helmet)
+        int physicalAttack, int demonAttack, int hollyAttack, int physicalDefense, int demonDefense, int hollyDefense, float weight, int hpRegen, int manaRegen, float effectDuration, ItemType itemType)
     {
         this.itemName = itemName;
         this.rarity = rarity;
-        this.itemType = itemType;
         this.hp = hp;
         this.mana = mana;
         this.movementSpeed = movementSpeed;
@@ -313,5 +411,6 @@ public class GearItem
         this.hpRegen = hpRegen;
         this.manaRegen = manaRegen;
         this.effectDuration = effectDuration;
+        this.itemType = itemType;
     }
 }
