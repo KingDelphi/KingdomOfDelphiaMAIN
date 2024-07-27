@@ -8910,6 +8910,7 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   hasLastPosition: 0
   body: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &2221351867532868139
 MonoBehaviour:
   m_ObjectHideFlags: 0

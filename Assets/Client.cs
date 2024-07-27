@@ -34,7 +34,11 @@ public class Client : NetworkBehaviour
 
         // Asigna los prefabs a los nombres de los personajes
         characterPrefabs["Cerebrito"] = Resources.Load<GameObject>("Prefabs/Cerebrito");
-        characterPrefabs["Tres Deseos"] = Resources.Load<GameObject>("Prefabs/TresDeseos");
+        characterPrefabs["Tres Deseos"] = Resources.Load<GameObject>("Prefabs/Tres Deseos");
+        characterPrefabs["Esqueletico"] = Resources.Load<GameObject>("Prefabs/Esqueletico");
+        characterPrefabs["La Momia Verdulera"] = Resources.Load<GameObject>("Prefabs/La Momia Verdulera");
+        characterPrefabs["Lobin"] = Resources.Load<GameObject>("Prefabs/Lobin");
+
     }
     
     public override void Spawned()

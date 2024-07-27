@@ -83,7 +83,6 @@ public class Esqueletico : MonoBehaviour
         {
             int playerExperience = player.experience;
             // Realiza las acciones necesarias con la experiencia del jugador obtenida
-            Debug.Log("La experiencia actual del jugador es: " + playerExperience);
         }
 
         // Throw Hammer

@@ -85,7 +85,6 @@ public class LaMomiaVerdulera : MonoBehaviour
         {
             int playerExperience = player.experience;
             // Realiza las acciones necesarias con la experiencia del jugador obtenida
-            Debug.Log("La experiencia actual del jugador es: " + playerExperience);
         }
 
         // Cast "Bad Words"

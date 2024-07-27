@@ -30366,9 +30366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clientPrefab: {fileID: 1665177547606650469, guid: 373c322720e8942f1ba5e699fb6ac1a2, type: 3}
-  existingPlayer: {fileID: 0}
-  networkObject: {fileID: 0}
-  spawnerLocalPlayerNetworkObject: {fileID: 0}
 --- !u!1 &1427805140
 GameObject:
   m_ObjectHideFlags: 0
@@ -33884,21 +33881,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fce2569a17944be9f727b29973206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 3337753112215678051, guid: 81b5d6f223c88472498a4896f28c4497, type: 3}
-  spawnPosition: {x: -36, y: -28, z: 0}
-  runner: {fileID: 0}
   playerInventory: {fileID: 0}
   inventoryCanvas: {fileID: 1415402310}
+  anotherInv: {fileID: 0}
   slot: {fileID: 3365299569123761645, guid: f75038d0c19772548b08138941b7cedf, type: 3}
   gearMenu: {fileID: 1881448288}
-  playerNetworkObject: {fileID: 0}
-  existingPlayer: {fileID: 0}
-  existingNetworkObject: {fileID: 0}
+  networkManager: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 506983668}
   characters:
   - {fileID: 3337753112215678051, guid: 81b5d6f223c88472498a4896f28c4497, type: 3}
   - {fileID: 572329979587953912, guid: 0bf14f63d4c0d4a8db379db566a1850b, type: 3}
+  - {fileID: 9011450021607665303, guid: 243214fe0a7804fd2858c34f138d15a9, type: 3}
+  - {fileID: 228380502601174890, guid: f4a947a2f1d7447c2895d8ce75667a4e, type: 3}
+  - {fileID: 3004650861264318570, guid: d84c982664ad345769296cd5e4f84b68, type: 3}
   clients: []
   scenes:
   - {fileID: 102900000, guid: 3129a69e2a076407197796ea6dfae799, type: 3}
@@ -33918,6 +33914,8 @@ MonoBehaviour:
   - {fileID: 102900000, guid: b8ab936aad4334c6b97b319fca5ce17f, type: 3}
   clientHolder: {fileID: 2462236}
   characterHolder: {fileID: 1195019953}
+  characterController: {fileID: 0}
+  client: {fileID: 0}
 --- !u!114 &1613417168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35254,6 +35252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0887ea6e99ed47eabd628957a5d9dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
+  characterController: {fileID: 0}
+  characterFaction: {fileID: 0}
+  reputationSystem: {fileID: 0}
 --- !u!1 &1620496775
 GameObject:
   m_ObjectHideFlags: 0
@@ -40108,6 +40110,7 @@ MonoBehaviour:
   - {fileID: 333767814}
   - {fileID: 749912855}
   - {fileID: 208234306}
+  client: {fileID: 0}
 --- !u!114 &1876985778
 MonoBehaviour:
   m_ObjectHideFlags: 0
