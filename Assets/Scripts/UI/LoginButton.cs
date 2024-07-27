@@ -1,156 +1,10 @@
-// using System.Linq;
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using TMPro;
-// using Cinemachine;
-// using UnityEngine.SceneManagement;
-// using Fusion;
-
-
-// public class LoginButton : MonoBehaviour
-// {
-//     //public List<GameObject> characters; // Agrega los personajes en el Inspector
-//     public GameObject selectedCharacterInfoCanvas; // Referencia al canvas "SelectedCharacterInfo"
-
-//     private CinemachineVirtualCamera virtualCamera;
-    
-//     public GameManager gameManager;
-
-//     public List<DropdownBehaviour> dropdownList;
-
-//     public void OnClick()
-//     {
-//         GameObject characterNameTextObject = GameObject.Find("UI/Canvas/SelectedCharacterInfo/InfoPanel/CharacterNameText");
-
-//         if (characterNameTextObject != null)
-//         {
-//             TextMeshProUGUI characterNameText = characterNameTextObject.GetComponent<TextMeshProUGUI>();
-
-//             if (characterNameText != null)
-//             {
-//                 string characterName = characterNameText.text.Replace("Name: ", "");
-//                 Debug.Log("Nombre del personaje: " + characterName);
-
-//                 GameObject activeCharacter = FindActiveCharacter();
-//                 if (activeCharacter != null)
-//                 {
-//                     Debug.Log("Deactivating active character: " + activeCharacter.name);
-//                     activeCharacter.SetActive(false);
-//                 }
-
-//                 GameObject selectedCharacter = GameManager.Instance.GetCharacterInstance(characterName);
-//                 if (selectedCharacter != null)
-//                 {
-//                     selectedCharacter.SetActive(true);
-//                     Debug.Log($"Character {characterName} activated: {selectedCharacter.activeSelf}");
-
-//                     Player selectedPlayerComponent = selectedCharacter.GetComponent<Player>();
-//                     if (selectedPlayerComponent == null)
-//                     {
-//                         Debug.LogError($"Player component not found on {characterName}");
-//                         return;
-//                     }
-
-//                     GameManager.Instance.player = selectedPlayerComponent;
-
-//                     Client client = Client.Instance;
-//                     if (client != null)
-//                     {
-//                         client.playerPrefab = selectedCharacter; // Cambiar el prefab del player
-//                         client.SetActivePlayer(GameManager.Instance.player);
-
-//                         client.activePlayer = selectedPlayerComponent;
-//                         client.playerPrefab = selectedCharacter;
-//                         // client.activePlayer.SetupLocalPlayer(); CREO QUE SE ESTA LLAMANDO 2 VECES.
-
-//                         // Set the player as a child of the characterHolder
-//                         selectedPlayerComponent.transform.SetParent(client.characterHolder, false);
-//                     }
-//                     else
-//                     {
-//                         Debug.LogError("Client not found.");
-//                     }
-
-//                     GameManager.Instance.playerInventory = selectedPlayerComponent.inventory;
-//                 }
-//                 else
-//                 {
-//                     Debug.LogError("Character instance not found: " + characterName);
-//                 }
-//             }
-//             else
-//             {
-//                 Debug.LogError("CharacterNameText component not found.");
-//             }
-//         }
-//         else
-//         {
-//             Debug.LogError("CharacterNameText object not found.");
-//         }
-
-//         if (selectedCharacterInfoCanvas != null)
-//         {
-//             selectedCharacterInfoCanvas.SetActive(false);
-//             Debug.Log("SelectedCharacterInfoCanvas deactivated.");
-//         }
-//         else
-//         {
-//             Debug.LogError("SelectedCharacterInfoCanvas not assigned.");
-//         }
-
-//         foreach (DropdownBehaviour drop in dropdownList)
-//         {
-//             drop.UpdateInventory();
-//         }
-//     }
-
-// private GameObject FindActiveCharacter()
-// {
-//     Player[] characters = FindObjectsOfType<Player>();
-//     foreach (Player character in characters)
-//     {
-//         if (character.gameObject.activeSelf)
-//         {
-//             return character.gameObject;
-//         }
-//     }
-//     return null;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     private GameObject FindCharacterByName(string name, bool includeInactive = false)
-// {
-//     GameObject[] characters = Resources.FindObjectsOfTypeAll<GameObject>();
-//     foreach (GameObject character in characters)
-//     {
-//         if (character.name == name && (includeInactive || character.activeInHierarchy))
-//         {
-//             return character;
-//         }
-//     }
-//     return null;
-// }
-// }
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using Fusion;
 
 
 public class LoginButton : MonoBehaviour
@@ -163,196 +17,126 @@ public class LoginButton : MonoBehaviour
 
     public List<DropdownBehaviour> dropdownList;
 
-    // public void OnClick()
-    // {
-    //     GameObject characterNameTextObject = GameObject.Find("UI/Canvas/SelectedCharacterInfo/InfoPanel/CharacterNameText");
-        
-    //     if (characterNameTextObject != null)
-    //     {
-    //         TextMeshProUGUI characterNameText = characterNameTextObject.GetComponent<TextMeshProUGUI>();
-            
-    //         if (characterNameText != null)
-    //         {
-    //             string characterName = characterNameText.text.Replace("Name: ", "");
-    //             Debug.Log("Nombre del personaje: " + characterName);
+    public Client client;
 
-    //             GameObject activeCharacter = FindActiveCharacter();
-
-    //             if (activeCharacter != null)
-    //             {
-    //                 activeCharacter.SetActive(false);
-    //             }
-
-    //             GameObject selectedCharacter = FindCharacterByName(characterName, includeInactive: true);
-    //             if (selectedCharacter != null)
-    //             {
-    //                 selectedCharacter.SetActive(true);
-                    
-    //                 GameManager gameManager = FindObjectOfType<GameManager>();
-
-    //                 if (gameManager != null)
-    //                 {
-    //                         gameManager.player = selectedCharacter.GetComponent<Player>();
-    //                         if(selectedCharacter.GetComponent<Player>().sceneIndex != SceneManager.GetActiveScene().buildIndex)
-    //                         {
-    //                             GameManager.Instance.ChangeScene(selectedCharacter.GetComponent<Player>().sceneIndex, Vector3.zero);
-    //                         }
-    //                         else
-    //                         {
-    //                             selectedCharacter.GetComponent<CharacterController>().Initiate();
-    //                             virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
-    //                             virtualCamera.Follow = selectedCharacter.transform;
-    //                         }
-    //                 }
-    //                 else
-    //                 {
-    //                     Debug.LogError("GameManager not found.");
-    //                 }
-    //             }
-    //             else
-    //             {
-    //                 Debug.LogError("Character object not found: " + characterName);
-    //             }
-    //         }
-    //         else
-    //         {
-    //             Debug.LogError("CharacterNameText component not found.");
-    //         }
-    //     }
-    //     else
-    //     {
-    //         Debug.LogError("CharacterNameText object not found.");
-    //     }
-
-    //     if (selectedCharacterInfoCanvas != null)
-    //     {
-    //         selectedCharacterInfoCanvas.SetActive(false);
-    //     }
-    //     else
-    //     {
-    //         Debug.LogError("SelectedCharacterInfoCanvas not assigned.");
-    //     }
-    //     gameManager.playerInventory = FindObjectOfType<PlayerInventory>();
-    //     foreach(DropdownBehaviour drop in dropdownList) {
-    //         drop.UpdateInventory();
-    //     }
-    // }
-
-        public void OnClick()
-{
-    GameObject characterNameTextObject = GameObject.Find("UI/Canvas/SelectedCharacterInfo/InfoPanel/CharacterNameText");
-
-    if (characterNameTextObject != null)
+    public void OnClick()
     {
-        TextMeshProUGUI characterNameText = characterNameTextObject.GetComponent<TextMeshProUGUI>();
+        Debug.Log("LoginButton(24).OnClick() called.");
 
-        if (characterNameText != null)
+        GameObject characterNameTextObject = GameObject.Find("UI/Canvas/SelectedCharacterInfo/InfoPanel/CharacterNameText");
+        if (characterNameTextObject == null)
         {
-            string characterName = characterNameText.text.Replace("Name: ", "");
-            Debug.Log("Nombre del personaje: " + characterName);
+            Debug.LogError("CharacterNameText object not found.");
+            return;
+        }
 
-            GameObject activeCharacter = FindActiveCharacter();
-            if (activeCharacter != null)
-            {
-                Debug.Log("Deactivating active character: " + activeCharacter.name);
-                activeCharacter.SetActive(false);
-            }
+        TextMeshProUGUI characterNameText = characterNameTextObject.GetComponent<TextMeshProUGUI>();
+        if (characterNameText == null)
+        {
+            Debug.LogError("CharacterNameText component not found.");
+            return;
+        }
 
-            GameManager gameManager = GameManager.Instance;
-            if (gameManager != null)
-            {
-                // Obtén la instancia del Player actual
-                Player currentPlayer = gameManager.player;
+        string characterName = characterNameText.text.Replace("Name: ", "");
+        Debug.Log("LoginButton(41) Nombre del personaje: " + characterName);
 
-                if (currentPlayer != null)
-                {
-                    // Obtén el cliente específico del Player
-                    Client client = currentPlayer.GetClient();
-                    
-                    if (client != null)
-                    {
-                        // Cambia el prefab del jugador
-                        client.ChangePlayerPrefab(characterName);
+        GameManager gameManager = GameManager.Instance;
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found.");
+            return;
+        }
 
-                        // Obtén la instancia del personaje seleccionado
-                        GameObject selectedCharacter = gameManager.GetCharacterInstance(characterName);
-                        if (selectedCharacter != null)
-                        {
-                            selectedCharacter.SetActive(true);
-                            Debug.Log($"Character {characterName} activated: {selectedCharacter.activeSelf}");
+        GameObject activeCharacter = FindActiveCharacter();
+        if (activeCharacter != null)
+        {
+            Debug.Log("Deactivating active character: " + activeCharacter.name);
+            activeCharacter.SetActive(false);
+        }
 
-                            Player selectedPlayerComponent = selectedCharacter.GetComponent<Player>();
-                            if (selectedPlayerComponent == null)
-                            {
-                                Debug.LogError($"Player component not found on {characterName}");
-                                return;
-                            }
+        Player currentPlayer = gameManager.player;
+        if (currentPlayer == null)
+        {
+            Debug.LogError("Current player not found.");
+            return;
+        }
 
-                            gameManager.player = selectedPlayerComponent;
+        Client client = currentPlayer.GetClient();
+        if (client == null)
+        {
+            Debug.LogError("Client not found for the current player.");
+            return;
+        }
 
-                            // Actualiza el cliente
-                            client.playerPrefab = selectedCharacter;
-                            client.SetActivePlayer(gameManager.player);
-                            client.activePlayer = selectedPlayerComponent;
+        // Cambia el prefab del jugador
+        client.ChangePlayerPrefab(characterName);
+        Debug.LogWarning("LoginButton(73) ESPARRAGO SALTARIN - After client.ChangePlayerPrefab(characterName);");
 
-                            // Establece el jugador como hijo del characterHolder
-                            selectedPlayerComponent.transform.SetParent(client.characterHolder, false);
+        // Obtén la ID del cliente actual
+        string clientId = client.GetComponent<NetworkObject>().Id.ToString();
 
-                            if (selectedPlayerComponent.inventory != null)
-                            {
-                                gameManager.playerInventory = selectedPlayerComponent.inventory;
-                            }
-                            else
-                            {
-                                Debug.LogError("Selected player's inventory not found.");
-                            }
-                        }
-                        else
-                        {
-                            Debug.LogError("Character instance not found: " + characterName);
-                        }
-                    }
-                    else
-                    {
-                        Debug.LogError("Client not found for the current player.");
-                    }
-                }
-                else
-                {
-                    Debug.LogError("Current player not found.");
-                }
-            }
-            else
-            {
-                Debug.LogError("GameManager not found.");
-            }
+        // Construye el nombre con el formato correcto
+        string characterNameWithId = $"{characterName} {clientId}";
+
+        // Obtén la instancia del personaje seleccionado
+        client.PrintCharacterInstances();
+        GameObject selectedCharacter = client.GetCharacterInstance(characterNameWithId);
+        if (selectedCharacter == null)
+        {
+            Debug.LogError("Character instance not found: " + characterNameWithId);
+            return;
+        }
+
+        selectedCharacter.SetActive(true);
+        Debug.Log($"LoginButton(91) (Character) selectedCharacter: {selectedCharacter} activated: {selectedCharacter.activeSelf}");
+
+        Debug.Log("ESPARRAGO RADIOACTIVO - LoginButton(93) Before calling selectedCharacter.GetComponent<Player>().RpcUpdatePlayers()");
+        selectedCharacter.GetComponent<Player>().RpcUpdatePlayers();
+
+        Player selectedPlayerComponent = selectedCharacter.GetComponent<Player>();
+        if (selectedPlayerComponent == null)
+        {
+            Debug.LogError($"Player component not found on {selectedCharacter}");
+            return;
+        }
+
+        gameManager.player = selectedPlayerComponent;
+
+        // Actualiza el cliente
+        client.playerPrefab = selectedCharacter;
+        client.SetActivePlayer(gameManager.player);
+        client.activePlayer = selectedPlayerComponent;
+
+        // Establece el jugador como hijo del characterHolder
+        selectedPlayerComponent.transform.SetParent(client.characterHolder, false);
+
+        if (selectedPlayerComponent.inventory != null)
+        {
+            gameManager.playerInventory = selectedPlayerComponent.inventory;
         }
         else
         {
-            Debug.LogError("CharacterNameText component not found.");
+            Debug.LogError("Selected player's inventory not found.");
         }
-    }
-    else
-    {
-        Debug.LogError("CharacterNameText object not found.");
-    }
 
-    if (selectedCharacterInfoCanvas != null)
-    {
-        selectedCharacterInfoCanvas.SetActive(false);
-        Debug.Log("SelectedCharacterInfoCanvas deactivated.");
-    }
-    else
-    {
-        Debug.LogError("SelectedCharacterInfoCanvas not assigned.");
-    }
+        if (selectedCharacterInfoCanvas != null)
+        {
+            selectedCharacterInfoCanvas.SetActive(false);
+            Debug.Log("SelectedCharacterInfoCanvas deactivated.");
+        }
+        else
+        {
+            Debug.LogError("SelectedCharacterInfoCanvas not assigned.");
+        }
 
-    foreach (DropdownBehaviour drop in dropdownList)
-    {
-        drop.UpdateInventory();
-    }
-}
+        foreach (DropdownBehaviour drop in dropdownList)
+        {
+            drop.UpdateInventory();
+        }
 
+        Debug.LogWarning("✔️✔️✔️✔️✔️ LoginButton(137) - Character Changed Successfully - Running gameManager.MaximumVerification().");
+        gameManager.MaximumVerification();
+    }
 
 
     private GameObject FindActiveCharacter()
@@ -367,7 +151,6 @@ public class LoginButton : MonoBehaviour
                 }
             }
         }
-
         return null;
     }
 
@@ -383,7 +166,6 @@ public class LoginButton : MonoBehaviour
                 }
             }
         }
-
         return null;
     }
 }

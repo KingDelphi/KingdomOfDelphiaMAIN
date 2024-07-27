@@ -1,444 +1,9 @@
-// using UnityEngine;
-// using UnityEngine.SceneManagement;
-// using Cinemachine;
-// using System.Collections.Generic;
-// using Fusion;
-// using System;
-// using System.Linq;
-
-// public class GameManager : MonoBehaviour
-// {   
-//     public GameObject playerPrefab; // Prefab del jugador
-//     public Vector3 spawnPosition; // Posición de spawn
-
-//     public NetworkRunner runner; // Añade esta línea para referenciar el NetworkRunner
-
-    
-//     public PlayerInventory playerInventory;
-//     public GameObject inventoryCanvas;
-    
-//     public GameObject slot;
-//     public GearMenu gearMenu;
-
-//     public NetworkObject playerNetworkObject;
-//     public static event Action<NetworkObject> OnPlayerSpawned;
-
-//     public GameObject existingPlayer;
-//     public NetworkObject existingNetworkObject;
-
-
-    
-
-
-//     private static GameManager _instance;
-//     public static GameManager Instance 
-//     { 
-//         get
-//         {
-//             if(_instance == null)
-//             {
-//                 _instance = GameObject.FindWithTag("Game Manager").GetComponent<GameManager>();
-//                 _instance.Initiate();
-//             }
-//             return _instance;
-//         }    
-//         private set
-//         {
-//             _instance = value;
-//         } 
-//     }
-
-
-//     private CinemachineVirtualCamera virtualCamera;
-//     private PolygonCollider2D confinerCollider;
-//     public Player player;
-//     private List<GearItem> savedPlayerInventory;
-//     private int savedPlayerHealth;
-//     private Vector3 savedEntryPosition;
-
-//     public GameObject UI;
-
-//     public List<GameObject> characters;
-//     private Dictionary<string, GameObject> characterInstances = new Dictionary<string, GameObject>();
-
-
-//     public List<Client> clients = new List<Client>();
-
-//     public List<UnityEngine.Object> scenes;
-
-//     public Transform clientHolder;
-//     public Transform characterHolder;
-
-//     public void SaveGameState()
-//     {
-//         if (SaveLoadSystem.Instance != null)
-//         {
-//             SaveLoadSystem.Instance.SaveGame();
-//         }
-//         else
-//         {
-//             Debug.LogWarning("SaveLoadSystem not found. Unable to save game.");
-//         }
-//     }
-
-//     public void LoadGameState()
-//     {
-//         if (SaveLoadSystem.Instance != null)
-//         {
-//             SaveLoadSystem.Instance.LoadGame();
-//         }
-//         else
-//         {
-//             Debug.LogWarning("SaveLoadSystem not found. Unable to load game.");
-//         }
-//     }
-
-//     private void OnApplicationQuit()
-//     {
-//         SaveGameState();
-//     }
-
-//     private void Awake()
-//     {   
-//         if (Instance == null)
-//         {
-//             Instance = this;
-//             Initiate();
-//         }
-
-//         // Crear instancias de los prefabs y mantenerlas desactivadas
-//         foreach (var prefab in characters)
-//         {
-//             GameObject instance = Instantiate(prefab);
-//             instance.SetActive(false);
-
-// // Establecer el CharacterHolder como padre de los clones
-//                 if (characterHolder != null)
-//                 {
-//                     instance.transform.SetParent(characterHolder, false);
-//                 }
-//                 else
-//                 {
-//                     Debug.LogWarning("CharacterHolder is not assigned.");
-//                 }
-
-//             DontDestroyOnLoad(instance);
-//             characterInstances.Add(prefab.name, instance);
-//         }
-//     }
-
-//     public GameObject GetCharacterInstance(string characterName)
-//     {
-//         if (characterInstances.ContainsKey(characterName))
-//         {
-//             return characterInstances[characterName];
-//         }
-//         return null;
-//     }
-
-//     public void PlayerInventoryInitialized(PlayerInventory inventory)
-//     {
-//         playerInventory = inventory;
-//         if (playerInventory == null)
-//         {
-//             Debug.LogError("PlayerInventory component not found.");
-//         }
-//         else
-//         {
-//             Debug.Log("GameManager(148) Inventario del jugador inicializado con playerInventory = inventory: " + inventory); // OJOLOCUAZ se puso debug para saber cual es el inventory.
-//         }
-//     }
-
-//     private void Initiate()
-//     {
-//         DontDestroyOnLoad(gameObject);
-//         DontDestroyOnLoad(UI);
-//         DontDestroyOnLoad(clientHolder);
-//         DontDestroyOnLoad(characterHolder);
-//     }
-
-//     private void Update() {
-//            if(Input.GetKeyDown(KeyCode.K))
-//            {
-//                 SaveGameState();
-//            }
-
-//            if(Input.GetKeyDown(KeyCode.L))
-//            {
-//                 LoadGameState();
-//            }
-           
-//            if(Input.GetKeyDown(KeyCode.I)) {
-//             playerInventory = FindObjectOfType<PlayerInventory>();
-//             int newIndex = new int();
-//             foreach(GearItem item in playerInventory.inventory) {
-//             if(gearMenu.equippedGear[0].itemName == item.itemName) {    
-//                 playerInventory.inventory.RemoveAt(newIndex);
-//                 break;
-//             }
-//             newIndex += 1;
-//             }
-
-//             if(inventoryCanvas.activeInHierarchy) {
-//                 foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
-//                         Destroy(t.gameObject);
-//                     }
-//               inventoryCanvas.SetActive(false);
-//               } else {
-//               inventoryCanvas.SetActive(true);
-//               foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
-//                         Destroy(t.gameObject);
-//                     }
-//               playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
-//               }
-//             }
-//     }
-            
-
-//     public void ChangeScene(int targetSceneIndex, Vector3 entryPosition)
-//     {
-//         savedEntryPosition = entryPosition;
-        
-//         SceneManager.LoadScene(targetSceneIndex);
-        
-//     }
-
-//     public void ChangeScene(int targetSceneIndex)
-//     {
-//         ChangeScene(targetSceneIndex, Vector3.zero);
-//     }
-
-//     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-//     {        
-//         SetupSceneForPlayer(player, runner);
-
-//         player.RpcUpdatePlayers();
-//     }
-
-//     public void SetupSceneForPlayer(Player player, NetworkRunner runner)
-// {
-//     Debug.Log($"Setting up scene for player. Player: {player}, Runner: {runner}");
-
-//     Debug.Log("NEW (3rd Iteration)GameManager(222) BEFORE making this assignment this.player = player. Variables: this.player: " + this.player + " player: " + player); // OJOLOCUAZ...Vamos a ver que sale en las variables
-//     this.player = player; // POSIBLE ERROR, DESCOMENTAR SI SALE ERROR.
-//     Debug.Log("NEW (3rd Iteration)GameManager(224) AFTER making this assignment this.player = player. Variables: this.player: " + this.player + " player: " + player); // OJOLOCUAZ...Vamos a ver que sale en las variables
-    
-//     Debug.Log("NEW (3rd Iteration)GameManager(226) BEFORE making this assignment this.playerPrefab = player.gameObject. Variables: this.playerPrefab: " + this.playerPrefab + " player.gameObject: " + player.gameObject); // OJOLOCUAZ...Vamos a ver que sale en las variables
-//     this.playerPrefab = player.gameObject; //POSIBLE SOLUCION
-//     Debug.Log("NEW (3rd Iteration)GameManager(228) AFTER making this assignment this.playerPrefab = player.gameObject. Variables: this.playerPrefab: " + this.playerPrefab + " player.gameObject: " + player.gameObject); // OJOLOCUAZ...Vamos a ver que sale en las variables    
-
-//     playerNetworkObject = player.GetComponent<NetworkObject>();
-//     Debug.Log("Assigned playerNetworkObject: " + playerNetworkObject);
-//     Debug.Log("playerNetworkObject.InputAuthority: " + playerNetworkObject.InputAuthority);
-
-
-//     Debug.Log("NEW (3rd Iteration)GameManager(230) BEFORE checking if (runner == null) Variables: runner: " + runner); // OJOLOCUAZ...Vamos a ver que sale en las variables
-//             if (runner == null)
-//             {
-//                 runner = FindObjectOfType<NetworkRunner>();
-//                 Debug.Log("GameManager(234) Assigned runner = FindObjectOfType<NetworkRunner>(); runner: " + runner);
-//             }
-
-//             if (runner == null)
-//             {
-//                 Debug.LogError("NetworkRunner is null.");
-//                 return;
-//             }
-
-//     Debug.Log("NEW (3rd Iteration)GameManager(243) BEFORE checking if (playerPrefab == null) Variables: playerPrefab: " + playerPrefab); // OJOLOCUAZ...Vamos a ver que sale en las variables
-//             if (playerPrefab == null)
-//             {
-//                 Debug.LogError("Player prefab is null.");
-//                 return;
-//             }
-
-//     Debug.Log("NEW (3rd Iteration)GameManager(250) BEFORE checking if (player == null) Variables: player: " + player); // OJOLOCUAZ...Vamos a ver que sale en las variables
-//             if (player == null)
-//             {
-//                 Debug.LogError("Player is null.");
-//                 return;
-//             }
-
-//             // Asegúrate de que player tiene NetworkObject y si no, agregarlo
-//             // Debug.Log("UPDATED To 3rd Iteration. GameManager(258) BEFORE Assigning playerNetworkObject = player.GetComponent<NetworkObject>(). VARIABLES: playerNetworkObject: " + playerNetworkObject + " player.GetComponent<NetworkObject>(): " + player.GetComponent<NetworkObject>()); // OJOLOCUAZ - Se agrego un debug AFTER
-//             // playerNetworkObject = player.GetComponent<NetworkObject>();
-//             // Debug.Log("UPDATED To 3rd Iteration. GameManager(260) AFTER Assigning playerNetworkObject = player.GetComponent<NetworkObject>(). VARIABLES: playerNetworkObject: " + playerNetworkObject + " player.GetComponent<NetworkObject>(): " + player.GetComponent<NetworkObject>()); // OJOLOCUAZ - Se agrego un debug AFTER
-            
-//     Debug.Log("NEW (3rd Iteration)GameManager(262) BEFORE checking if (playerNetworkObject == null) Variables: playerNetworkObject: " + playerNetworkObject); // OJOLOCUAZ...Vamos a ver que sale en las variables        
-//             if (playerNetworkObject == null)
-//             {
-//                 Debug.Log("UPDATED To 3rd Iteration. GameManager(263) Assigning playerNetworkObject = player.gameObject.AddComponent<NetworkObject>(). VARIABLES: playerNetworkObject: " + playerNetworkObject + " player.gameObject.AddComponent<NetworkObject>(): " + player.gameObject.AddComponent<NetworkObject>()); // OJOLOCO DEBUG - 2da Iteracion
-//                 playerNetworkObject = player.gameObject.AddComponent<NetworkObject>();
-//             }
-
-//             if (playerNetworkObject == null)
-//             {
-//                 Debug.LogError("Player NetworkObject is null.");
-//                 return;
-//             }
-//             else
-//             {
-//                 runner.SetPlayerObject(runner.LocalPlayer, playerNetworkObject);
-//                 Debug.Log($"Player object set for runner. LocalPlayer: {runner.LocalPlayer}, PlayerObject: {playerNetworkObject}");
-//             }
-
-//     Debug.Log("NEW (3rd Iteration)GameManager(279) BEFORE checking if (playerNetworkObject.InputAuthority == null) Variables: playerNetworkObject.InputAuthority: " + playerNetworkObject.InputAuthority); // OJOLOCUAZ...Vamos a ver que sale en las variables      
-//             if (playerNetworkObject.InputAuthority == null)
-//             {
-//                 Debug.LogError("InputAuthority is null.");
-//                 return;
-//             }
-//             else
-//             {
-//                 Debug.Log("2ND ITERATION! GameManager(287) Checking variable playerNetworkObject.InputAuthority: " + playerNetworkObject.InputAuthority + " NOTE: Should be Player[0] or Character[Id:524290]."); // OJOLOCUAZ Updated a 3ra Iteracion - playerNetworkObject.InputAuthority = [Player:None], lo cual debe ser un PROBLEMA y talvez deberia ser [Player:0] o Character [Id:524290]
-//             }
-
-//     // Línea 233 - Asegúrate de que `player.character` puede almacenar un `NetworkObject` o usa un `GameObject`.
-// Debug.Log("NEW (3rd Iteration)GameManager(291) BEFORE making this assignment existingPlayer = FindInactiveObjectByName(playerPrefab.name). Variables: existingPlayer: " + existingPlayer + " FindInactiveObjectByName(playerPrefab.name): " + FindInactiveObjectByName(playerPrefab.name)); // OJOLOCUAZ...Vamos a ver que sale en las variables
-// existingPlayer = FindInactiveObjectByName(playerPrefab.name);
-// Debug.Log("NEW (3rd Iteration)GameManager(293) AFTER making this assignment existingPlayer = FindInactiveObjectByName(playerPrefab.name). Variables: existingPlayer: " + existingPlayer + " FindInactiveObjectByName(playerPrefab.name): " + FindInactiveObjectByName(playerPrefab.name)); // OJOLOCUAZ...Vamos a ver que sale en las variables
-// Debug.Log("GameManager(294) BEFORE CHECKING if(existingPlayer == null). VARIABLES: runner: " + runner + " playerPrefab: " + playerPrefab + " player: " + player + " assigned playerNetworkObject = player.GetComponent<NetworkObject>(): " + playerNetworkObject + " playerNetworkObject.InputAuthority: " + playerNetworkObject.InputAuthority + " assigned existingPlayer = playerPrefab.name: " + existingPlayer);
-// if(existingPlayer == null) // OJOLOCUAZ DE LA 2da Iteracion existingPlayer == null (FALSE), se brinco esta parte.
-// {
-//     Debug.Log("NEW 3rd Iteration!GameManager(297) if(existingPlayer == null) = TRUE");
-//     NetworkObject playerNetworkObject = runner.Spawn(playerPrefab, spawnPosition, Quaternion.identity, runner.LocalPlayer);
-//     Debug.Log("GAMEMANAGER: Nuevo jugador spawneado: " + playerNetworkObject);
-//     OnPlayerSpawned?.Invoke(playerNetworkObject);
-// }
-// else // OJOLOCUAZ DE LA 2da Iteracion existingPlayer == null (FALSE), se llamo esta parte.
-// {
-//     Debug.Log("NEW 3rd Iteration!GameManager(304) if(existingPlayer == null) = FALSE");
-//     Debug.Log("GameManager(305) Since (existingPlayer == null) = false, variable existingPlayer: " + existingPlayer + " ya existe, no se ha creado un nuevo prefab, sino que SE VA A ACTIVAR el Clone existingPlayer: " + existingPlayer);
-//     existingPlayer.SetActive(true);
-//     Debug.Log("GameManager(307) No se ha creado un nuevo prefab, sino que SE HA ACTIVADO el Clone existingPlayer con existingPlayer.SetActive(true), variable existingPlayer: " + existingPlayer + " Ahora se creara el Network Object existingNetworkObject con Network Object existingNetworkObject = existingPlayer.GetComponent<NetworkObject>()");
-//     NetworkObject existingNetworkObject = existingPlayer.GetComponent<NetworkObject>();
-//     Debug.Log("GameManager(309) existingPlayer: " + existingPlayer + " existe y se ha activado. La variable NetworkObject existingNetworkObject: " + existingNetworkObject + " se ha creado con el valor existingPlayer.GetComponent<NetworkObject>(): " + existingPlayer.GetComponent<NetworkObject>() + " Se llamara a la Accion OnPlayerSpawned?.Invoke(existingNetworkObject)");
-//     OnPlayerSpawned?.Invoke(existingNetworkObject);
-//     Debug.Log("GameManager(311). Debug.Log despues de que se llamo OnPlayerSpawned?.Invoke(existingNetworkObject) con el valor existingNetworkObject: " + existingNetworkObject);
-
-// }
-
-// Debug.Log("2ND ITERATION! GameManager(315) Just BEFORE assigning player.character = playerNetworkObject.gameObject. VARIABLES: player.character: " + player.character + " playerNetworkObject.gameObject: " + playerNetworkObject.gameObject); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-// player.character = playerNetworkObject.gameObject;
-// Debug.Log("2ND ITERATION! GameManager(317) Just AFTER assigning player.character = playerNetworkObject.gameObject. VARIABLES: player.character: " + player.character + " playerNetworkObject.gameObject: " + playerNetworkObject.gameObject); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-
-// // Obtener el `GameObject` del `NetworkObject`.
-// Debug.Log("2ND ITERATION! GameManager(320) Just BEFORE assigning GameObject characterGameObject = player.character. VARIABLES: NEW GAMEOBJECT characterGameObject, & player.character: " + player.character); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-// GameObject characterGameObject = player.character;
-// Debug.Log("2ND ITERATION! GameManager(322) Just AFTER assigning GameObject characterGameObject = player.character. VARIABLES: characterGameObject: " + characterGameObject + " player.character: " + player.character); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-
-// // Actualizar la referencia del GameManager al nuevo personaje
-// Debug.Log("2ND ITERATION! GameManager(325) Just BEFORE assigning this.player = characterGameObject.GetComponent<Player>(). VARIABLES: this.player: " + this.player + " characterGameObject.GetComponent<Player>(): " + characterGameObject.GetComponent<Player>()); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-// this.player = characterGameObject.GetComponent<Player>();
-// Debug.Log("2ND ITERATION! GameManager(327) Just AFTER assigning this.player = characterGameObject.GetComponent<Player>(). VARIABLES: this.player: " + this.player + " characterGameObject.GetComponent<Player>(): " + characterGameObject.GetComponent<Player>()); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-
-// // Asegúrate de que `player.characterController` esté definido o accede al `CharacterController` desde el `GameObject` del `NetworkObject`.
-// Debug.Log("2ND ITERATION! GameManager(330) Just BEFORE assigning CharacterController characterController = characterGameObject.GetComponent<CharacterController>(). VARIABLES: NEW CHARACTERCONTROLLER characterController, & characterGameObject.GetComponent<CharacterController>(): " + characterGameObject.GetComponent<CharacterController>()); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-// CharacterController characterController = characterGameObject.GetComponent<CharacterController>();
-// Debug.Log("2ND ITERATION! GameManager(332) Just AFTER assigning CharacterController characterController = characterGameObject.GetComponent<CharacterController>(). VARIABLES: characterController: " + characterController + " characterGameObject.GetComponent<CharacterController>(): " + characterGameObject.GetComponent<CharacterController>()); // OJOLOCO NUEVO DEBUG - 2da Iteracion
-// if (characterController != null)
-//     {
-//         characterController.Initiate();
-//     }
-//     else
-//     {
-//         Debug.LogError("CharacterController not found on the character GameObject.");
-//     }
-
-//     // // Actualizar la cámara para seguir al nuevo personaje
-//     virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
-//     if (virtualCamera != null)
-//     {
-//         virtualCamera.Follow = characterGameObject.transform;
-//     }
-//     else
-//     {
-//         Debug.LogError("CinemachineVirtualCamera not found.");
-//     }
-
-//     GameObject confinerObject = GameObject.Find("Map");
-//     if (confinerObject != null)
-//     {
-//         confinerCollider = confinerObject.GetComponent<PolygonCollider2D>();
-//     }
-
-//     if (savedEntryPosition != Vector3.zero)
-//     {
-//         player.transform.position = savedEntryPosition;
-//     }
-// }
-
-
-//     public PlayerInventory GetPlayerInventory()
-//     {
-//         return playerInventory;
-//     }
-
-//     public void ActivatePlayersInScene()
-//     {
-//         Debug.Log("Activating Players in Scene.");
-//         foreach(Client client in clients)
-//         {
-//             Player player = client.activePlayer;
-//             if(player != null)
-//             {
-//                 bool shouldBeActive = client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex;
-//                 player.gameObject.SetActive(shouldBeActive);
-//                 Debug.Log($"Player {player.name} active state set to {shouldBeActive}");
-//             }       
-//         }
-//     }
-
-//     public static string GetScene(int index)
-//     {
-//         return SceneUtility.GetScenePathByBuildIndex(index);
-//     }
-
-//     private GameObject FindInactiveObjectByName(string name)
-//     {
-//         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
-//         return allObjects.FirstOrDefault(obj => obj.name == name && obj.hideFlags == HideFlags.None);
-//     }
-
-//     #if !UNITY_EDITOR
-//             static string myLog = "";
-//             private string output;
-//             private string stack;
-
-//             void OnEnable()
-//             {
-//                 Application.logMessageReceivedThreaded += Log;
-//             }
-
-//             void OnDisable()
-//             {
-//                 Application.logMessageReceivedThreaded -= Log;
-//             }
-
-//             public void Log(string logString, string stackTrace, UnityEngine.LogType type)
-//             {
-//                 output = logString;
-//                 stack = stackTrace;
-//                 myLog = output + "\n" + stack + "\n" + myLog;
-//                 if (myLog.Length > 5000)
-//                 {
-//                 myLog = myLog.Substring(0, 4000);
-//                 }
-//             }
-//             void OnGUI()
-//             {
-//                 {
-//                     myLog = GUI.TextArea(new Rect(30, 30, Screen.width / 2, Screen.height - 30), myLog);
-//                 }
-//             }
-//     #endif
-// }
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 using System.Collections.Generic;
 using Fusion;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -470,25 +35,18 @@ public class GameManager : MonoBehaviour
 
     private CinemachineVirtualCamera virtualCamera;
     private PolygonCollider2D confinerCollider;
-
     public Player player;
     private List<GearItem> savedPlayerInventory;
     private int savedPlayerHealth;
     private Vector3 savedEntryPosition;
-
     public GameObject UI;
-
     public List<GameObject> characters;
-
-    private Dictionary<string, GameObject> characterInstances = new Dictionary<string, GameObject>();
-
     public List<Client> clients = new List<Client>();
-
     public List<Object> scenes;
-
     public Transform clientHolder;
     public Transform characterHolder;
     public CharacterController characterController;
+    public Client client;
 
     private void Awake()
     {   
@@ -499,18 +57,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public GameObject GetCharacterInstance(string characterName)
+    public void SetClient(Client newClient)
     {
-        if (characterInstances.ContainsKey(characterName))
-        {
-            Debug.Log($"Character instance found for {characterName}");
-            return characterInstances[characterName];
-        }
-        else
-        {
-            Debug.LogError($"Character instance not found for {characterName}");
-            return null;
-        }
+        Debug.Log("GameManager(62).SetClient(Client newClient) called. VARIABLES: newClient: " + newClient);
+        client = newClient;
+        Debug.Log("GameManager(64) received Client: " + client.gameObject.name);
     }
 
     public void PlayerInventoryInitialized(PlayerInventory inventory)
@@ -519,10 +70,6 @@ public class GameManager : MonoBehaviour
         if (playerInventory == null)
         {
             Debug.LogError("PlayerInventory component not found.");
-        }
-        else
-        {
-            // Debug.Log("Inventario del jugador inicializado con playerInventory = inventory: " + inventory);
         }
     }
 
@@ -561,7 +108,6 @@ public class GameManager : MonoBehaviour
             }
     }
             
-
     public void ChangeScene(int targetSceneIndex, Vector3 entryPosition)
     {
         savedEntryPosition = entryPosition;
@@ -575,9 +121,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        Debug.Log("OnSceneLoaded");
-        
+    {        
         SetupSceneForPlayer(player);
         Debug.Log("Before RPC");
         player.RpcUpdatePlayers();
@@ -585,11 +129,14 @@ public class GameManager : MonoBehaviour
 
     public void SetupSceneForPlayer(Player _player)
     {
+        Debug.Log("GameManager(132).SetupSceneForPlayer(_player) called. _player: " + _player);
+        Debug.Log("GameManager(133) Before assigning player = _player. VARIABLES: player: " + player + ", _player: " + _player);
         player = _player;
+        Debug.Log("GameManager(135) After assigning player = _player. VARIABLES (should be same): player: " + player + ", _player: " + _player);
         
         if (player == null)
         {
-            Debug.Log("Player or PlayerInventory not found in the scene.");
+            Debug.Log("Player is null.");
             return;
         }
 
@@ -622,18 +169,6 @@ public class GameManager : MonoBehaviour
         }
 
         confinerCollider = confinerObject.GetComponent<PolygonCollider2D>();
-        if (confinerCollider == null)
-        {
-            // Debug.Log("PolygonCollider2D not found on the object with Confiner.");
-        }
-
-        if (player == null)
-        {
-            Debug.Log("Character not found in the scene.");
-            return;
-        }
-
-        // Debug.Log("Llegamos a donde la transform position cambia a savedEntryPosition de manera exitosa.");
     }
 
     public PlayerInventory GetPlayerInventory()
@@ -643,21 +178,130 @@ public class GameManager : MonoBehaviour
 
     public void ActivatePlayersInScene()
     {
-        Debug.Log("Activating Players in Scene.");
+        Debug.Log("GameManager(181).ActivatePlayersInScene() called.");
         foreach(Client client in clients)
         {
             Player player = client.activePlayer;
+            Debug.Log("GameManager(185) After assigning Player player = client.activePlayer. VARIABLES: player: " + player + ", (should be same as player) client.activePlayer: " + client.activePlayer);
             if(player != null)
             {
+                Debug.Log("GameManager(188) Before running player.gameObject.SetActive(client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex). VARIABLES (SHOULD BE THE SAME): SceneManager.GetActiveScene().buildIndex: " + SceneManager.GetActiveScene().buildIndex + ", client.activePlayerSceneIndex: " + client.activePlayerSceneIndex);
                 player.gameObject.SetActive(client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex);
-            }
-               
+                
+                // Debug.LogWarning("✔️✔️✔️✔️✔️ GameManager(191) - Game Initialized Successfully - Running MaximumVerification().");
+                // MaximumVerification();
+            }   
         }
     }
 
     public static string GetScene(int index)
     {
         return SceneUtility.GetScenePathByBuildIndex(index);
+    }
+
+    public void GameManagerVerification()
+    {
+        Debug.Log($"GameManager Verification: \n" +
+                  //$"_player: {_player}\n" + 
+                  $"player: {player}\n" +
+                  //$"activePlayer: {activePlayer}\n" +
+                  $"SceneManager.GetActiveScene().buildIndex: {SceneManager.GetActiveScene().buildIndex}\n" +
+                  $"client.activePlayerSceneIndex: {client.activePlayerSceneIndex}");
+        Debug.Log("GameManager Verification: ✔️ Success");
+    }
+
+    public void MaximumVerification()
+    {
+        Debug.Log("GameManager(215).MaximumVerification() called.");
+        // Encuentra y verifica el ClientSpawner correcto
+        var clientSpawners = FindObjectsOfType<ClientSpawner>();
+        ClientSpawner correctClientSpawner = null;
+        foreach (var cs in clientSpawners)
+        {
+            var networkRunner = cs.GetComponent<NetworkRunner>();
+            if (networkRunner != null)
+            {
+                correctClientSpawner = cs;
+                Debug.Log($"GameManager(225) - ClientSpawner '{cs.gameObject.name}' found with NetworkRunner.");
+                cs.ClientSpawnerVerification();
+                break;
+            }
+            else
+            {
+                Debug.LogWarning($"GameManager(231) - ClientSpawner '{cs.gameObject.name}' does not have a NetworkRunner.");
+            }
+        }
+
+        // Encuentra y verifica el Client correcto
+        var clients = FindObjectsOfType<Client>();
+        Client correctClient = null;
+        foreach (var c in clients)
+        {
+            var networkObject = c.GetComponent<NetworkObject>();
+            if (networkObject == null)
+            {
+                Debug.LogWarning($"GameManager(243) - Client '{c.gameObject.name}' does not have a NetworkObject component.");
+            }
+            else if (!networkObject.HasStateAuthority)
+            {
+                Debug.LogWarning($"GameManager(247) - Client '{c.gameObject.name}' does not have StateAuthority.");
+            }
+            else
+            {
+                correctClient = c;
+                Debug.Log($"GameManager(252) - Client '{c.gameObject.name}' found with StateAuthority.");
+                c.ClientVerification();
+
+                var clientNetworkObjectId = networkObject.Id;
+                Debug.Log($"GameManager(256) - Client NetworkObject.Id: {clientNetworkObjectId}");
+
+                // Verifica el Player
+                if (player != null)
+                {
+                    Debug.Log($"GameManager(261) - Player '{player.gameObject.name}' found with matching NetworkObject.Id: {clientNetworkObjectId}");
+                    player.PlayerVerification();
+                }
+                else
+                {
+                    Debug.LogWarning($"GameManager(266) - Player with matching NetworkObject.Id {clientNetworkObjectId} not found. PlayerVerification() not done.");
+                }
+
+                // Verifica el CharacterController correcto
+                if (characterController != null)
+                {
+                    Debug.Log($"GameManager(272) - CharacterController '{characterController.gameObject.name}' found with matching Player NetworkObject.Id: {clientNetworkObjectId}");
+                    characterController.CharacterControllerVerification();
+                }
+                else
+                {
+                    Debug.LogWarning($"GameManager(277) - CharacterController with matching Player NetworkObject.Id {clientNetworkObjectId} not found. CharacterControllerVerification() not done.");
+                }
+                break;
+            }
+        }
+
+        if (correctClient == null)
+        {
+            Debug.LogWarning("GameManager(285) - No Client with StateAuthority found.");
+        }
+
+        // Llama a la verificación del propio GameManager
+        GameManagerVerification();
+        AuthorityHelperVerification();
+        Debug.LogWarning("✔️✔️✔️✔️✔️ GameManager(291).MaximumVerification() Finished.");
+    }
+
+    public void AuthorityHelperVerification()
+    {
+        Debug.Log("GameManager(296).AuthorityHelperVerification() called.");
+
+        var allNetworkObjectsWithAuthority = AuthorityHelper.FindAllNetworkObjectsWithStateAuthority();
+        foreach (var networkObject in allNetworkObjectsWithAuthority)
+        {
+            Debug.Log($"NetworkObject with StateAuthority: {networkObject.name}, Id: {networkObject.Id}");
+        }
+
+        Debug.Log("AuthorityHelper Verification: ✔️ Success");
     }
 
     #if !UNITY_EDITOR

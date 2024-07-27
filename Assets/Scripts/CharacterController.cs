@@ -31,7 +31,10 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
 
     public void Initiate()
     {
+        Debug.Log("CharacterController(34).Initiate() called.");
+        Debug.Log("CharacterController(35) Before assigning player = GetComponent<Player>(). VARIABLES: player: " + player);
         player = GetComponent<Player>();
+        Debug.Log("CharacterController(37) After assigning player = GetComponent<Player>(). VARIABLES: player: " + player);
         
         rb = GetComponent<Rigidbody2D>();
         if (hasLastPosition)
@@ -60,9 +63,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     }
 
     private void Update()
-    {
-        if (!player.HasStateAuthority) return;
-        
+    {   
         if (player == null)
         {
             player = GetComponent<Player>();
@@ -131,6 +132,13 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     {
         Vector2 moveVector = direction.normalized * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + moveVector);
+    }
+
+    public void CharacterControllerVerification()
+    {
+        Debug.Log($"CharacterController Verification: \n" +
+                  $"player: {player}");
+        Debug.Log("CharacterController Verification: ✔️ Success");
     }
 
     // Comienza Implementación de ISaveable en el script CharacterController
