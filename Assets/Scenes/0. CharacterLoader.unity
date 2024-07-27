@@ -33912,6 +33912,10 @@ MonoBehaviour:
   - {fileID: 102900000, guid: a9ee3044d7e224669b0c0d5c49d98fca, type: 3}
   - {fileID: 102900000, guid: c0f3aad930cba4191b2dcda9a07bebd2, type: 3}
   - {fileID: 102900000, guid: b8ab936aad4334c6b97b319fca5ce17f, type: 3}
+  - {fileID: 102900000, guid: f77eacf1a59c94cf28bff1bf998fc3c4, type: 3}
+  - {fileID: 102900000, guid: c519e4638447846aebce3a9a4b8de083, type: 3}
+  - {fileID: 102900000, guid: 535cb72c0fd794ed7b1009022daac01a, type: 3}
+  - {fileID: 102900000, guid: 1c3fd84a4b6014e598f459bcefaaecd5, type: 3}
   clientHolder: {fileID: 2462236}
   characterHolder: {fileID: 1195019953}
   characterController: {fileID: 0}
