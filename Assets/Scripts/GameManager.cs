@@ -182,14 +182,9 @@ public class GameManager : MonoBehaviour
         foreach(Client client in clients)
         {
             Player player = client.activePlayer;
-            Debug.Log("GameManager(185) After assigning Player player = client.activePlayer. VARIABLES: player: " + player + ", (should be same as player) client.activePlayer: " + client.activePlayer);
             if(player != null)
             {
-                Debug.Log("GameManager(188) Before running player.gameObject.SetActive(client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex). VARIABLES (SHOULD BE THE SAME): SceneManager.GetActiveScene().buildIndex: " + SceneManager.GetActiveScene().buildIndex + ", client.activePlayerSceneIndex: " + client.activePlayerSceneIndex);
                 player.gameObject.SetActive(client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex);
-                
-                // Debug.LogWarning("✔️✔️✔️✔️✔️ GameManager(191) - Game Initialized Successfully - Running MaximumVerification().");
-                // MaximumVerification();
             }   
         }
     }

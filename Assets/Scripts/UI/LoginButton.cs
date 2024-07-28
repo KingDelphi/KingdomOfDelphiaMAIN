@@ -70,7 +70,7 @@ public class LoginButton : MonoBehaviour
 
         // Cambia el prefab del jugador
         client.ChangePlayerPrefab(characterName);
-        Debug.LogWarning("LoginButton(73) ESPARRAGO SALTARIN - After client.ChangePlayerPrefab(characterName);");
+        Debug.LogWarning("LoginButton(73) After client.ChangePlayerPrefab(characterName);");
 
         // Obtén la ID del cliente actual
         string clientId = client.GetComponent<NetworkObject>().Id.ToString();
@@ -90,8 +90,8 @@ public class LoginButton : MonoBehaviour
         selectedCharacter.SetActive(true);
         Debug.Log($"LoginButton(91) (Character) selectedCharacter: {selectedCharacter} activated: {selectedCharacter.activeSelf}");
 
-        Debug.Log("ESPARRAGO RADIOACTIVO - LoginButton(93) Before calling selectedCharacter.GetComponent<Player>().RpcUpdatePlayers()");
-        selectedCharacter.GetComponent<Player>().RpcUpdatePlayers();
+        // Debug.Log("ESPARRAGO RADIOACTIVO - LoginButton(93) Before calling selectedCharacter.GetComponent<Player>().RpcUpdatePlayers()");
+        // selectedCharacter.GetComponent<Player>().RpcUpdatePlayers();
 
         Player selectedPlayerComponent = selectedCharacter.GetComponent<Player>();
         if (selectedPlayerComponent == null)
@@ -99,6 +99,8 @@ public class LoginButton : MonoBehaviour
             Debug.LogError($"Player component not found on {selectedCharacter}");
             return;
         }
+
+        Debug.Log("LoginButton(103) ESPARRAGO DEL MOMENTO - AQUI VAMOS...");
 
         gameManager.player = selectedPlayerComponent;
 
@@ -134,6 +136,9 @@ public class LoginButton : MonoBehaviour
             drop.UpdateInventory();
         }
 
+        Debug.Log("ESPARRAGO RADIOACTIVO - LoginButton(139) Before calling selectedPlayerComponent.GetComponent<Player>().RpcUpdatePlayers()");
+        selectedPlayerComponent.RpcUpdatePlayers();
+        
         Debug.LogWarning("✔️✔️✔️✔️✔️ LoginButton(137) - Character Changed Successfully - Running gameManager.MaximumVerification().");
         gameManager.MaximumVerification();
     }

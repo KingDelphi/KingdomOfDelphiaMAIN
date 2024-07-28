@@ -436,11 +436,11 @@ public class Player : NetworkBehaviour
         gear.OnEquipmentChanged += CalculatePlayerStats;
     }
 
-    public void SetupOtherPlayer()
-    {
-        GetComponent<CharacterController>().Initiate();
-        gameObject.tag = "Untagged";
-    }
+    // public void SetupOtherPlayer()
+    // {
+    //     GetComponent<CharacterController>().Initiate();
+    //     gameObject.tag = "Untagged";
+    // }
 
     public override void Spawned()
     {
@@ -449,27 +449,18 @@ public class Player : NetworkBehaviour
         DontDestroyOnLoad(gameObject);
         transform.SetParent(GameManager.Instance.characterHolder);
         
-        // Usar el prefabName y clientId para el nombre del objeto
-        // PrefabInfo prefabInfo = GetComponent<PrefabInfo>();
-        // if (prefabInfo != null)
-        // {
-        //     gameObject.name = $"{prefabInfo.prefabName} {clientId.ToString()}";
-        // }
-        // else
-        // {
-        //     gameObject.name = $"Player {clientId.ToString()}";
-        // }
         Debug.Log("Player(460) gameObject.name:" + gameObject.name + " Spawned. ");
 
         StartCoroutine(FindClient());
-        
-        // Debug.LogWarning("✔️✔️✔️✔️✔️ Player(466) - Game Initialized Successfully - Running GameManager.Instance.MaximumVerification().");
-        // GameManager.Instance.MaximumVerification();
     }
 
     IEnumerator FindClient()
     {
-        Debug.Log("Player(467).FindClient() called.");
+        if (GetComponent<NetworkObject>().HasStateAuthority)
+        {
+            Debug.Log("Player(461).FindClient() called.");
+        }
+
         while (true)
         {
             foreach (Client c in GameManager.Instance.clients)
@@ -489,7 +480,11 @@ public class Player : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void RpcUpdatePlayers()
     {
-        Debug.Log("Player(487).RpcUpdatePlayers() called.");
+        if (GetComponent<NetworkObject>().HasStateAuthority)
+        {
+            Debug.Log("Player(485).RpcUpdatePlayers() called.");
+        }
+        
         GameManager.Instance.ActivatePlayersInScene();
     }
 

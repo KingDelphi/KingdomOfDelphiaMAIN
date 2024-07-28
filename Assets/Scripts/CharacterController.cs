@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Fusion;
 
 public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
 {
@@ -30,12 +31,14 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     public Player player;
 
     public void Initiate()
-    {
-        Debug.Log("CharacterController(34).Initiate() called.");
-        Debug.Log("CharacterController(35) Before assigning player = GetComponent<Player>(). VARIABLES: player: " + player);
+    {        
         player = GetComponent<Player>();
-        Debug.Log("CharacterController(37) After assigning player = GetComponent<Player>(). VARIABLES: player: " + player);
         
+        if (player.GetComponent<NetworkObject>().HasStateAuthority)
+        {
+            Debug.Log("CharacterController(38).Initiate() called.");
+        }
+
         rb = GetComponent<Rigidbody2D>();
         if (hasLastPosition)
         {
@@ -72,12 +75,6 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
                 Debug.LogError("Player component not found on CharacterController.");
                 return;
             }
-        }
-
-        if (!player.HasStateAuthority)
-        {
-            Debug.LogError("CharacterController.Update() called. player: " + player + " does not have StateAuthority.");
-            return;
         }
         
         float horizontalInput = Input.GetAxis("Horizontal");
