@@ -1,4 +1,5 @@
 using UnityEngine;
+using Fusion;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -10,17 +11,22 @@ public class SceneTransition : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (GameManager.Instance != null)
+            // Verifica si el jugador que colisionó es el jugador local
+            if (collision.GetComponent<NetworkObject>().HasStateAuthority)
             {
-                // Obtener el nombre de la escena actual
-                collision.GetComponent<Player>().sceneIndex = targetSceneIndex;
-                collision.GetComponent<Player>().client.activePlayerSceneIndex = targetSceneIndex;
-                GameManager.Instance.ChangeScene(targetSceneIndex, entryPosition);
-            }
-            else
-            {
-                Debug.LogError("GameManager instance is missing.");
+                if (GameManager.Instance != null)
+                {
+                    // Obtener el nombre de la escena actual
+                    collision.GetComponent<Player>().sceneIndex = targetSceneIndex;
+                    collision.GetComponent<Player>().client.activePlayerSceneIndex = targetSceneIndex;
+                    GameManager.Instance.ChangeScene(targetSceneIndex, entryPosition);
+                }
+                else
+                {
+                    Debug.LogError("GameManager instance is missing.");
+                }
             }
         }
     }
+
 }

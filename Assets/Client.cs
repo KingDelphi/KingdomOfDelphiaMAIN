@@ -85,7 +85,7 @@ public class Client : NetworkBehaviour
             {                
                 Runner.Spawn(
                 playerPrefab, 
-                new Vector3(0, 1, 0), 
+                new Vector3(-48.5f, -7, 0), 
                 Quaternion.identity, 
                 Runner.LocalPlayer,
                 InitializeCharacterBeforeSpawn

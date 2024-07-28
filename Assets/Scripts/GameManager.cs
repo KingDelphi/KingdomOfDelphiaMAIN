@@ -122,17 +122,19 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {        
-        SetupSceneForPlayer(player);
-        Debug.Log("Before RPC");
-        player.RpcUpdatePlayers();
+        if (player.GetComponent<NetworkObject>().HasStateAuthority)
+        {
+            SetupSceneForPlayer(player);
+            player.RpcUpdatePlayers();
+        }
     }
 
     public void SetupSceneForPlayer(Player _player)
     {
         Debug.Log("GameManager(132).SetupSceneForPlayer(_player) called. _player: " + _player);
-        Debug.Log("GameManager(133) Before assigning player = _player. VARIABLES: player: " + player + ", _player: " + _player);
+        //Debug.Log("GameManager(133) Before assigning player = _player. VARIABLES: player: " + player + ", _player: " + _player);
         player = _player;
-        Debug.Log("GameManager(135) After assigning player = _player. VARIABLES (should be same): player: " + player + ", _player: " + _player);
+        //Debug.Log("GameManager(135) After assigning player = _player. VARIABLES (should be same): player: " + player + ", _player: " + _player);
         
         if (player == null)
         {
@@ -156,7 +158,7 @@ public class GameManager : MonoBehaviour
 
         if (savedEntryPosition != Vector3.zero)
         {
-            Debug.Log("Setting Position to " + savedEntryPosition);
+            //Debug.Log("Setting Position to " + savedEntryPosition);
             player.transform.position = savedEntryPosition;
         }
 
@@ -169,6 +171,8 @@ public class GameManager : MonoBehaviour
         }
 
         confinerCollider = confinerObject.GetComponent<PolygonCollider2D>();
+
+        playerInventory = player.GetComponent<PlayerInventory>();
     }
 
     public PlayerInventory GetPlayerInventory()
@@ -176,16 +180,22 @@ public class GameManager : MonoBehaviour
         return playerInventory;
     }
 
-    public void ActivatePlayersInScene()
+    public void DeactivatePlayersInScene()
     {
-        Debug.Log("GameManager(181).ActivatePlayersInScene() called.");
+        Debug.Log("GameManager(181).DeactivatePlayersInScene() called.");
         foreach(Client client in clients)
         {
-            Player player = client.activePlayer;
-            if(player != null)
+            Player playerToDestroy = client.activePlayer;
+
+            if (client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex)
             {
-                player.gameObject.SetActive(client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex);
-            }   
+                playerToDestroy.gameObject.SetActive(true);
+            }
+            else
+            {
+                playerToDestroy.gameObject.SetActive(false);
+                
+            }
         }
     }
 

@@ -98,7 +98,7 @@ public class Player : NetworkBehaviour
         currentMana = mana;
         manaBar.color = Color.blue;
 
-        GameManager.Instance.PlayerInventoryInitialized(inventory);
+        //GameManager.Instance.PlayerInventoryInitialized(inventory);
     }
 
     private void Update()
@@ -444,14 +444,14 @@ public class Player : NetworkBehaviour
 
     public override void Spawned()
     {
-        Debug.Log("Player(445).Spawned() called.");
+        Debug.Log("Player(445).Spawned() called. " + gameObject.name + " Spawned.");
         sceneIndex = 1;
         DontDestroyOnLoad(gameObject);
         transform.SetParent(GameManager.Instance.characterHolder);
-        
-        Debug.Log("Player(460) gameObject.name:" + gameObject.name + " Spawned. ");
 
         StartCoroutine(FindClient());
+        
+        RpcUpdatePlayers();
     }
 
     IEnumerator FindClient()
@@ -469,7 +469,7 @@ public class Player : NetworkBehaviour
                 {
                     client = c;
                     c.SetActivePlayer(this);
-                    RpcUpdatePlayers();
+                    //RpcUpdatePlayers();
                     yield break;
                 }
             }
@@ -485,7 +485,7 @@ public class Player : NetworkBehaviour
             Debug.Log("Player(485).RpcUpdatePlayers() called.");
         }
         
-        GameManager.Instance.ActivatePlayersInScene();
+        GameManager.Instance.DeactivatePlayersInScene();
     }
 
     public void PlayerVerification()

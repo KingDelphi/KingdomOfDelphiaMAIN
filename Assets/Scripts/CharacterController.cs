@@ -40,15 +40,15 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         }
 
         rb = GetComponent<Rigidbody2D>();
-        if (hasLastPosition)
-        {
-            transform.position = lastPosition;
-        }
-        else
-        {
-            lastPosition = transform.position;
-            hasLastPosition = true;
-        }
+        // if (hasLastPosition)
+        // {
+        //     transform.position = lastPosition;
+        // }
+        // else
+        // {
+        //     lastPosition = transform.position;
+        //     hasLastPosition = true;
+        // }
 
         mapObject = GameObject.FindGameObjectWithTag("Map");
 
@@ -103,7 +103,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
             moveInput.y = 0;
         }
         
-        lastPosition = transform.position;
+        //lastPosition = transform.position;
         
     }
 
