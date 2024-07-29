@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnApplicationQuit()
+    {
+        SaveLoadSystem.Instance.SaveGame();
+    }
+
     public void SetClient(Client newClient)
     {
         Debug.Log("GameManager(62).SetClient(Client newClient) called. VARIABLES: newClient: " + newClient);
@@ -181,12 +186,21 @@ public class GameManager : MonoBehaviour
     }
 
     public void DeactivatePlayersInScene()
+{
+    Debug.Log("GameManager(181).DeactivatePlayersInScene() called.");
+    foreach(Client client in clients)
     {
-        Debug.Log("GameManager(181).DeactivatePlayersInScene() called.");
-        foreach(Client client in clients)
-        {
-            Player playerToDestroy = client.activePlayer;
+        Player playerToDestroy = client.activePlayer;
 
+        // Chequeo para evitar desactivar el jugador local
+        if (playerToDestroy.GetComponent<NetworkObject>().HasStateAuthority)
+        {
+            // No desactivar el jugador local
+            playerToDestroy.gameObject.SetActive(true);
+        }
+        else
+        {
+            // Desactivar los demás jugadores
             if (client.activePlayerSceneIndex == SceneManager.GetActiveScene().buildIndex)
             {
                 playerToDestroy.gameObject.SetActive(true);
@@ -194,10 +208,11 @@ public class GameManager : MonoBehaviour
             else
             {
                 playerToDestroy.gameObject.SetActive(false);
-                
             }
         }
     }
+}
+
 
     public static string GetScene(int index)
     {

@@ -83,9 +83,12 @@ public class Client : NetworkBehaviour
         {
             if (playerPrefab != null)
             {                
+                // Obtener la posición guardada
+                Vector3 savedPosition = SaveLoadSystem.Instance.GetSavedPosition();
+
                 Runner.Spawn(
                 playerPrefab, 
-                new Vector3(-48.5f, -7, 0), 
+                savedPosition, 
                 Quaternion.identity, 
                 Runner.LocalPlayer,
                 InitializeCharacterBeforeSpawn

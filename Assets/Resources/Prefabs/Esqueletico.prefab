@@ -17689,7 +17689,7 @@ MonoBehaviour:
   mapObject: {fileID: 0}
   animator: {fileID: 8960891951054761995}
   lastPosition: {x: 0, y: 0, z: 0}
-  hasLastPosition: 0
+  hasLastPosition: 1
   body: {fileID: 9008969748989979961}
   player: {fileID: 0}
 --- !u!114 &1770238613987700169

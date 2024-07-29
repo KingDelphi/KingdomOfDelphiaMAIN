@@ -103,7 +103,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
             moveInput.y = 0;
         }
         
-        //lastPosition = transform.position;
+        lastPosition = transform.position;
         
     }
 
@@ -184,7 +184,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     }
 
     [Serializable]
-    private class CharacterControllerSaveData //SAVELOAD
+    public class CharacterControllerSaveData //SAVELOAD
     {
         public float moveSpeed;
         public string mapObjectName;
