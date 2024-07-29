@@ -40,15 +40,6 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         }
 
         rb = GetComponent<Rigidbody2D>();
-        // if (hasLastPosition)
-        // {
-        //     transform.position = lastPosition;
-        // }
-        // else
-        // {
-        //     lastPosition = transform.position;
-        //     hasLastPosition = true;
-        // }
 
         mapObject = GameObject.FindGameObjectWithTag("Map");
 
@@ -143,14 +134,21 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     // Implementación de ISaveable
     public object SaveState() //SAVELOAD
     {
-        return new CharacterControllerSaveData
+        var saveData = new CharacterControllerSaveData
         {
             moveSpeed = this.moveSpeed,
-            mapObjectName = this.mapObject != null ? this.mapObject.name : "",
+            //mapObjectName = this.mapObject != null ? this.mapObject.name : "",
             lastPositionX = this.lastPosition.x,
             lastPositionY = this.lastPosition.y,
             lastPositionZ = this.lastPosition.z
         };
+        
+        Debug.Log($"CharacterController SaveState called. Data to be saved: \n" +
+                $"moveSpeed: {saveData.moveSpeed}, \n" +
+                //$"mapObjectName: {saveData.mapObjectName}, \n" +
+                $"lastPosition: ({saveData.lastPositionX}, {saveData.lastPositionY}, {saveData.lastPositionZ})");
+        
+        return saveData;
     }
 
     public void LoadState(object state) //SAVELOAD
@@ -159,10 +157,10 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         {
             this.moveSpeed = saveData.moveSpeed;
         
-            if (!string.IsNullOrEmpty(saveData.mapObjectName))
-            {
-                this.mapObject = GameObject.Find(saveData.mapObjectName);
-            }
+            // if (!string.IsNullOrEmpty(saveData.mapObjectName))
+            // {
+            //     this.mapObject = GameObject.Find(saveData.mapObjectName);
+            // }
 
             this.lastPosition = new Vector3(saveData.lastPositionX, saveData.lastPositionY, saveData.lastPositionZ);
             this.hasLastPosition = true;
@@ -187,7 +185,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     public class CharacterControllerSaveData //SAVELOAD
     {
         public float moveSpeed;
-        public string mapObjectName;
+        //public string mapObjectName;
         public float lastPositionX;
         public float lastPositionY;
         public float lastPositionZ;

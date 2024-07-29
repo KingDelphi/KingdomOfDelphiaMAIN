@@ -2,10 +2,12 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using Fusion;
 
 public class SaveLoadSystem : MonoBehaviour
 {
     public static SaveLoadSystem Instance { get; private set; }
+    private Player currentPlayer;
 
     private void Awake()
     {
@@ -20,8 +22,23 @@ public class SaveLoadSystem : MonoBehaviour
         }
     }
 
+    // Método para establecer el jugador actual
+    public void SetCurrentPlayer(Player player)
+    {
+        currentPlayer = player;
+    }
+
     public void SaveGame()
     {
+        if (currentPlayer == null)
+        {
+            Debug.LogWarning("No Player with State Authority found.");
+            return;
+        }
+
+        // Asegúrate de que 'playerName' esté disponible en 'currentPlayer'
+        string playerName = currentPlayer.playerName;
+        
         var saveables = FindObjectsOfType<MonoBehaviour>().OfType<ISaveable>();
         foreach (var saveable in saveables)
         {
@@ -32,10 +49,13 @@ public class SaveLoadSystem : MonoBehaviour
 
         // Guardar el índice de la escena actual
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
         PlayerPrefs.SetInt("SavedSceneIndex", currentSceneIndex);
 
         PlayerPrefs.Save();
-        Debug.Log("Game Saved");
+
+        Debug.Log($"Game Saved for Player: {currentPlayer.playerName}, Character: {currentPlayer.name}, Map: {currentSceneName}");
     }
 
     public void LoadGame()

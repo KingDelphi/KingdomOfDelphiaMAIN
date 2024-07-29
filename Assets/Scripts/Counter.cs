@@ -63,13 +63,21 @@ public class Counter : MonoBehaviour, ISaveable
      // Implementación de ISaveable: Guardar estado
     public object SaveState()
     {
-        return new CounterSaveData
+        var saveData = new CounterSaveData
         {
             yitopoCount = yitopoCount,
             yotepoCount = yotepoCount,
             ranitomaCount = ranitomaCount,
             ranotemaCount = ranotemaCount
         };
+
+        Debug.Log($"Counter SaveState called. Data to be saved: \n" +
+                $"yitopoCount: {saveData.yitopoCount}, \n" +
+                $"yotepoCount: {saveData.yotepoCount}, \n" +
+                $"ranitomaCount: {saveData.ranitomaCount}, \n" +
+                $"ranotemaCount: {saveData.ranotemaCount}");
+
+        return saveData;
     }
 
     // Implementación de ISaveable: Cargar estado

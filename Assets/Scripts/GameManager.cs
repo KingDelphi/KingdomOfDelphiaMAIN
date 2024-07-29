@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        SaveLoadSystem.Instance.SetCurrentPlayer(player);
         SaveLoadSystem.Instance.SaveGame();
     }
 

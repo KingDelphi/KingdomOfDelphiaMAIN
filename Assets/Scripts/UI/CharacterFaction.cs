@@ -21,8 +21,13 @@ public class CharacterFaction : MonoBehaviour, ISaveable
     {
         CharacterFactionSaveData saveData = new CharacterFactionSaveData();
         saveData.currentFaction = currentFaction;
+
+        Debug.Log($"CharacterFaction SaveState called. Data to be saved: \n" +
+                $"Current Faction: {saveData.currentFaction}");
+
         return saveData;
     }
+
 
     public void LoadState(object state)
     {

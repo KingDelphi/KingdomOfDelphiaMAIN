@@ -361,35 +361,60 @@ public class QuestSystem : MonoBehaviour, ISaveable
     }
 
     public object SaveState()
-{
-    QuestSystemSaveData saveData = new QuestSystemSaveData();
-
-    // Guardar datos de quests
-    foreach (Quest quest in quests)
     {
-        QuestSaveData questData = new QuestSaveData(quest.questID, quest.isCompleted, quest.hasCollectedReward);
-        saveData.quests.Add(questData);
+        QuestSystemSaveData saveData = new QuestSystemSaveData();
+
+        // Guardar datos de quests
+        foreach (Quest quest in quests)
+        {
+            QuestSaveData questData = new QuestSaveData(quest.questID, quest.questTitle, quest.isCompleted, quest.hasCollectedReward);
+            saveData.quests.Add(questData);
+        }
+
+        Debug.Log("QuestSystem SaveState called. Data to be saved: \n" +
+                $"Total Quests: {saveData.quests.Count}, \n" +
+                $"zeroQuestFinished: {saveData.zeroQuestFinished}, \n" +
+                $"firstQuestActive: {saveData.firstQuestActive}, \n" +
+                $"firstQuestKillFinished: {saveData.firstQuestKillFinished}, \n" +
+                $"firstQuestItemFinished: {saveData.firstQuestItemFinished}, \n" +
+                $"yitopoCount: {saveData.yitopoCount}, \n" +
+                $"yotepoCount: {saveData.yotepoCount}, \n" +
+                $"ranitomaCount: {saveData.ranitomaCount}, \n" +
+                $"ranotemaCount: {saveData.ranotemaCount}, \n" +
+                $"chickenLegCount: {saveData.chickenLegCount}, \n" +
+                $"porkHamCount: {saveData.porkHamCount}, \n" +
+                $"baconCount: {saveData.baconCount}, \n" +
+                $"honeyInfusedBaconCount: {saveData.honeyInfusedBaconCount}, \n" +
+                $"secondQuestActive: {saveData.secondQuestActive}, \n" +
+                $"secondQuestKillFinished: {saveData.secondQuestKillFinished}, \n" +
+                $"tioJuaneteCount: {saveData.tioJuaneteCount}");
+
+        for (int i = 0; i < saveData.quests.Count; i++)
+        {
+            var quest = saveData.quests[i];
+            Debug.Log($"Quest {i + 1}: ID = {quest.questID}, Title = {quest.questTitle}, IsCompleted = {quest.isCompleted}, HasCollectedReward = {quest.hasCollectedReward}");
+        }
+
+        // Guardar otras variables
+        saveData.zeroQuestFinished = zeroQuestFinished;
+        saveData.firstQuestActive = firstQuestActive;
+        saveData.firstQuestKillFinished = firstQuestKillFinished;
+        saveData.firstQuestItemFinished = firstQuestItemFinished;
+        saveData.yitopoCount = yitopoCount;
+        saveData.yotepoCount = yotepoCount;
+        saveData.ranitomaCount = ranitomaCount;
+        saveData.ranotemaCount = ranotemaCount;
+        saveData.chickenLegCount = chickenLegCount;
+        saveData.porkHamCount = porkHamCount;
+        saveData.baconCount = baconCount;
+        saveData.honeyInfusedBaconCount = honeyInfusedBaconCount;
+        saveData.secondQuestActive = secondQuestActive;
+        saveData.secondQuestKillFinished = secondQuestKillFinished;
+        saveData.tioJuaneteCount = tioJuaneteCount;
+
+        return saveData;
     }
 
-    // Guardar otras variables
-    saveData.zeroQuestFinished = zeroQuestFinished;
-    saveData.firstQuestActive = firstQuestActive;
-    saveData.firstQuestKillFinished = firstQuestKillFinished;
-    saveData.firstQuestItemFinished = firstQuestItemFinished;
-    saveData.yitopoCount = yitopoCount;
-    saveData.yotepoCount = yotepoCount;
-    saveData.ranitomaCount = ranitomaCount;
-    saveData.ranotemaCount = ranotemaCount;
-    saveData.chickenLegCount = chickenLegCount;
-    saveData.porkHamCount = porkHamCount;
-    saveData.baconCount = baconCount;
-    saveData.honeyInfusedBaconCount = honeyInfusedBaconCount;
-    saveData.secondQuestActive = secondQuestActive;
-    saveData.secondQuestKillFinished = secondQuestKillFinished;
-    saveData.tioJuaneteCount = tioJuaneteCount;
-
-    return saveData;
-}
 
 
     public void LoadState(object state)
@@ -465,13 +490,15 @@ public class QuestSystemSaveData
 public class QuestSaveData
 {
     public int questID;
+    public string questTitle;
     public bool isCompleted;
     public bool hasCollectedReward;
 
     // Constructor
-    public QuestSaveData(int id, bool completed, bool collectedReward)
+    public QuestSaveData(int id, string title, bool completed, bool collectedReward)
     {
         questID = id;
+        questTitle = title;
         isCompleted = completed;
         hasCollectedReward = collectedReward;
     }

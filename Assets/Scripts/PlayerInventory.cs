@@ -66,6 +66,17 @@ public class PlayerInventory : MonoBehaviour, ISaveable
             inventoryItems = this.inventory.ConvertAll(item => ConvertGearItemToSaveData(item))
         };
 
+        // Agrega el Debug.Log para mostrar los datos que se están guardando
+        Debug.Log($"PlayerInventory SaveState called. Data to be saved: \n" +
+                $"Gold: {saveData.gold}\n" +
+                $"Inventory Items Count: {saveData.inventoryItems.Count}");
+
+        for (int i = 0; i < saveData.inventoryItems.Count; i++)
+        {
+            var item = saveData.inventoryItems[i];
+            Debug.Log($"Item {i + 1}: Name = {item.itemName}, Type = {item.itemType}");
+        }
+
         return saveData;
     }
 

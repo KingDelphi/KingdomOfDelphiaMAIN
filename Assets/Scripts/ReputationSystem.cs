@@ -222,7 +222,7 @@ public void UpdatePlayerReputationDisplay()
     }
 }
 
-public object SaveState()
+    public object SaveState()
     {
         FactionReputationDataSaveData saveData = new FactionReputationDataSaveData();
 
@@ -235,6 +235,19 @@ public object SaveState()
             data.currentTitleName = factionData.currentTitleName;
 
             saveData.factionReputations.Add(data);
+        }
+
+        Debug.Log("ReputationSystem SaveState called. Data to be saved: \n" +
+                $"Total Faction Reputations: {saveData.factionReputations.Count}");
+
+        for (int i = 0; i < saveData.factionReputations.Count; i++)
+        {
+            var faction = saveData.factionReputations[i];
+            Debug.Log($"Faction {i + 1}: \n" +
+                    $"Faction Name = {faction.faction}, \n" +
+                    $"Reputation = {faction.reputation}, \n" +
+                    $"Current Title Index = {faction.CurrentTitleIndex}, \n" +
+                    $"Current Title Name = {faction.currentTitleName}");
         }
 
         return saveData;
