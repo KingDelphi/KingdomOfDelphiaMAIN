@@ -22,6 +22,19 @@ using Fusion.Editor;
 [ScriptHelp(BackColor = EditorHeaderBackColor.Steel)]
 public class NetworkDebugStart : Fusion.Behaviour {
 
+  public string roomName;
+  
+  
+  // Exponer la función para iniciar el cliente compartido.
+    public void StartSharedClientExternally() {
+        StartSharedClient();
+    }
+
+    // Permitir que el nombre de la sala se establezca desde otro script.
+    public void SetRoomName(string roomName) {
+        DefaultRoomName = roomName;
+    }
+  
   /// <summary>
   /// Selection for how <see cref="NetworkDebugStart"/> will behave at startup.
   /// </summary>

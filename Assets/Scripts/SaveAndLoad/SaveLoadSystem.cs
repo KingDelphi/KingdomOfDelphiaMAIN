@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.SceneManagement;
 using Fusion;
+using System.Collections;
+
 
 public class SaveLoadSystem : MonoBehaviour
 {
@@ -12,7 +14,6 @@ public class SaveLoadSystem : MonoBehaviour
     private List<ISaveable> saveables = new List<ISaveable>();
     private bool initialLoadComplete = false;
     private const string BetaTesterName = "BetaTester";
-
 
     private void Awake()
     {
@@ -102,12 +103,32 @@ public class SaveLoadSystem : MonoBehaviour
             ApplySavedState();
             CancelInvoke("InstantiateAllSaveables"); // Detener la llamada repetida
 
+            // Ocultar la pantalla de carga
+            if (LoadingScreenManager.Instance != null)
+            {
+                LoadingScreenManager.Instance.HideLoadingScreen();
+            }
+            // Mostrarla nuevamente por 1 segundo
+            StartCoroutine(ShowLoadingScreenForOneSecond());
+
         }
         else
         {
             // Podrías agregar lógica aquí para instanciar objetos ISaveable si es necesario.
             Debug.LogWarning("No ISaveable objects registered yet. Waiting for registration.");
         }
+    }
+
+    private IEnumerator ShowLoadingScreenForOneSecond()
+    {
+        // Mostrar la pantalla de carga
+        LoadingScreenManager.Instance.ShowLoadingScreen();
+
+        // Esperar 1 segundo
+        yield return new WaitForSeconds(1f);
+
+        // Ocultar la pantalla de carga
+        LoadingScreenManager.Instance.HideLoadingScreen();
     }
 
     private void ApplySavedState()

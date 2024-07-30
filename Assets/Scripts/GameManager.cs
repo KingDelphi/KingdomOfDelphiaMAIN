@@ -346,7 +346,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("AuthorityHelper Verification: ✔️ Success");
     }
-
+/*
     #if !UNITY_EDITOR
             static string myLog = "";
             private string output;
@@ -380,7 +380,7 @@ public class GameManager : MonoBehaviour
                 }
             }
     #endif
-        
+*/
 
 
 
