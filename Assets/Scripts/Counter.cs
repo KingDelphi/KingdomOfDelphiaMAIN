@@ -17,6 +17,7 @@ public class Counter : MonoBehaviour, ISaveable
     // Start is called before the first frame update
     void Start()
     {
+        SaveLoadSystem.Instance.RegisterSaveable(this);
         // Buscar el componente QuestSystem en el objeto actual o en sus padres
         questSystem = GetComponentInParent<QuestSystem>();
         

@@ -30,6 +30,11 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
 
     public Player player;
 
+    private void Start()
+    {
+        SaveLoadSystem.Instance.RegisterSaveable(this);
+    }
+
     public void Initiate()
     {        
         player = GetComponent<Player>();
@@ -137,7 +142,6 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         var saveData = new CharacterControllerSaveData
         {
             moveSpeed = this.moveSpeed,
-            //mapObjectName = this.mapObject != null ? this.mapObject.name : "",
             lastPositionX = this.lastPosition.x,
             lastPositionY = this.lastPosition.y,
             lastPositionZ = this.lastPosition.z
@@ -145,7 +149,6 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         
         Debug.Log($"CharacterController SaveState called. Data to be saved: \n" +
                 $"moveSpeed: {saveData.moveSpeed}, \n" +
-                //$"mapObjectName: {saveData.mapObjectName}, \n" +
                 $"lastPosition: ({saveData.lastPositionX}, {saveData.lastPositionY}, {saveData.lastPositionZ})");
         
         return saveData;
@@ -156,11 +159,6 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         if (state is CharacterControllerSaveData saveData)
         {
             this.moveSpeed = saveData.moveSpeed;
-        
-            // if (!string.IsNullOrEmpty(saveData.mapObjectName))
-            // {
-            //     this.mapObject = GameObject.Find(saveData.mapObjectName);
-            // }
 
             this.lastPosition = new Vector3(saveData.lastPositionX, saveData.lastPositionY, saveData.lastPositionZ);
             this.hasLastPosition = true;
@@ -185,7 +183,6 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     public class CharacterControllerSaveData //SAVELOAD
     {
         public float moveSpeed;
-        //public string mapObjectName;
         public float lastPositionX;
         public float lastPositionY;
         public float lastPositionZ;

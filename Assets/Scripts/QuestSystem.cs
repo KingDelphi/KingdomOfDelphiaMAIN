@@ -125,6 +125,7 @@ public class QuestSystem : MonoBehaviour, ISaveable
 
     private void Start()
     {
+        SaveLoadSystem.Instance.RegisterSaveable(this);
         quests.Add(quest0);
         zeroQuestFinished = false;
     }

@@ -87,6 +87,7 @@ public class Player : NetworkBehaviour
 
     private void Awake()
     {
+        playerName = GameManager.Instance.GetPlayerName();
         textMeshPro = GetComponentInChildren<TextMeshPro>();
 
         experience = 0;

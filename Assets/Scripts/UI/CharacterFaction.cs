@@ -49,6 +49,8 @@ public class CharacterFaction : MonoBehaviour, ISaveable
 
     private void Start()
     {
+        SaveLoadSystem.Instance.RegisterSaveable(this);
+           
         // Inicializa la facción del personaje, por defecto es DelphiaGuard
         currentFaction = Faction.DelphiaGuard;
         reputationSystem = FindObjectOfType<ReputationSystem>();

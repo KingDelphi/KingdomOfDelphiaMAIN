@@ -7,6 +7,7 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
+    private string playerName;
     public PlayerInventory playerInventory;
     public GameObject inventoryCanvas;
     public GameObject anotherInv;
@@ -57,8 +58,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetPlayerName(string name)
+    {
+        playerName = name;
+    }
+
+    public string GetPlayerName()
+    {
+        return playerName;
+    }
+
     private void OnApplicationQuit()
     {
+        if (player == null)
+        {
+            Debug.LogWarning("No player found to save.");
+            return;
+        }
+
+        Debug.LogWarning($"✔️✔️✔️✔️✔️ Saving game for Player: {player.playerName}");
         SaveLoadSystem.Instance.SetCurrentPlayer(player);
         SaveLoadSystem.Instance.SaveGame();
     }
@@ -87,32 +105,35 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(characterHolder);
     }
 
-    private void Update() {
-           if(Input.GetKeyDown(KeyCode.I)) {
+    private void Update() 
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.I)) {
             playerInventory = FindObjectOfType<PlayerInventory>();
             int newIndex = new int();
-            foreach(GearItem item in playerInventory.inventory) {
-            if(gearMenu.equippedGear[0].itemName == item.itemName) {    
-                playerInventory.inventory.RemoveAt(newIndex);
-                break;
-            }
-            newIndex += 1;
+            
+            foreach (GearItem item in playerInventory.inventory) {
+                if (gearMenu.equippedGear[0].itemName == item.itemName) {
+                    playerInventory.inventory.RemoveAt(newIndex);
+                    break;
+                }
+                newIndex += 1;
             }
 
-            if(inventoryCanvas.activeInHierarchy) {
-                foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
-                        Destroy(t.gameObject);
-                    }
-              inventoryCanvas.SetActive(false);
-              } else {
-              inventoryCanvas.SetActive(true);
-              foreach(Transform t in inventoryCanvas.transform.GetChild(0)) {
-                        Destroy(t.gameObject);
-                    }
-              playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
-              }
+            if (inventoryCanvas.activeInHierarchy) {
+                foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
+                    Destroy(t.gameObject);
+                }
+                inventoryCanvas.SetActive(false);
+            } else {
+                inventoryCanvas.SetActive(true);
+                foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
+                    Destroy(t.gameObject);
+                }
+                playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
             }
+        }
     }
+
             
     public void ChangeScene(int targetSceneIndex, Vector3 entryPosition)
     {
@@ -179,6 +200,7 @@ public class GameManager : MonoBehaviour
         confinerCollider = confinerObject.GetComponent<PolygonCollider2D>();
 
         playerInventory = player.GetComponent<PlayerInventory>();
+        UI.SetActive(true);
     }
 
     public PlayerInventory GetPlayerInventory()

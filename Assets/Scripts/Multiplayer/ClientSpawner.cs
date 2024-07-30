@@ -37,6 +37,17 @@ public class ClientSpawner : SimulationBehaviour, IPlayerJoined
     private IEnumerator LoadGameAndSetScene()
     {
         yield return new WaitForSeconds(0.1f); // Espera un segundo para asegurarte de que todo se ha inicializado
+        
+        string playerName = GameManager.Instance.GetPlayerName();
+
+        if (string.IsNullOrEmpty(playerName))
+        {
+            Debug.LogWarning("Player name not found.");
+            yield break;
+        }
+
+        Debug.LogWarning($"✔️✔️✔️✔️✔️ Loading game for Player: {playerName}");
+        SaveLoadSystem.Instance.SetCurrentPlayerName(playerName);
 
         SaveLoadSystem.Instance.LoadGame();
         

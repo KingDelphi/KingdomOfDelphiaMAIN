@@ -152,6 +152,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
 
     private void Start()
     {
+        SaveLoadSystem.Instance.RegisterSaveable(this);
         // Inicializar inventario, oro y gear
         inventory = new List<GearItem>();
         gold = 0;
