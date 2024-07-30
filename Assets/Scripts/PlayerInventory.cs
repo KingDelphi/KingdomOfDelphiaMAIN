@@ -36,6 +36,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     [System.Serializable]
     public class GearItemSaveData
     {
+        public int quantity;
         public string itemName;
         public GearItem.Rarity itemRarity;
         public int hp;
@@ -74,7 +75,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
         for (int i = 0; i < saveData.inventoryItems.Count; i++)
         {
             var item = saveData.inventoryItems[i];
-            Debug.Log($"Item {i + 1}: Name = {item.itemName}, Type = {item.itemType}");
+            Debug.Log($"Item {i + 1}: Name = {item.itemName}, Quantity = {item.quantity}, Type = {item.itemType}");
         }
 
         return saveData;
@@ -85,7 +86,16 @@ public class PlayerInventory : MonoBehaviour, ISaveable
     if (state is PlayerInventorySaveData saveData)
     {
         this.gold = saveData.gold;
-        this.inventory = saveData.inventoryItems.ConvertAll(item => ConvertSaveDataToGearItem(item));
+
+        // Convertir GearItemSaveData a GearItem y establecer la cantidad correcta
+        this.inventory.Clear();
+        foreach (var itemData in saveData.inventoryItems)
+        {
+            GearItem item = ConvertSaveDataToGearItem(itemData);
+            item.quantity = itemData.quantity; // Restaurar la cantidad
+            this.inventory.Add(item);
+        }
+
         InventoryUpdated?.Invoke();
     }
     else
@@ -100,6 +110,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
 
         return new GearItemSaveData
         {
+            quantity = gearItem.quantity,
             itemName = gearItem.itemName,
             itemRarity = gearItem.rarity,
             hp = gearItem.hp,
@@ -144,7 +155,7 @@ public class PlayerInventory : MonoBehaviour, ISaveable
             saveData.manaRegen,
             saveData.effectDuration,
             saveData.itemType
-        );
+        ) { quantity = saveData.quantity };
     }
 
         // Termina Implementación de ISaveable en el script PlayerInventory

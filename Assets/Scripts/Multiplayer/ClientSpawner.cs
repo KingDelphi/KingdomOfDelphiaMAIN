@@ -52,7 +52,7 @@ public class ClientSpawner : SimulationBehaviour, IPlayerJoined
         SaveLoadSystem.Instance.LoadGame();
         
         // Aquí se decide la escena a cargar
-        int savedSceneIndex = SaveLoadSystem.Instance.GetSavedSceneIndex();
+        int savedSceneIndex = SaveLoadSystem.Instance.GetSavedSceneIndex(playerName);
         if (savedSceneIndex != -1)
         {
             Debug.Log($"Loading saved scene index: {savedSceneIndex}");

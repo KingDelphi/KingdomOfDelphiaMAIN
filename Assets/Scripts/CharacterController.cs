@@ -144,11 +144,14 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
             moveSpeed = this.moveSpeed,
             lastPositionX = this.lastPosition.x,
             lastPositionY = this.lastPosition.y,
-            lastPositionZ = this.lastPosition.z
+            lastPositionZ = this.lastPosition.z,
+            mapSpriteName = this.mapObject.GetComponent<SpriteRenderer>().sprite.name // Guardar el nombre del sprite
+
         };
         
         Debug.Log($"CharacterController SaveState called. Data to be saved: \n" +
                 $"moveSpeed: {saveData.moveSpeed}, \n" +
+                $"mapSpriteName: {saveData.mapSpriteName}, \n" +
                 $"lastPosition: ({saveData.lastPositionX}, {saveData.lastPositionY}, {saveData.lastPositionZ})");
         
         return saveData;
@@ -172,6 +175,32 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
             {
                 this.transform.position = this.lastPosition;
             }
+
+            // Actualiza el SpriteRenderer del mapa
+            if (this.mapObject != null)
+            {
+                var spriteRenderer = this.mapObject.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    var sprite = Resources.Load<Sprite>(saveData.mapSpriteName);
+                    if (sprite != null)
+                    {
+                        spriteRenderer.sprite = sprite;
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Sprite not found for name: {saveData.mapSpriteName}");
+                    }
+                }
+                else
+                {
+                    Debug.LogError("SpriteRenderer component not found on mapObject.");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("mapObject is not assigned.");
+            }
         }
         else
         {
@@ -186,6 +215,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         public float lastPositionX;
         public float lastPositionY;
         public float lastPositionZ;
+        public string mapSpriteName;
     }
         // Termina Implementación de ISaveable en el script Player
 

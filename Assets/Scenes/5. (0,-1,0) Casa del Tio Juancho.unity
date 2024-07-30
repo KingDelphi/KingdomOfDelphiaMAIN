@@ -997,7 +997,7 @@ SpriteRenderer:
   m_SortingLayerID: -1684428927
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 991c2634e03d9487089b1cdddee5db84, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab5619d8d3bb44e059906aa6ef9ccc94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2817,16 +2817,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64fce2569a17944be9f727b29973206a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
-  spawnPosition: {x: 0, y: 0, z: 0}
-  runner: {fileID: 0}
   playerInventory: {fileID: 0}
   inventoryCanvas: {fileID: 0}
+  anotherInv: {fileID: 0}
   slot: {fileID: 0}
   gearMenu: {fileID: 0}
-  playerNetworkObject: {fileID: 0}
-  existingPlayer: {fileID: 0}
-  existingNetworkObject: {fileID: 0}
+  networkManager: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
@@ -2834,6 +2830,8 @@ MonoBehaviour:
   scenes: []
   clientHolder: {fileID: 0}
   characterHolder: {fileID: 0}
+  characterController: {fileID: 0}
+  client: {fileID: 0}
 --- !u!4 &427846596
 Transform:
   m_ObjectHideFlags: 0

@@ -126,8 +126,6 @@ public class QuestSystem : MonoBehaviour, ISaveable
     private void Start()
     {
         SaveLoadSystem.Instance.RegisterSaveable(this);
-        quests.Add(quest0);
-        zeroQuestFinished = false;
     }
 
     public void CompleteQuestZero()
@@ -368,7 +366,20 @@ public class QuestSystem : MonoBehaviour, ISaveable
         // Guardar datos de quests
         foreach (Quest quest in quests)
         {
-            QuestSaveData questData = new QuestSaveData(quest.questID, quest.questTitle, quest.isCompleted, quest.hasCollectedReward);
+            QuestSaveData questData = new QuestSaveData(quest.questID, quest.questTitle, quest.questDescription, quest.isCompleted, quest.hasCollectedReward);
+            
+            // Guardar los objetivos de la misión
+            foreach (QuestObjective objective in quest.objectives)
+            {
+                questData.objectives.Add(new QuestObjectiveSaveData(objective.objectiveDescription, objective.requiredAmount, objective.currentAmount, objective.isCompleted));
+            }
+
+            // Guardar las recompensas de la misión
+            foreach (QuestReward reward in quest.rewards)
+            {
+                questData.rewards.Add(new QuestRewardSaveData(reward.rewardType, reward.amount, reward.rewardDescription, reward.itemName));
+            }
+            
             saveData.quests.Add(questData);
         }
 
@@ -390,11 +401,11 @@ public class QuestSystem : MonoBehaviour, ISaveable
                 $"secondQuestKillFinished: {saveData.secondQuestKillFinished}, \n" +
                 $"tioJuaneteCount: {saveData.tioJuaneteCount}");
 
-        for (int i = 0; i < saveData.quests.Count; i++)
-        {
-            var quest = saveData.quests[i];
-            Debug.Log($"Quest {i + 1}: ID = {quest.questID}, Title = {quest.questTitle}, IsCompleted = {quest.isCompleted}, HasCollectedReward = {quest.hasCollectedReward}");
-        }
+        // for (int i = 0; i < saveData.quests.Count; i++)
+        // {
+        //     var quest = saveData.quests[i];
+        //     Debug.Log($"Quest {i + 1}: ID = {quest.questID}, Title = {quest.questTitle}, IsCompleted = {quest.isCompleted}, HasCollectedReward = {quest.hasCollectedReward}");
+        // }
 
         // Guardar otras variables
         saveData.zeroQuestFinished = zeroQuestFinished;
@@ -426,10 +437,34 @@ public class QuestSystem : MonoBehaviour, ISaveable
         foreach (QuestSaveData questData in saveData.quests)
         {
             Quest quest = GetQuestByID(questData.questID);
-            if (quest != null)
+            if (quest == null)
             {
-                quest.isCompleted = questData.isCompleted;
-                quest.hasCollectedReward = questData.hasCollectedReward;
+                // Si la quest no existe, creamos una nueva
+                quest = new Quest(questData.questID, questData.questTitle, string.Empty, false);
+                quests.Add(quest);
+            }
+
+            quest.questDescription = questData.questDescription;
+
+            // Cargar los objetivos de la misión
+            quest.objectives.Clear();
+            foreach (QuestObjectiveSaveData objectiveData in questData.objectives)
+            {
+                quest.objectives.Add(new QuestObjective(objectiveData.objectiveDescription, objectiveData.requiredAmount)
+                {
+                    currentAmount = objectiveData.currentAmount,
+                    isCompleted = objectiveData.isCompleted
+                });
+            }
+
+            // Cargar las recompensas de la misión
+            quest.rewards.Clear();
+            foreach (QuestRewardSaveData rewardData in questData.rewards)
+            {
+                quest.rewards.Add(new QuestReward(rewardData.rewardType, rewardData.amount, rewardData.rewardDescription)
+                {
+                    itemName = rewardData.itemName
+                });
             }
         }
 
@@ -455,7 +490,6 @@ public class QuestSystem : MonoBehaviour, ISaveable
         Debug.LogError("Failed to load QuestSystem state: Invalid save data type");
 
     }
-    
 }
 
 }
@@ -492,15 +526,55 @@ public class QuestSaveData
 {
     public int questID;
     public string questTitle;
+    public string questDescription;
     public bool isCompleted;
     public bool hasCollectedReward;
+    public List<QuestObjectiveSaveData> objectives;
+    public List<QuestRewardSaveData> rewards;
 
     // Constructor
-    public QuestSaveData(int id, string title, bool completed, bool collectedReward)
+    public QuestSaveData(int id, string title, string description, bool completed, bool collected)
     {
         questID = id;
         questTitle = title;
+        questDescription = description;
         isCompleted = completed;
-        hasCollectedReward = collectedReward;
+        hasCollectedReward = collected;
+        objectives = new List<QuestObjectiveSaveData>();
+        rewards = new List<QuestRewardSaveData>();
+    }
+}
+
+[System.Serializable]
+public class QuestObjectiveSaveData
+{
+    public string objectiveDescription;
+    public int requiredAmount;
+    public int currentAmount;
+    public bool isCompleted;
+
+    public QuestObjectiveSaveData(string description, int required, int current, bool completed)
+    {
+        objectiveDescription = description;
+        requiredAmount = required;
+        currentAmount = current;
+        isCompleted = completed;
+    }
+}
+
+[System.Serializable]
+public class QuestRewardSaveData
+{
+    public QuestReward.RewardType rewardType;
+    public int amount;
+    public string rewardDescription;
+    public string itemName;
+
+    public QuestRewardSaveData(QuestReward.RewardType type, int value, string description, string item)
+    {
+        rewardType = type;
+        amount = value;
+        rewardDescription = description;
+        itemName = item;
     }
 }

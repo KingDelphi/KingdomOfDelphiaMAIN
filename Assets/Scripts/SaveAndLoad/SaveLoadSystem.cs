@@ -11,6 +11,8 @@ public class SaveLoadSystem : MonoBehaviour
     private string currentPlayerName;
     private List<ISaveable> saveables = new List<ISaveable>();
     private bool initialLoadComplete = false;
+    private const string BetaTesterName = "BetaTester";
+
 
     private void Awake()
     {
@@ -25,7 +27,6 @@ public class SaveLoadSystem : MonoBehaviour
         }
     }
 
-    // Método para establecer el jugador actual
     public void SetCurrentPlayer(Player player)
     {
         currentPlayer = player;
@@ -122,6 +123,8 @@ public class SaveLoadSystem : MonoBehaviour
     private void LoadStateForSaveable(ISaveable saveable)
     {
         string key = saveable.GetType().FullName + "_" + currentPlayerName;
+        string betaTesterKey = saveable.GetType().FullName + "_" + BetaTesterName;
+
         if (PlayerPrefs.HasKey(key))
         {
             string json = PlayerPrefs.GetString(key);
@@ -130,19 +133,41 @@ public class SaveLoadSystem : MonoBehaviour
             object state = JsonUtility.FromJson(json, saveable.SaveType);
             saveable.LoadState(state);
         }
+        else if (PlayerPrefs.HasKey(betaTesterKey))
+        {
+            string json = PlayerPrefs.GetString(betaTesterKey);
+            Debug.Log($"Loading default data from BetaTester for key: {betaTesterKey}, JSON: {json}");
+
+            object state = JsonUtility.FromJson(json, saveable.SaveType);
+            saveable.LoadState(state);
+
+            // Actualizar el nombre del jugador en el estado cargado
+            if (saveable is Player player)
+            {
+                player.playerName = currentPlayerName;
+            }
+        }
         else
         {
             Debug.LogWarning($"No data found for key: {key}");
         }
     }
 
-    public int GetSavedSceneIndex()
+    public int GetSavedSceneIndex(string playerName)
     {
-        string key = "SavedSceneIndex";
+        string key = "SavedSceneIndex_" + playerName;
+        string betaTesterKey = "SavedSceneIndex_" + BetaTesterName;
+
         if (PlayerPrefs.HasKey(key))
         {
             int sceneIndex = PlayerPrefs.GetInt(key);
             Debug.Log($"SaveLoadSystem - Saved Scene Index: {sceneIndex}");
+            return sceneIndex;
+        }
+        else if (PlayerPrefs.HasKey(betaTesterKey))
+        {
+            int sceneIndex = PlayerPrefs.GetInt(betaTesterKey);
+            Debug.Log($"SaveLoadSystem - Loaded default Scene Index: {sceneIndex} from BetaTester");
             return sceneIndex;
         }
         else
@@ -155,9 +180,17 @@ public class SaveLoadSystem : MonoBehaviour
     public Vector3 GetSavedPosition()
     {
         string key = typeof(CharacterController).FullName;
+        string betaTesterKey = typeof(CharacterController).FullName + "_" + BetaTesterName;
+
         if (PlayerPrefs.HasKey(key))
         {
             string json = PlayerPrefs.GetString(key);
+            var saveData = JsonUtility.FromJson<CharacterController.CharacterControllerSaveData>(json);
+            return new Vector3(saveData.lastPositionX, saveData.lastPositionY, saveData.lastPositionZ);
+        }
+        else if (PlayerPrefs.HasKey(betaTesterKey))
+        {
+            string json = PlayerPrefs.GetString(betaTesterKey);
             var saveData = JsonUtility.FromJson<CharacterController.CharacterControllerSaveData>(json);
             return new Vector3(saveData.lastPositionX, saveData.lastPositionY, saveData.lastPositionZ);
         }
