@@ -22,6 +22,8 @@ public class Player : NetworkBehaviour
     private TextMeshPro textMeshPro;
 
     public int experience;
+    public int level;
+    public TMP_Text playerNameText;
 
     // Stats iniciales del jugador
     public int initialHp;
@@ -74,6 +76,11 @@ public class Player : NetworkBehaviour
 
     public Client client;
 
+    public void SetLevel(int newLevel)
+    {
+        level = newLevel;
+    }
+    
     public void SetClient(Client client)
     {
         this.client = client;
@@ -84,6 +91,12 @@ public class Player : NetworkBehaviour
         Debug.Log("Player(84).GetClient called.");
         return client;
     }
+
+    // private void UpdateDisplayName()
+    // {
+    //     string LVLName = "LVL " + level + " " + playerName;
+    //     playerNameText.text = LVLName;
+    // }
 
     private void Awake()
     {
@@ -104,7 +117,7 @@ public class Player : NetworkBehaviour
 
     private void Update()
     {
-        textMeshPro.text = playerName;
+        textMeshPro.text = "LVL " + level + " " + playerName;
 
         if (Input.GetKeyDown(KeyCode.Q))
         {

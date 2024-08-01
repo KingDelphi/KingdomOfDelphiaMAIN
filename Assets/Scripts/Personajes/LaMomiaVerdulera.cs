@@ -58,9 +58,20 @@ public class LaMomiaVerdulera : MonoBehaviour
     private int currentLevel = 1;
     private int currentExperience = 0;
 
+    public int GetLevel()
+    {
+        return currentLevel;
+    }
+
+    private void UpdateLevel()
+    {
+        player.SetLevel(GetLevel());
+    }
+
     private void Start()
     {
         player = FindObjectOfType<Player>(); // Busca el objeto con el script "Player"
+        UpdateLevel();
 
         // Suscribirse al evento OnAddExperience del script Player
         if (player != null)
@@ -226,6 +237,8 @@ public class LaMomiaVerdulera : MonoBehaviour
 
             // Iniciar la corutina para animar la posición vertical del texto de nivel durante 1 segundo
             StartCoroutine(MoveLvlText(lvlTextObject, lvlTextPosition + Vector3.up));
+
+            UpdateLevel();
         }
     }
 

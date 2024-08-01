@@ -42,8 +42,9 @@ public class PlayerReputationDisplay : MonoBehaviour
     {
         if (reputationSystem != null && titleText != null)
         {
+            int index = reputationSystem.GetCurrentTitleIndex(currentFaction);
             string currentTitle = reputationSystem.GetCurrentTitle(currentFaction);
-            titleText.text = currentTitle;
+            titleText.text = $"Rank {index + 1} {currentTitle}"; // Se suma 1 al índice para que sea 1-based en lugar de 0-based
         }
     }
 

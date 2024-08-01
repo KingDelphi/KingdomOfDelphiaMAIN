@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public Transform characterHolder;
     public CharacterController characterController;
     public Client client;
+    public string serverName;
 
     private void Awake()
     {   
@@ -56,6 +57,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
             Initiate();
         }
+    }
+
+    public string GetServerName()
+    {
+        return serverName;
+    }
+
+    public void SetServer(string server)
+    {
+        serverName = server;
     }
 
     public void SetPlayerName(string name)
@@ -78,6 +89,7 @@ public class GameManager : MonoBehaviour
 
         Debug.LogWarning($"✔️✔️✔️✔️✔️ Saving game for Player: {player.playerName}");
         SaveLoadSystem.Instance.SetCurrentPlayer(player);
+        SaveLoadSystem.Instance.SetServer(serverName);
         SaveLoadSystem.Instance.SaveGame();
     }
 
@@ -106,11 +118,13 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update() 
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.I)) {
-            playerInventory = FindObjectOfType<PlayerInventory>();
-            int newIndex = new int();
-            
+{
+    if (Input.GetKeyDown(KeyCode.V)) {
+        playerInventory = FindObjectOfType<PlayerInventory>();
+        
+        // Verificar que gearMenu.equippedGear no esté vacío
+        if (gearMenu.equippedGear.Count > 0) {
+            int newIndex = 0;
             foreach (GearItem item in playerInventory.inventory) {
                 if (gearMenu.equippedGear[0].itemName == item.itemName) {
                     playerInventory.inventory.RemoveAt(newIndex);
@@ -118,23 +132,27 @@ public class GameManager : MonoBehaviour
                 }
                 newIndex += 1;
             }
+        } else {
+            Debug.LogWarning("gearMenu.equippedGear está vacío.");
+        }
 
-            if (inventoryCanvas.activeInHierarchy) {
-                foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
-                    Destroy(t.gameObject);
-                }
-                inventoryCanvas.SetActive(false);
-            } else {
-                inventoryCanvas.SetActive(true);
-                foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
-                    Destroy(t.gameObject);
-                }
-                playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
+        if (inventoryCanvas.activeInHierarchy) {
+            // Destruir los objetos hijos del inventario
+            foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
+                Destroy(t.gameObject);
             }
+            inventoryCanvas.SetActive(false);
+        } else {
+            inventoryCanvas.SetActive(true);
+            // Asegurar que el inventario esté limpio antes de listar los ítems
+            foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
+                Destroy(t.gameObject);
+            }
+            playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
         }
     }
+}
 
-            
     public void ChangeScene(int targetSceneIndex, Vector3 entryPosition)
     {
         savedEntryPosition = entryPosition;
@@ -159,9 +177,7 @@ public class GameManager : MonoBehaviour
     public void SetupSceneForPlayer(Player _player)
     {
         Debug.Log("GameManager(132).SetupSceneForPlayer(_player) called. _player: " + _player);
-        //Debug.Log("GameManager(133) Before assigning player = _player. VARIABLES: player: " + player + ", _player: " + _player);
         player = _player;
-        //Debug.Log("GameManager(135) After assigning player = _player. VARIABLES (should be same): player: " + player + ", _player: " + _player);
         
         if (player == null)
         {
@@ -185,7 +201,6 @@ public class GameManager : MonoBehaviour
 
         if (savedEntryPosition != Vector3.zero)
         {
-            //Debug.Log("Setting Position to " + savedEntryPosition);
             player.transform.position = savedEntryPosition;
         }
 
@@ -235,7 +250,6 @@ public class GameManager : MonoBehaviour
         }
     }
 }
-
 
     public static string GetScene(int index)
     {

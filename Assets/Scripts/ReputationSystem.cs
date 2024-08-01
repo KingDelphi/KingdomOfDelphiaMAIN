@@ -218,6 +218,16 @@ public class ReputationSystem : MonoBehaviour, ISerializationCallbackReceiver, I
     return "";
 }
 
+public int GetCurrentTitleIndex(Faction faction)
+    {
+        var factionData = factionReputations.Find(data => data.faction == faction);
+        if (factionData != null)
+        {
+            return factionData.CurrentTitleIndex;
+        }
+        return 0;
+    }
+
 public void UpdatePlayerReputationDisplay()
 {
     PlayerReputationDisplay display = FindObjectOfType<PlayerReputationDisplay>();

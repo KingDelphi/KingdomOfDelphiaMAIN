@@ -17,9 +17,11 @@ public class SceneTransition : MonoBehaviour
                 if (GameManager.Instance != null)
                 {
                     // Obtener el nombre de la escena actual
+                    LoadingScreenManager.Instance.ShowLoadingScreen();
                     collision.GetComponent<Player>().sceneIndex = targetSceneIndex;
                     collision.GetComponent<Player>().client.activePlayerSceneIndex = targetSceneIndex;
                     GameManager.Instance.ChangeScene(targetSceneIndex, entryPosition);
+                    LoadingScreenManager.Instance.HideLoadingScreen();
                 }
                 else
                 {

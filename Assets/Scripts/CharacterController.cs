@@ -16,7 +16,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
 
     private Vector2 moveInput;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     private float minX, maxX, minY, maxY;
 

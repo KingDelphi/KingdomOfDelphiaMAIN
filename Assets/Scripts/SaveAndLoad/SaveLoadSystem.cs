@@ -9,11 +9,13 @@ using System.Collections;
 public class SaveLoadSystem : MonoBehaviour
 {
     public static SaveLoadSystem Instance { get; private set; }
-    private Player currentPlayer;
-    private string currentPlayerName;
+    public Player currentPlayer;
+    public string currentPlayerName;
     private List<ISaveable> saveables = new List<ISaveable>();
     private bool initialLoadComplete = false;
     private const string BetaTesterName = "BetaTester";
+    private const string BetaTesterServer = "Testia";
+    public string serverName;
 
     private void Awake()
     {
@@ -26,6 +28,11 @@ public class SaveLoadSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetServer(string server)
+    {
+        serverName = server;
     }
 
     public void SetCurrentPlayer(Player player)
@@ -61,7 +68,7 @@ public class SaveLoadSystem : MonoBehaviour
         var saveables = FindObjectsOfType<MonoBehaviour>().OfType<ISaveable>();
         foreach (var saveable in saveables)
         {
-            string key = saveable.GetType().FullName + "_" + playerName;
+            string key = saveable.GetType().FullName + "_" + serverName + "_" + playerName;
             string json = JsonUtility.ToJson(saveable.SaveState());
             PlayerPrefs.SetString(key, json);
             Debug.Log($"Saving data for key: {key}, JSON: {json}");
@@ -76,7 +83,7 @@ public class SaveLoadSystem : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Debug.LogWarning($"✔️✔️✔️✔️✔️ Game Saved for Player: {playerName}, Character: {currentPlayer.name}, Map: {currentSceneName}");
+        Debug.LogWarning($"✔️✔️✔️✔️✔️ Game Saved for Player: {playerName}, Character: {currentPlayer.name}, Server: {serverName}, Map: {currentSceneName}");
     }
 
     public void LoadGame()
@@ -89,6 +96,7 @@ public class SaveLoadSystem : MonoBehaviour
 
         // Asegúrate de que 'playerName' esté disponible en 'currentPlayer'
         string playerName = currentPlayerName;
+        serverName = GameManager.Instance.GetServerName();
 
         // Primera fase de carga: Instanciar los objetos ISaveable
         InvokeRepeating("InstantiateAllSaveables", 0f, 1f); // Llamar cada 1 segundo
@@ -138,13 +146,13 @@ public class SaveLoadSystem : MonoBehaviour
             LoadStateForSaveable(saveable);
         }
 
-        Debug.LogWarning($"✔️✔️✔️✔️✔️ Game Loaded for Player: {currentPlayerName}");
+        Debug.LogWarning($"✔️✔️✔️✔️✔️ Game Loaded for Player: {currentPlayerName}, Server: {serverName}");
     }
 
     private void LoadStateForSaveable(ISaveable saveable)
     {
-        string key = saveable.GetType().FullName + "_" + currentPlayerName;
-        string betaTesterKey = saveable.GetType().FullName + "_" + BetaTesterName;
+        string key = saveable.GetType().FullName + "_" + serverName + "_" + currentPlayerName;
+        string betaTesterKey = saveable.GetType().FullName + "_" + serverName + "_" + BetaTesterName;
 
         if (PlayerPrefs.HasKey(key))
         {

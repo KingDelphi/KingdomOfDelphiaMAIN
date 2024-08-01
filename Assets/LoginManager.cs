@@ -15,15 +15,8 @@ public class LoginManager : MonoBehaviour
     
 
     private void Start()
-    {
-        // // Mostrar la pantalla de carga
-        // if (LoadingScreenManager.Instance != null)
-        // {
-        //     LoadingScreenManager.Instance.ShowLoadingScreen();
-        // }
-        
+    {   
         loginButton.onClick.AddListener(HandleLogin);
-        // gameImage.SetActive(true);
     }
 
     public void HandleLogin()
@@ -47,12 +40,10 @@ public class LoginManager : MonoBehaviour
             // Llenar el campo "Room" con el nombre del servidor seleccionado
             string selectedServer = serverDropdown.options[serverDropdown.value].text;
             networkDebugStart.DefaultRoomName = selectedServer;
+            GameManager.Instance.SetServer(selectedServer);
 
             // Iniciar el cliente compartido
             networkDebugStart.StartSharedClient();
-
-            // Ocultar la interfaz de Photon Fusion y mostrar la imagen del juego
-            // gameImage.SetActive(false);
         }
         else
         {

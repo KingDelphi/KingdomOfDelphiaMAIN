@@ -116,8 +116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.9000015, y: 2.630001}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: -4.9000015, y: 1.930001}
+  m_SizeDelta: {x: 30, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1663682337425251361
 MeshRenderer:
@@ -292,7 +292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3337174181180684521}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.70000076, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -300,8 +300,8 @@ Transform:
   - {fileID: 3334291924258974595}
   - {fileID: 3340505748005154761}
   - {fileID: 3333866267468971353}
-  m_Father: {fileID: 3646446164890721478}
-  m_RootOrder: 0
+  m_Father: {fileID: 3334165918423721351}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &3222730442047969867
 SortingGroup:
@@ -5405,14 +5405,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3337256607011090137}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2965927, y: -1.5412674, z: 0.047532078}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3340324694432607071}
   - {fileID: 3340437771399617153}
+  - {fileID: 3340338903294160845}
   m_Father: {fileID: 3646446164890721478}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3388524451657888511
 Animator:
@@ -13083,11 +13084,12 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  rb: {fileID: 0}
   mapObject: {fileID: 0}
   animator: {fileID: 3388524451657888511}
   lastPosition: {x: 0, y: 0, z: 0}
   hasLastPosition: 1
-  body: {fileID: 3340338903294160845}
+  body: {fileID: 3334165918423721351}
   player: {fileID: 0}
 --- !u!114 &6000402490477490118
 MonoBehaviour:
@@ -13110,6 +13112,8 @@ MonoBehaviour:
   manaBar: {fileID: 3456772553513458590}
   playerName: KingDelphi
   experience: 0
+  level: 0
+  playerNameText: {fileID: 0}
   initialHp: 8
   initialMana: 16
   initialMovementSpeed: 0
@@ -26244,8 +26248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.9, y: 2.25}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: -4.9, y: 1.55}
+  m_SizeDelta: {x: 30, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3456772554474756984
 MeshRenderer:
@@ -26496,7 +26500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.85}
+  m_AnchoredPosition: {x: 0, y: 2.15}
   m_SizeDelta: {x: 180, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3456772554864915745
@@ -26599,7 +26603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 3}
+  m_AnchoredPosition: {x: 0, y: 2.3}
   m_SizeDelta: {x: 180, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3456772554983095298
@@ -26767,7 +26771,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3340338903294160845}
   - {fileID: 3334165918423721351}
   m_Father: {fileID: 3334100485694667025}
   m_RootOrder: 0
