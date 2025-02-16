@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -104,7 +103,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +116,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -149,13 +148,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 32712697}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -39, y: -21.46, z: 15.498801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525908978}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &32712700
 Rigidbody2D:
@@ -174,6 +173,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -188,6 +193,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -333,6 +357,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202375562}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 0}
@@ -340,7 +365,6 @@ Transform:
   m_Children:
   - {fileID: 1739745061}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &202375565
 AudioSource:
@@ -443,6 +467,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2059389050}
     m_Modifications:
     - target: {fileID: 5516679763493239, guid: 596b55b62466445f7afda407e6a11960, type: 3}
@@ -506,6 +531,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5516679763493239, guid: 596b55b62466445f7afda407e6a11960, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 276886701}
+    - targetCorrespondingSourceObject: {fileID: 5516679763493239, guid: 596b55b62466445f7afda407e6a11960, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 276886700}
   m_SourcePrefab: {fileID: 100100000, guid: 596b55b62466445f7afda407e6a11960, type: 3}
 --- !u!4 &276886698 stripped
 Transform:
@@ -543,6 +577,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -573,13 +626,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317105632}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 519420032}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &317105634
 MonoBehaviour:
@@ -631,13 +684,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332311386}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &332311389
 BoxCollider2D:
@@ -649,6 +702,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -690,13 +762,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458712918}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596302899}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &458712920
 MonoBehaviour:
@@ -795,9 +867,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -831,6 +911,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -36.3, y: -28.400002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -838,7 +919,6 @@ Transform:
   m_Children:
   - {fileID: 317105633}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -911,6 +991,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525908977}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.061417, y: -21.231304, z: -15.498801}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -923,7 +1004,6 @@ Transform:
   - {fileID: 1724786045}
   - {fileID: 1354183848}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &797431693
 GameObject:
@@ -951,13 +1031,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797431693}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -73.21, y: 63.91, z: 15.498801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525908978}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &797431696
 Rigidbody2D:
@@ -976,6 +1056,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -990,6 +1076,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1084,13 +1189,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354183847}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.5, y: 63.91, z: 15.498801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525908978}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1354183849
 Rigidbody2D:
@@ -1109,6 +1214,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -1123,6 +1234,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1218,6 +1348,25 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1241,6 +1390,7 @@ PolygonCollider2D:
       - {x: -26.506319, y: -48.709778}
       - {x: 27.797503, y: -53.59962}
       - {x: 27.322098, y: 28.580677}
+  m_UseDelaunayMesh: 0
 --- !u!4 &1425776039
 Transform:
   m_ObjectHideFlags: 0
@@ -1248,13 +1398,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425776037}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 41, y: 12.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430494785
 GameObject:
@@ -1316,13 +1466,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430494785}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1596302896
 GameObject:
@@ -1335,6 +1485,7 @@ GameObject:
   - component: {fileID: 1596302899}
   - component: {fileID: 1596302900}
   - component: {fileID: 1596302901}
+  - component: {fileID: 1596302902}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -1349,6 +1500,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596302896}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -36.3, y: -28.400002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1356,7 +1508,6 @@ Transform:
   m_Children:
   - {fileID: 458712919}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1596302900
 MonoBehaviour:
@@ -1387,6 +1538,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
+    FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
@@ -1413,6 +1565,20 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1739745062}
   m_ConfineScreenEdges: 1
   m_Damping: 0
+--- !u!114 &1596302902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596302896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cbf61715184b49ac91313aa16d96a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomFactor: 0.5
+  zoomDuration: 0.5
 --- !u!1 &1613417165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,13 +1604,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613417165}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1613417167
 MonoBehaviour:
@@ -1463,7 +1629,7 @@ MonoBehaviour:
   anotherInv: {fileID: 0}
   slot: {fileID: 3365299569123761645, guid: f75038d0c19772548b08138941b7cedf, type: 3}
   gearMenu: {fileID: 0}
-  circle: {fileID: 0}
+  networkManager: {fileID: 0}
   player: {fileID: 0}
   UI: {fileID: 0}
   characters: []
@@ -1471,6 +1637,15 @@ MonoBehaviour:
   scenes: []
   clientHolder: {fileID: 0}
   characterHolder: {fileID: 0}
+  characterController: {fileID: 0}
+  client: {fileID: 0}
+  serverName: 
+  isMono: 0
+  isMulti: 0
+  isPVP: 0
+  isSafe: 0
+  isPermadeath: 0
+  isNormalDeath: 0
 --- !u!114 &1613417168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,7 +1664,6 @@ MonoBehaviour:
     - quantity: 0
       itemName: Gold
       rarity: 0
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1505,10 +1679,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Nugget (50 Gold)
       rarity: 0
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1524,10 +1698,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Lingot (1,000 Gold)
       rarity: 0
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1543,12 +1717,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Food
     gearItems:
     - quantity: 0
       itemName: Chicken Leg
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1564,10 +1738,10 @@ MonoBehaviour:
       hpRegen: 1
       manaRegen: 1
       effectDuration: 20
+      itemType: 0
     - quantity: 0
       itemName: Pork Ham
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1583,10 +1757,10 @@ MonoBehaviour:
       hpRegen: 1
       manaRegen: 1
       effectDuration: 60
+      itemType: 0
     - quantity: 0
       itemName: Bacon
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1602,10 +1776,10 @@ MonoBehaviour:
       hpRegen: 2
       manaRegen: 2
       effectDuration: 20
+      itemType: 0
     - quantity: 0
       itemName: Honey-Infused Bacon
       rarity: 8
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1621,12 +1795,12 @@ MonoBehaviour:
       hpRegen: 2
       manaRegen: 2
       effectDuration: 120
+      itemType: 0
   - categoryName: Potions
     gearItems:
     - quantity: 0
       itemName: Small Health Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1642,10 +1816,10 @@ MonoBehaviour:
       hpRegen: 20
       manaRegen: 0
       effectDuration: 0.01
+      itemType: 0
     - quantity: 0
       itemName: Small Mana Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1661,10 +1835,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 20
       effectDuration: 0.01
+      itemType: 0
     - quantity: 0
       itemName: Medium Health Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1680,10 +1854,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Medium Mana Potion
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1699,10 +1873,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Big Health Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1718,10 +1892,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Big Mana Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1737,10 +1911,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Great Health Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1756,10 +1930,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Great Mana Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1775,10 +1949,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Health Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1794,10 +1968,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Mana Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1813,10 +1987,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Small Exp Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1832,10 +2006,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 300
+      itemType: 0
     - quantity: 0
       itemName: Medium Exp Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1851,10 +2025,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 900
+      itemType: 0
     - quantity: 0
       itemName: Big Exp Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1870,10 +2044,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 1800
+      itemType: 0
     - quantity: 0
       itemName: Great Exp Potion
       rarity: 5
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1889,10 +2063,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 3600
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Exp Potion
       rarity: 6
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1908,10 +2082,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 7200
+      itemType: 0
     - quantity: 0
       itemName: Small Loot Potion
       rarity: 2
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1927,10 +2101,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 300
+      itemType: 0
     - quantity: 0
       itemName: Medium Loot Potion
       rarity: 3
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1946,10 +2120,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 900
+      itemType: 0
     - quantity: 0
       itemName: Big Loot Potion
       rarity: 4
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1965,10 +2139,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 1800
+      itemType: 0
     - quantity: 0
       itemName: Great Loot Potion
       rarity: 5
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -1984,10 +2158,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 3600
+      itemType: 0
     - quantity: 0
       itemName: Ultimate Loot Potion
       rarity: 6
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2003,12 +2177,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 7200
+      itemType: 0
   - categoryName: Holder
     gearItems:
     - quantity: 0
       itemName: Backpack
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2024,12 +2198,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Helmet
     gearItems:
     - quantity: 0
       itemName: Leather Helmet
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2045,10 +2219,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Helmet
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2064,12 +2238,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Armor
     gearItems:
     - quantity: 0
       itemName: Leather Armor
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2085,10 +2259,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Armor
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2104,12 +2278,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Legs
     gearItems:
     - quantity: 0
       itemName: Leather Legs
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2125,10 +2299,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Legs
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2144,12 +2318,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Boots
     gearItems:
     - quantity: 0
       itemName: Leather Boots
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2165,12 +2339,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Weapon
     gearItems:
     - quantity: 0
       itemName: Wooden Stick
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2186,10 +2360,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Small Dagger
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2205,12 +2379,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Shield
     gearItems:
     - quantity: 0
       itemName: Wooden Shield
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2226,10 +2400,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Shield
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2245,12 +2419,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Ring
     gearItems:
     - quantity: 0
       itemName: Wooden Ring
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2266,10 +2440,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Brass Ring
       rarity: 1
-      itemType: 0
       hp: 0
       mana: 0
       movementSpeed: 0
@@ -2285,12 +2459,12 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   - categoryName: Amulet
     gearItems:
     - quantity: 0
       itemName: Brass Amulet
       rarity: 1
-      itemType: 0
       hp: 10
       mana: 20
       movementSpeed: 0
@@ -2306,10 +2480,10 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
     - quantity: 0
       itemName: Old Pendant
       rarity: 7
-      itemType: 0
       hp: 25
       mana: 35
       movementSpeed: 0
@@ -2325,6 +2499,7 @@ MonoBehaviour:
       hpRegen: 0
       manaRegen: 0
       effectDuration: 0
+      itemType: 0
   gearItems: []
 --- !u!1 &1636280857
 GameObject:
@@ -2369,13 +2544,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636280857}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.713692, y: 24.996851, z: 0.8356101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1724786044
 GameObject:
@@ -2403,13 +2578,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724786044}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 40.6, y: -21.46, z: 15.498801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525908978}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1724786046
 Rigidbody2D:
@@ -2428,6 +2603,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -2442,6 +2623,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2534,13 +2734,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739745060}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 202375564}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1739745062
 PolygonCollider2D:
@@ -2552,6 +2752,25 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2571,6 +2790,7 @@ PolygonCollider2D:
       - {x: -10.231598, y: 6.2325296}
       - {x: -10.22346, y: -6.226471}
       - {x: 10.233253, y: -6.225311}
+  m_UseDelaunayMesh: 0
 --- !u!1 &2036047512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,13 +2815,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036047512}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2036047516
 MonoBehaviour:
@@ -2645,13 +2865,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052350113}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 60.5, y: 21.4, z: 15.498801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525908978}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2052350116
 Rigidbody2D:
@@ -2670,6 +2890,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -2684,6 +2910,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2775,6 +3020,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059389049}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.139904, y: 47.958622, z: -10.119476}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2783,7 +3029,6 @@ Transform:
   - {fileID: 7099463739267430}
   - {fileID: 276886698}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2080465237
 GameObject:
@@ -2811,13 +3056,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080465237}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -80.5, y: 21.4, z: 15.498801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 525908978}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2080465240
 Rigidbody2D:
@@ -2836,6 +3081,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -2850,6 +3101,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -2928,6 +3198,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 2059389050}
     m_Modifications:
     - target: {fileID: 1275798564653282052, guid: 4b15f30a135694f8eab00a6987f6282d, type: 3}
@@ -3015,4 +3286,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b15f30a135694f8eab00a6987f6282d, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 519420032}
+  - {fileID: 202375564}
+  - {fileID: 525908978}
+  - {fileID: 2036047515}
+  - {fileID: 332311388}
+  - {fileID: 1596302899}
+  - {fileID: 2059389050}
+  - {fileID: 1613417166}
+  - {fileID: 1430494788}
+  - {fileID: 1636280859}
+  - {fileID: 1425776039}

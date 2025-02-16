@@ -37,9 +37,6 @@ public class GearItemManager : MonoBehaviour
                 // Acceder a las propiedades del GearItem
                 string itemName = gearItem.itemName;
                 float weight = gearItem.weight;
-
-                // Realizar acciones con el GearItem
-                //Debug.Log("Category: " + categoryName + ", Item: " + itemName + ", Weight: " + weight);
             }
         }
     }

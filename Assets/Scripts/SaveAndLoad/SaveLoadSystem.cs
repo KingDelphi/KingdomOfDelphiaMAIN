@@ -183,28 +183,33 @@ public class SaveLoadSystem : MonoBehaviour
     }
 
     public int GetSavedSceneIndex(string playerName)
-    {
-        string key = "SavedSceneIndex_" + playerName;
-        string betaTesterKey = "SavedSceneIndex_" + BetaTesterName;
+{
+    string key = "SavedSceneIndex_" + playerName;
+    string betaTesterKey = "SavedSceneIndex_" + BetaTesterName;
 
-        if (PlayerPrefs.HasKey(key))
-        {
-            int sceneIndex = PlayerPrefs.GetInt(key);
-            Debug.Log($"SaveLoadSystem - Saved Scene Index: {sceneIndex}");
-            return sceneIndex;
-        }
-        else if (PlayerPrefs.HasKey(betaTesterKey))
-        {
-            int sceneIndex = PlayerPrefs.GetInt(betaTesterKey);
-            Debug.Log($"SaveLoadSystem - Loaded default Scene Index: {sceneIndex} from BetaTester");
-            return sceneIndex;
-        }
-        else
-        {
-            Debug.LogWarning("SaveLoadSystem - No saved scene index found, returning default scene index (1).");
-            return 1; // Valor por defecto si no hay datos guardados
-        }
+    if (PlayerPrefs.HasKey(key))
+    {
+        int sceneIndex = PlayerPrefs.GetInt(key);
+        Debug.Log($"SaveLoadSystem - Saved Scene Index: {sceneIndex}");
+        
+        // Si el índice guardado es 0, forzarlo a 1
+        return sceneIndex == 0 ? 1 : sceneIndex;
     }
+    else if (PlayerPrefs.HasKey(betaTesterKey))
+    {
+        int sceneIndex = PlayerPrefs.GetInt(betaTesterKey);
+        Debug.Log($"SaveLoadSystem - Loaded default Scene Index: {sceneIndex} from BetaTester");
+
+        // Si el índice guardado es 0, forzarlo a 1
+        return sceneIndex == 0 ? 1 : sceneIndex;
+    }
+    else
+    {
+        Debug.LogWarning("SaveLoadSystem - No saved scene index found, returning default scene index (1).");
+        return 1; // Forzar el índice a 1 si no hay datos guardados
+    }
+}
+
 
     public Vector3 GetSavedPosition()
     {

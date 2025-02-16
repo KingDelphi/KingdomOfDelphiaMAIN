@@ -10,40 +10,37 @@ public class LoginManager : MonoBehaviour
     public TMP_InputField passwordInput;
     public Button loginButton;
     public TMP_Text feedbackText;
-    public NetworkDebugStart networkDebugStart;
     public GameObject loginManagerCanvas;
-    
+
+    private NetworkRunner networkRunner; // Se mantiene privado para evitar manipulación externa
 
     private void Start()
-    {   
+    {
         loginButton.onClick.AddListener(HandleLogin);
     }
 
     public void HandleLogin()
     {
-        loginManagerCanvas.SetActive(false);
+        // loginManagerCanvas.SetActive(false);
 
-        // Mostrar la pantalla de carga
+        // Mostrar la pantalla de carga si está disponible
         if (LoadingScreenManager.Instance != null)
         {
             LoadingScreenManager.Instance.ShowLoadingScreen();
         }
-        
+
         string playerName = playerNameInput.text;
         string password = passwordInput.text;
 
         if (Authenticate(playerName, password))
         {
-            // Almacenar el nombre del jugador y cargar la siguiente escena
             GameManager.Instance.SetPlayerName(playerName);
 
-            // Llenar el campo "Room" con el nombre del servidor seleccionado
             string selectedServer = serverDropdown.options[serverDropdown.value].text;
-            networkDebugStart.DefaultRoomName = selectedServer;
             GameManager.Instance.SetServer(selectedServer);
 
-            // Iniciar el cliente compartido
-            networkDebugStart.StartSharedClient();
+            // Iniciar la conexión a la red
+            StartGame(selectedServer);
         }
         else
         {
@@ -51,9 +48,49 @@ public class LoginManager : MonoBehaviour
         }
     }
 
+    private async void StartGame(string roomName)
+    {
+        if (string.IsNullOrEmpty(roomName))
+        {
+            Debug.LogError("⚠️ Room name is empty! Cannot start game.");
+            return;
+        }
+
+        // Buscar si ya hay un NetworkRunner en la escena
+        networkRunner = FindObjectOfType<NetworkRunner>();
+        if (networkRunner == null)
+        {
+            networkRunner = gameObject.AddComponent<NetworkRunner>();
+        }
+
+        // Buscar si ya hay un NetworkSceneManagerDefault en la escena
+        NetworkSceneManagerDefault sceneManager = FindObjectOfType<NetworkSceneManagerDefault>();
+        if (sceneManager == null)
+        {
+            sceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>();
+        }
+
+        Debug.Log($"📡 Connecting to room: {roomName} as Shared Client...");
+
+        var result = await networkRunner.StartGame(new StartGameArgs()
+        {
+            GameMode = GameMode.Shared,  // ✅ Equivalente a "Start Shared Client"
+            SessionName = roomName,
+            SceneManager = sceneManager,
+        });
+
+        if (result.Ok)
+        {
+            Debug.Log($"✅ Successfully connected to room: {roomName}");
+        }
+        else
+        {
+            Debug.LogError($"❌ Failed to start game: {result.ErrorMessage}");
+        }
+    }
+
     private bool Authenticate(string playerName, string password)
     {
-        // Aquí se debe realizar la autenticación, por ejemplo, con un servidor o base de datos
-        return !string.IsNullOrEmpty(playerName) && !string.IsNullOrEmpty(password); // Simplificado para este ejemplo
+        return !string.IsNullOrEmpty(playerName) && !string.IsNullOrEmpty(password);
     }
 }

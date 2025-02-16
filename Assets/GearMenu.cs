@@ -15,7 +15,6 @@ public class GearMenu : MonoBehaviour
 
     void Awake()
     {
-        // Debug.Log("GearMenu Awake() called.");
         player = FindObjectOfType<Player>();
         playerInventory = FindObjectOfType<PlayerInventory>();
         equippedGear = new List<GearItem>(new GearItem[9]); // Inicializar lista de equipo equipado

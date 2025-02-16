@@ -6,7 +6,7 @@ using System.Text;
 
 public class OpenAIChat : MonoBehaviour
 {
-    private string apiKey = "";
+    private string apiKey = "sk-proj-TbnxcrI1EMWl6V5XBRXsT3BlbkFJ6vj962iwrhRBXqxjsLhW";
 
     public IEnumerator SendMessageToOpenAI(string message, System.Action<string> callback)
     {

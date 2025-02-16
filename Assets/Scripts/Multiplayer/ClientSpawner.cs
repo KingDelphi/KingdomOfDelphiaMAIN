@@ -17,53 +17,73 @@ public class ClientSpawner : SimulationBehaviour, IPlayerJoined
 
             if (SceneManager.GetActiveScene().buildIndex != 0)
             {
-                Debug.Log("ClientSpawner(20) if(SceneManager.GetActiveScene().buildIndex != 0) = TRUE; FIRST BLOCK CALLED. ");
+                Debug.Log("ClientSpawner(20) if(SceneManager.GetActiveScene().buildIndex != 0) = TRUE; FIRST BLOCK CALLED.");
                 StartCoroutine(SpawnWithDelay());
             }
             else
             {
-                Debug.Log("ClientSpawner(25) if(SceneManager.GetActiveScene().buildIndex != 0) = FALSE; SECOND BLOCK CALLED. ");
+                Debug.Log("ClientSpawner(25) if(SceneManager.GetActiveScene().buildIndex != 0) = FALSE; SECOND BLOCK CALLED.");
                 clientRef = _player;
                 SceneManager.sceneLoaded += SpawnClient;
 
-                // Llama al método de carga del juego
                 StartCoroutine(LoadGameAndSetScene());
-
-                //Runner.SetActiveScene(GameManager.GetScene(1));
             }
         }
     }
 
     private IEnumerator LoadGameAndSetScene()
+{
+    yield return new WaitForSeconds(0.1f); 
+    
+    string playerName = GameManager.Instance.GetPlayerName();
+
+    if (string.IsNullOrEmpty(playerName))
     {
-        yield return new WaitForSeconds(0.1f); // Espera un segundo para asegurarte de que todo se ha inicializado
-        
-        string playerName = GameManager.Instance.GetPlayerName();
-
-        if (string.IsNullOrEmpty(playerName))
-        {
-            Debug.LogWarning("Player name not found.");
-            yield break;
-        }
-
-        Debug.LogWarning($"✔️✔️✔️✔️✔️ Loading game for Player: {playerName}");
-        SaveLoadSystem.Instance.SetCurrentPlayerName(playerName);
-
-        SaveLoadSystem.Instance.LoadGame();
-        
-        // Aquí se decide la escena a cargar
-        int savedSceneIndex = SaveLoadSystem.Instance.GetSavedSceneIndex(playerName);
-        if (savedSceneIndex != -1)
-        {
-            Debug.Log($"Loading saved scene index: {savedSceneIndex}");
-            Runner.SetActiveScene(GameManager.GetScene(savedSceneIndex));
-        }
-        else
-        {
-            Debug.Log("No saved scene found, loading default scene 1");
-            Runner.SetActiveScene(GameManager.GetScene(1));
-        }
+        Debug.LogWarning("Player name not found.");
+        yield break;
     }
+
+    Debug.LogWarning($"✔️✔️✔️✔️✔️ Loading game for Player: {playerName}");
+    SaveLoadSystem.Instance.SetCurrentPlayerName(playerName);
+
+    SaveLoadSystem.Instance.LoadGame();
+
+    int savedSceneIndex = SaveLoadSystem.Instance.GetSavedSceneIndex(playerName);
+    SceneRef sceneRef = SceneRef.FromIndex(savedSceneIndex != -1 ? savedSceneIndex : 1);
+
+    Debug.Log($"Loading scene: {sceneRef}");
+
+    if (Runner.SceneManager != null)
+    {
+        var sceneParams = new NetworkLoadSceneParameters();
+        
+        // 💡 Cargar la nueva escena en modo aditivo
+        Runner.SceneManager.LoadScene(sceneRef, sceneParams);
+        
+        // 🔄 Esperar hasta que la escena esté completamente cargada
+        Scene newScene;
+        do
+        {
+            yield return null;
+            newScene = SceneManager.GetSceneByBuildIndex(savedSceneIndex);
+        } while (!newScene.isLoaded);
+
+        // 🔥 Cambiar la escena activa a la nueva
+        SceneManager.SetActiveScene(newScene);
+
+        // 🚀 Descargar la escena 0 después de hacer el cambio
+        SceneManager.UnloadSceneAsync(0);
+    }
+    else
+    {
+        Debug.LogError("⚠️ Runner.SceneManager is null! Make sure NetworkSceneManager is assigned.");
+    }
+}
+
+
+
+
+
 
     public void SpawnClient(Scene scene, LoadSceneMode mode)
     {
@@ -75,20 +95,19 @@ public class ClientSpawner : SimulationBehaviour, IPlayerJoined
     {
         Debug.Log("ClientSpawner(55).SpawnWithDelay() called.");
         yield return new WaitForSeconds(1.5f);
-        // Obtener la posición guardada
+
         Vector3 savedPosition = SaveLoadSystem.Instance.GetSavedPosition();
         Runner.Spawn(clientPrefab, savedPosition, Quaternion.identity, clientRef, InitializeClientBeforeSpawn);
     }
 
     private void InitializeClientBeforeSpawn(NetworkRunner runner, NetworkObject obj)
     {
-        
+        // Implementa la inicialización si es necesario
     }
 
     public void ClientSpawnerVerification()
     {
         Debug.Log($"ClientSpawner Verification: \n" +
-                  //$"_player: {_player}\n" +
                   $"Runner.LocalPlayer: {Runner.LocalPlayer}\n" +
                   $"SceneManager.GetActiveScene().buildIndex: {SceneManager.GetActiveScene().buildIndex}");
         Debug.Log("ClientSpawner Verification: ✔️ Success");

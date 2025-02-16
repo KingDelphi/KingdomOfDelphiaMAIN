@@ -49,6 +49,12 @@ public class GameManager : MonoBehaviour
     public CharacterController characterController;
     public Client client;
     public string serverName;
+    public bool isMono;
+    public bool isMulti;
+    public bool isPVP;
+    public bool isSafe;
+    public bool isPermadeath;
+    public bool isNormalDeath;
 
     private void Awake()
     {   
@@ -59,24 +65,104 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SetServerVariables(string server)
+    {
+        switch (server)
+        {
+            case "Delphia Valor":
+                isMono = true;
+                isMulti = false;
+                isPVP = true;
+                isSafe = false;
+                isPermadeath = false;
+                isNormalDeath = true;
+                break;
+            case "Delphia Honor":
+                isMono = true;
+                isMulti = false;
+                isPVP = true;
+                isSafe = false;
+                isPermadeath = true;
+                isNormalDeath = false;
+                break;
+            case "Delphia Harmony":
+                isMono = true;
+                isMulti = false;
+                isPVP = false;
+                isSafe = true;
+                isPermadeath = false;
+                isNormalDeath = true;
+                break;
+            case "Delphia Resolve":
+                isMono = true;
+                isMulti = false;
+                isPVP = false;
+                isSafe = true;
+                isPermadeath = true;
+                isNormalDeath = false;
+                break;
+            case "Delphia Unity":
+                isMono = false;
+                isMulti = true;
+                isPVP = true;
+                isSafe = false;
+                isPermadeath = false;
+                isNormalDeath = true;
+                break;
+            case "Delphia Valiant":
+                isMono = false;
+                isMulti = true;
+                isPVP = true;
+                isSafe = false;
+                isPermadeath = true;
+                isNormalDeath = false;
+                break;
+            case "Delphia Peace":
+                isMono = false;
+                isMulti = true;
+                isPVP = false;
+                isSafe = true;
+                isPermadeath = false;
+                isNormalDeath = true;
+                break;
+            case "Delphia Eternity":
+                isMono = false;
+                isMulti = true;
+                isPVP = false;
+                isSafe = true;
+                isPermadeath = true;
+                isNormalDeath = false;
+                break;
+            default:
+                Debug.LogError("Server name not recognized");
+                break;
+        }
+    }
+
     public string GetServerName()
     {
+        Debug.Log("GameManager(144): serverName: " + serverName);
         return serverName;
     }
 
     public void SetServer(string server)
     {
         serverName = server;
+        SetServerVariables(server);
+        Debug.Log("GameManager(152): server: " + server);
     }
 
     public void SetPlayerName(string name)
     {
         playerName = name;
+        Debug.Log("GameManager(158): playerName: " + playerName);
     }
 
     public string GetPlayerName()
     {
+        Debug.Log("GameManager(164): playerName: " + playerName);
         return playerName;
+        
     }
 
     private void OnApplicationQuit()

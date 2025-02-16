@@ -8,12 +8,12 @@ using System.Collections;
 
 public class Player : NetworkBehaviour
 {
-    public int maxHealth = 0;
+    public int maxHealth;
     public int currentHealth;
 
     public Image healthBar;
 
-    public int maxMana = 0;
+    public int maxMana;
     public int currentMana;
 
     public Image manaBar;
@@ -75,6 +75,9 @@ public class Player : NetworkBehaviour
     public NetworkId clientId {get; set;}
 
     public Client client;
+    public bool isDead = false;
+    private GameObject bloodEffectPanel; // Panel de sangre en pantalla
+
 
     public void SetLevel(int newLevel)
     {
@@ -92,12 +95,6 @@ public class Player : NetworkBehaviour
         return client;
     }
 
-    // private void UpdateDisplayName()
-    // {
-    //     string LVLName = "LVL " + level + " " + playerName;
-    //     playerNameText.text = LVLName;
-    // }
-
     private void Awake()
     {
         playerName = GameManager.Instance.GetPlayerName();
@@ -112,7 +109,20 @@ public class Player : NetworkBehaviour
         currentMana = mana;
         manaBar.color = Color.blue;
 
-        //GameManager.Instance.PlayerInventoryInitialized(inventory);
+        // Buscar el panel en la UI
+        if (bloodEffectPanel == null)
+        {
+            GameObject prefab = Resources.Load<GameObject>("BloodEffectPanel");
+            if (prefab != null)
+            {
+                bloodEffectPanel = Instantiate(prefab);
+                bloodEffectPanel.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            }
+            else
+            {
+                Debug.Log("bloodEffectPanel prefab no encontrado...");
+            }
+        }
     }
 
     private void Update()
@@ -135,7 +145,6 @@ public class Player : NetworkBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-
         healthBar.fillAmount = (float)currentHealth / hp;
 
         if (currentHealth >= hp * 0.8)
@@ -161,11 +170,43 @@ public class Player : NetworkBehaviour
 
         currentHealth = Mathf.Max(currentHealth, 0);
 
+        // Activar efecto de sangre si está en vida negra (menos del 10% de HP)
+        if (currentHealth <= hp * 0.1 && bloodEffectPanel != null)
+        {
+            Debug.Log("Activando BloodEffectPanel con parpadeo...");
+
+            if (currentHealth <= hp * 0.1)
+            {
+                BloodEffectController bloodEffect = bloodEffectPanel.GetComponent<BloodEffectController>();
+                if (bloodEffect != null)
+                {
+                    bloodEffect.ShowBloodEffect();
+                }
+            }
+        }
+
+        if (currentHealth <= 0 && bloodEffectPanel != null)
+        {
+            Debug.Log("Vida = 0. BloodEffectPanel se mantiene activado.");
+            bloodEffectPanel.GetComponent<Image>().color = new Color(1, 0, 0, 0.8f); // Más opaco
+            bloodEffectPanel.SetActive(true);
+        }
+
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+
+    // Método para ocultar el panel
+    void HideBloodEffect()
+    {
+        if (bloodEffectPanel != null)
+        {
+            bloodEffectPanel.SetActive(false);
+        }
+    }
+
 
     public void Heal(int healAmount)
     {
@@ -224,8 +265,38 @@ public class Player : NetworkBehaviour
 
     private void Die()
     {
+        if (isDead) return; // 🚫 Evita que muera varias veces
+
+        isDead = true; // ⚰️ Marcar como muerto
+
         Debug.Log("El personaje ha muerto.");
+
+        gameObject.layer = LayerMask.NameToLayer("Dead");
+
+        // Desactiva el Collider para evitar recibir más ataques
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
+        PenalizeExp(0.10f);
+
+        // 🌫️ Activar la Nube de Muerte
+        DeathFogEffect deathFog = FindObjectOfType<DeathFogEffect>();
+        if (deathFog != null)
+        {
+            deathFog.StartFogEffect();
+        }
+
+        DeathSystem deathSystem = GetComponent<DeathSystem>();
+        if (deathSystem != null)
+        {
+            deathSystem.Die(GetComponent<PlayerInventory>());
+        }
     }
+
+    
 
     public void ReceiveExp(int expAmount)
     {
@@ -233,6 +304,15 @@ public class Player : NetworkBehaviour
         OnAddExperience?.Invoke(expAmount);
 
         Debug.Log("El personaje ha recibido " + expAmount + " puntos de experiencia. Total de experiencia: " + experience);
+    }
+
+    public void PenalizeExp(float percentage)
+    {
+        int expLost = Mathf.FloorToInt(experience * percentage);
+        experience = Mathf.Max(0, experience - expLost); // Evita números negativos
+        OnAddExperience?.Invoke(-expLost);
+
+        Debug.Log($"El personaje ha perdido {expLost} puntos de experiencia. Experiencia previa: {experience + expLost}, Experiencia actual: {experience}");
     }
 
     public int GetExperience()
@@ -449,12 +529,6 @@ public class Player : NetworkBehaviour
 
         gear.OnEquipmentChanged += CalculatePlayerStats;
     }
-
-    // public void SetupOtherPlayer()
-    // {
-    //     GetComponent<CharacterController>().Initiate();
-    //     gameObject.tag = "Untagged";
-    // }
 
     public override void Spawned()
     {

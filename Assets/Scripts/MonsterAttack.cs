@@ -47,32 +47,41 @@ public class MonsterAttack : MonoBehaviour
     }
 
     private void Update()
+{
+    if (!isAttacking && playerCharacter != null)
     {
-        if (!isAttacking)
+        Player player = playerCharacter.GetComponent<Player>();
+        
+        // 🔹 Verificamos si el jugador está muerto antes de atacarlo
+        if (player != null && player.isDead) 
         {
-            // Verificar la distancia entre el monstruo y el jugador
-            float distanceToPlayer = Vector3.Distance(transform.position, playerCharacter.transform.position);
+            return; // 🚫 Si está muerto, no seguimos con el ataque
+        }
 
-            if (distanceToPlayer <= attackRange)
+        // Verificar la distancia entre el monstruo y el jugador
+        float distanceToPlayer = Vector3.Distance(transform.position, playerCharacter.transform.position);
+
+        if (distanceToPlayer <= attackRange)
+        {
+            if (hasRunAnimation && animator != null && animator.GetBool("Run"))
             {
-                if (hasRunAnimation && animator != null && animator.GetBool("Run"))
-                {
-                    animator.SetBool("Run", false);
-                }
-                
-                // Si el jugador está dentro del rango de ataque y ha pasado el tiempo de espera, realizar el ataque
-                if (attackTimer >= attackCooldown)
-                {
-                    PerformAttack();
-                    attackTimer = 0f;
-                }
-                else
-                {
-                    attackTimer += Time.deltaTime;
-                }
+                animator.SetBool("Run", false);
+            }
+            
+            // Si el jugador está dentro del rango de ataque y ha pasado el tiempo de espera, realizar el ataque
+            if (attackTimer >= attackCooldown)
+            {
+                PerformAttack();
+                attackTimer = 0f;
+            }
+            else
+            {
+                attackTimer += Time.deltaTime;
             }
         }
     }
+}
+
 
     private void PerformAttack()
     {

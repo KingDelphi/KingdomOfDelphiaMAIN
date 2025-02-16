@@ -46,8 +46,17 @@ namespace Assets.HeroEditor.Common.CharacterScripts
 	    /// Set characters' expression. Called from animation.
 	    /// </summary>
 		public void SetExpression(string expression)
-	    {
-		    transform.parent.GetComponent<Character>().SetExpression(expression);
+		{
+			Character character = GetComponentInParent<Character>();
+
+			if (character != null)
+			{
+				character.SetExpression(expression);
+			}
+			else
+			{
+				Debug.LogError("❌ No se encontró el componente Character en los padres.");
+			}
 		}
 
 	    /// <summary>

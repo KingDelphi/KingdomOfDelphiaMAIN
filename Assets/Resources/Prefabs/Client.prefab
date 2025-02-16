@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665177547606650469}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1665177547606650468
 MonoBehaviour:
@@ -45,18 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SortKey: 3908330120
   ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 1
-  AllowStateAuthorityOverride: 0
-  AoiPositionSource: {fileID: 0}
   Flags: 2305
-  NetworkGuid:
-    RawGuidValue: 373c322720e8942f1ba5e699fb6ac1a2
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4865053813359193121}
-  SimulationBehaviours: []
+  ForceRemoteRenderTimeframe: 0
 --- !u!114 &4865053813359193121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2731ea7e830144a8be0b53809ab4a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
   activePlayer: {fileID: 0}
   playerPrefab: {fileID: 572329979587953912, guid: 0bf14f63d4c0d4a8db379db566a1850b, type: 3}
-  _activePlayerSceneIndex: 0
   characterHolder: {fileID: 0}
+  networkObject: {fileID: 0}
+  newNetworkObject: {fileID: 0}

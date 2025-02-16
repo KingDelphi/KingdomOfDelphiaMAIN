@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Fusion;
 
-public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
+public class CharacterController : NetworkBehaviour, ISaveable // SAVELOAD
 {
-    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public string ID => GetInstanceID().ToString(); // SAVELOAD
     public Type SaveType => typeof(CharacterControllerSaveData); // Implementación correcta de `SaveType`
 
     public float moveSpeed = 15f;
@@ -17,18 +17,20 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     private Vector2 moveInput;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     public Rigidbody2D rb;
-
-    private float minX, maxX, minY, maxY;
-
+    
     public GameObject mapObject;
-
     public Animator animator;
+    public Transform body;
+    public Player player;
 
+    // 🔹 Variables para interpolación manual
+    private Vector2 targetPosition;
+    private Vector2 previousPosition;
+    private float interpolationFactor = 20f; // Ajusta según pruebas
+
+    // 🔹 Variables de guardado
     public Vector3 lastPosition;
     public bool hasLastPosition = false;
-    public Transform body;
-
-    public Player player;
 
     private void Start()
     {
@@ -38,27 +40,8 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     public void Initiate()
     {        
         player = GetComponent<Player>();
-        
-        if (player.GetComponent<NetworkObject>().HasStateAuthority)
-        {
-            Debug.Log("CharacterController(38).Initiate() called.");
-        }
-
         rb = GetComponent<Rigidbody2D>();
-
         mapObject = GameObject.FindGameObjectWithTag("Map");
-
-        SpriteRenderer mapRenderer = mapObject.GetComponent<SpriteRenderer>();
-
-        float mapLeft = mapRenderer.bounds.min.x;
-        float mapRight = mapRenderer.bounds.max.x;
-        float mapBottom = mapRenderer.bounds.min.y;
-        float mapTop = mapRenderer.bounds.max.y;
-
-        minX = mapLeft;
-        maxX = mapRight;
-        minY = mapBottom;
-        maxY = mapTop;
     }
 
     private void Update()
@@ -66,41 +49,25 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         if (player == null)
         {
             player = GetComponent<Player>();
-            if (player == null)
-            {
-                Debug.LogError("Player component not found on CharacterController.");
-                return;
-            }
+            if (player == null) return;
         }
-        
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
 
-        moveInput = new Vector2(horizontalInput, verticalInput);
-
-        if (moveInput != Vector2.zero)
+        if (Object.HasInputAuthority)
         {
-            animator.SetInteger("State", 2);
-            animator.SetBool("Run", true);
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            moveInput = new Vector2(horizontalInput, verticalInput);
+
+            animator.SetBool("Run", moveInput != Vector2.zero);
         }
         else
         {
-            animator.SetInteger("State", 0);
-            animator.SetBool("Run", false);
+            // 🔥 Interpolamos suavemente la posición
+            rb.position = Vector2.Lerp(rb.position, targetPosition, Time.deltaTime * interpolationFactor);
         }
 
-        if ((moveInput.x < 0 && transform.position.x <= minX) || (moveInput.x > 0 && transform.position.x >= maxX))
-        {
-            moveInput.x = 0;
-        }
-
-        if ((moveInput.y < 0 && transform.position.y <= minY) || (moveInput.y > 0 && transform.position.y >= maxY))
-        {
-            moveInput.y = 0;
-        }
-        
-        lastPosition = transform.position;
-        
+        lastPosition = transform.position; // Guardamos la posición actual
     }
 
     private void FixedUpdate()
@@ -109,7 +76,10 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
             return;
 
         if (moveInput != Vector2.zero)
+        {
             MovePlayer(moveInput);
+            RPC_SetPosition(rb.position); // 🔥 Sincronizamos la nueva posición con los demás clientes
+        }
 
         if (moveInput.x > 0)
         {
@@ -127,6 +97,12 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         rb.MovePosition(rb.position + moveVector);
     }
 
+    [Rpc(RpcSources.InputAuthority, RpcTargets.StateAuthority)]
+    private void RPC_SetPosition(Vector2 newPos)
+    {
+        targetPosition = newPos; // 🔥 Actualizamos la posición objetivo para interpolación
+    }
+
     public void CharacterControllerVerification()
     {
         Debug.Log($"CharacterController Verification: \n" +
@@ -134,10 +110,8 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         Debug.Log("CharacterController Verification: ✔️ Success");
     }
 
-    // Comienza Implementación de ISaveable en el script CharacterController
-
-    // Implementación de ISaveable
-    public object SaveState() //SAVELOAD
+    // 🔹 Implementación de ISaveable
+    public object SaveState() // SAVELOAD
     {
         var saveData = new CharacterControllerSaveData
         {
@@ -146,7 +120,6 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
             lastPositionY = this.lastPosition.y,
             lastPositionZ = this.lastPosition.z,
             mapSpriteName = this.mapObject.GetComponent<SpriteRenderer>().sprite.name // Guardar el nombre del sprite
-
         };
         
         Debug.Log($"CharacterController SaveState called. Data to be saved: \n" +
@@ -157,16 +130,15 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         return saveData;
     }
 
-    public void LoadState(object state) //SAVELOAD
+    public void LoadState(object state) // SAVELOAD
     {
         if (state is CharacterControllerSaveData saveData)
         {
             this.moveSpeed = saveData.moveSpeed;
-
             this.lastPosition = new Vector3(saveData.lastPositionX, saveData.lastPositionY, saveData.lastPositionZ);
             this.hasLastPosition = true;
 
-            // Actualiza la posición del personaje
+            // 🔥 Restauramos la posición del personaje
             if (this.rb != null)
             {
                 this.rb.position = this.lastPosition;
@@ -176,7 +148,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
                 this.transform.position = this.lastPosition;
             }
 
-            // Actualiza el SpriteRenderer del mapa
+            // 🔥 Restauramos el SpriteRenderer del mapa
             if (this.mapObject != null)
             {
                 var spriteRenderer = this.mapObject.GetComponent<SpriteRenderer>();
@@ -209,7 +181,7 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
     }
 
     [Serializable]
-    public class CharacterControllerSaveData //SAVELOAD
+    public class CharacterControllerSaveData // SAVELOAD
     {
         public float moveSpeed;
         public float lastPositionX;
@@ -217,6 +189,4 @@ public class CharacterController : MonoBehaviour, ISaveable //SAVELOAD
         public float lastPositionZ;
         public string mapSpriteName;
     }
-        // Termina Implementación de ISaveable en el script Player
-
 }
