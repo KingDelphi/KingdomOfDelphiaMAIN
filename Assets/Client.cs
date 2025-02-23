@@ -40,6 +40,41 @@ public class Client : NetworkBehaviour
         characterPrefabs["Lobin"] = Resources.Load<GameObject>("Prefabs/Lobin");
 
     }
+
+    public void ForceSpawnPlayer()
+{
+    if (playerPrefab == null)
+    {
+        Debug.LogError("❌ ForceSpawnPlayer() - playerPrefab es NULL.");
+        return;
+    }
+
+    Vector3 spawnPosition = new Vector3(0, 1, 0);
+
+    if (!Runner.IsServer && !Runner.IsSharedModeMasterClient)
+    {
+        Debug.LogWarning("⚠️ ForceSpawnPlayer() - Solo el servidor o el master client pueden spawnear jugadores.");
+        return;
+    }
+
+    Debug.Log("🚀 ForceSpawnPlayer() - Intentando spawnear el jugador en la red...");
+
+    Runner.Spawn(
+        playerPrefab,
+        spawnPosition,
+        Quaternion.identity,
+        Runner.LocalPlayer,
+        (runner, obj) =>
+        {
+            Debug.Log($"✅ Runner.Spawn() - Personaje spawneado: {obj.name} en {spawnPosition}");
+            InitializeCharacterBeforeSpawn(runner, obj);  // ✅ Inicializamos después del spawn
+            SetActivePlayer(obj.GetComponent<Player>());
+        }
+    );
+}
+
+
+
     
     public override void Spawned()
     {
@@ -87,27 +122,52 @@ public class Client : NetworkBehaviour
                 Vector3 savedPosition = SaveLoadSystem.Instance.GetSavedPosition();
 
                 Runner.Spawn(
-                playerPrefab, 
-                savedPosition, 
-                Quaternion.identity, 
+                playerPrefab,
+                savedPosition,
+                Quaternion.identity,
                 Runner.LocalPlayer,
-                InitializeCharacterBeforeSpawn
-                );  
+                (runner, obj) =>
+                {
+                    Debug.Log($"✅ Runner.Spawn() - Personaje spawneado: {obj.name} en {savedPosition}");
+                    SetActivePlayer(obj.GetComponent<Player>());
+                    InitializeCharacterBeforeSpawn(runner, obj);  // ✅ Inicializamos después del spawn
+                    
+                }
+            ); 
             }
             else
             {
                 Debug.LogError("playerPrefab is null.");
             }
 
+        // if (HasStateAuthority)
+        // {
+        //     Debug.Log("ANDRES Client(84) if(HasStateAuthority): " + HasStateAuthority + ". DEBE SER TRUE!");
+
+        //     if (playerPrefab != null)
+        //     {                
+        //         Debug.Log("ANDRES Client(87) if(playerPrefab != null): " + (playerPrefab != null) + ". DEBE SER TRUE!");
+
+        //         // 🔥 Aquí reemplazamos Runner.Spawn() con nuestra función personalizada 🔥
+        //         ForceSpawnPlayer();
+        //     }
+        //     else
+        //     {
+        //         Debug.LogError("ANDRES Client(116) playerPrefab is null.");
+        //     }
+        // }
+
+
             Debug.LogWarning("✔️✔️✔️✔️✔️ Client(99) - Player Spawned Successfully - Running gameManager.MaximumVerification().");
             gameManager.MaximumVerification();
 
         }
     }
+    
 
     private void InitializeCharacterBeforeSpawn(NetworkRunner runner, NetworkObject obj)
     {
-        Debug.Log("CUASIMODISIMO TIENE QUE APARECER AL INICIAR Y AL CAMBIAR DE PERSONAJE. Client(107).InitializeCharacterBeforeSpawn() called. VARIABLES: NetworkRunner: " + runner + ", NetworkObject: " + obj);
+        Debug.Log("JURGENSAURIO TIENE QUE APARECER AL INICIAR Y AL CAMBIAR DE PERSONAJE. Client(107).InitializeCharacterBeforeSpawn() called. VARIABLES: NetworkRunner: " + runner + ", NetworkObject: " + obj);
         
         Player player = obj.GetComponent<Player>();
         Debug.Log("Client(110) After assigning Player player = obj.GetComponent<Player>(). VARIABLES: player: " + player);
@@ -143,31 +203,26 @@ public class Client : NetworkBehaviour
 
     public void SetActivePlayer(Player player)
     {
-        if (GetComponent<NetworkObject>().HasStateAuthority)
+        Debug.Log("JURGENSAURIO TIENE QUE APARECER AL INICIAR PERSONAJE. Client(205).SetActivePlayer() called. VARIABLES: player: " + player);
+
+        if (player == null)
         {
-            Debug.Log("Client(145).SetActivePlayer() called. VARIABLES: player: " + player);
-        }        
-        
-        //Debug.Log("Client(144) Before assigning activePlayer = player. VARIABLES: activePlayer: " + activePlayer + ", player: " + player);
+            Debug.LogError("❌ SetActivePlayer() - player es NULL.");
+            return;
+        }
+
+        Debug.Log($"✅ SetActivePlayer() - Asignando {player.name} como jugador activo.");
+
         activePlayer = player;
-        //Debug.Log("Client(146) After assigning activePlayer = player. VARIABLES: activePlayer: " + activePlayer + ", player: " + player);
 
-        if (activePlayer != null)
+        if (HasStateAuthority)
         {
-            activePlayer.SetClient(this);
-
-            if (HasStateAuthority)
-            {
-                Debug.Log("Client(136) activePlayer: " + activePlayer + ", (should be True) HasStateAuthority: " + HasStateAuthority);
-                activePlayer.SetupLocalPlayer();
-                activePlayer.transform.SetParent(characterHolder, false);
-            }
-            // else
-            // {
-            //     activePlayer.SetupOtherPlayer();
-            // }
+            Debug.Log("✔️✔️✔️ SetActivePlayer() - Este cliente tiene StateAuthority.");
+            activePlayer.SetupLocalPlayer();
+            activePlayer.transform.SetParent(characterHolder, false);
         }
     }
+
 
     public void ChangePlayerPrefab(string characterName)
 {

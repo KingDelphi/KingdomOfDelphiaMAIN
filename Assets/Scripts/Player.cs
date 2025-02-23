@@ -264,37 +264,87 @@ public class Player : NetworkBehaviour
     }
 
     private void Die()
+{
+    if (isDead) return; // 🚫 Evita que muera varias veces
+
+    // 🔥 🚀 Scroll of Life - Evita la muerte
+    PlayerInventory inventory = GetComponent<PlayerInventory>();
+    if (inventory.HasItem(inventory.GetGearItemByName("Life Scroll")))
     {
-        if (isDead) return; // 🚫 Evita que muera varias veces
+        inventory.UseItem(inventory.GetGearItemByName("Life Scroll"));
 
-        isDead = true; // ⚰️ Marcar como muerto
+        Debug.Log("🔥 LifeScroll activado! El personaje revive.");
 
-        Debug.Log("El personaje ha muerto.");
+        // 🎵 Sonido de resurrección
+        AudioSource.PlayClipAtPoint(Resources.Load<AudioClip>("lifeScrollAudio"), transform.position);
 
-        gameObject.layer = LayerMask.NameToLayer("Dead");
-
-        // Desactiva el Collider para evitar recibir más ataques
-        Collider col = GetComponent<Collider>();
-        if (col != null)
+        // 🎬 Animación de resurrección
+        Animator anim = GetComponent<Animator>();
+        if (anim != null)
         {
-            col.enabled = false;
+            anim.SetTrigger("Victory");
         }
 
-        PenalizeExp(0.10f);
+        // 💖 Restaurar HP
+        Heal(maxHealth);
 
-        // 🌫️ Activar la Nube de Muerte
-        DeathFogEffect deathFog = FindObjectOfType<DeathFogEffect>();
-        if (deathFog != null)
+        // 🛡️ Aplicar Buffs: Invulnerabilidad y Velocidad x2
+        BuffSystem buffSystem = GetComponent<BuffSystem>();
+        if (buffSystem != null)
         {
-            deathFog.StartFogEffect();
+            buffSystem.ApplyBuff("Invulnerability", 10f, (state) =>
+            {
+                gameObject.layer = state ? LayerMask.NameToLayer("Invulnerable") : LayerMask.NameToLayer("Default");
+            });
+
+            buffSystem.ApplyBuff("SpeedBoost", 10f, (state) =>
+            {
+                movementSpeed = state ? movementSpeed * 2f : movementSpeed / 2f;
+            });
         }
 
-        DeathSystem deathSystem = GetComponent<DeathSystem>();
-        if (deathSystem != null)
+        // Instanciar el prefab del escudo protector sobre el personaje
+        GameObject shieldPrefab = Resources.Load<GameObject>("ShieldPrefab"); // Asegúrate de tener el prefab en Resources
+        if (shieldPrefab != null)
         {
-            deathSystem.Die(GetComponent<PlayerInventory>());
+            GameObject shieldInstance = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
+            shieldInstance.transform.SetParent(transform); // Hacer que el escudo esté en el mismo lugar que el personaje
+            shieldInstance.transform.localPosition = Vector3.zero; // Ajustar la posición si es necesario
+
+            // Destruir el escudo después de 10 segundos
+            Destroy(shieldInstance, 10f);
         }
+
+        return; // 🚫 No sigue la muerte
     }
+
+    // ⚰️ Muerte Normal
+    isDead = true;
+    Debug.Log("El personaje ha muerto.");
+    gameObject.layer = LayerMask.NameToLayer("Dead");
+
+    // ❌ Desactiva el Collider
+    Collider col = GetComponent<Collider>();
+    if (col != null)
+    {
+        col.enabled = false;
+    }
+
+    PenalizeExp(0.10f);
+
+    // 🌫️ Activar Nube de Muerte
+    DeathFogEffect deathFog = FindObjectOfType<DeathFogEffect>();
+    if (deathFog != null)
+    {
+        deathFog.StartFogEffect();
+    }
+
+    DeathSystem deathSystem = GetComponent<DeathSystem>();
+    if (deathSystem != null)
+    {
+        deathSystem.Die(inventory);
+    }
+}
 
     
 

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 3908330120
   ObjectInterest: 1
-  Flags: 2305
+  Flags: 264449
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4865053813359193121}
@@ -66,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activePlayer: {fileID: 0}
   playerPrefab: {fileID: 572329979587953912, guid: 0bf14f63d4c0d4a8db379db566a1850b, type: 3}
+  _activePlayerSceneIndex: 0
   characterHolder: {fileID: 0}
   networkObject: {fileID: 0}
   newNetworkObject: {fileID: 0}

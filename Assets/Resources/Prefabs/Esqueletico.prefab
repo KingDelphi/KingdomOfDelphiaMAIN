@@ -17425,13 +17425,14 @@ GameObject:
   - component: {fileID: -5563715255332592064}
   - component: {fileID: 5839733390710975}
   - component: {fileID: -3695136153600185417}
+  - component: {fileID: -8672687445789978855}
   m_Layer: 8
   m_Name: Esqueletico
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9013977141150497765
 Transform:
   m_ObjectHideFlags: 0
@@ -18419,6 +18420,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64e946b8af76e4101a3ff955395256f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8672687445789978855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011450021607665303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84430cb76e0b541ca9102a8b44fd6848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9011473178536752807

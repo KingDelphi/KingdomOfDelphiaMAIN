@@ -14589,6 +14589,7 @@ GameObject:
   - component: {fileID: 6605685799961479673}
   - component: {fileID: -4250926354025943628}
   - component: {fileID: -1714439809194508798}
+  - component: {fileID: -4277135815584346985}
   m_Layer: 8
   m_Name: Lobin
   m_TagString: Player
@@ -15585,6 +15586,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64e946b8af76e4101a3ff955395256f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4277135815584346985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3004650861264318570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84430cb76e0b541ca9102a8b44fd6848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3004662142266095736

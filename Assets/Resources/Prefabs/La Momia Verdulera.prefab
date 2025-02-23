@@ -22590,13 +22590,14 @@ GameObject:
   - component: {fileID: 6340305794984442573}
   - component: {fileID: 1027339586083067672}
   - component: {fileID: -1974220388600922095}
+  - component: {fileID: 1990206208536943464}
   m_Layer: 0
   m_Name: La Momia Verdulera
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &233149946121116184
 Transform:
   m_ObjectHideFlags: 0
@@ -23584,6 +23585,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64e946b8af76e4101a3ff955395256f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1990206208536943464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228380502601174890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84430cb76e0b541ca9102a8b44fd6848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &228394729217447770

@@ -94,38 +94,44 @@ public class SaveLoadSystem : MonoBehaviour
             return;
         }
 
+        Debug.Log($"FIDEO1 - LoadGame: currentPlayerName = {currentPlayerName}");
+
+        string testPlayerName = GameManager.Instance.GetPlayerName();
+        Debug.Log($"FIDEO2 - LoadGameB: GameManager returned playerName = {testPlayerName}");
+
+
         // Asegúrate de que 'playerName' esté disponible en 'currentPlayer'
         string playerName = currentPlayerName;
         serverName = GameManager.Instance.GetServerName();
+
+        Debug.Log("FIDEO3 - LoadGameC: Llamando a InstantiateAllSaveables cada 1 segundo.");
 
         // Primera fase de carga: Instanciar los objetos ISaveable
         InvokeRepeating("InstantiateAllSaveables", 0f, 1f); // Llamar cada 1 segundo
     }
 
     private void InstantiateAllSaveables()
+{
+    Debug.Log("InstantiateAllSaveables se está ejecutando.");
+
+    // ⚡ La verificación ahora se cumple
+    if (saveables.Count == 6)
     {
-        // Verificar si ya hay al menos un ISaveable registrado
-        if (saveables.Count == 6)
-        {
-            initialLoadComplete = true;
-            ApplySavedState();
-            CancelInvoke("InstantiateAllSaveables"); // Detener la llamada repetida
+        initialLoadComplete = true;
+        ApplySavedState();
+        CancelInvoke("InstantiateAllSaveables"); // Detener la llamada repetida
 
-            // Ocultar la pantalla de carga
-            if (LoadingScreenManager.Instance != null)
-            {
-                LoadingScreenManager.Instance.HideLoadingScreen();
-            }
-            // Mostrarla nuevamente por 1 segundo
-            StartCoroutine(ShowLoadingScreenForOneSecond());
-
-        }
-        else
+        // Ocultar la pantalla de carga
+        if (LoadingScreenManager.Instance != null)
         {
-            // Podrías agregar lógica aquí para instanciar objetos ISaveable si es necesario.
-            Debug.LogWarning("No ISaveable objects registered yet. Waiting for registration.");
+            LoadingScreenManager.Instance.HideLoadingScreen();
         }
+
+        // Mostrarla nuevamente por 1 segundo
+        StartCoroutine(ShowLoadingScreenForOneSecond());
     }
+}
+
 
     private IEnumerator ShowLoadingScreenForOneSecond()
     {
@@ -150,37 +156,44 @@ public class SaveLoadSystem : MonoBehaviour
     }
 
     private void LoadStateForSaveable(ISaveable saveable)
+{
+    if (saveable == null) 
     {
-        string key = saveable.GetType().FullName + "_" + serverName + "_" + currentPlayerName;
-        string betaTesterKey = saveable.GetType().FullName + "_" + serverName + "_" + BetaTesterName;
+        Debug.LogWarning("⚠️ Saltando LoadStateForSaveable porque saveable es NULL.");
+        return; // ❌ Evita intentar cargar estado en un objeto inexistente
+    }
 
-        if (PlayerPrefs.HasKey(key))
+    string key = saveable.GetType().FullName + "_" + serverName + "_" + currentPlayerName;
+    string betaTesterKey = saveable.GetType().FullName + "_" + serverName + "_" + BetaTesterName;
+
+    if (PlayerPrefs.HasKey(key))
+    {
+        string json = PlayerPrefs.GetString(key);
+        Debug.Log($"Loading data for key: {key}, JSON: {json}");
+
+        object state = JsonUtility.FromJson(json, saveable.SaveType);
+        saveable.LoadState(state);
+    }
+    else if (PlayerPrefs.HasKey(betaTesterKey))
+    {
+        string json = PlayerPrefs.GetString(betaTesterKey);
+        Debug.Log($"Loading default data from BetaTester for key: {betaTesterKey}, JSON: {json}");
+
+        object state = JsonUtility.FromJson(json, saveable.SaveType);
+        saveable.LoadState(state);
+
+        // Actualizar el nombre del jugador en el estado cargado
+        if (saveable is Player player)
         {
-            string json = PlayerPrefs.GetString(key);
-            Debug.Log($"Loading data for key: {key}, JSON: {json}");
-
-            object state = JsonUtility.FromJson(json, saveable.SaveType);
-            saveable.LoadState(state);
-        }
-        else if (PlayerPrefs.HasKey(betaTesterKey))
-        {
-            string json = PlayerPrefs.GetString(betaTesterKey);
-            Debug.Log($"Loading default data from BetaTester for key: {betaTesterKey}, JSON: {json}");
-
-            object state = JsonUtility.FromJson(json, saveable.SaveType);
-            saveable.LoadState(state);
-
-            // Actualizar el nombre del jugador en el estado cargado
-            if (saveable is Player player)
-            {
-                player.playerName = currentPlayerName;
-            }
-        }
-        else
-        {
-            Debug.LogWarning($"No data found for key: {key}");
+            player.playerName = currentPlayerName;
         }
     }
+    else
+    {
+        Debug.LogWarning($"⚠️ No data found for key: {key}. Se usará el estado por defecto.");
+    }
+}
+
 
     public int GetSavedSceneIndex(string playerName)
 {

@@ -5146,6 +5146,7 @@ GameObject:
   - component: {fileID: -1473733868870585844}
   - component: {fileID: -1921838934962111883}
   - component: {fileID: 4921844102363268405}
+  - component: {fileID: -1264911973297953527}
   m_Layer: 8
   m_Name: Tres Deseos
   m_TagString: Player
@@ -6141,6 +6142,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64e946b8af76e4101a3ff955395256f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1264911973297953527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572329979587953912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84430cb76e0b541ca9102a8b44fd6848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &572346328379323870

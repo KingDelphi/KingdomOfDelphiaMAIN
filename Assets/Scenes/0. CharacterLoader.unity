@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 115083550}
   - component: {fileID: 115083552}
   m_Layer: 0
-  m_Name: Jurgensaurio, el Dragon indomable
+  m_Name: Jurgensaurio, el Dragon Indomable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25515,6 +25515,7 @@ GameObject:
   - component: {fileID: 1147941436}
   - component: {fileID: 1147941435}
   - component: {fileID: 1147941434}
+  - component: {fileID: 1147941437}
   m_Layer: 0
   m_Name: CharacterSelectorCanvas
   m_TagString: Untagged
@@ -25850,6 +25851,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1147941437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147941432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d9b39fde66e40478b4bd6577117d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1148387434
 GameObject:
   m_ObjectHideFlags: 0
@@ -26690,7 +26703,7 @@ GameObject:
   - component: {fileID: 1181108560}
   - component: {fileID: 1181108562}
   m_Layer: 0
-  m_Name: Delphi, el Bonito
+  m_Name: Delphito, el Bonito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39528,7 +39541,7 @@ GameObject:
   - component: {fileID: 1708917435}
   - component: {fileID: 1708917437}
   m_Layer: 0
-  m_Name: Delphi, el Bebito
+  m_Name: Delphito, el Bebito
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44109,6 +44122,7 @@ GameObject:
   - component: {fileID: 1891941754}
   - component: {fileID: 1891941753}
   - component: {fileID: 1891941752}
+  - component: {fileID: 1891941755}
   m_Layer: 0
   m_Name: DeathButton
   m_TagString: Untagged
@@ -44218,6 +44232,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891941750}
   m_CullTransparentMesh: 1
+--- !u!114 &1891941755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891941750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3888cf81c7f684fc8a2763e1e3937c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  permaDeathButton: {fileID: 1891941752}
 --- !u!1 &1899850422
 GameObject:
   m_ObjectHideFlags: 0
