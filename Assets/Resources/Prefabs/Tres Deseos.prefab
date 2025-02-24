@@ -5603,10 +5603,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 12
-  currentHealth: 0
+  currentHealth: 12
   healthBar: {fileID: 2029759973243769063}
   maxMana: 42
-  currentMana: 0
+  currentMana: 42
   manaBar: {fileID: 2029759973548798815}
   playerName: KingDelphi
   experience: 0
@@ -5627,8 +5627,8 @@ MonoBehaviour:
   initialHpRegen: 0
   initialManaRegen: 0
   initialEffectDuration: 0
-  hp: 0
-  mana: 0
+  hp: 12
+  mana: 42
   movementSpeed: 0
   criticalChance: 0
   criticalBonus: 0

@@ -102,6 +102,12 @@ public class Player : NetworkBehaviour
 
         experience = 0;
 
+        // Asegurar que hp tenga un valor válido
+        if (hp <= 0)
+        {
+            hp = maxHealth; // Usar maxHealth como referencia
+        }
+
         currentHealth = hp;
         healthBar.color = Color.green;
         textMeshPro.color = Color.green;
@@ -124,6 +130,7 @@ public class Player : NetworkBehaviour
             }
         }
     }
+
 
     private void Update()
     {

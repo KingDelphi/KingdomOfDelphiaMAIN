@@ -110,6 +110,8 @@ public class SaveLoadSystem : MonoBehaviour
         InvokeRepeating("InstantiateAllSaveables", 0f, 1f); // Llamar cada 1 segundo
     }
 
+    
+
     private void InstantiateAllSaveables()
 {
     Debug.Log("InstantiateAllSaveables se está ejecutando.");

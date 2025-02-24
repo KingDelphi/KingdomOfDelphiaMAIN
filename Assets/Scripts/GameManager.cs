@@ -275,7 +275,7 @@ public class GameManager : MonoBehaviour
         characterController.hasLastPosition = false;
         characterController.Initiate();
 
-        player.currentHealth = savedPlayerHealth;
+        player.currentHealth = player.hp/*savedPlayerHealth*/;
 
         virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
 
