@@ -5153,7 +5153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &575873520495071982
 Transform:
   m_ObjectHideFlags: 0
@@ -5482,7 +5482,7 @@ Animator:
   m_GameObject: {fileID: 572329979587953912}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0acc6d8cc6cc44ce9eafa9ecf65691be, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5567,7 +5567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8431431295e4d0d8d38cb4570083f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
+  moveSpeed: 16
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0
@@ -5602,8 +5602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ab7331f16214668aa062511ba2d0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 12
-  currentHealth: 12
+  maxHealth: 60
+  currentHealth: 60
   healthBar: {fileID: 2029759973243769063}
   maxMana: 42
   currentMana: 42
@@ -5612,7 +5612,7 @@ MonoBehaviour:
   experience: 0
   level: 0
   playerNameText: {fileID: 0}
-  initialHp: 12
+  initialHp: 60
   initialMana: 42
   initialMovementSpeed: 0
   initialCriticalChance: 0
@@ -5627,7 +5627,7 @@ MonoBehaviour:
   initialHpRegen: 0
   initialManaRegen: 0
   initialEffectDuration: 0
-  hp: 12
+  hp: 60
   mana: 42
   movementSpeed: 0
   criticalChance: 0

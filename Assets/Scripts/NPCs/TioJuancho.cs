@@ -80,6 +80,7 @@ public class TioJuancho : MonoBehaviour
     }
 }
 
+
     private void StartSecondTask()
     {
         // Encargar la segunda tarea (matar al jefe)
