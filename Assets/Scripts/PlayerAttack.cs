@@ -22,7 +22,10 @@ public class PlayerAttack : MonoBehaviour
     public GameObject selectedMonster;
     public float? distanceToSelectedMonster;
 
-    private Animator animator;
+    public Animator animator;
+
+    private PlayerAnimationHandler animationHandler;
+
 
     public enum AttackType
     {
@@ -35,11 +38,31 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        // animator = GetComponentInChildren<Animator>();
         selectedMonster = null;
         distanceToSelectedMonster = null;
         isAttacking = false;
         attackTimer = attackCooldown;
+
+        // Transform bodyVisuals = transform.Find("BodyVisuals");
+
+        // if (bodyVisuals != null)
+        // {
+        //     Transform animationTransform = bodyVisuals.Find("Animation");
+
+        //     if (animationTransform != null)
+        //     {
+        //         animationHandler = animationTransform.GetComponent<PlayerAnimationHandler>();
+        //     }
+        //     else
+        //     {
+        //         Debug.LogError("No se encontró 'Animation' dentro de 'BodyVisuals' en " + gameObject.name);
+        //     }
+        // }
+        // else
+        // {
+        //     Debug.LogError("No se encontró 'BodyVisuals' dentro de " + gameObject.name);
+        // }
     }
 
     private void Update()
@@ -141,7 +164,7 @@ public class PlayerAttack : MonoBehaviour
             // Reproducir animación B en el punto intermedio entre el jugador y el monstruo
             Vector3 midPoint = (transform.position + selectedMonster.transform.position) * 0.5f;
             GameObject attackHitEffectInstance = Instantiate(attackHitEffect, midPoint, Quaternion.identity);
-            animator.Play("SlashMeleePaired", 0);
+            animator.Play("SlashMelee1H", 0);
 
             // Calcular la posición vertical del texto de daño por encima del monstruo
             Collider2D monsterCollider = selectedMonster.GetComponent<Collider2D>();
@@ -191,7 +214,7 @@ public class PlayerAttack : MonoBehaviour
             // Reproducir animación A en el punto intermedio entre el jugador y el monstruo
             Vector3 midPoint = (transform.position + selectedMonster.transform.position) * 0.5f;
             Instantiate(attackMissEffect, midPoint, Quaternion.identity);
-            animator.Play("SlashMeleePaired", 0);
+            animator.Play("SlashMelee1H", 0);
         }
 
         isAttacking = false;

@@ -16298,7 +16298,7 @@ Animator:
   m_GameObject: {fileID: 9010963958558174253}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a3d97861e294b4afe8deb090cfc11e6d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0acc6d8cc6cc44ce9eafa9ecf65691be, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -18133,6 +18133,7 @@ MonoBehaviour:
   damageTextColor: {r: 1, g: 0, b: 0, a: 1}
   criticalDamageTextColor: {r: 1, g: 0, b: 1, a: 1}
   selectedMonster: {fileID: 0}
+  animator: {fileID: 8960891951054761995}
   attackType: 0
 --- !u!114 &1770238613987700171
 MonoBehaviour:

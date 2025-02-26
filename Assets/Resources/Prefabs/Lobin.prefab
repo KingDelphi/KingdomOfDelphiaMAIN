@@ -15297,6 +15297,7 @@ MonoBehaviour:
   damageTextColor: {r: 1, g: 0, b: 0, a: 1}
   criticalDamageTextColor: {r: 1, g: 0, b: 1, a: 1}
   selectedMonster: {fileID: 0}
+  animator: {fileID: 2947267055811948278}
   attackType: 0
 --- !u!114 &8469826154448238943
 MonoBehaviour:
