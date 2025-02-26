@@ -17846,7 +17846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8431431295e4d0d8d38cb4570083f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 12
+  moveSpeed: 16
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0
@@ -17884,15 +17884,15 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 50
   healthBar: {fileID: 5076666596335719983}
-  maxMana: 16
-  currentMana: 16
+  maxMana: 12
+  currentMana: 0
   manaBar: {fileID: 5076666597298631309}
   playerName: KingDelphi
   experience: 0
   level: 0
   playerNameText: {fileID: 0}
   initialHp: 50
-  initialMana: 16
+  initialMana: 12
   initialMovementSpeed: 0
   initialCriticalChance: 0
   initialCriticalBonus: 0
@@ -17907,7 +17907,7 @@ MonoBehaviour:
   initialManaRegen: 0
   initialEffectDuration: 0
   hp: 50
-  mana: 16
+  mana: 0
   movementSpeed: 0
   criticalChance: 0
   criticalBonus: 0
@@ -18320,7 +18320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SortKey: 2930200488
   ObjectInterest: 1
-  Flags: 2305
+  Flags: 264449
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 1770238613987700168}

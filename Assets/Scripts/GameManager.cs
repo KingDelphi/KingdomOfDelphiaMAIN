@@ -271,9 +271,6 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-
-        
-
         characterController = player.GetComponent<CharacterController>();
         characterController.hasLastPosition = false;
         characterController.Initiate();

@@ -153,7 +153,6 @@ public class QuestSystem : MonoBehaviour, ISaveable
         quests.Add(quest1); // Agregar la primera quest a la lista de quests
         firstQuestActive = true;
     }
-    
 
     public void EnemyDefeated(string monsterName)
     {

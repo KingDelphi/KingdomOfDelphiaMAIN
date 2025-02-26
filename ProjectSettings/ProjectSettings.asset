@@ -693,7 +693,7 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     Standalone: FUSION_WEAVER;FUSION2;FUSION_LOGLEVEL_INFO
-    WebGL: FUSION_WEAVER;FUSION2;FUSION_LOGLEVEL_INFO
+    WebGL: FUSION_WEAVER
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
