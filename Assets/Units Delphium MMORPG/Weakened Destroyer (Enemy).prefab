@@ -24665,6 +24665,7 @@ GameObject:
   - component: {fileID: 8095227986989696446}
   - component: {fileID: -1156884738520134888}
   - component: {fileID: 2569219927845726518}
+  - component: {fileID: 3371180443969999215}
   m_Layer: 9
   m_Name: Weakened Destroyer (Enemy)
   m_TagString: Monster
@@ -25299,6 +25300,33 @@ MonoBehaviour:
     itemType: 8
   lootTextPrefab: {fileID: 5451587305522244553, guid: afd1acff5a1b04fbb987e513d9b09a5d, type: 3}
   lootTextColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!50 &3371180443969999215
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190742136947212681}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1190761522284851375
 GameObject:
   m_ObjectHideFlags: 0
