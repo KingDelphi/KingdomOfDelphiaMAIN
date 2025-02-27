@@ -219,6 +219,7 @@ public class PlayerAttack : MonoBehaviour
 
         isAttacking = false;
     }
+    
 
     private IEnumerator MoveDamageText(GameObject damageTextObject, Vector3 targetPosition)
     {
