@@ -101,38 +101,38 @@ public class GameManager : MonoBehaviour
                 isPermadeath = true;
                 isNormalDeath = false;
                 break;
-            case "Delphia Unity":
-                isMono = false;
-                isMulti = true;
-                isPVP = true;
-                isSafe = false;
-                isPermadeath = false;
-                isNormalDeath = true;
-                break;
-            case "Delphia Valiant":
-                isMono = false;
-                isMulti = true;
-                isPVP = true;
-                isSafe = false;
-                isPermadeath = true;
-                isNormalDeath = false;
-                break;
-            case "Delphia Peace":
-                isMono = false;
-                isMulti = true;
-                isPVP = false;
-                isSafe = true;
-                isPermadeath = false;
-                isNormalDeath = true;
-                break;
-            case "Delphia Eternity":
-                isMono = false;
-                isMulti = true;
-                isPVP = false;
-                isSafe = true;
-                isPermadeath = true;
-                isNormalDeath = false;
-                break;
+            // case "Delphia Unity":
+            //     isMono = false;
+            //     isMulti = true;
+            //     isPVP = true;
+            //     isSafe = false;
+            //     isPermadeath = false;
+            //     isNormalDeath = true;
+            //     break;
+            // case "Delphia Valiant":
+            //     isMono = false;
+            //     isMulti = true;
+            //     isPVP = true;
+            //     isSafe = false;
+            //     isPermadeath = true;
+            //     isNormalDeath = false;
+            //     break;
+            // case "Delphia Peace":
+            //     isMono = false;
+            //     isMulti = true;
+            //     isPVP = false;
+            //     isSafe = true;
+            //     isPermadeath = false;
+            //     isNormalDeath = true;
+            //     break;
+            // case "Delphia Eternity":
+            //     isMono = false;
+            //     isMulti = true;
+            //     isPVP = false;
+            //     isSafe = true;
+            //     isPermadeath = true;
+            //     isNormalDeath = false;
+            //     break;
             default:
                 Debug.LogError("Server name not recognized");
                 break;

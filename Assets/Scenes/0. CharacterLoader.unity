@@ -27218,8 +27218,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -70, y: 140}
-  m_SizeDelta: {x: 140, y: 40}
+  m_AnchoredPosition: {x: -144.75916, y: 140}
+  m_SizeDelta: {x: 289.5181, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194226418
 MonoBehaviour:
@@ -27271,21 +27271,13 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Delphia Valor
+    - m_Text: Delphia Valor (PVP / Normal Death)
       m_Image: {fileID: 0}
-    - m_Text: Delphia Honor
+    - m_Text: Delphia Honor (PVP / Perma-Death)
       m_Image: {fileID: 0}
-    - m_Text: Delphia Harmony
+    - m_Text: Delphia Harmony (Non-PVP / Normal Death)
       m_Image: {fileID: 0}
-    - m_Text: Delphia Resolve
-      m_Image: {fileID: 0}
-    - m_Text: Delphia Unity
-      m_Image: {fileID: 0}
-    - m_Text: Delphia Valiant
-      m_Image: {fileID: 0}
-    - m_Text: Delphia Peace
-      m_Image: {fileID: 0}
-    - m_Text: Delphia Eternity
+    - m_Text: Delphia Resolve (Non-PVP / Perma-Death)
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -31532,7 +31524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: -0.5}
+  m_AnchoredPosition: {x: -7.5000153, y: -0.5}
   m_SizeDelta: {x: -35, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1353362646
@@ -31555,7 +31547,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Delphia Valor
+  m_text: Delphia Valor (PVP / Normal Death)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

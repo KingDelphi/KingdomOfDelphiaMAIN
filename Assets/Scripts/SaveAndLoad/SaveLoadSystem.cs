@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 using Fusion;
 using System.Collections;
-
+using System.Text.RegularExpressions;
 
 public class SaveLoadSystem : MonoBehaviour
 {
@@ -30,9 +30,16 @@ public class SaveLoadSystem : MonoBehaviour
         }
     }
 
+    // Nueva función para limpiar el nombre del servidor
+    public static string CleanServerName(string rawName)
+    {
+        // Esto elimina cualquier texto entre paréntesis, incluyendo espacios
+        return Regex.Replace(rawName, @"\s*\(.*?\)\s*", "").Trim();
+    }
+
     public void SetServer(string server)
     {
-        serverName = server;
+        serverName = CleanServerName(server);
     }
 
     public void SetCurrentPlayer(Player player)
@@ -62,28 +69,26 @@ public class SaveLoadSystem : MonoBehaviour
             return;
         }
 
-        // Asegúrate de que 'playerName' esté disponible en 'currentPlayer'
         string playerName = currentPlayer.playerName;
-        
+        // Limpiar serverName antes de usarlo
+        string cleanServerName = CleanServerName(serverName);
+
         var saveables = FindObjectsOfType<MonoBehaviour>().OfType<ISaveable>();
         foreach (var saveable in saveables)
         {
-            string key = saveable.GetType().FullName + "_" + serverName + "_" + playerName;
+            string key = saveable.GetType().FullName + "_" + cleanServerName + "_" + playerName;
             string json = JsonUtility.ToJson(saveable.SaveState());
             PlayerPrefs.SetString(key, json);
             Debug.Log($"Saving data for key: {key}, JSON: {json}");
-
         }
 
-        // Guardar el índice de la escena actual
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         string currentSceneName = SceneManager.GetActiveScene().name;
 
         PlayerPrefs.SetInt("SavedSceneIndex_" + currentPlayer.playerName, currentSceneIndex);
-
         PlayerPrefs.Save();
 
-        Debug.LogWarning($"✔️✔️✔️✔️✔️ Game Saved for Player: {playerName}, Character: {currentPlayer.name}, Server: {serverName}, Map: {currentSceneName}");
+        Debug.LogWarning($"✔️✔️✔️✔️✔️ Game Saved for Player: {playerName}, Character: {currentPlayer.name}, Server: {cleanServerName}, Map: {currentSceneName}");
     }
 
     public void LoadGame()
@@ -94,56 +99,41 @@ public class SaveLoadSystem : MonoBehaviour
             return;
         }
 
-        Debug.Log($"FIDEO1 - LoadGame: currentPlayerName = {currentPlayerName}");
-
         string testPlayerName = GameManager.Instance.GetPlayerName();
         Debug.Log($"FIDEO2 - LoadGameB: GameManager returned playerName = {testPlayerName}");
 
-
-        // Asegúrate de que 'playerName' esté disponible en 'currentPlayer'
         string playerName = currentPlayerName;
-        serverName = GameManager.Instance.GetServerName();
+        string rawServerName = GameManager.Instance.GetServerName();
+        serverName = CleanServerName(rawServerName);
 
-        Debug.Log("FIDEO3 - LoadGameC: Llamando a InstantiateAllSaveables cada 1 segundo.");
+        Debug.Log($"FIDEO3 - LoadGameC: Server name cleaned to: {serverName}");
 
-        // Primera fase de carga: Instanciar los objetos ISaveable
-        InvokeRepeating("InstantiateAllSaveables", 0f, 1f); // Llamar cada 1 segundo
+        InvokeRepeating("InstantiateAllSaveables", 0f, 1f);
     }
-
-    
 
     private void InstantiateAllSaveables()
-{
-    Debug.Log("InstantiateAllSaveables se está ejecutando.");
-
-    // ⚡ La verificación ahora se cumple
-    if (saveables.Count == 6)
     {
-        initialLoadComplete = true;
-        ApplySavedState();
-        CancelInvoke("InstantiateAllSaveables"); // Detener la llamada repetida
+        Debug.Log("InstantiateAllSaveables se está ejecutando.");
 
-        // Ocultar la pantalla de carga
-        if (LoadingScreenManager.Instance != null)
+        if (saveables.Count == 6)
         {
-            LoadingScreenManager.Instance.HideLoadingScreen();
+            initialLoadComplete = true;
+            ApplySavedState();
+            CancelInvoke("InstantiateAllSaveables");
+
+            if (LoadingScreenManager.Instance != null)
+            {
+                LoadingScreenManager.Instance.HideLoadingScreen();
+            }
+
+            StartCoroutine(ShowLoadingScreenForOneSecond());
         }
-
-        // Mostrarla nuevamente por 1 segundo
-        StartCoroutine(ShowLoadingScreenForOneSecond());
     }
-}
-
 
     private IEnumerator ShowLoadingScreenForOneSecond()
     {
-        // Mostrar la pantalla de carga
         LoadingScreenManager.Instance.ShowLoadingScreen();
-
-        // Esperar 1 segundo
         yield return new WaitForSeconds(1f);
-
-        // Ocultar la pantalla de carga
         LoadingScreenManager.Instance.HideLoadingScreen();
     }
 
@@ -158,73 +148,65 @@ public class SaveLoadSystem : MonoBehaviour
     }
 
     private void LoadStateForSaveable(ISaveable saveable)
-{
-    if (saveable == null) 
     {
-        Debug.LogWarning("⚠️ Saltando LoadStateForSaveable porque saveable es NULL.");
-        return; // ❌ Evita intentar cargar estado en un objeto inexistente
-    }
-
-    string key = saveable.GetType().FullName + "_" + serverName + "_" + currentPlayerName;
-    string betaTesterKey = saveable.GetType().FullName + "_" + serverName + "_" + BetaTesterName;
-
-    if (PlayerPrefs.HasKey(key))
-    {
-        string json = PlayerPrefs.GetString(key);
-        Debug.Log($"Loading data for key: {key}, JSON: {json}");
-
-        object state = JsonUtility.FromJson(json, saveable.SaveType);
-        saveable.LoadState(state);
-    }
-    else if (PlayerPrefs.HasKey(betaTesterKey))
-    {
-        string json = PlayerPrefs.GetString(betaTesterKey);
-        Debug.Log($"Loading default data from BetaTester for key: {betaTesterKey}, JSON: {json}");
-
-        object state = JsonUtility.FromJson(json, saveable.SaveType);
-        saveable.LoadState(state);
-
-        // Actualizar el nombre del jugador en el estado cargado
-        if (saveable is Player player)
+        if (saveable == null)
         {
-            player.playerName = currentPlayerName;
+            Debug.LogWarning("⚠️ Saltando LoadStateForSaveable porque saveable es NULL.");
+            return;
+        }
+
+        string cleanServerName = CleanServerName(serverName);
+
+        string key = saveable.GetType().FullName + "_" + cleanServerName + "_" + currentPlayerName;
+        string betaTesterKey = saveable.GetType().FullName + "_" + cleanServerName + "_" + BetaTesterName;
+
+        if (PlayerPrefs.HasKey(key))
+        {
+            string json = PlayerPrefs.GetString(key);
+            Debug.Log($"Loading data for key: {key}, JSON: {json}");
+
+            object state = JsonUtility.FromJson(json, saveable.SaveType);
+            saveable.LoadState(state);
+        }
+        else if (PlayerPrefs.HasKey(betaTesterKey))
+        {
+            string json = PlayerPrefs.GetString(betaTesterKey);
+            Debug.Log($"Loading default data from BetaTester for key: {betaTesterKey}, JSON: {json}");
+
+            object state = JsonUtility.FromJson(json, saveable.SaveType);
+            saveable.LoadState(state);
+
+            if (saveable is Player player)
+            {
+                player.playerName = currentPlayerName;
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"⚠️ No data found for key: {key}. Se usará el estado por defecto.");
         }
     }
-    else
-    {
-        Debug.LogWarning($"⚠️ No data found for key: {key}. Se usará el estado por defecto.");
-    }
-}
-
 
     public int GetSavedSceneIndex(string playerName)
-{
-    string key = "SavedSceneIndex_" + playerName;
-    string betaTesterKey = "SavedSceneIndex_" + BetaTesterName;
-
-    if (PlayerPrefs.HasKey(key))
     {
-        int sceneIndex = PlayerPrefs.GetInt(key);
-        Debug.Log($"SaveLoadSystem - Saved Scene Index: {sceneIndex}");
-        
-        // Si el índice guardado es 0, forzarlo a 1
-        return sceneIndex == 0 ? 1 : sceneIndex;
-    }
-    else if (PlayerPrefs.HasKey(betaTesterKey))
-    {
-        int sceneIndex = PlayerPrefs.GetInt(betaTesterKey);
-        Debug.Log($"SaveLoadSystem - Loaded default Scene Index: {sceneIndex} from BetaTester");
+        string key = "SavedSceneIndex_" + playerName;
+        string betaTesterKey = "SavedSceneIndex_" + BetaTesterName;
 
-        // Si el índice guardado es 0, forzarlo a 1
-        return sceneIndex == 0 ? 1 : sceneIndex;
+        if (PlayerPrefs.HasKey(key))
+        {
+            int sceneIndex = PlayerPrefs.GetInt(key);
+            return sceneIndex == 0 ? 1 : sceneIndex;
+        }
+        else if (PlayerPrefs.HasKey(betaTesterKey))
+        {
+            int sceneIndex = PlayerPrefs.GetInt(betaTesterKey);
+            return sceneIndex == 0 ? 1 : sceneIndex;
+        }
+        else
+        {
+            return 1;
+        }
     }
-    else
-    {
-        Debug.LogWarning("SaveLoadSystem - No saved scene index found, returning default scene index (1).");
-        return 1; // Forzar el índice a 1 si no hay datos guardados
-    }
-}
-
 
     public Vector3 GetSavedPosition()
     {
@@ -245,7 +227,7 @@ public class SaveLoadSystem : MonoBehaviour
         }
         else
         {
-            return new Vector3(0, 1, 0); // Valor por defecto si no hay datos guardados
+            return new Vector3(0, 1, 0);
         }
     }
 }
