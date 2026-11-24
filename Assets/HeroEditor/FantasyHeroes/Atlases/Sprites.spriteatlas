@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -3967,8 +3967,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4046bfcf2746809419c40170bb84f92d, type: 3}
   - {fileID: 21300000, guid: 7fe524eff1ad4a9ba48897b865e8a7fa, type: 3}
   m_PackedSpriteNamesToIndex:
-  - SwampLordMask1 [FullHair]
-  - Ninjato [Paint]
+  - 'SwampLordMask1 [FullHair]'
+  - 'Ninjato [Paint]'
   - ScoutHelm
   - WoodenShield2
   - DarkStoneHammer
@@ -4053,9 +4053,9 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - Apple
-  - EliteGuardSword [Paint]
+  - 'EliteGuardSword [Paint]'
   - SantaHelperHat3
-  - WitchHat [Paint]
+  - 'WitchHat [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4068,7 +4068,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Sai [Paint]
+  - 'Sai [Paint]'
   - WitchWand
   - HermitHat
   - SmallPotion
@@ -4095,7 +4095,7 @@ SpriteAtlas:
   - ForearmL
   - FireballScroll
   - SandMageStaff2
-  - BishopHat [FullHair]
+  - 'BishopHat [FullHair]'
   - MalformedStaff
   - HandL
   - HandR
@@ -4109,10 +4109,10 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - HeroicCape [Paint]
+  - 'HeroicCape [Paint]'
   - Stoccata
-  - HeavyHelm [Paint]
-  - CardinalHat [Paint]
+  - 'HeavyHelm [Paint]'
+  - 'CardinalHat [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4141,7 +4141,7 @@ SpriteAtlas:
   - HunterHat
   - FireWizardHood
   - KnightShield
-  - BowmanHat [Paint]
+  - 'BowmanHat [Paint]'
   - DwellerWand
   - HandL
   - HandR
@@ -4167,7 +4167,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - EnforcedHelm [Paint]
+  - 'EnforcedHelm [Paint]'
   - ArrowQuiver3
   - AgileHat
   - ChampionShield
@@ -4183,8 +4183,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Mask2 [Paint]
-  - LandsknechtHelm [Paint]
+  - 'Mask2 [Paint]'
+  - 'LandsknechtHelm [Paint]'
   - SantaWand
   - HandL
   - HandR
@@ -4212,16 +4212,16 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - TrainingSword [Paint]
+  - 'TrainingSword [Paint]'
   - Limb
   - Riser
   - Arrow
-  - WarriorHelm [Paint]
+  - 'WarriorHelm [Paint]'
   - Limb
   - Riser
   - Arrow
-  - Boomerang [Paint]
-  - IronIslandsSword [Paint]
+  - 'Boomerang [Paint]'
+  - 'IronIslandsSword [Paint]'
   - WaterBag
   - SamuraiHelm2
   - HandL
@@ -4238,7 +4238,7 @@ SpriteAtlas:
   - ForearmL
   - DruidWand
   - SamuraiElderHelm
-  - KnightHelm [Paint]
+  - 'KnightHelm [Paint]'
   - RoyalArcherHat
   - ElderStaff
   - HandL
@@ -4255,7 +4255,7 @@ SpriteAtlas:
   - ForearmL
   - WoodenStake
   - SamuraiShield2
-  - KnightSword [Paint]
+  - 'KnightSword [Paint]'
   - SunriseSword
   - BlueKnightShield
   - SandWarriorSword2
@@ -4271,9 +4271,9 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - CotttonCape [Paint]
+  - 'CotttonCape [Paint]'
   - SantaHelperHat1
-  - BanditMask [Paint]
+  - 'BanditMask [Paint]'
   - PeasantCap
   - SantaHat
   - HandL
@@ -4290,7 +4290,7 @@ SpriteAtlas:
   - ForearmL
   - ShadowSword
   - SamuraiShield3
-  - VisorKnightHelm [Paint]
+  - 'VisorKnightHelm [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4316,7 +4316,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - ShortIronKatana [Paint]
+  - 'ShortIronKatana [Paint]'
   - MarauderHood
   - StormBringerWand
   - HandL
@@ -4331,10 +4331,10 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - DestroyerHelm [Paint]
+  - 'DestroyerHelm [Paint]'
   - TowerShield
-  - NinjaHelm1 [Paint]
-  - MediumPotion [Paint]
+  - 'NinjaHelm1 [Paint]'
+  - 'MediumPotion [Paint]'
   - SandHealerStaff1
   - AdvancedGladiatorShield
   - SantaHelperHat2
@@ -4367,14 +4367,14 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - SlaveSword [Paint]
+  - 'SlaveSword [Paint]'
   - Morgana
   - WaterWizardHelm
-  - RoyalCape [Paint]
+  - 'RoyalCape [Paint]'
   - Limb
   - Riser
   - Arrow
-  - SharpHelm [Paint]
+  - 'SharpHelm [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4399,10 +4399,10 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - LargePotion [Paint]
+  - 'LargePotion [Paint]'
   - HorseLordSickle
-  - DruidHat [Paint]
-  - Katana2 [Paint]
+  - 'DruidHat [Paint]'
+  - 'Katana2 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4416,7 +4416,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - BronzeDagger
-  - InquisitorSword4 [Paint]
+  - 'InquisitorSword4 [Paint]'
   - SpearmanHelm1
   - AmateurDodgeHat
   - ThrowingStar
@@ -4432,12 +4432,12 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - DwellerHood [Paint]
-  - SwampLordMask2  [FullHair]
+  - 'DwellerHood [Paint]'
+  - 'SwampLordMask2  [FullHair]'
   - Limb
   - Riser
   - Arrow
-  - Zweihander [Paint]
+  - 'Zweihander [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4451,8 +4451,8 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - MountainShield
-  - GuardSword2 [Paint]
-  - Potion3 [Paint]
+  - 'GuardSword2 [Paint]'
+  - 'Potion3 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4527,7 +4527,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - EliteKnightSword [Paint]
+  - 'EliteKnightSword [Paint]'
   - Axeorang
   - HandL
   - HandR
@@ -4541,7 +4541,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - NinjaHelm2 [Paint]
+  - 'NinjaHelm2 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4554,8 +4554,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - DarkMountainHelm [Paint]
-  - MercenarySword2 [Paint]
+  - 'DarkMountainHelm [Paint]'
+  - 'MercenarySword2 [Paint]'
   - Ham
   - HandL
   - HandR
@@ -4588,18 +4588,18 @@ SpriteAtlas:
   - AspenStake
   - FireWarriorSword2
   - BerserkHelm
-  - BatCape [Paint]
+  - 'BatCape [Paint]'
   - WarlockWand
   - TwoHandedVikingAxe1
   - Morgenstern
   - LeatherCap
   - BroadSword
   - WaterAdeptWand1
-  - ClericHood [Paint]
-  - SlaveHeadband [FullHair]
+  - 'ClericHood [Paint]'
+  - 'SlaveHeadband [FullHair]'
   - Grog
   - SandShooterTurban
-  - TwoHandedVikingSword2 [Paint]
+  - 'TwoHandedVikingSword2 [Paint]'
   - WarClub
   - HandL
   - HandR
@@ -4614,8 +4614,8 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - ManticoreHelmet
-  - ShortDagger [Paint]
-  - HeroicCape2 [Paint]
+  - 'ShortDagger [Paint]'
+  - 'HeroicCape2 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4629,7 +4629,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - WoodenShield1
-  - MilitiamanShortSword [Paint]
+  - 'MilitiamanShortSword [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4694,7 +4694,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Potion1 [Paint]
+  - 'Potion1 [Paint]'
   - SnperHood
   - Limb
   - Riser
@@ -4713,7 +4713,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - OldCape [Paint]
+  - 'OldCape [Paint]'
   - LongHammer
   - HandL
   - HandR
@@ -4727,8 +4727,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - InquisitorSword1 [Paint]
-  - ShamanMask3 [FullHair]
+  - 'InquisitorSword1 [Paint]'
+  - 'ShamanMask3 [FullHair]'
   - VikingIronHelm3
   - Limb
   - Riser
@@ -4803,11 +4803,11 @@ SpriteAtlas:
   - ForearmL
   - Coin
   - SavageBoomerang
-  - MagicSword [Paint]
+  - 'MagicSword [Paint]'
   - ArrowQuiver2
-  - FireKnightSword [Paint]
+  - 'FireKnightSword [Paint]'
   - GladiatorShield
-  - TwoHandedVikingSword3 [Paint]
+  - 'TwoHandedVikingSword3 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4846,7 +4846,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - MagicBronzeRing
-  - NinjaHelm3 [Paint]
+  - 'NinjaHelm3 [Paint]'
   - GoldenEarring
   - HandL
   - HandR
@@ -4902,7 +4902,7 @@ SpriteAtlas:
   - ForearmL
   - ExpertHunterHat
   - CrusaderShield
-  - MilitiamanHelmet1 [Paint]
+  - 'MilitiamanHelmet1 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4922,8 +4922,8 @@ SpriteAtlas:
   - DestroyerAxe
   - Scythe
   - ElegantGoldenRing
-  - PaladinSword [Paint]
-  - BalancedSword [Paint]
+  - 'PaladinSword [Paint]'
+  - 'BalancedSword [Paint]'
   - Limb
   - Riser
   - Arrow
@@ -4943,7 +4943,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - SpearmanHelm2
-  - Potion2 [Paint]
+  - 'Potion2 [Paint]'
   - SamuraiShield1
   - WoodenSpikedClub
   - AdvancedDipperHat
@@ -4960,7 +4960,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - MountainSword [Paint]
+  - 'MountainSword [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4973,7 +4973,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - MercenaryHelm2 [Paint]
+  - 'MercenaryHelm2 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -4993,7 +4993,7 @@ SpriteAtlas:
   - Potion2
   - ChickenLeg
   - Bilbo
-  - InquisitorHat2 [Paint]
+  - 'InquisitorHat2 [Paint]'
   - Limb
   - Riser
   - Arrow
@@ -5053,7 +5053,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - OldCape2 [Paint]
+  - 'OldCape2 [Paint]'
   - Potion3
   - HandL
   - HandR
@@ -5067,8 +5067,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - InquisitorHat1 [Paint]
-  - SmallPotion [Paint]
+  - 'InquisitorHat1 [Paint]'
+  - 'SmallPotion [Paint]'
   - SandWarriorHalberd
   - OldPoleaxe
   - HandL
@@ -5086,20 +5086,20 @@ SpriteAtlas:
   - CursedBone
   - VikingAxe3
   - MagicGoldenRing
-  - TwoHandedSword [Paint]
+  - 'TwoHandedSword [Paint]'
   - CarnivalMask
   - Halberd
   - GuardShield2
   - SandElderTurban
   - GuardShield1
-  - ThiefHelm [Paint]
-  - ShamanMask [FullHair]
-  - Machete [Paint]
+  - 'ThiefHelm [Paint]'
+  - 'ShamanMask [FullHair]'
+  - 'Machete [Paint]'
   - SwampHealer1Staff
   - ManticoreSword
   - WoodenBuckler
   - SandWarriorSword1
-  - Katana3 [Paint]
+  - 'Katana3 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5137,7 +5137,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Katana1 [Paint]
+  - 'Katana1 [Paint]'
   - PathfinderHood
   - GladiatorHelm2
   - BerserkAxe
@@ -5154,7 +5154,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - SamuraiElderSword
-  - PathfinderHat [Paint]
+  - 'PathfinderHat [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5167,15 +5167,15 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - MercenarySword1 [Paint]
+  - 'MercenarySword1 [Paint]'
   - BoneClub
   - SandHealerHood
   - GreyKnightShield
-  - GuardSword1 [Paint]
+  - 'GuardSword1 [Paint]'
   - FreeFolkAxe
   - MediumPotion
   - LeatherHelm
-  - ShortSword [Paint]
+  - 'ShortSword [Paint]'
   - WaterAdeptWand2
   - HandL
   - HandR
@@ -5192,12 +5192,12 @@ SpriteAtlas:
   - Spear
   - WarHammer
   - TwoHandedVikingAxe2
-  - GuardHelm3 [Paint]
+  - 'GuardHelm3 [Paint]'
   - IronShield1
   - Harpoon
-  - CrusaderHelm [Paint]
+  - 'CrusaderHelm [Paint]'
   - WoodenShield3
-  - VikingSword2 [Paint]
+  - 'VikingSword2 [Paint]'
   - MilitiamanShield
   - HandL
   - HandR
@@ -5212,7 +5212,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - SandWarriorHelm2
-  - DeserterDagger [Paint]
+  - 'DeserterDagger [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5241,8 +5241,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - ShamanMask2 [FullHair]
-  - LionSword [Paint]
+  - 'ShamanMask2 [FullHair]'
+  - 'LionSword [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5281,7 +5281,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - EliteKnightHelm
-  - MilitiamanHelmet2 [Paint]
+  - 'MilitiamanHelmet2 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5319,7 +5319,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - CataphractHelm [Paint]
+  - 'CataphractHelm [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5401,7 +5401,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - IronShield2
-  - ShortKnightSword [Paint]
+  - 'ShortKnightSword [Paint]'
   - TwoHandedVikingSword1
   - ShamanWand
   - NecromancerHood
@@ -5420,14 +5420,14 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - WarriorShield
-  - SamuraiSword2 [Paint]
+  - 'SamuraiSword2 [Paint]'
   - Potion1
-  - SiegeArcherHelm [Paint]
+  - 'SiegeArcherHelm [Paint]'
   - Limb
   - Riser
   - Arrow
   - FireWizardWand
-  - NorthWardenSword [Paint]
+  - 'NorthWardenSword [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5453,11 +5453,11 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - SiegeSpear
-  - AssassinDagger [Paint]
+  - 'AssassinDagger [Paint]'
   - Limb
   - Riser
   - Arrow
-  - InquisitorSword3 [Paint]
+  - 'InquisitorSword3 [Paint]'
   - GoldenRing
   - CardinalWand
   - HandL
@@ -5478,7 +5478,7 @@ SpriteAtlas:
   - TwoHandedWoodenMace
   - StoneAxe
   - VikingLeatherHelm
-  - RangerHat [Paint]
+  - 'RangerHat [Paint]'
   - DarkKnightShield
   - VikingSword1
   - Hamburger
@@ -5496,7 +5496,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - HalberdierHelm [Paint]
+  - 'HalberdierHelm [Paint]'
   - SmallAxe
   - HandL
   - HandR
@@ -5535,8 +5535,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - VampireCape [Paint]
-  - HunterHelm [Paint]
+  - 'VampireCape [Paint]'
+  - 'HunterHelm [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5555,7 +5555,7 @@ SpriteAtlas:
   - Flute
   - PyromancerWand
   - DrownedGoblinHand
-  - WitchHunterHat [Paint]
+  - 'WitchHunterHat [Paint]'
   - SilverRing
   - HandL
   - HandR
@@ -5581,7 +5581,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - GrandmaCape [Paint]
+  - 'GrandmaCape [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5595,7 +5595,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - SwampMage2Staff
-  - ShamanMask [Paint]
+  - 'ShamanMask [Paint]'
   - ExpertBowmanHat
   - Limb
   - Riser
@@ -5654,7 +5654,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - DeserterBandage [FullHair]
+  - 'DeserterBandage [FullHair]'
   - IceWizardWand
   - MagicBomb
   - HandL
@@ -5673,7 +5673,7 @@ SpriteAtlas:
   - Limb
   - Riser
   - Arrow
-  - GuardHelm [Paint]
+  - 'GuardHelm [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5698,13 +5698,13 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - GuardHelm2 [Paint]
+  - 'GuardHelm2 [Paint]'
   - StrawHat
-  - LittleLionSword [Paint]
+  - 'LittleLionSword [Paint]'
   - Limb
   - Riser
   - Arrow
-  - HermitHood [Paint]
+  - 'HermitHood [Paint]'
   - Banan
   - Limb
   - Riser
@@ -5772,16 +5772,16 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - SteelHelm [Paint]
+  - 'SteelHelm [Paint]'
   - RedLionShield
-  - SamuraiSword3 [Paint]
+  - 'SamuraiSword3 [Paint]'
   - Kunai
   - SandWarriorHelm1
   - SamuraiHelm1
   - Limb
   - Riser
   - Arrow
-  - GuardHelm1 [Paint]
+  - 'GuardHelm1 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5811,7 +5811,7 @@ SpriteAtlas:
   - ForearmL
   - FireAdeptHood
   - SwampMage1Staff
-  - MountainHelm [Paint]
+  - 'MountainHelm [Paint]'
   - BronzeEyeRing
   - HandL
   - HandR
@@ -5833,7 +5833,7 @@ SpriteAtlas:
   - GoldLionShield
   - SwampWarriorSpear
   - CataphractSpear
-  - HunterKnife [Paint]
+  - 'HunterKnife [Paint]'
   - LargePotion
   - HandL
   - HandR
@@ -5859,16 +5859,16 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Mask1 [Paint]
-  - AssassinHood [Paint]
+  - 'Mask1 [Paint]'
+  - 'AssassinHood [Paint]'
   - SteelAxe
   - FireAdeptWand2
   - SteelPotHelm
-  - ShamanHelm [FullHair]
+  - 'ShamanHelm [FullHair]'
   - SpikedShield
   - Smallsword
   - ManticoreShield
-  - WolfSword [Paint]
+  - 'WolfSword [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5885,7 +5885,7 @@ SpriteAtlas:
   - Limb
   - Riser
   - Arrow
-  - MercenaryHelm1 [Paint]
+  - 'MercenaryHelm1 [Paint]'
   - HardwoodWand
   - VikingIronHelm2
   - Worm
@@ -5907,8 +5907,8 @@ SpriteAtlas:
   - Riser
   - Arrow
   - TwoHandedVikingAxe3
-  - InquisitorSword2 [Paint]
-  - PaladinHelm [Paint]
+  - 'InquisitorSword2 [Paint]'
+  - 'PaladinHelm [Paint]'
   - HandL
   - HandR
   - Leg
@@ -5921,9 +5921,9 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - VikingSword3 [Paint]
+  - 'VikingSword3 [Paint]'
   - Bottle1
-  - HeavySword [Paint]
+  - 'HeavySword [Paint]'
   m_RenderDataMap: {}
   m_Tag: Sprites
   m_IsVariant: 0

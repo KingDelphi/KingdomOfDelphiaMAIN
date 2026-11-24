@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -1573,8 +1573,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - GasMask2Glowing[Paint]
-  - UberSoldierHelmFull [Paint]
+  - 'GasMask2Glowing[Paint]'
+  - 'UberSoldierHelmFull [Paint]'
   - Sparks
   - ArmyKnife
   - HandL
@@ -1590,7 +1590,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - FlashGrenade
-  - Mask2 [Paint]
+  - 'Mask2 [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1711,7 +1711,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - Bluetooth
-  - SampleCape [Paint]
+  - 'SampleCape [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1793,10 +1793,10 @@ SpriteAtlas:
   - Limb
   - Riser
   - Arrow
-  - GasMask [Paint]
+  - 'GasMask [Paint]'
   - SmokeDissolve
   - Blue
-  - UberSoldier [Paint]
+  - 'UberSoldier [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1816,7 +1816,7 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - Bandit [Paint]
+  - 'Bandit [Paint]'
   - Black
   - HockeyStick
   - Bottle
@@ -1856,8 +1856,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - DeutschenHat [Paint]
-  - Mask1 [Paint]
+  - 'DeutschenHat [Paint]'
+  - 'Mask1 [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1909,7 +1909,7 @@ SpriteAtlas:
   - Magazine
   - Worm
   - SantaHelperHat2
-  - GasMaskGlowing [Paint]
+  - 'GasMaskGlowing [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1949,7 +1949,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Sock [Paint]
+  - 'Sock [Paint]'
   - PolicemanBaton
   - Forestock
   - Rifle
@@ -2005,9 +2005,9 @@ SpriteAtlas:
   - Arrow
   - Cap
   - MlitaryBeret3
-  - GasMask2 [Paint]
-  - Boomerang [Paint]
-  - Bandana [Paint]
+  - 'GasMask2 [Paint]'
+  - 'Boomerang [Paint]'
+  - 'Bandana [Paint]'
   - HandL
   - HandR
   - Leg
@@ -2058,9 +2058,9 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - StreetCap [Paint]
+  - 'StreetCap [Paint]'
   - Radio2
-  - SWATTransparent [Paint]
+  - 'SWATTransparent [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -2106,7 +2106,7 @@ SpriteAtlas:
   - ForearmL
   - Radio2
   - AdventurerCap
-  - HunterMask [Paint]
+  - 'HunterMask [Paint]'
   - HandL
   - HandR
   - Leg
@@ -2120,8 +2120,8 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - SantaHat
-  - NinjaHeadband [Paint]
-  - BoomBoxCap [Paint]
+  - 'NinjaHeadband [Paint]'
+  - 'BoomBoxCap [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -2157,7 +2157,7 @@ SpriteAtlas:
   - ForearmL
   - GoldenEarring
   - UbersoldierHelm
-  - Headband [Paint] [FullHair]
+  - 'Headband [Paint] [FullHair]'
   - Jetpack5
   m_RenderDataMap: {}
   m_Tag: Sprites

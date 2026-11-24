@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -1101,8 +1101,8 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - SampleCape [Paint]
-  - HeavySword2 [Paint]
+  - 'SampleCape [Paint]'
+  - 'HeavySword2 [Paint]'
   - LightSword2
   - SantaHelperHat3
   - HandL
@@ -1155,17 +1155,17 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - ArrowQuiver3 [Paint]
+  - 'ArrowQuiver3 [Paint]'
   - EnergyShield3
-  - Helm1a [Paint]
-  - Glasses4 [Paint]
-  - ArrowQuiver2 [Paint]
+  - 'Helm1a [Paint]'
+  - 'Glasses4 [Paint]'
+  - 'ArrowQuiver2 [Paint]'
   - Jetpack9
   - MediumHealing
   - EnergyShield
   - laserpurple
   - Cape3
-  - Axeorang [Paint]
+  - 'Axeorang [Paint]'
   - Jetpack4
   - Communicator
   - HandL
@@ -1181,11 +1181,11 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - MuzzleFlashSmallGreen
-  - Glasses2 [Paint]
+  - 'Glasses2 [Paint]'
   - lasergreen
   - MuzzleFlashBlue
   - Jetpack
-  - EnergyKnife [Paint]
+  - 'EnergyKnife [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1227,7 +1227,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Helm7 [Paint]
+  - 'Helm7 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1313,7 +1313,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Helm5 [Paint]
+  - 'Helm5 [Paint]'
   - LagreHealing
   - Forestock
   - Rifle
@@ -1322,7 +1322,7 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - Helm2 [Paint]
+  - 'Helm2 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1354,7 +1354,7 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - Helm2a [Paint]
+  - 'Helm2a [Paint]'
   - SantaHat
   - Limb
   - Riser
@@ -1386,10 +1386,10 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Boomerang [Paint]
+  - 'Boomerang [Paint]'
   - GoldenEarring
-  - Glasses1 [Paint]
-  - EnergySword [Paint]
+  - 'Glasses1 [Paint]'
+  - 'EnergySword [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1421,8 +1421,8 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - ArrowQuiver1 [Paint]
-  - HeavySword [Paint]
+  - 'ArrowQuiver1 [Paint]'
+  - 'HeavySword [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1471,7 +1471,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - SteelShield [Paint]
+  - 'SteelShield [Paint]'
   - FireRing
   - Jetpack3
   - Cape4
@@ -1508,7 +1508,7 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - SpaceTrooperVisor [Paint]
+  - 'SpaceTrooperVisor [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1518,9 +1518,9 @@ SpriteAtlas:
   - Magazine
   - MuzzleFlashSmallYellow
   - SantaHelperHat2
-  - Helm4 [Paint]
+  - 'Helm4 [Paint]'
   - Communicator
-  - Helm6 [Paint]
+  - 'Helm6 [Paint]'
   - DragonTooth
   - Forestock
   - Rifle
@@ -1538,16 +1538,16 @@ SpriteAtlas:
   - Slide
   - Magazine
   - MARK-H2Shield
-  - Helm3 [Paint]
-  - Helm3a [Paint]
-  - Glasses3 [Paint]
+  - 'Helm3 [Paint]'
+  - 'Helm3a [Paint]'
+  - 'Glasses3 [Paint]'
   - Jetpack2
   - Smoke
   - MuzzleFlashGreen
   - Limb
   - Riser
   - Arrow
-  - EnergyShield [Paint]
+  - 'EnergyShield [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1560,7 +1560,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - ArrowQuiver4  [Paint]
+  - 'ArrowQuiver4  [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1568,23 +1568,23 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - Helm4a [Paint]
-  - Mask2 [Paint]
+  - 'Helm4a [Paint]'
+  - 'Mask2 [Paint]'
   - Banan
   - EnergyKnife
-  - Helm1 [Paint]
-  - ThrowingStar [Paint]
+  - 'Helm1 [Paint]'
+  - 'ThrowingStar [Paint]'
   - Jetpack7
   - MuzzleFlashSmallBlue
   - laserblue
-  - EnergyShield3 [Paint]
-  - Mask3 [Paint]
-  - EnergyShield2 [Paint]
+  - 'EnergyShield3 [Paint]'
+  - 'Mask3 [Paint]'
+  - 'EnergyShield2 [Paint]'
   - laserred
-  - SteelShield2 [Paint]
+  - 'SteelShield2 [Paint]'
   - Mine
-  - SpaceTrooperHelmet [Paint]
-  - Mask1 [Paint]
+  - 'SpaceTrooperHelmet [Paint]'
+  - 'Mask1 [Paint]'
   - Forestock
   - Rifle
   - Shell

@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     {
         switch (server)
         {
-            case "Delphia Valor":
+            case "Delphia Valor (PVP / Normal Death)":
                 isMono = true;
                 isMulti = false;
                 isPVP = true;

@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -507,212 +507,212 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 1ff4fcefb3bf438f850c815722d877b5, type: 3}
   - {fileID: 21300000, guid: a42a73ffeb8b7e0409073e42ea15715b, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Helm3a [Paint]
-  - SampleCape [Paint]
-  - MARK-L4 [Paint]
-  - MARK-H1 [Paint]
+  - 'Helm3a [Paint]'
+  - 'SampleCape [Paint]'
+  - 'MARK-L4 [Paint]'
+  - 'MARK-H1 [Paint]'
   - SmallHealing
   - MARK-H2ShieldLight
   - THead
-  - Helm1a [Paint]
+  - 'Helm1a [Paint]'
   - Jetpack4
-  - MARK-H2B [Paint]
-  - HeavySword [Paint]
-  - EnergyKnife [Paint]
+  - 'MARK-H2B [Paint]'
+  - 'HeavySword [Paint]'
+  - 'EnergyKnife [Paint]'
   - HB-2000.png
-  - MARK-L3 [Paint]
-  - Helm2 [Paint]
-  - MARK-L2 [Paint]
-  - MARK-H2B [Paint]
-  - MARK-L6 [Paint]
-  - MARK-L1 [Paint]
+  - 'MARK-L3 [Paint]'
+  - 'Helm2 [Paint]'
+  - 'MARK-L2 [Paint]'
+  - 'MARK-H2B [Paint]'
+  - 'MARK-L6 [Paint]'
+  - 'MARK-L1 [Paint]'
   - MediumHealing
-  - MARK-L5 [Paint]
+  - 'MARK-L5 [Paint]'
   - PR-9000.png
   - SantaHelper
-  - MARK-H2 [Paint]
-  - MARK-L1 [Paint]
-  - SteelShield [Paint]
+  - 'MARK-H2 [Paint]'
+  - 'MARK-L1 [Paint]'
+  - 'SteelShield [Paint]'
   - MARK-H2Shield
-  - MARK-H4 [Paint]
+  - 'MARK-H4 [Paint]'
   - MARK-H5
   - SantaHelperWand
   - TBody
-  - Axeorang [Paint]
+  - 'Axeorang [Paint]'
   - CaptainForm
-  - MARK-L5 [Paint]
-  - MARK-L2 [Paint]
+  - 'MARK-L5 [Paint]'
+  - 'MARK-L2 [Paint]'
   - Cape2
   - EnergyShield3
-  - MARK-H2B [Paint]
+  - 'MARK-H2B [Paint]'
   - Jetpack
   - Santa2
-  - MARK-H3B [Paint]
+  - 'MARK-H3B [Paint]'
   - MARK-H4Shield
   - Jetpack9
-  - MARK-L4 [Paint]
-  - Mask3 [Paint]
-  - MARK-H4B [Paint]
-  - MARK-H3 [Paint]
-  - MARK-H3B [Paint]
-  - MARK-H4 [Paint]
+  - 'MARK-L4 [Paint]'
+  - 'Mask3 [Paint]'
+  - 'MARK-H4B [Paint]'
+  - 'MARK-H3 [Paint]'
+  - 'MARK-H3B [Paint]'
+  - 'MARK-H4 [Paint]'
   - SG-V.png
-  - Glasses4 [Paint]
+  - 'Glasses4 [Paint]'
   - Jetpack2
-  - MARK-L5 [Paint]
+  - 'MARK-L5 [Paint]'
   - SantaHelperHat2
-  - MARK-H2B [Paint]
-  - MARK-L2 [Paint]
-  - Helm3 [Paint]
-  - Glasses2 [Paint]
-  - MARK-L6 [Paint]
+  - 'MARK-H2B [Paint]'
+  - 'MARK-L2 [Paint]'
+  - 'Helm3 [Paint]'
+  - 'Glasses2 [Paint]'
+  - 'MARK-L6 [Paint]'
   - MARK-H5
-  - MARK-H2B [Paint]
+  - 'MARK-H2B [Paint]'
   - EnergyShield
   - PulsePistol.png
   - LightHandBlaster.png
-  - MARK-H3B [Paint]
+  - 'MARK-H3B [Paint]'
   - Bow4
   - Thermal
   - Arrow2
   - Jetpack6
   - SantaHelperHat1
-  - MARK-H4B [Paint]
-  - MARK-H2 [Paint]
-  - MARK-L6 [Paint]
+  - 'MARK-H4B [Paint]'
+  - 'MARK-H2 [Paint]'
+  - 'MARK-L6 [Paint]'
   - Mine
   - CaptainForm
-  - MARK-H4 [Paint]
-  - MARK-H1B [Paint]
-  - MARK-H3 [Paint]
-  - HeavySword2 [Paint]
-  - MARK-H2 [Paint]
+  - 'MARK-H4 [Paint]'
+  - 'MARK-H1B [Paint]'
+  - 'MARK-H3 [Paint]'
+  - 'HeavySword2 [Paint]'
+  - 'MARK-H2 [Paint]'
   - SantaHelper
-  - MARK-H4B [Paint]
+  - 'MARK-H4B [Paint]'
   - Santa1
   - EnergySword
   - LagreHealing
   - LR-100.png
-  - MARK-H1 [Paint]
-  - ThrowingStar [Paint]
+  - 'MARK-H1 [Paint]'
+  - 'ThrowingStar [Paint]'
   - Santa1
-  - MARK-H1B [Paint]
+  - 'MARK-H1B [Paint]'
   - Cape3
-  - MARK-H1 [Paint]
+  - 'MARK-H1 [Paint]'
   - Communicator
   - TBody2
-  - MARK-H1B [Paint]
+  - 'MARK-H1B [Paint]'
   - Jetpack8
   - Santa2
   - RL-DIY200.png
-  - Mask1 [Paint]
+  - 'Mask1 [Paint]'
   - SantaHelper
-  - MARK-L1 [Paint]
-  - MARK-H4B [Paint]
+  - 'MARK-L1 [Paint]'
+  - 'MARK-H4B [Paint]'
   - Santa1
   - MARK-H5
-  - MARK-L1 [Paint]
+  - 'MARK-L1 [Paint]'
   - MARK-H5
-  - Helm4a [Paint]
-  - MARK-L2 [Paint]
-  - Boomerang [Paint]
-  - ArrowQuiver1 [Paint]
+  - 'Helm4a [Paint]'
+  - 'MARK-L2 [Paint]'
+  - 'Boomerang [Paint]'
+  - 'ArrowQuiver1 [Paint]'
   - Santa1
-  - Helm4 [Paint]
-  - MARK-H4 [Paint]
-  - MARK-H3B [Paint]
+  - 'Helm4 [Paint]'
+  - 'MARK-H4 [Paint]'
+  - 'MARK-H3B [Paint]'
   - Worm
   - GoldenEarring
   - Santa2
   - SantaWand
   - Communicator
   - LightSword2
-  - EnergyShield [Paint]
-  - EnergySword [Paint]
-  - Helm6 [Paint]
+  - 'EnergyShield [Paint]'
+  - 'EnergySword [Paint]'
+  - 'Helm6 [Paint]'
   - CaptainForm
-  - Glasses3 [Paint]
-  - EnergyShield3 [Paint]
-  - MARK-L5 [Paint]
-  - MARK-L6 [Paint]
-  - MARK-H3 [Paint]
-  - SpaceTrooperVisor [Paint]
-  - SpaceTrooperHelmet [Paint]
+  - 'Glasses3 [Paint]'
+  - 'EnergyShield3 [Paint]'
+  - 'MARK-L5 [Paint]'
+  - 'MARK-L6 [Paint]'
+  - 'MARK-H3 [Paint]'
+  - 'SpaceTrooperVisor [Paint]'
+  - 'SpaceTrooperHelmet [Paint]'
   - LB-600.png
   - LightSword
   - FirestormFusionBlaster.png
   - SpreadGun.png
   - MARK-H5
-  - MARK-L5 [Paint]
-  - Helm1 [Paint]
+  - 'MARK-L5 [Paint]'
+  - 'Helm1 [Paint]'
   - Cape1
-  - MARK-H2B [Paint]
+  - 'MARK-H2B [Paint]'
   - PP-RX.png
   - Bow1
   - SR-MDK.png
   - CaptainForm
   - EnergyKnife
-  - EnergyShield2 [Paint]
-  - MARK-H3 [Paint]
+  - 'EnergyShield2 [Paint]'
+  - 'MARK-H3 [Paint]'
   - Jetpack5
   - Jetpack7
-  - MARK-H1 [Paint]
+  - 'MARK-H1 [Paint]'
   - LB-200.png
   - DragonTooth
-  - MARK-L6 [Paint]
+  - 'MARK-L6 [Paint]'
   - Cape4
-  - MARK-H3B [Paint]
-  - Bow3 [Paint]
-  - MARK-H4 [Paint]
+  - 'MARK-H3B [Paint]'
+  - 'Bow3 [Paint]'
+  - 'MARK-H4 [Paint]'
   - Santa1
-  - MARK-L4 [Paint]
-  - MARK-L5 [Paint]
+  - 'MARK-L4 [Paint]'
+  - 'MARK-L5 [Paint]'
   - MARK-H5
-  - MARK-L1 [Paint]
-  - MARK-L3 [Paint]
-  - Helm7 [Paint]
+  - 'MARK-L1 [Paint]'
+  - 'MARK-L3 [Paint]'
+  - 'Helm7 [Paint]'
   - LR-300.png
   - Flash
-  - MARK-H4 [Paint]
-  - Helm5 [Paint]
-  - MARK-H2 [Paint]
-  - Arrow3 [Paint]
-  - MARK-H3 [Paint]
+  - 'MARK-H4 [Paint]'
+  - 'Helm5 [Paint]'
+  - 'MARK-H2 [Paint]'
+  - 'Arrow3 [Paint]'
+  - 'MARK-H3 [Paint]'
   - Santa1
   - OblivionPlasmaGun.png
   - SantaHelper
-  - MARK-H4B [Paint]
+  - 'MARK-H4B [Paint]'
   - Banan
-  - MARK-L3 [Paint]
-  - MARK-H1 [Paint]
-  - MARK-L3 [Paint]
+  - 'MARK-L3 [Paint]'
+  - 'MARK-H1 [Paint]'
+  - 'MARK-L3 [Paint]'
   - SantaHelper
-  - MARK-H1B [Paint]
+  - 'MARK-H1B [Paint]'
   - LR-500.png
-  - MARK-H1 [Paint]
+  - 'MARK-H1 [Paint]'
   - RL-800.png
-  - ArrowQuiver4  [Paint]
-  - MARK-H1B [Paint]
-  - MARK-L6 [Paint]
-  - MARK-H3 [Paint]
-  - MARK-H2 [Paint]
-  - MARK-L1 [Paint]
-  - MARK-L4 [Paint]
+  - 'ArrowQuiver4  [Paint]'
+  - 'MARK-H1B [Paint]'
+  - 'MARK-L6 [Paint]'
+  - 'MARK-H3 [Paint]'
+  - 'MARK-H2 [Paint]'
+  - 'MARK-L1 [Paint]'
+  - 'MARK-L4 [Paint]'
   - CaptainForm
-  - MARK-L4 [Paint]
+  - 'MARK-L4 [Paint]'
   - EnergyShield2
   - RRII.png
-  - MARK-L3 [Paint]
-  - Glasses1 [Paint]
+  - 'MARK-L3 [Paint]'
+  - 'Glasses1 [Paint]'
   - SantaHelperHat3
-  - SteelShield2 [Paint]
-  - Helm2a [Paint]
+  - 'SteelShield2 [Paint]'
+  - 'Helm2a [Paint]'
   - LR-300RX.png
-  - Mask2 [Paint]
-  - MARK-H2 [Paint]
-  - MARK-L2 [Paint]
+  - 'Mask2 [Paint]'
+  - 'MARK-H2 [Paint]'
+  - 'MARK-L2 [Paint]'
   - Santa2
-  - ArrowQuiver2 [Paint]
+  - 'ArrowQuiver2 [Paint]'
   - CaptainForm
   - PR-5000.png
   - Santa2
@@ -721,17 +721,17 @@ SpriteAtlas:
   - ThrowingStar2
   - Smoke
   - SantaHat
-  - MARK-H3B [Paint]
+  - 'MARK-H3B [Paint]'
   - SR-25.png
   - Helm3b
-  - MARK-H4B [Paint]
+  - 'MARK-H4B [Paint]'
   - Arrow4
-  - ArrowQuiver3 [Paint]
+  - 'ArrowQuiver3 [Paint]'
   - Santa2
-  - MARK-L3 [Paint]
-  - MARK-H1B [Paint]
-  - MARK-L4 [Paint]
-  - MARK-L2 [Paint]
+  - 'MARK-L3 [Paint]'
+  - 'MARK-H1B [Paint]'
+  - 'MARK-L4 [Paint]'
+  - 'MARK-L2 [Paint]'
   - Bow2
   - Arrow1
   m_RenderDataMap: {}

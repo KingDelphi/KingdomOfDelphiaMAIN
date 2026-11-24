@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -2414,24 +2414,24 @@ SpriteAtlas:
   - FireWizardArmor
   - SiegeArcherArmor
   - LeatherCap
-  - EliteGuardArmor [Paint]
+  - 'EliteGuardArmor [Paint]'
   - Spear
-  - ShortDagger [Paint]
+  - 'ShortDagger [Paint]'
   - OrcBow
-  - AssassinArmor [Paint]
+  - 'AssassinArmor [Paint]'
   - WaterAdept
   - DarkStoneHammer
   - VikingLeatherHelm
   - VikingIronHelm2
   - SteelAxe
   - HornBow
-  - ShamanMask [Paint]
+  - 'ShamanMask [Paint]'
   - SandWarrior1
   - NecromancerHood
   - HorseLord
-  - WitchHat [Paint]
-  - InquisitorHat1 [Paint]
-  - Ninja2 [Paint]
+  - 'WitchHat [Paint]'
+  - 'InquisitorHat1 [Paint]'
+  - 'Ninja2 [Paint]'
   - GladiatorHelm2
   - FamilySword
   - BanditArmor
@@ -2444,42 +2444,42 @@ SpriteAtlas:
   - GoldenEarring
   - FireWizardArmor
   - SwampWarrior1
-  - PaladinArmor [Paint]
+  - 'PaladinArmor [Paint]'
   - Grog
   - Axeorang
-  - NinjaHelm3 [Paint]
-  - KnightSword [Paint]
+  - 'NinjaHelm3 [Paint]'
+  - 'KnightSword [Paint]'
   - LeatherLightArmor
   - SandMage2
   - Nomad
-  - Ninja2 [Paint]
+  - 'Ninja2 [Paint]'
   - HunterTunic
-  - EliteGuardArmor [Paint]
+  - 'EliteGuardArmor [Paint]'
   - SandShooter1
   - Robe
-  - NightsWatch [Paint]
+  - 'NightsWatch [Paint]'
   - SwampWarrior1
   - SiegeSpear
   - ShamanWand
   - MagicSilverRing
   - GoldenRing
-  - HeavySword [Paint]
+  - 'HeavySword [Paint]'
   - SamuraiElder
   - SamuraiHeavy2
-  - NightsWatch [Paint]
-  - WolfSword [Paint]
+  - 'NightsWatch [Paint]'
+  - 'WolfSword [Paint]'
   - BattleBow
   - VikingFurArmor
   - AmateurDodgeHat
-  - HeavyHelm [Paint]
+  - 'HeavyHelm [Paint]'
   - SamuraiHeavy3
   - Deserter
   - IronIslands
-  - GguardsmenArmor [Paint]
+  - 'GguardsmenArmor [Paint]'
   - SpearmanArmor
-  - RoyalCape [Paint]
+  - 'RoyalCape [Paint]'
   - LeatherRivetedArmor
-  - VikingRoughArmor3 [Paint]
+  - 'VikingRoughArmor3 [Paint]'
   - ShamanArmor
   - SandHealer2
   - ManticoreSword
@@ -2490,26 +2490,26 @@ SpriteAtlas:
   - VikingLightArmor1
   - GreyKnight
   - LandsknechtArmor
-  - FireKnightArmor [Paint]
+  - 'FireKnightArmor [Paint]'
   - SandMageStaff2
   - SamuraiHeavy1
   - LittleLion
   - DreadCleaver
   - Bottle1
-  - ChainmailLightArmor [Paint]
+  - 'ChainmailLightArmor [Paint]'
   - WaterWizardArmor
   - WaterWizardArmor
   - ArrowQuiver3
-  - AssassinHood [Paint]
-  - KnightArmor [Paint]
+  - 'AssassinHood [Paint]'
+  - 'KnightArmor [Paint]'
   - FireAdept
-  - AssassinArmor [Paint]
-  - BanditMask [Paint]
+  - 'AssassinArmor [Paint]'
+  - 'BanditMask [Paint]'
   - OldHeavyShield
   - VikingRoughArmor1
   - SamuraiElderSword
   - TowerShield
-  - ChainmailLightArmor [Paint]
+  - 'ChainmailLightArmor [Paint]'
   - WaterWizardWand
   - VikingRoughArmor2
   - LittleLion
@@ -2522,32 +2522,32 @@ SpriteAtlas:
   - BronzeDagger
   - Hunter
   - SandMage1
-  - Scout [Paint]
-  - Mask1 [Paint]
+  - 'Scout [Paint]'
+  - 'Mask1 [Paint]'
   - SilverRing
   - Militiaman
   - GuardShield2
   - SandShooter2
   - HorseLord
-  - GguardsmenArmor [Paint]
+  - 'GguardsmenArmor [Paint]'
   - SpikeBomb
   - GypsyHat
   - WoodenShield3
   - IronIslands
-  - OldCape2 [Paint]
-  - Scout [Paint]
-  - FireKnightArmor [Paint]
+  - 'OldCape2 [Paint]'
+  - 'Scout [Paint]'
+  - 'FireKnightArmor [Paint]'
   - Hermit
-  - IronPlateArmor [Paint]
+  - 'IronPlateArmor [Paint]'
   - SandShooter2
   - Wanderer
-  - ShortSword [Paint]
+  - 'ShortSword [Paint]'
   - VikingFurArmor
-  - PaladinHelm [Paint]
+  - 'PaladinHelm [Paint]'
   - SwampHealer2
-  - Ninja1 [Paint]
+  - 'Ninja1 [Paint]'
   - VikingLightArmor3
-  - VikingRoughArmor3 [Paint]
+  - 'VikingRoughArmor3 [Paint]'
   - SandWarrior1
   - Gold
   - SamuraiLight2
@@ -2557,26 +2557,26 @@ SpriteAtlas:
   - GladiatorArmor
   - FalconIronHelm
   - Santa1
-  - MediumPotion [Paint]
+  - 'MediumPotion [Paint]'
   - IceWizardArmor
-  - Cleric [Paint]
+  - 'Cleric [Paint]'
   - GladiatorHelm1
   - BerserkArmor
-  - WitchHunterArmor [Paint]
+  - 'WitchHunterArmor [Paint]'
   - StormBringerWand
   - SpikedArmor
-  - MercenaryHelm1 [Paint]
+  - 'MercenaryHelm1 [Paint]'
   - Nomad
-  - GuardArmor [Paint]
+  - 'GuardArmor [Paint]'
   - SpikedArmor
-  - DeserterBandage [FullHair]
-  - Sai [Paint]
-  - HeavyArmor [Paint]
+  - 'DeserterBandage [FullHair]'
+  - 'Sai [Paint]'
+  - 'HeavyArmor [Paint]'
   - VikingLightArmor3
   - Bilbo
   - SandHealer2
   - SandWarrior1
-  - AssassinArmor [Paint]
+  - 'AssassinArmor [Paint]'
   - VikingLightArmor1
   - RunicAxe
   - SandMage2
@@ -2589,7 +2589,7 @@ SpriteAtlas:
   - BattleBow
   - SwampWarrior2
   - RedLion
-  - ShamanHelm [FullHair]
+  - 'ShamanHelm [FullHair]'
   - HawkHelm
   - WoodcutterPoleaxe
   - FarmerClothes
@@ -2598,25 +2598,25 @@ SpriteAtlas:
   - MagicGoldenRing
   - WarlockArmor
   - BasicIronShield
-  - DarkMountainHelm [Paint]
+  - 'DarkMountainHelm [Paint]'
   - SniperArmor
   - Rags2
   - AdvancedGladiatorShield
   - VikingIronBow3
   - Ninja3
-  - BishopHat [FullHair]
+  - 'BishopHat [FullHair]'
   - SwampWarrior1
   - SandMage2
   - LandsknechtArmor
-  - ShortKnightSword [Paint]
+  - 'ShortKnightSword [Paint]'
   - PathFinderBow
   - SamuraiBow1
-  - Mountain [Paint]
+  - 'Mountain [Paint]'
   - SwampElder
   - IronIslands
-  - BanditLightArmor [Paint]
+  - 'BanditLightArmor [Paint]'
   - GladiatorArmor
-  - KnightHelm [Paint]
+  - 'KnightHelm [Paint]'
   - SandHealer1
   - Slave
   - TwoHandedWoodenMace
@@ -2624,83 +2624,83 @@ SpriteAtlas:
   - SamuraiBow3
   - RangerArmor
   - ChampionArmor
-  - NightsWatch [Paint]
+  - 'NightsWatch [Paint]'
   - FireAdept
   - GoldLion
   - NecromancerArmor
   - BoneClub
-  - ChainmailLightArmor [Paint]
+  - 'ChainmailLightArmor [Paint]'
   - DarkKnight
   - SandHealer1
   - Bottle2
   - GoldLion
   - SwampHealer2
   - PathfinderArmor
-  - GuardHelm2 [Paint]
+  - 'GuardHelm2 [Paint]'
   - SandHealer2
   - KnightArmor
   - SamuraiBow1
-  - MercenaryArmor [Paint]
+  - 'MercenaryArmor [Paint]'
   - Robe
   - Nomad
   - TwoHandedVikingAxe2
   - BanditArmor
-  - VikingSword3 [Paint]
+  - 'VikingSword3 [Paint]'
   - RangerArmor
   - VikingLightArmor3
-  - Katana2 [Paint]
-  - NorthWardenSword [Paint]
-  - Ninja1 [Paint]
+  - 'Katana2 [Paint]'
+  - 'NorthWardenSword [Paint]'
+  - 'Ninja1 [Paint]'
   - FireWarriorSword1
-  - Ninjato [Paint]
-  - CataphractArmor [Paint]
+  - 'Ninjato [Paint]'
+  - 'CataphractArmor [Paint]'
   - SandMageStaff1
   - Santa1
   - Santa1
-  - GuardHelm1 [Paint]
+  - 'GuardHelm1 [Paint]'
   - Hermit
   - DruidArmor
-  - FreeFolk [Paint]
+  - 'FreeFolk [Paint]'
   - ScoutHelm
   - IronShield1
   - ScoutBow
-  - Ninja2 [Paint]
-  - IronArmor [Paint]
+  - 'Ninja2 [Paint]'
+  - 'IronArmor [Paint]'
   - BishopArmor
   - LandsknechtArmor
   - ThiefArmor
-  - NinjaHelm1 [Paint]
-  - Zweihander [Paint]
-  - MercenaryArmor [Paint]
+  - 'NinjaHelm1 [Paint]'
+  - 'Zweihander [Paint]'
+  - 'MercenaryArmor [Paint]'
   - SunriseSword
-  - MarauderArmor [Paint]
-  - NinjaHelm2 [Paint]
+  - 'MarauderArmor [Paint]'
+  - 'NinjaHelm2 [Paint]'
   - Coin
   - HunterTunic
-  - AssassinArmor [Paint]
+  - 'AssassinArmor [Paint]'
   - SandWarriorSword1
   - GoldLion
   - GateCrusher
-  - MilitiamanShortSword [Paint]
-  - PaladinSword [Paint]
+  - 'MilitiamanShortSword [Paint]'
+  - 'PaladinSword [Paint]'
   - LeatherRivetedArmor
   - BerserkArmor
   - VikingFurArmor
   - MediumPotion
-  - Ninja1 [Paint]
+  - 'Ninja1 [Paint]'
   - ScoutShortBow
   - MagicBomb
   - HunterHat2
   - SamuraiLight2
   - LeatherJacket
-  - EliteGuardArmor [Paint]
-  - SiegeArcherHelm [Paint]
+  - 'EliteGuardArmor [Paint]'
+  - 'SiegeArcherHelm [Paint]'
   - MarauderHood
   - RangerArmor
   - MarauderBow
   - SamuraiLight3
-  - CrusaderChainmail [Paint]
-  - GuardSword2 [Paint]
+  - 'CrusaderChainmail [Paint]'
+  - 'GuardSword2 [Paint]'
   - ChampionHelm
   - HunterTunic
   - ThiefArmor
@@ -2709,8 +2709,8 @@ SpriteAtlas:
   - IceWizardArmor
   - IceWizardHood
   - Hunter
-  - CataphractArmor [Paint]
-  - CataphractArmor [Paint]
+  - 'CataphractArmor [Paint]'
+  - 'CataphractArmor [Paint]'
   - RedLion
   - GreyKnight
   - BerserkArmor
@@ -2718,43 +2718,43 @@ SpriteAtlas:
   - VikingRoughArmor2
   - HorseLord
   - SwampHealer1
-  - IronIslandsSword [Paint]
+  - 'IronIslandsSword [Paint]'
   - FireWizardArmor
   - Rags2
-  - WitchHunterArmor [Paint]
+  - 'WitchHunterArmor [Paint]'
   - PeasantCap
-  - Ninja2 [Paint]
-  - VikingRoughArmor3 [Paint]
+  - 'Ninja2 [Paint]'
+  - 'VikingRoughArmor3 [Paint]'
   - DarkKnightShield
-  - Scout [Paint]
-  - WitchHunterArmor [Paint]
+  - 'Scout [Paint]'
+  - 'WitchHunterArmor [Paint]'
   - HunterShortBow
-  - HalberdierHelm [Paint]
+  - 'HalberdierHelm [Paint]'
   - WitchArmor
   - SandShooter2
   - SamuraiHeavy3
   - Slave
   - Ninja3
-  - CataphractArmor [Paint]
+  - 'CataphractArmor [Paint]'
   - FireAdeptWand2
   - KnightArmor
-  - IronPlateArmor [Paint]
-  - WitchHunterArmor [Paint]
+  - 'IronPlateArmor [Paint]'
+  - 'WitchHunterArmor [Paint]'
   - FireWizardHood
   - SantaHelperWand
   - SamuraiHeavy3
   - SwampShooter2
-  - CrusaderChainmail [Paint]
+  - 'CrusaderChainmail [Paint]'
   - StormBringerArmor
   - FireWarriorArmor
   - NecromancerArmor
-  - Cleric [Paint]
+  - 'Cleric [Paint]'
   - HunterShortBow
-  - VampireCape [Paint]
+  - 'VampireCape [Paint]'
   - Nomad
   - PyromancerArmor
-  - KnightArmor [Paint]
-  - MercenaryArmor [Paint]
+  - 'KnightArmor [Paint]'
+  - 'MercenaryArmor [Paint]'
   - LeatherRivetedArmor
   - VikingRoughArmor2
   - GoldLion
@@ -2767,8 +2767,8 @@ SpriteAtlas:
   - Santa2
   - VikingRoughArmor1
   - SamuraiHeavy3
-  - CataphractArmor [Paint]
-  - CataphractHelm [Paint]
+  - 'CataphractArmor [Paint]'
+  - 'CataphractHelm [Paint]'
   - VikingLightArmor3
   - VikingRoughArmor2
   - FireWarriorArmor
@@ -2776,22 +2776,22 @@ SpriteAtlas:
   - CardinalArmor
   - StormBringerArmor
   - SpearmanArmor
-  - AssassinDagger [Paint]
+  - 'AssassinDagger [Paint]'
   - RareSilverRing
-  - Ninja1 [Paint]
+  - 'Ninja1 [Paint]'
   - ManticoreArmor
-  - HalberdierArmor [Paint]
+  - 'HalberdierArmor [Paint]'
   - WoodenSpikedClub
   - SwampHealer1
   - PathfinderArmor
   - FireAdeptHood
   - PeasantClothing
-  - ShamanMask [FullHair]
+  - 'ShamanMask [FullHair]'
   - WaterWizardArmor
   - DwellerArmor
-  - HermitHood [Paint]
-  - DestroyerArmor [Paint]
-  - Cleric [Paint]
+  - 'HermitHood [Paint]'
+  - 'DestroyerArmor [Paint]'
+  - 'Cleric [Paint]'
   - FarmerClothes
   - SantaHelper
   - StormBringerArmor
@@ -2800,10 +2800,10 @@ SpriteAtlas:
   - SwampElder
   - VikingLightArmor2
   - StormBringerArmor
-  - Cleric [Paint]
+  - 'Cleric [Paint]'
   - Rags2
   - SniperArmor
-  - LittleLionSword [Paint]
+  - 'LittleLionSword [Paint]'
   - VikingIronHelm3
   - ShadowSword
   - PathfinderArmor
@@ -2817,10 +2817,10 @@ SpriteAtlas:
   - SamuraiHeavy1
   - PeasantClothing
   - HunterBow
-  - InquisitorHat2 [Paint]
+  - 'InquisitorHat2 [Paint]'
   - LargePotion
   - ChampionArmor
-  - BalancedSword [Paint]
+  - 'BalancedSword [Paint]'
   - FarmerClothes
   - WarlockArmor
   - IceWizardArmor
@@ -2830,92 +2830,92 @@ SpriteAtlas:
   - Deserter
   - SamuraiLight1
   - HermitLamp
-  - FireKnightArmor [Paint]
+  - 'FireKnightArmor [Paint]'
   - SamuraiSword2
   - StormBringerArmor
-  - SteelHelm [Paint]
-  - SwampLordMask1 [FullHair]
+  - 'SteelHelm [Paint]'
+  - 'SwampLordMask1 [FullHair]'
   - Wanderer
   - Militiaman
-  - FireKnightArmor [Paint]
+  - 'FireKnightArmor [Paint]'
   - Militiaman
   - LeatherRivetedArmor
   - Rags1
   - DarkMountain
-  - AssassinArmor [Paint]
-  - CardinalHat [Paint]
-  - WarriorHelm [Paint]
+  - 'AssassinArmor [Paint]'
+  - 'CardinalHat [Paint]'
+  - 'WarriorHelm [Paint]'
   - FireAdept
-  - GuardArmor [Paint]
+  - 'GuardArmor [Paint]'
   - Rags1
   - Rags2
   - NinjaShield
   - Cheese
-  - ArielDress [Paint]
+  - 'ArielDress [Paint]'
   - GreyKnight
   - HornBow
   - Hunter
   - KnightShield
-  - MarauderArmor [Paint]
-  - IronPlateArmor [Paint]
+  - 'MarauderArmor [Paint]'
+  - 'IronPlateArmor [Paint]'
   - SandShooterBow2
   - SmallPotion
-  - MilitiamanHelmet1 [Paint]
+  - 'MilitiamanHelmet1 [Paint]'
   - Rags2
-  - Ninja1 [Paint]
-  - PaladinArmor [Paint]
+  - 'Ninja1 [Paint]'
+  - 'PaladinArmor [Paint]'
   - JesterHat
   - Brainz
   - ElegantGoldenRing
   - CarnivalMask
-  - DwellerHood [Paint]
+  - 'DwellerHood [Paint]'
   - RustySword
   - SandHealerStaff2
   - VikingLightArmor1
   - DarkKnight
-  - TwoHandedVikingSword3 [Paint]
+  - 'TwoHandedVikingSword3 [Paint]'
   - SwampShooter2
   - LandsknechtArmor
   - Gems
   - Worm
-  - Ninja2 [Paint]
+  - 'Ninja2 [Paint]'
   - HunterLightArmor
   - InquisitorArmor
   - Banan
   - BanditArmor
   - Robe
   - Rags1
-  - ChainmailLightArmor [Paint]
+  - 'ChainmailLightArmor [Paint]'
   - LeatherLightArmor
   - Hermit
   - SamuraiHeavy2
   - SwampMage1
-  - BanditLightArmor [Paint]
+  - 'BanditLightArmor [Paint]'
   - RoyalArcherArmor
   - SniperArmor
   - FireWarriorArmor
-  - ArielDress [Paint]
+  - 'ArielDress [Paint]'
   - NorthWarden
   - SandWarrior1
-  - BanditLightArmor [Paint]
+  - 'BanditLightArmor [Paint]'
   - SandShooter1
   - SamuraiBow2
-  - TwoHandedVikingSword2 [Paint]
+  - 'TwoHandedVikingSword2 [Paint]'
   - GreyKnight
-  - HalberdierArmor [Paint]
-  - IronArmor [Paint]
+  - 'HalberdierArmor [Paint]'
+  - 'IronArmor [Paint]'
   - DruidArmor
   - SantaHelperHat2
-  - KnightArmor [Paint]
+  - 'KnightArmor [Paint]'
   - VikingAxe1
   - FireWarriorShield
   - TwoHandedVikingAxe3
-  - Potion1 [Paint]
-  - Mountain [Paint]
-  - HeavyArmor [Paint]
+  - 'Potion1 [Paint]'
+  - 'Mountain [Paint]'
+  - 'HeavyArmor [Paint]'
   - BlackHammer
   - Scythe
-  - LandsknechtHelm [Paint]
+  - 'LandsknechtHelm [Paint]'
   - RangerArmor
   - IronIslands
   - ExpertBowmanHat
@@ -2927,7 +2927,7 @@ SpriteAtlas:
   - ElderStaff
   - SwampShooter1
   - Potion2
-  - EliteGuardArmor [Paint]
+  - 'EliteGuardArmor [Paint]'
   - SantaHelper
   - CardinalArmor
   - RoyalArcherArmor
@@ -2937,38 +2937,38 @@ SpriteAtlas:
   - SamuraiHeavy2
   - PyromancerArmor
   - Rags3
-  - BanditLightArmor [Paint]
+  - 'BanditLightArmor [Paint]'
   - VikingWoodenBow
-  - OldCape [Paint]
+  - 'OldCape [Paint]'
   - SwampShooter1
-  - IronArmor [Paint]
+  - 'IronArmor [Paint]'
   - InquisitorArmor
   - VikingShortBow
   - Rags3
   - LeatherRivetedArmor
   - HunterHat
   - SandMage1
-  - Ninja2 [Paint]
+  - 'Ninja2 [Paint]'
   - RedLion
-  - InquisitorSword2 [Paint]
+  - 'InquisitorSword2 [Paint]'
   - FireWizardArmor
   - WaterWizardArmor
   - RedLion
-  - MercenarySword2 [Paint]
+  - 'MercenarySword2 [Paint]'
   - SwampWarrior2
-  - DestroyerArmor [Paint]
+  - 'DestroyerArmor [Paint]'
   - ArrowQuiver
   - Rags3
   - SamuraiElder
   - SandMage1
   - RoyalArcherArmor
   - SwampHealer2Staff
-  - DruidHat [Paint]
+  - 'DruidHat [Paint]'
   - ShamanArmor
   - MarauderBow
   - SwampHealer1
   - SwampShooter1
-  - InquisitorSword4 [Paint]
+  - 'InquisitorSword4 [Paint]'
   - GuardShield
   - NorthWarden
   - SwampMage2Staff
@@ -2979,7 +2979,7 @@ SpriteAtlas:
   - SandHealer1
   - SpikedArmor
   - FireAdept
-  - InquisitorSword3 [Paint]
+  - 'InquisitorSword3 [Paint]'
   - FalconLightArmor
   - Robe
   - VikingRoughArmor1
@@ -2990,16 +2990,16 @@ SpriteAtlas:
   - SandShooter1
   - DarkKnight
   - AspenStake
-  - BanditLightArmor [Paint]
+  - 'BanditLightArmor [Paint]'
   - DestroyerAxe
   - RoyalGuard
   - SandHealer1
   - SpearmanArmor
-  - VikingSword2 [Paint]
-  - PaladinArmor [Paint]
-  - Machete [Paint]
+  - 'VikingSword2 [Paint]'
+  - 'PaladinArmor [Paint]'
+  - 'Machete [Paint]'
   - DwellerWand
-  - GrandmaCape [Paint]
+  - 'GrandmaCape [Paint]'
   - CardinalArmor
   - FireWizardArmor
   - ThiefArmor
@@ -3013,7 +3013,7 @@ SpriteAtlas:
   - SamuraiElder
   - StoneAxe
   - WaterWizardArmor
-  - VikingRoughArmor3 [Paint]
+  - 'VikingRoughArmor3 [Paint]'
   - GoldLion
   - LeatherLightArmor
   - SniperArmor
@@ -3023,47 +3023,47 @@ SpriteAtlas:
   - GladiatorArmor
   - SpikedArmor
   - NecromancerShield
-  - BanditLightArmor [Paint]
-  - MercenaryArmor [Paint]
-  - HunterHelm [Paint]
+  - 'BanditLightArmor [Paint]'
+  - 'MercenaryArmor [Paint]'
+  - 'HunterHelm [Paint]'
   - SwampMage2
-  - HalberdierArmor [Paint]
+  - 'HalberdierArmor [Paint]'
   - BerserkArmor
   - SandMage2
   - Flute
-  - IronArmor [Paint]
+  - 'IronArmor [Paint]'
   - SamuraiLight1
   - SwampMage1
   - HorseLord
-  - MarauderArmor [Paint]
-  - Mountain [Paint]
+  - 'MarauderArmor [Paint]'
+  - 'Mountain [Paint]'
   - SwampElder
   - BishopArmor
-  - TrainingSword [Paint]
-  - SharpHelm [Paint]
+  - 'TrainingSword [Paint]'
+  - 'SharpHelm [Paint]'
   - SandShooter1
   - Deserter
   - Wanderer
   - RoyalArcherArmor
   - FireAdept
   - SniperBow
-  - GuardArmor [Paint]
+  - 'GuardArmor [Paint]'
   - SwampWarrior1
   - VikingLightArmor2
   - IceWizardArmor
-  - CrusaderChainmail [Paint]
+  - 'CrusaderChainmail [Paint]'
   - NorthWarden
   - ManticoreArmor
   - SamuraiLight3
   - SwampWarrior1
-  - IronPlateArmor [Paint]
+  - 'IronPlateArmor [Paint]'
   - RangerBow
   - DecoratedSilverRing
   - SandWarriorSword2
   - WarlockHood
   - TwoHandedVikingSword1
   - SamuraiLight1
-  - MercenaryArmor [Paint]
+  - 'MercenaryArmor [Paint]'
   - SwampMage2
   - LeatherHelm
   - SiegeArcherArmor
@@ -3071,15 +3071,15 @@ SpriteAtlas:
   - CardinalWand
   - SpearmanArmor
   - KiteShield
-  - MercenarySword1 [Paint]
+  - 'MercenarySword1 [Paint]'
   - SandWarrior2
-  - MilitiamanHelmet2 [Paint]
+  - 'MilitiamanHelmet2 [Paint]'
   - Smallsword
   - SwampHealer1
   - MasterDodgeHat
   - WitchWand
-  - DestroyerArmor [Paint]
-  - PaladinArmor [Paint]
+  - 'DestroyerArmor [Paint]'
+  - 'PaladinArmor [Paint]'
   - SwampWarrior1
   - WitchArmor
   - KnightArmor
@@ -3087,26 +3087,26 @@ SpriteAtlas:
   - VikingIronHelm1
   - SandWarriorHelm2
   - Morgana
-  - HeroicCape [Paint]
+  - 'HeroicCape [Paint]'
   - ManticoreArmor
-  - CotttonCape [Paint]
+  - 'CotttonCape [Paint]'
   - SwampMage1
-  - EliteKnightSword [Paint]
-  - HeavyArmor [Paint]
+  - 'EliteKnightSword [Paint]'
+  - 'HeavyArmor [Paint]'
   - BronzeRing
-  - SlaveHeadband [FullHair]
+  - 'SlaveHeadband [FullHair]'
   - LeatherJacket
   - Santa1
   - HandBomb
   - CardinalArmor
   - SantaHelperHat3
-  - HalberdierArmor [Paint]
+  - 'HalberdierArmor [Paint]'
   - WaterBag
   - FireballScroll
   - SandShooter1
-  - VikingRoughArmor3 [Paint]
+  - 'VikingRoughArmor3 [Paint]'
   - SwampElder
-  - Katana3 [Paint]
+  - 'Katana3 [Paint]'
   - OldPoleaxe
   - SamuraiLight2
   - SandShooter2
@@ -3117,14 +3117,14 @@ SpriteAtlas:
   - PyromancerArmor
   - NecromancerArmor
   - SandMage1
-  - Scout [Paint]
+  - 'Scout [Paint]'
   - WitchArmor
   - SwampShooter2Bow
   - InquisitorArmor
-  - MarauderArmor [Paint]
+  - 'MarauderArmor [Paint]'
   - SwampShooter1Bow
-  - Ninja1 [Paint]
-  - GguardsmenArmor [Paint]
+  - 'Ninja1 [Paint]'
+  - 'GguardsmenArmor [Paint]'
   - SandWarrior2
   - Slave
   - SamuraiSword3
@@ -3139,34 +3139,34 @@ SpriteAtlas:
   - SandElderStaff
   - SamuraiShield3
   - FireWarriorArmor
-  - HunterKnife [Paint]
+  - 'HunterKnife [Paint]'
   - VikingIronBow3
-  - ShamanMask3 [FullHair]
+  - 'ShamanMask3 [FullHair]'
   - BerserkArmor
   - StormBringerArmor
-  - BatCape [Paint]
+  - 'BatCape [Paint]'
   - SwampWarrior2
   - Militiaman
   - Rags1
   - CrusaderShield
   - AgileHat
   - VikingLightArmor2
-  - GuardArmor [Paint]
+  - 'GuardArmor [Paint]'
   - PeasantClothing
   - ThiefArmor
   - SandWarriorHalberd
-  - GuardHelm [Paint]
+  - 'GuardHelm [Paint]'
   - BerserkArmor
   - FireKnightShield
   - FarmerClothes
-  - Potion2 [Paint]
+  - 'Potion2 [Paint]'
   - WoodenShield1
   - HermitWand
   - VikingLightArmor2
-  - ChainmailLightArmor [Paint]
-  - InquisitorSword1 [Paint]
+  - 'ChainmailLightArmor [Paint]'
+  - 'InquisitorSword1 [Paint]'
   - FarmerClothes
-  - IronArmor [Paint]
+  - 'IronArmor [Paint]'
   - VikingIronBow1
   - LandsknechtArmor
   - BlueKnightShield
@@ -3183,33 +3183,33 @@ SpriteAtlas:
   - WoodenShield
   - FalconLightArmor
   - ArrowQuiver2
-  - DestroyerHelm [Paint]
-  - FreeFolk [Paint]
+  - 'DestroyerHelm [Paint]'
+  - 'FreeFolk [Paint]'
   - ManticoreHelmet
   - VikingLightArmor3
   - SwampHealer2
   - FalconLightArmor
-  - ShamanMask2 [FullHair]
-  - KnightArmor [Paint]
+  - 'ShamanMask2 [FullHair]'
+  - 'KnightArmor [Paint]'
   - Santa2
   - Halberd
-  - BowmanHat [Paint]
+  - 'BowmanHat [Paint]'
   - VikingLightArmor2
-  - DeserterDagger [Paint]
+  - 'DeserterDagger [Paint]'
   - DarkMountain
   - DruidArmor
   - Santa2
   - SandElderTurban
   - SamuraiElder
-  - ThiefHelm [Paint]
+  - 'ThiefHelm [Paint]'
   - Hamburger
   - ChampionArmor
   - ThiefArmor
   - SandHealerStaff1
   - ManticoreArmor
-  - CrusaderChainmail [Paint]
+  - 'CrusaderChainmail [Paint]'
   - RoyalGuard
-  - Cleric [Paint]
+  - 'Cleric [Paint]'
   - HorseLord
   - SantaHelper
   - SamuraiElderHelm
@@ -3221,33 +3221,33 @@ SpriteAtlas:
   - PathFinderBow
   - DarkKnight
   - LandsknechtArmor
-  - Mountain [Paint]
+  - 'Mountain [Paint]'
   - SandElder
   - VikingIronBow2
   - KnightArmor
-  - IronPlateArmor [Paint]
-  - KnightArmor [Paint]
+  - 'IronPlateArmor [Paint]'
+  - 'KnightArmor [Paint]'
   - PyromancerWand
   - SteelTowerShield
-  - DestroyerArmor [Paint]
-  - CataphractArmor [Paint]
+  - 'DestroyerArmor [Paint]'
+  - 'CataphractArmor [Paint]'
   - SteampunkGlasses
   - DarkMountain
-  - VikingRoughArmor3 [Paint]
+  - 'VikingRoughArmor3 [Paint]'
   - DwellerArmor
   - SwampMage1Staff
-  - SamuraiSword2 [Paint]
+  - 'SamuraiSword2 [Paint]'
   - FireWarriorArmor
   - Hunter
   - FireAdeptWand1
-  - SlaveSword [Paint]
-  - PathfinderHat [Paint]
+  - 'SlaveSword [Paint]'
+  - 'PathfinderHat [Paint]'
   - AdvancedKnightShield
   - SwampWarriorSpear
   - SandHealerHood
   - WarClub
   - WoodenBuckler
-  - LionSword [Paint]
+  - 'LionSword [Paint]'
   - PeasantClothing
   - Kunai
   - SpearmanHelm2
@@ -3260,7 +3260,7 @@ SpriteAtlas:
   - Wanderer
   - RedLion
   - Ninja3
-  - FireKnightSword [Paint]
+  - 'FireKnightSword [Paint]'
   - SamuraiLight1
   - Deserter
   - SandShooterBow2
@@ -3269,12 +3269,12 @@ SpriteAtlas:
   - SandWarrior
   - SpearmanArmor
   - ScoutBow
-  - HeavyArmor [Paint]
+  - 'HeavyArmor [Paint]'
   - SandWarrior2
   - SamuraiLight1
   - HunterLightArmor
   - VikingShortBow
-  - MountainSword [Paint]
+  - 'MountainSword [Paint]'
   - MilitiamanShield
   - FireWarriorArmor
   - InquisitorArmor
@@ -3289,10 +3289,10 @@ SpriteAtlas:
   - VikingLightArmor3
   - SandShooter1
   - WarriorShield
-  - WitchHunterHat [Paint]
-  - VisorKnightHelm [Paint]
+  - 'WitchHunterHat [Paint]'
+  - 'VisorKnightHelm [Paint]'
   - ManticoreShield
-  - Mountain [Paint]
+  - 'Mountain [Paint]'
   - SamuraiHeavy2
   - SandShooter2
   - RangerArmor
@@ -3301,7 +3301,7 @@ SpriteAtlas:
   - SamuraiElder
   - SpikedArmor
   - SamuraiLight3
-  - DestroyerArmor [Paint]
+  - 'DestroyerArmor [Paint]'
   - RoyalGuard
   - SandWarrior1
   - IronShield3
@@ -3309,23 +3309,23 @@ SpriteAtlas:
   - SwampWarrior2
   - WaterWizardHelm
   - Slave
-  - Katana1 [Paint]
+  - 'Katana1 [Paint]'
   - SandMage1
   - RoyalGuard
   - BerserkHelm
-  - NightsWatch [Paint]
-  - Mask2 [Paint]
-  - SamuraiSword3 [Paint]
+  - 'NightsWatch [Paint]'
+  - 'Mask2 [Paint]'
+  - 'SamuraiSword3 [Paint]'
   - SamuraiHelm3
   - TwoHandedVikingAxe1
-  - GuardHelm3 [Paint]
+  - 'GuardHelm3 [Paint]'
   - NorthWarden
   - FamilyBow
   - SamuraiHeavy1
   - Santa2
-  - NightsWatch [Paint]
+  - 'NightsWatch [Paint]'
   - VikingAxe3
-  - ArielDress [Paint]
+  - 'ArielDress [Paint]'
   - NecromancerArmor
   - SamuraiElder
   - ArcherHat
@@ -3335,23 +3335,23 @@ SpriteAtlas:
   - LeatherJacket
   - SamuraiLight3
   - Hermit
-  - IronArmor [Paint]
-  - AssassinArmor [Paint]
-  - GguardsmenArmor [Paint]
+  - 'IronArmor [Paint]'
+  - 'AssassinArmor [Paint]'
+  - 'GguardsmenArmor [Paint]'
   - ChampionArmor
   - WoodenClub
   - Ninja3
   - PyromancerArmor
   - SandHealer1
-  - ShortIronKatana [Paint]
+  - 'ShortIronKatana [Paint]'
   - ChampionArmor
-  - ArielDress [Paint]
+  - 'ArielDress [Paint]'
   - WarlockArmor
   - SwampMage2
   - CardinalBook
   - SamuraiLight2
   - PeasantClothing
-  - CrusaderChainmail [Paint]
+  - 'CrusaderChainmail [Paint]'
   - KnightArmor
   - HunterTunic
   - HalfmoonHat
@@ -3361,9 +3361,9 @@ SpriteAtlas:
   - WaterAdept
   - SandWarrior
   - SandShooter2
-  - CrusaderChainmail [Paint]
+  - 'CrusaderChainmail [Paint]'
   - DwellerArmor
-  - ArielDress [Paint]
+  - 'ArielDress [Paint]'
   - NecromancerArmor
   - VikingRoughArmor2
   - Stoccata
@@ -3373,18 +3373,18 @@ SpriteAtlas:
   - LeatherJacket
   - SamuraiHeavy1
   - VikingFurArmor
-  - Scout [Paint]
+  - 'Scout [Paint]'
   - SandElder
-  - WitchHunterArmor [Paint]
+  - 'WitchHunterArmor [Paint]'
   - WarlockWand
-  - MountainHelm [Paint]
+  - 'MountainHelm [Paint]'
   - VikingFurArmor
   - SwampElder
   - IceWizardWand
   - Lamp
   - HunterTunic
-  - GuardArmor [Paint]
-  - EnforcedHelm [Paint]
+  - 'GuardArmor [Paint]'
+  - 'EnforcedHelm [Paint]'
   - SniperBow
   - SpikedArmor
   - VikingLightArmor1
@@ -3402,48 +3402,48 @@ SpriteAtlas:
   - WarlockArmor
   - RoyalArcherArmor
   - NecromancerArmor
-  - IronPlateArmor [Paint]
+  - 'IronPlateArmor [Paint]'
   - SandHealer1
   - SamuraiHeavy2
   - SpikedShield
   - SmallAxe
-  - Scout [Paint]
+  - 'Scout [Paint]'
   - GreyKnight
   - IronIslands
   - VikingSword1
   - SamuraiBow3
-  - HeavyArmor [Paint]
+  - 'HeavyArmor [Paint]'
   - IceWizardArmor
   - LittleLion
   - SwampMage1
-  - HalberdierArmor [Paint]
+  - 'HalberdierArmor [Paint]'
   - SwampWarrior2
-  - TwoHandedSword [Paint]
-  - EliteGuardArmor [Paint]
+  - 'TwoHandedSword [Paint]'
+  - 'EliteGuardArmor [Paint]'
   - Rags3
   - SwampMage2
   - SamuraiHelm1
-  - MagicSword [Paint]
-  - SwampLordMask2  [FullHair]
+  - 'MagicSword [Paint]'
+  - 'SwampLordMask2  [FullHair]'
   - SamuraiHeavy3
   - WitchArmor
-  - FreeFolk [Paint]
-  - RangerHat [Paint]
+  - 'FreeFolk [Paint]'
+  - 'RangerHat [Paint]'
   - ClericWand2
   - VikingAxe2
   - ChickenLeg
-  - MarauderArmor [Paint]
+  - 'MarauderArmor [Paint]'
   - Santa1
   - SandElder
   - SwampHealer2
-  - HalberdierArmor [Paint]
-  - FireKnightArmor [Paint]
+  - 'HalberdierArmor [Paint]'
+  - 'FireKnightArmor [Paint]'
   - SandWarrior1
-  - KnightArmor [Paint]
+  - 'KnightArmor [Paint]'
   - DwellerArmor
   - InquisitorArmor
   - WoodenStake
-  - Cleric [Paint]
+  - 'Cleric [Paint]'
   - WoodenShield2
   - LeatherJacket
   - VikingRoughArmor1
@@ -3455,19 +3455,19 @@ SpriteAtlas:
   - ShamanArmor
   - LibrarianGlasses
   - WaterAdept
-  - FireKnightArmor [Paint]
+  - 'FireKnightArmor [Paint]'
   - Ninja3
-  - FreeFolk [Paint]
+  - 'FreeFolk [Paint]'
   - RangerArmor
-  - WitchHunterArmor [Paint]
+  - 'WitchHunterArmor [Paint]'
   - SandMage2
-  - PaladinArmor [Paint]
-  - Boomerang [Paint]
+  - 'PaladinArmor [Paint]'
+  - 'Boomerang [Paint]'
   - Santa2
   - SandWarrior2
   - RoyalGuard
-  - LargePotion [Paint]
-  - DestroyerArmor [Paint]
+  - 'LargePotion [Paint]'
+  - 'DestroyerArmor [Paint]'
   - ChampionShield
   - DwellerArmor
   - SantaHelperHat1
@@ -3485,30 +3485,30 @@ SpriteAtlas:
   - Nomad
   - CursedBone
   - DarkSword
-  - ArielDress [Paint]
+  - 'ArielDress [Paint]'
   - SandElder
   - SwampShooter2
   - BerserkAxe
   - GuardShield1
-  - HeroicCape2 [Paint]
-  - PaladinArmor [Paint]
+  - 'HeroicCape2 [Paint]'
+  - 'PaladinArmor [Paint]'
   - BanditArmor
-  - GuardArmor [Paint]
+  - 'GuardArmor [Paint]'
   - KnightArmor
   - Militiaman
-  - MercenaryArmor [Paint]
+  - 'MercenaryArmor [Paint]'
   - SiegeArcherArmor
   - FireWarriorSword2
   - SteelPotHelm
-  - FreeFolk [Paint]
-  - MercenaryHelm2 [Paint]
+  - 'FreeFolk [Paint]'
+  - 'MercenaryHelm2 [Paint]'
   - Deserter
   - RoyalGuard
   - HunterLightArmor
   - GladiatorArmor
   - CardinalArmor
   - SiegeArcherArmor
-  - FreeFolk [Paint]
+  - 'FreeFolk [Paint]'
   - WaterAdept
   - SnperHood
   - RangerBow
@@ -3518,9 +3518,9 @@ SpriteAtlas:
   - Hunter
   - SamuraiShield2
   - ManticoreArmor
-  - EliteGuardArmor [Paint]
+  - 'EliteGuardArmor [Paint]'
   - Hermit
-  - HeavyArmor [Paint]
+  - 'HeavyArmor [Paint]'
   - Deserter
   - LongHammer
   - WitchArmor
@@ -3530,12 +3530,12 @@ SpriteAtlas:
   - LittleLion
   - WaterWizardArmor
   - Rags1
-  - GguardsmenArmor [Paint]
+  - 'GguardsmenArmor [Paint]'
   - WarlockArmor
   - DruidArmor
   - VikingWoodenBow
   - SandWarrior2
-  - Mountain [Paint]
+  - 'Mountain [Paint]'
   - SantaHelper
   - SwampShooter1
   - SamuraiLight2
@@ -3546,12 +3546,12 @@ SpriteAtlas:
   - SandWarrior2
   - Nomad
   - GladiatorArmor
-  - NightsWatch [Paint]
+  - 'NightsWatch [Paint]'
   - SandHealer2
   - RoyalArcherBow
-  - Potion3 [Paint]
+  - 'Potion3 [Paint]'
   - SwampShooter2
-  - ClericHood [Paint]
+  - 'ClericHood [Paint]'
   - Hunter
   - PyromancerArmor
   - GreyKnightShield
@@ -3560,20 +3560,20 @@ SpriteAtlas:
   - SandWarrior
   - IronIslands
   - BroadSword
-  - GguardsmenArmor [Paint]
-  - GuardSword1 [Paint]
+  - 'GguardsmenArmor [Paint]'
+  - 'GuardSword1 [Paint]'
   - OrcBow
   - VikingRoughArmor2
   - WaterAdeptWand2
-  - EliteGuardSword [Paint]
+  - 'EliteGuardSword [Paint]'
   - DruidWand
-  - SmallPotion [Paint]
+  - 'SmallPotion [Paint]'
   - SandHealer2
   - WoodcutterAxe
   - LandsknechtShield
   - SwampShooter1
   - SwampHealer2
-  - MarauderArmor [Paint]
+  - 'MarauderArmor [Paint]'
   - ExpertHunterHat
   - VikingRoughArmor1
   - WitchArmor
@@ -3581,14 +3581,14 @@ SpriteAtlas:
   - SwampMage1
   - IceWizardArmor
   - SavageBoomerang
-  - ChainmailLightArmor [Paint]
+  - 'ChainmailLightArmor [Paint]'
   - GoldDragon
   - SwampShooter2
   - SandWarrior
   - SandWarrior
   - SiegeArcherArmor
   - VikingFurArmor
-  - CrusaderHelm [Paint]
+  - 'CrusaderHelm [Paint]'
   - FamilyBow
   m_RenderDataMap: {}
   m_Tag: Icons

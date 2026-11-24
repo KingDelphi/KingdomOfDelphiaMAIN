@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -384,12 +384,12 @@ SpriteAtlas:
   - AutomaticRifle.png
   - SantaHelper
   - Deserter.png
-  - OldCape2 [Paint]
+  - 'OldCape2 [Paint]'
   - Gunslinger
   - Sheriff
   - LibrarianGlasses
   - Rifleman
-  - BanditBlindfoldTypeA [Paint]
+  - 'BanditBlindfoldTypeA [Paint]'
   - SantaHelperWand
   - NativeAxe
   - Drifter
@@ -402,9 +402,9 @@ SpriteAtlas:
   - DoubleBarrelShotgun.png
   - Gunslinger
   - Drifter
-  - BanditBlindfoldTypeB [Paint]
+  - 'BanditBlindfoldTypeB [Paint]'
   - NativeBowTypeC
-  - BanditMask [Paint]
+  - 'BanditMask [Paint]'
   - GoldenEarring
   - Gunslinger
   - NativeWarrior
@@ -473,14 +473,14 @@ SpriteAtlas:
   - NativeBowTypeB
   - RiflemanCap
   - Trickster
-  - CotttonCape [Paint]
+  - 'CotttonCape [Paint]'
   - SantaHelper
   - RidgeTop
   - Drifter
   - Marksman
   - Marshall
   - Quickshot.png
-  - OldCape1 [Paint]
+  - 'OldCape1 [Paint]'
   - ScullBlindfold
   - Santa2
   - Santa1
@@ -507,7 +507,7 @@ SpriteAtlas:
   - TrooperRifle.png
   - Santa1
   - HuntsmanKnife
-  - BanditBlindfoldTypeC [Paint]
+  - 'BanditBlindfoldTypeC [Paint]'
   - Santa2
   - MarksmanHat
   - Tomahawk
@@ -522,7 +522,7 @@ SpriteAtlas:
   - CheapAxe
   - Santa1
   - WhiskeyBottle
-  - NativeWarriorHeadband [FullHair]
+  - 'NativeWarriorHeadband [FullHair]'
   - NativeWarrior
   m_RenderDataMap: {}
   m_Tag: Icons

@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -233,96 +233,96 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2d2170be03d2431f91c999680e5abb82, type: 3}
   - {fileID: 21300000, guid: d42b592fa68b47cea40347f46ea1d7de, type: 3}
   m_PackedSpriteNamesToIndex:
-  - Horns9 [Paint] [FullHair]
+  - 'Horns9 [Paint] [FullHair]'
   - Bubble
   - DoubleTrouble
-  - Lea [HideEars]
-  - Horns7 [Paint] [FullHair]
+  - 'Lea [HideEars]'
+  - 'Horns7 [Paint] [FullHair]'
   - Bubble
   - Rocky
-  - Ribbon1 [Paint] [FullHair]
-  - Blossom [HideEars]
-  - Blossom [HideEars]
+  - 'Ribbon1 [Paint] [FullHair]'
+  - 'Blossom [HideEars]'
+  - 'Blossom [HideEars]'
   - Rocky
-  - Horns15[Paint] [FullHair]
+  - 'Horns15[Paint] [FullHair]'
   - Princess
   - Fluffy
   - Cheeky
-  - Cleo [HideEars]
+  - 'Cleo [HideEars]'
   - Cheeky
-  - Crown [FullHair]
-  - Horns5 [Paint] [FullHair]
+  - 'Crown [FullHair]'
+  - 'Horns5 [Paint] [FullHair]'
   - Rocky
-  - Lea [HideEars]
+  - 'Lea [HideEars]'
   - DoubleTrouble
   - Ariel
   - Fluffy
   - Ariel
-  - Horns12 [Paint] [FullHair]
+  - 'Horns12 [Paint] [FullHair]'
   - Bubble
-  - Princess [HideEars]
+  - 'Princess [HideEars]'
   - Fluffy
   - Cutie
   - Rocky
-  - BunnyEars2 [Paint] [FullHair]
+  - 'BunnyEars2 [Paint] [FullHair]'
   - Ariel
-  - Lea [HideEars]
-  - Horns10 [Paint] [FullHair]
+  - 'Lea [HideEars]'
+  - 'Horns10 [Paint] [FullHair]'
   - DoubleTrouble
   - Wavy
-  - Cleo [HideEars]
+  - 'Cleo [HideEars]'
   - Blade
-  - Diadem [FullHair]
+  - 'Diadem [FullHair]'
   - Blade
   - Wavy
-  - Horns2 [Paint] [FullHair]
+  - 'Horns2 [Paint] [FullHair]'
   - Princess
   - Blade
   - Cutie
   - Bubble
-  - CatEars [Paint] [FullHair]
-  - Ribbon2 [Paint] [FullHair]
+  - 'CatEars [Paint] [FullHair]'
+  - 'Ribbon2 [Paint] [FullHair]'
   - Cutie
-  - Horns14 [Paint] [FullHair]
-  - Ribbon1 [FullHair]
-  - BunnyEars [FullHair]
+  - 'Horns14 [Paint] [FullHair]'
+  - 'Ribbon1 [FullHair]'
+  - 'BunnyEars [FullHair]'
   - Cheeky
-  - Lea [HideEars]
-  - Horns1 [Paint] [FullHair]
-  - Blossom [HideEars]
-  - Blossom [Paint] [FullHair]
-  - BunnyEars1 [Paint] [FullHair]
-  - Ribbon2 [FullHair]
-  - Emma [HideEars]
+  - 'Lea [HideEars]'
+  - 'Horns1 [Paint] [FullHair]'
+  - 'Blossom [HideEars]'
+  - 'Blossom [Paint] [FullHair]'
+  - 'BunnyEars1 [Paint] [FullHair]'
+  - 'Ribbon2 [FullHair]'
+  - 'Emma [HideEars]'
   - Wavy
-  - BunnyPin [FullHair]
-  - Emma [HideEars]
-  - Horns8 [Paint] [FullHair]
+  - 'BunnyPin [FullHair]'
+  - 'Emma [HideEars]'
+  - 'Horns8 [Paint] [FullHair]'
   - Fluffy
-  - Cleo [HideEars]
+  - 'Cleo [HideEars]'
   - Cutie
-  - BunnyEars2 [FullHair]
+  - 'BunnyEars2 [FullHair]'
   - Ariel
-  - Emma [HideEars]
-  - Horns11 [Paint] [FullHair]
-  - SkullPin [FullHair]
-  - Horns4 [Paint] [FullHair]
-  - Rocky [Paint] [FullHair]
+  - 'Emma [HideEars]'
+  - 'Horns11 [Paint] [FullHair]'
+  - 'SkullPin [FullHair]'
+  - 'Horns4 [Paint] [FullHair]'
+  - 'Rocky [Paint] [FullHair]'
   - Blade
   - Spiky
-  - Horns6 [Paint] [FullHair]
+  - 'Horns6 [Paint] [FullHair]'
   - Wavy
   - Spiky
-  - Emma [HideEars]
+  - 'Emma [HideEars]'
   - Cheeky
   - DoubleTrouble
   - Princess
-  - Blossom [HideEars]
+  - 'Blossom [HideEars]'
   - Spiky
-  - Horns3 [Paint] [FullHair]
-  - Horns13 [Paint] [FullHair]
+  - 'Horns3 [Paint] [FullHair]'
+  - 'Horns13 [Paint] [FullHair]'
   - Spiky
-  - Cleo [HideEars]
+  - 'Cleo [HideEars]'
   m_RenderDataMap: {}
   m_Tag: Sprites
   m_IsVariant: 0

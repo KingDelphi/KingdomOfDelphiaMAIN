@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -1854,7 +1854,7 @@ SpriteAtlas:
   - MagnetismHelmet
   - WingsOfBrynhildr
   - SwordOfHallow
-  - ElementalArcherCrown [FullHair]
+  - 'ElementalArcherCrown [FullHair]'
   - ArcCape
   - AoiWingSword
   - DivineDragonStaff
@@ -1875,7 +1875,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - StormcallerHelmet [FullHair]
+  - 'StormcallerHelmet [FullHair]'
   - HelmetOfEndingLight
   - ElementalShield
   - UnderlordWings
@@ -1894,7 +1894,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - UncleSamHat [FullHair]
+  - 'UncleSamHat [FullHair]'
   - LakeDragonHelmet
   - SeraphimBack
   - PlatinumUnicornHelm
@@ -1902,7 +1902,7 @@ SpriteAtlas:
   - TachyonSword
   - CapeOfEndingLight
   - VoidDragonStaff
-  - ChocolatierRibbon [FullHair]
+  - 'ChocolatierRibbon [FullHair]'
   - CapeOfEternalLight
   - HandL
   - HandR
@@ -1920,7 +1920,7 @@ SpriteAtlas:
   - AbsoluteShieldSP
   - UranosHelm
   - VoidDragonCape
-  - HelmetOfRelentlessNightmares [FullHair]
+  - 'HelmetOfRelentlessNightmares [FullHair]'
   - ShieldOfLoneWolf
   - QitianCape
   - CaneOfIgnis
@@ -2072,8 +2072,8 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - ObsidianEdge
-  - HelmetOfForgottenFoe [FullHair]
-  - PhoenixHairpiece [FullHair]
+  - 'HelmetOfForgottenFoe [FullHair]'
+  - 'PhoenixHairpiece [FullHair]'
   - ObsidianShield
   - StaffOfBrynhildr
   - ElementalSword1
@@ -2107,7 +2107,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - EyeguardOfDecay [FullHair]
+  - 'EyeguardOfDecay [FullHair]'
   - ElementalMageHood2
   - ShieldOfRagingCrux
   - HandL
@@ -2214,7 +2214,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - CrownOfAjero [FullHair]
+  - 'CrownOfAjero [FullHair]'
   - CherufeHat
   - ElementalMageHood
   - HandL
@@ -2229,7 +2229,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - IndraGemmedCrown [FullHair]
+  - 'IndraGemmedCrown [FullHair]'
   - SteampunkSword
   - ElementalSword3
   - HandL
@@ -2326,7 +2326,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - UltimateMadokaRibbons [FullHair]
+  - 'UltimateMadokaRibbons [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -2339,7 +2339,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - LotusPrinceHorns [FullHair]
+  - 'LotusPrinceHorns [FullHair]'
   - CapeOfAjero
   - HelmOfEternalLight
   - AizenHeavyHelm
@@ -2384,7 +2384,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - KronosCrownedHelmet [FullHair]
+  - 'KronosCrownedHelmet [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -2530,7 +2530,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - SwordOfLoneWolf
-  - SupremeHimeCrown [FullHair]
+  - 'SupremeHimeCrown [FullHair]'
   - HabakiriHitenSword
   - BlazewingHelmet
   - NemeanHelmet
@@ -2563,7 +2563,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - TechBackV2.0
-  - HelmOfBrynhildr [FullHair]
+  - 'HelmOfBrynhildr [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -2602,8 +2602,8 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - SeraphimHalo [FullHair]
-  - CrownOfCompassion [FullHair]
+  - 'SeraphimHalo [FullHair]'
+  - 'CrownOfCompassion [FullHair]'
   - DarkJusticeHelmet
   - ExorcismRing
   - SwordOfHallowTypeB

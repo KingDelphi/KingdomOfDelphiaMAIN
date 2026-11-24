@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -916,7 +916,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - NativeWarriorHeadband [FullHair]
+  - 'NativeWarriorHeadband [FullHair]'
   - Forestock
   - Rifle
   - Shell
@@ -931,7 +931,7 @@ SpriteAtlas:
   - Ammo
   - Slide
   - Magazine
-  - BanditBlindfoldTypeB [Paint]
+  - 'BanditBlindfoldTypeB [Paint]'
   - HandL
   - HandR
   - Leg
@@ -944,7 +944,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - BanditBlindfoldTypeA [Paint]
+  - 'BanditBlindfoldTypeA [Paint]'
   - ScullBlindfold
   - Forestock
   - Rifle
@@ -954,7 +954,7 @@ SpriteAtlas:
   - Slide
   - Magazine
   - SpikeBomb
-  - BanditMask [Paint]
+  - 'BanditMask [Paint]'
   - WhiskeyBottle
   - Cutter
   - Flash1
@@ -972,7 +972,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - MarshallHat
-  - BanditBlindfoldTypeC [Paint]
+  - 'BanditBlindfoldTypeC [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1002,7 +1002,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - CotttonCape [Paint]
+  - 'CotttonCape [Paint]'
   - Eyeglasses
   - NativeBoomerang
   - Flash2
@@ -1018,7 +1018,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - OldCape1 [Paint]
+  - 'OldCape1 [Paint]'
   - Forestock
   - Rifle
   - Shell
@@ -1072,7 +1072,7 @@ SpriteAtlas:
   - ForearmL
   - Eyepatch
   - Blast
-  - OldCape2 [Paint]
+  - 'OldCape2 [Paint]'
   - Forestock
   - Rifle
   - Shell

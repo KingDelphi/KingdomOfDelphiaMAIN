@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -697,10 +697,10 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - OldPirateHat
   - TribalLoincloth
-  - SkeletonBrains [FullHair]
+  - 'SkeletonBrains [FullHair]'
   - GadiatorLoincloth
-  - Horns4 [FullHair]
-  - FurryEars4 [Paint]
+  - 'Horns4 [FullHair]'
+  - 'FurryEars4 [Paint]'
   - OldPirateSaber
   - ZombieClothes3
   - MummyEar2
@@ -718,15 +718,15 @@ SpriteAtlas:
   - SkeletonArmor4
   - SkeletonArmor1
   - MummyClothes1
-  - Dagger [FullHair]
+  - 'Dagger [FullHair]'
   - SkeletonKing
   - FurryBody4
   - DemonEar3
   - WoodenStake
-  - Stiches [FullHair]
+  - 'Stiches [FullHair]'
   - WarriorLoincloth
   - ZombieClothes3
-  - Arrows [FullHair]
+  - 'Arrows [FullHair]'
   - ZombieHead2
   - SpineBow
   - TribalLoincloth
@@ -763,14 +763,14 @@ SpriteAtlas:
   - SkeletonArmor4
   - Santa1
   - Skeleton1NoHandR
-  - Horns1 [Paint] [FullHair]
+  - 'Horns1 [Paint] [FullHair]'
   - OldCap
   - ZombieClothes4
   - DemonEyes4
   - WarriorLoincloth
   - RagLoincloth
   - WolfyEars3
-  - RedBandana [FullHair]
+  - 'RedBandana [FullHair]'
   - ZombieEyes5
   - SkeletonLeftArmHook
   - FurryEyes2
@@ -796,7 +796,7 @@ SpriteAtlas:
   - SkeletonShield3
   - GlowingEyes
   - Santa2
-  - Brainz [FullHair]
+  - 'Brainz [FullHair]'
   - EgyptianBow
   - ZombieClothes5
   - SkeletonKing
@@ -816,7 +816,7 @@ SpriteAtlas:
   - SkeletonArmor2
   - ZombieEyes3
   - MummyClothes4
-  - Piglet2 [Paint]
+  - 'Piglet2 [Paint]'
   - MummyClothes4
   - SkeletonArmor2
   - ArmoredLoincloth
@@ -826,7 +826,7 @@ SpriteAtlas:
   - SkeletonArmor4
   - MummyClothes4
   - SkeletonArmor1
-  - Boomerang [Paint]
+  - 'Boomerang [Paint]'
   - SantaHelper
   - Smirk
   - CursedStaff
@@ -874,13 +874,13 @@ SpriteAtlas:
   - BloodAxe
   - ZombieClothes1
   - WolfyEars2
-  - Piglet4 [Paint]
+  - 'Piglet4 [Paint]'
   - MummyClothes1
   - ZombieClothes4
   - SkeletonArmor1
-  - FurryEars3 [Paint]
+  - 'FurryEars3 [Paint]'
   - Santa2
-  - Horns1 [FullHair]
+  - 'Horns1 [FullHair]'
   - MummyWand
   - MummyClothes2
   - Demon1
@@ -890,7 +890,7 @@ SpriteAtlas:
   - Normal
   - MummyClothes3
   - SkeletonArmor5
-  - Axe [FullHair]
+  - 'Axe [FullHair]'
   - MummyClothes3
   - ZombieClothes1
   - ZombieClothes2
@@ -922,7 +922,7 @@ SpriteAtlas:
   - SkeletonArmor6
   - TribalLoincloth
   - OldHornHelm
-  - FurryEars1 [Paint]
+  - 'FurryEars1 [Paint]'
   - TribalLoincloth
   - MummyHat1
   - Worm
@@ -943,7 +943,7 @@ SpriteAtlas:
   - Skeleton2Eyes
   - FurryEyes1
   - BoneBow
-  - Piglet1 [Paint]
+  - 'Piglet1 [Paint]'
   - DemonEar4
   - SantaHelper
   - Skeleton1
@@ -955,7 +955,7 @@ SpriteAtlas:
   - DemonEyes2
   - Santa1
   - ZombieClothes2
-  - Piglet3 [Paint]
+  - 'Piglet3 [Paint]'
   - MummyHat4
   - MummyHat3
   - HeavyAxe
@@ -964,7 +964,7 @@ SpriteAtlas:
   - SkeletonHandRKnife
   - ZombieBody2
   - RagLoincloth
-  - Horns2 [Paint] [FullHair]
+  - 'Horns2 [Paint] [FullHair]'
   - Skeleton6
   - SantaHelper
   - MummyClothes2
@@ -973,9 +973,9 @@ SpriteAtlas:
   - SantaHelperWand
   - ZombieClothes5
   - SkeletonBow2
-  - SkeletonKing [FullHair]
+  - 'SkeletonKing [FullHair]'
   - ArmoredLoincloth
-  - Horns3 [Paint] [FullHair]
+  - 'Horns3 [Paint] [FullHair]'
   - SkeletonArmor4
   - GoldenEarring
   - ZombieClothes3
@@ -988,10 +988,10 @@ SpriteAtlas:
   - DemonEar1
   - MummyClothes4
   - DemonEyes3
-  - Horns4 [Paint] [FullHair]
+  - 'Horns4 [Paint] [FullHair]'
   - WolfyEars1
   - Banan
-  - Horns2 [FullHair]
+  - 'Horns2 [FullHair]'
   - Skeleton2EyesGlow
   - Santa2
   - MummyHead3
@@ -1009,10 +1009,10 @@ SpriteAtlas:
   - SkeletonArmor1
   - SantaHelper
   - BladeBow
-  - Horns3 [FullHair]
+  - 'Horns3 [FullHair]'
   - Santa1
   - Skeleton7
-  - FurryEars2 [Paint]
+  - 'FurryEars2 [Paint]'
   - Head
   - Skeleton4
   - Santa2

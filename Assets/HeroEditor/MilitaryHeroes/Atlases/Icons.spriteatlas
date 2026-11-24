@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -648,7 +648,7 @@ SpriteAtlas:
   - HandGrenade
   - Rebel2
   - Rock
-  - BoomBoxCap [Paint]
+  - 'BoomBoxCap [Paint]'
   - CompositeBow
   - Rebel2
   - Rock
@@ -669,14 +669,14 @@ SpriteAtlas:
   - Santa1
   - BattleBow
   - Bomberman
-  - Headband [Paint] [FullHair]
+  - 'Headband [Paint] [FullHair]'
   - MediumHealing
   - Soldier4
-  - DeutschenSoldier [Paint]
-  - Serpent [Paint]
+  - 'DeutschenSoldier [Paint]'
+  - 'Serpent [Paint]'
   - MAC-10.png
   - Medic
-  - UberSoldier [Paint]
+  - 'UberSoldier [Paint]'
   - Hunter
   - M-4Stich.png
   - Hunter
@@ -685,18 +685,18 @@ SpriteAtlas:
   - Boombox
   - Adventurer
   - SantaWand
-  - UberSoldier [Paint]
+  - 'UberSoldier [Paint]'
   - Jackal
   - Goth
-  - Executioner [Paint]
+  - 'Executioner [Paint]'
   - SantaHelperHat2
-  - Executioner [Paint]
+  - 'Executioner [Paint]'
   - BattleBow
-  - DeutschenHat [Paint]
+  - 'DeutschenHat [Paint]'
   - SantaHelper
   - CommandoNinja
   - Steampunk1
-  - GasMask [Paint]
+  - 'GasMask [Paint]'
   - Terminator
   - PolicemanBaton
   - SantaHelper
@@ -723,7 +723,7 @@ SpriteAtlas:
   - RiotPolice
   - Santa1
   - MilitaryBeret2
-  - Serpent [Paint]
+  - 'Serpent [Paint]'
   - Medic
   - SmokeGrenade
   - Medic
@@ -731,22 +731,22 @@ SpriteAtlas:
   - RPG.png
   - BlueSoldier
   - Street
-  - Mask2 [Paint]
+  - 'Mask2 [Paint]'
   - RedSoldier
   - SWAT
   - RocketLauncher.png
   - ArmyMan
   - Goth
-  - Serpent [Paint]
-  - Executioner [Paint]
+  - 'Serpent [Paint]'
+  - 'Executioner [Paint]'
   - Santa2
-  - Executioner [Paint]
+  - 'Executioner [Paint]'
   - Revolver.png
   - SantaHelperHat1
   - Jackal
-  - UberSoldier [Paint]
+  - 'UberSoldier [Paint]'
   - FlashGrenade
-  - UberSoldier [Paint]
+  - 'UberSoldier [Paint]'
   - UberSoldierGlasses
   - RiotPolice
   - Shotgun.png
@@ -757,21 +757,21 @@ SpriteAtlas:
   - BlueSoldier
   - SantaHelperWand
   - Terminator
-  - DeutschenSoldier [Paint]
+  - 'DeutschenSoldier [Paint]'
   - AK-47 [Golden].png
   - Jackal
   - ArmyKnife
   - Radio2
   - Policeman
   - SPAS-12.png
-  - Bandana [Paint]
+  - 'Bandana [Paint]'
   - Hunter
   - Santa1
   - Goth
   - RedSoldier
   - MilitaryBeret
   - AdventurerCap
-  - HunterMask [Paint]
+  - 'HunterMask [Paint]'
   - BlueSoldier
   - Steampunk2
   - M-4Laser.png
@@ -781,17 +781,17 @@ SpriteAtlas:
   - TFace
   - Mine1
   - M-4 [Silencer].png
-  - Serpent [Paint]
-  - Bandit [Paint]
+  - 'Serpent [Paint]'
+  - 'Bandit [Paint]'
   - Street
   - DesertEagle.png
   - Adventurer
   - Adventurer
   - Rebel2
   - CommandoNinja
-  - SampleCape [Paint]
+  - 'SampleCape [Paint]'
   - SRL.png
-  - NinjaHeadband [Paint]
+  - 'NinjaHeadband [Paint]'
   - Radio1
   - Street
   - PolicemanHat
@@ -804,25 +804,25 @@ SpriteAtlas:
   - HockeyStick
   - Bomberman
   - HeavyHelmet
-  - UberSoldierHelmFull [Paint]
+  - 'UberSoldierHelmFull [Paint]'
   - CommandoNinja
   - SantaHat
   - Hunter
-  - Boomerang [Paint]
+  - 'Boomerang [Paint]'
   - TBody2
   - UbersoldierHelm
   - LagreHealing
   - Terrorist
   - Jetpack3
   - Bottle
-  - Sock [Paint]
+  - 'Sock [Paint]'
   - Rebel
   - Street
   - Mark-3.png
   - PinBaseballBat
   - SandFalcon.png
   - CompositeBow
-  - UberSoldier [Paint]
+  - 'UberSoldier [Paint]'
   - NinjaHeadband
   - SVD.png
   - Cap
@@ -850,22 +850,22 @@ SpriteAtlas:
   - Radio1
   - Jackal
   - ArmyMan
-  - UberSoldier [Paint]
+  - 'UberSoldier [Paint]'
   - Sheperd.png
   - Santa1
   - Adventurer
-  - Mask1 [Paint]
+  - 'Mask1 [Paint]'
   - Santa2
-  - DeutschenSoldier [Paint]
+  - 'DeutschenSoldier [Paint]'
   - BlueSoldier
   - Soldier3
   - Boombox
   - SantaHelper
   - Rebel
-  - DeutschenSoldier [Paint]
+  - 'DeutschenSoldier [Paint]'
   - Policeman
-  - UberSoldier [Paint]
-  - GasMask2Glowing[Paint]
+  - 'UberSoldier [Paint]'
+  - 'GasMask2Glowing[Paint]'
   - RiotPolice
   - RedSoldier
   - ScoutKnife
@@ -877,22 +877,22 @@ SpriteAtlas:
   - Santa2
   - Rebel
   - M-16 [Paint].png
-  - StreetCap [Paint]
+  - 'StreetCap [Paint]'
   - M-47.png
   - CommandoNinja
   - Soldier
-  - Executioner [Paint]
+  - 'Executioner [Paint]'
   - Beer
   - SoldierHelm
   - MP-5.png
   - THead
   - Street
   - AR-25.png
-  - Executioner [Paint]
+  - 'Executioner [Paint]'
   - Bomberman
   - Soldier3
   - Santa2
-  - GasMaskGlowing [Paint]
+  - 'GasMaskGlowing [Paint]'
   - PinkStar
   - Santa1
   - SantaHelper
@@ -908,9 +908,9 @@ SpriteAtlas:
   - MlitaryBeret3
   - MillitaryCap
   - Medic
-  - Serpent [Paint]
-  - GasMask2 [Paint]
-  - DeutschenSoldier [Paint]
+  - 'Serpent [Paint]'
+  - 'GasMask2 [Paint]'
+  - 'DeutschenSoldier [Paint]'
   - TomG.png
   - MP-40.png
   - NNT.png
@@ -926,9 +926,9 @@ SpriteAtlas:
   - Bomberman
   - Boombox
   - Santa1
-  - Serpent [Paint]
+  - 'Serpent [Paint]'
   - ArrowQuiver
-  - DeutschenSoldier [Paint]
+  - 'DeutschenSoldier [Paint]'
   - Terminator
   - Santa2
   - ArmyMan
@@ -937,7 +937,7 @@ SpriteAtlas:
   - Soldier3
   - ArmyMan
   - Bomberman
-  - SWATTransparent [Paint]
+  - 'SWATTransparent [Paint]'
   - Rebel
   - MilitaryPanama
   - Jackal

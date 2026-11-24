@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -1201,7 +1201,7 @@ SpriteAtlas:
   - ArmorOfAjero
   - StormcallerArmor
   - UlimateMadokaDress
-  - HelmetOfRelentlessNightmares [FullHair]
+  - 'HelmetOfRelentlessNightmares [FullHair]'
   - GarmentsOfQitian
   - ChocolatierDress3
   - LambentGarb
@@ -1212,7 +1212,7 @@ SpriteAtlas:
   - HelmetOfTheMadGodTypeB
   - ShieldOfLoneWolf
   - ArmorOfTheForgottenFoe
-  - IndraGemmedCrown [FullHair]
+  - 'IndraGemmedCrown [FullHair]'
   - EsmeraldaArco
   - DarkLordStaff
   - UlimateMadokaDress
@@ -1225,7 +1225,7 @@ SpriteAtlas:
   - UnderloldStaff
   - DragonTempestBack
   - ArmorOfEndingLight
-  - CrownOfCompassion [FullHair]
+  - 'CrownOfCompassion [FullHair]'
   - ElementalSword1
   - PhoenixRobe2
   - NominakaRobe
@@ -1290,7 +1290,7 @@ SpriteAtlas:
   - SeraphimBack
   - DragonTempestSteelGarb
   - MagnetismArmor
-  - LotusPrinceHorns [FullHair]
+  - 'LotusPrinceHorns [FullHair]'
   - ArmorOfTheMadGod
   - DarkJusticeArmor
   - VoidDragonHelmet
@@ -1317,13 +1317,13 @@ SpriteAtlas:
   - SwordOfDemise
   - FrozenDragonArmor
   - UnderlordGarb
-  - HelmOfBrynhildr [FullHair]
+  - 'HelmOfBrynhildr [FullHair]'
   - PhoenixRobe
   - HelmetOfTheMadGod
   - VeracityColdbow
   - ElementalMageArmor
   - ArcArmorTypeB
-  - HelmetOfForgottenFoe [FullHair]
+  - 'HelmetOfForgottenFoe [FullHair]'
   - TerraSword
   - CherufeDress
   - PhoenixBow
@@ -1395,7 +1395,7 @@ SpriteAtlas:
   - BloodiedSpiritArmor
   - LakeDragonBow
   - TechArmorV2.0
-  - CrownOfAjero [FullHair]
+  - 'CrownOfAjero [FullHair]'
   - NemeanCape
   - LotusPrinceStaff
   - PlatinumUnicornArmor
@@ -1404,7 +1404,7 @@ SpriteAtlas:
   - ArcHelm
   - VoidDragonCape
   - BlazewingArmor
-  - UncleSamHat [FullHair]
+  - 'UncleSamHat [FullHair]'
   - ArmorOfRagingCrux
   - ArmorOfTheMadGodTypeB
   - CherufeDress
@@ -1428,12 +1428,12 @@ SpriteAtlas:
   - ArmorOfEndingLight
   - IgnisArmor
   - ElementalArmor
-  - UltimateMadokaRibbons [FullHair]
+  - 'UltimateMadokaRibbons [FullHair]'
   - ArmorOfEternalLight
   - ArmorOfEternalLight
   - ArmorOfDecay
   - BloodiedSpiritArmor
-  - KronosCrownedHelmet [FullHair]
+  - 'KronosCrownedHelmet [FullHair]'
   - VoidDragonArmor
   - NemeanArmor1
   - ElementalMageHood
@@ -1449,8 +1449,8 @@ SpriteAtlas:
   - ChocolatierLollipop
   - ElementalBow
   - ArmorOfLoneWolf
-  - SeraphimHalo [FullHair]
-  - StormcallerHelmet [FullHair]
+  - 'SeraphimHalo [FullHair]'
+  - 'StormcallerHelmet [FullHair]'
   - ChocolatierStaff
   - ElementalArmor
   - DarkJusticeCape
@@ -1458,7 +1458,7 @@ SpriteAtlas:
   - HelmetOfLoneWolf
   - ElementalHelmet
   - IgnisMask
-  - ChocolatierRibbon [FullHair]
+  - 'ChocolatierRibbon [FullHair]'
   - FrozenDragonArmor
   - CapeOfRagingCrux
   - NominakaRobe
@@ -1481,7 +1481,7 @@ SpriteAtlas:
   - GarmentsOfQitian
   - IgnisArmor
   - BloodiedSpiritHelmet
-  - SupremeHimeCrown [FullHair]
+  - 'SupremeHimeCrown [FullHair]'
   - ElementalStaff
   - ArmorOfRagingCrux
   - MikadoBow
@@ -1503,7 +1503,7 @@ SpriteAtlas:
   - BlazewingArmor
   - LambentBow
   - BloodiedSpiritSword
-  - ElementalArcherCrown [FullHair]
+  - 'ElementalArcherCrown [FullHair]'
   - ArcArmor
   - ElementalMageArmor
   - ObsidianEdge
@@ -1529,7 +1529,7 @@ SpriteAtlas:
   - ArmorOfRelentlessNightmares
   - ElementalMageHood2
   - ArmorOfCryingDemon
-  - PhoenixHairpiece [FullHair]
+  - 'PhoenixHairpiece [FullHair]'
   - ArrowOfGrace
   - PlatinumUnicornArmor
   - ArmorOfCryingDemon
@@ -1537,7 +1537,7 @@ SpriteAtlas:
   - WingsOfBrynhildr
   - SupremeMikadoGarb
   - PlatinumUnicornArmor
-  - EyeguardOfDecay [FullHair]
+  - 'EyeguardOfDecay [FullHair]'
   - StormcallerHelmet
   - ArmorOfTheForgottenFoe
   - CapeOfTheMadGod

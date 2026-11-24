@@ -21,7 +21,7 @@ SpriteAtlas:
       crunchedCompression: 0
       sRGB: 1
     platformSettings:
-    - serializedVersion: 3
+    - serializedVersion: 4
       m_BuildTarget: DefaultTexturePlatform
       m_MaxTextureSize: 2048
       m_ResizeAlgorithm: 0
@@ -1418,7 +1418,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e694b3ff63be49ea8632b7abc81bfe88, type: 3}
   m_PackedSpriteNamesToIndex:
   - OldHornHelm
-  - Piglet4 [Paint]
+  - 'Piglet4 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1431,12 +1431,12 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Horns3 [FullHair]
+  - 'Horns3 [FullHair]'
   - Banan
-  - Horns4 [FullHair]
+  - 'Horns4 [FullHair]'
   - HeavyAxe
   - RustedSword
-  - Horns1 [Paint] [FullHair]
+  - 'Horns1 [Paint] [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -1450,8 +1450,8 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - DemonEyes2
-  - Axe [FullHair]
-  - Brainz [FullHair]
+  - 'Axe [FullHair]'
+  - 'Brainz [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -1522,7 +1522,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - OldGladiatorHelm
-  - Horns1 [FullHair]
+  - 'Horns1 [FullHair]'
   - ZombieHead2
   - SkeletonShield1
   - Limb
@@ -1530,7 +1530,7 @@ SpriteAtlas:
   - Arrow
   - MummyHead1
   - FurryNose
-  - FurryEars1 [Paint]
+  - 'FurryEars1 [Paint]'
   - DemonEar4
   - HandL
   - HandR
@@ -1556,7 +1556,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Horns2 [Paint] [FullHair]
+  - 'Horns2 [Paint] [FullHair]'
   - DemonEyes4
   - Skeleton2
   - HandL
@@ -1661,7 +1661,7 @@ SpriteAtlas:
   - BrokenSword
   - DemonEyes3
   - Axeorang
-  - Piglet1 [Paint]
+  - 'Piglet1 [Paint]'
   - ZombieEar1
   - HandL
   - HandR
@@ -1708,7 +1708,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - MummyHat4
-  - RedBandana [FullHair]
+  - 'RedBandana [FullHair]'
   - TunnelEar2
   - Limb
   - Riser
@@ -1785,7 +1785,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - WoodenStake
-  - Piglet2 [Paint]
+  - 'Piglet2 [Paint]'
   - Worm
   - HandL
   - HandR
@@ -1879,7 +1879,7 @@ SpriteAtlas:
   - Skeleton7
   - SantaWand
   - OldLeatherHelm
-  - Dagger [FullHair]
+  - 'Dagger [FullHair]'
   - ZombieMouth5
   - HandL
   - HandR
@@ -1907,7 +1907,7 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - WoodenClub
-  - SkeletonKing [FullHair]
+  - 'SkeletonKing [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -1934,9 +1934,9 @@ SpriteAtlas:
   - ForearmL
   - Head
   - SkeletonShield2
-  - FurryEars2 [Paint]
+  - 'FurryEars2 [Paint]'
   - OldWarriorSword
-  - SkeletonBrains [FullHair]
+  - 'SkeletonBrains [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -1953,7 +1953,7 @@ SpriteAtlas:
   - FurryEyes3
   - BloodAxe
   - ZombieEyes5
-  - Horns4 [Paint] [FullHair]
+  - 'Horns4 [Paint] [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -1968,8 +1968,8 @@ SpriteAtlas:
   - ForearmL
   - OldPirateSaber
   - Skeleton1EyesGlow
-  - Boomerang [Paint]
-  - FurryEars4 [Paint]
+  - 'Boomerang [Paint]'
+  - 'FurryEars4 [Paint]'
   - HandL
   - HandR
   - Leg
@@ -1982,7 +1982,7 @@ SpriteAtlas:
   - SleeveR
   - ForearmR
   - ForearmL
-  - Stiches [FullHair]
+  - 'Stiches [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -2061,10 +2061,10 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - TunnelEarring
-  - FurryEars3 [Paint]
+  - 'FurryEars3 [Paint]'
   - DemonEar1
   - SkeletonHandRKnife
-  - Horns2 [FullHair]
+  - 'Horns2 [FullHair]'
   - HandL
   - HandR
   - Leg
@@ -2078,10 +2078,10 @@ SpriteAtlas:
   - ForearmR
   - ForearmL
   - ZombieMouth3
-  - Horns3 [Paint] [FullHair]
+  - 'Horns3 [Paint] [FullHair]'
   - MummyEar1
-  - Piglet3 [Paint]
-  - Arrows [FullHair]
+  - 'Piglet3 [Paint]'
+  - 'Arrows [FullHair]'
   - OldCap
   - Skeleton8
   - DemonEyes1
