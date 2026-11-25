@@ -478,7 +478,7 @@ namespace Fusion {
           return "Static: (broken)";
         } else if (Object.isSet) {
 #if UNITY_EDITOR
-          if (UnityEditor.AssetDatabase.TryGetGUIDAndLocalFileIdentifier(Object.instanceID, out var guid, out long fileID)) {
+          if (UnityEditor.AssetDatabase.TryGetGUIDAndLocalFileIdentifier(Object.entityId, out var guid, out long fileID)) {
             return $"Static: {guid}, fileID: {fileID}";
           }
 #endif
@@ -3579,7 +3579,7 @@ namespace Fusion {
       }
 
       public int GetHashCode(Scene obj) {
-        return obj.handle;
+        return (int)obj.handle.GetRawData();
       }
     }
 
@@ -3736,7 +3736,7 @@ namespace Fusion {
         result.Append("<Invalid>");
       }
 
-      result.Append(", handle:").Append(scene.handle);
+      result.Append(", handle:").Append(scene.handle.GetRawData());
       result.Append("]");
       return result.ToString();
     }
