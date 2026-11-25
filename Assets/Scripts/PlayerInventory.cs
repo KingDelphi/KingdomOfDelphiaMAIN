@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerInventory : MonoBehaviour, ISaveable
 {
-    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public string ID =>  GetEntityId().ToString(); //SAVELOAD
     public Type SaveType => typeof(PlayerInventorySaveData); // Tipo de estado guardado
 
 

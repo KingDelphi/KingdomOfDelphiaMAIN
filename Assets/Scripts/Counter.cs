@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour, ISaveable
 {
-    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public string ID =>  GetEntityId().ToString(); //SAVELOAD
     public Type SaveType => typeof(CounterSaveData); // Tipo de estado guardado
 
     QuestSystem questSystem;

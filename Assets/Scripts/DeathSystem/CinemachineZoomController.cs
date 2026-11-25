@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
-using Cinemachine;
+
 
 public class CinemachineZoomController : MonoBehaviour
 {
-    private CinemachineVirtualCamera virtualCam;
+    private Unity.Cinemachine.CinemachineVirtualCamera virtualCam;
     private float originalSize;
     private Vector3 originalPosition;
 
@@ -13,7 +13,7 @@ public class CinemachineZoomController : MonoBehaviour
 
     private void Start()
     {
-        virtualCam = GetComponent<CinemachineVirtualCamera>();
+        virtualCam = GetComponent<Unity.Cinemachine.CinemachineVirtualCamera>();
         if (virtualCam != null)
         {
             originalSize = virtualCam.m_Lens.OrthographicSize;

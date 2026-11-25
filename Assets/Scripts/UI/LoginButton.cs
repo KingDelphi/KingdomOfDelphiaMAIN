@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Cinemachine;
+
 using UnityEngine.SceneManagement;
 using Fusion;
 
@@ -11,7 +11,7 @@ public class LoginButton : MonoBehaviour
 {
     public GameObject selectedCharacterInfoCanvas; 
 
-    private CinemachineVirtualCamera virtualCamera;
+    private Unity.Cinemachine.CinemachineVirtualCamera virtualCamera;
     
     public GameManager gameManager;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterFaction : MonoBehaviour, ISaveable
 {
-    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public string ID =>  GetEntityId().ToString(); //SAVELOAD
     public Type SaveType => typeof(CharacterFactionSaveData);
     public enum Faction { DelphiaGuard, Bandit }
     public Faction currentFaction;

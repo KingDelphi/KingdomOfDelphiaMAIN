@@ -91,7 +91,7 @@ public class QuestReward
 
 public class QuestSystem : MonoBehaviour, ISaveable
 {
-    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public string ID =>  GetEntityId().ToString(); //SAVELOAD
     public Type SaveType => typeof(QuestSystemSaveData);
 
 

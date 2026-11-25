@@ -7,7 +7,7 @@ using Fusion;
 
 public class CharacterController : NetworkBehaviour, ISaveable // SAVELOAD
 {
-    public string ID => GetInstanceID().ToString(); // SAVELOAD
+    public string ID =>  GetEntityId().ToString(); // SAVELOAD
     public Type SaveType => typeof(CharacterControllerSaveData); // Implementación correcta de `SaveType`
 
     public float moveSpeed = 15f;

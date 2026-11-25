@@ -16,7 +16,7 @@ public class ReputationSystem : MonoBehaviour, ISerializationCallbackReceiver, I
         SaveLoadSystem.Instance.RegisterSaveable(this);
     }
     
-    public string ID => GetInstanceID().ToString(); //SAVELOAD
+    public string ID =>  GetEntityId().ToString(); //SAVELOAD
 
     public Type SaveType => typeof(FactionReputationDataSaveData);
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
+
 using System.Collections.Generic;
 using Fusion;
 using System.Linq;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         } 
     }
 
-    private CinemachineVirtualCamera virtualCamera;
+    private Unity.Cinemachine.CinemachineVirtualCamera virtualCamera;
     private PolygonCollider2D confinerCollider;
     public Player player;
     private List<GearItem> savedPlayerInventory;
@@ -277,7 +277,7 @@ public class GameManager : MonoBehaviour
 
         player.currentHealth = player.hp/*savedPlayerHealth*/;
 
-        virtualCamera = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+        virtualCamera = GameObject.FindObjectOfType<Unity.Cinemachine.CinemachineVirtualCamera>();
 
         if (virtualCamera == null)
         {
