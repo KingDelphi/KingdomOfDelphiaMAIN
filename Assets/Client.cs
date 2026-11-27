@@ -77,92 +77,91 @@ public class Client : NetworkBehaviour
 
     
     public override void Spawned()
+{
+    Debug.Log("Client(46).Spawned() called.");
+    activePlayerSceneIndex = 1;
+    DontDestroyOnLoad(gameObject);
+    transform.SetParent(GameManager.Instance.clientHolder);
+    gameObject.name = "Client " + GetComponent<NetworkObject>().Id.ToString();
+
+    if (GameManager.Instance.clients.Contains(this))
+        GameManager.Instance.clients.Remove(this);
+    GameManager.Instance.clients.Add(this);
+
+    Debug.Log("Client(58) " + gameObject.name + " Spawned. ");
+
+    GameManager gameManager = FindObjectOfType<GameManager>();
+
+    if (GetComponent<NetworkObject>().HasStateAuthority)
     {
-        Debug.Log("Client(46).Spawned() called.");
-        activePlayerSceneIndex = 1;
-        DontDestroyOnLoad(gameObject);
-        transform.SetParent(GameManager.Instance.clientHolder);
-        gameObject.name = "Client " + GetComponent<NetworkObject>().Id.ToString();
-        
-        if (GameManager.Instance.clients.Contains(this))
+        if (gameManager != null)
         {
-            GameManager.Instance.clients.Remove(this);
+            gameManager.SetClient(this);
+            Debug.Log("Client(68) Client assigned to GameManager.");
         }
-        GameManager.Instance.clients.Add(this);
-        
-        Debug.Log("Client(58) " + gameObject.name + " Spawned. ");
-
-        // Asociar el cliente al GameManager
-        GameManager gameManager = FindObjectOfType<GameManager>();
-
-        if(GetComponent<NetworkObject>().HasStateAuthority)
+        else
         {
-            if (gameManager != null)
-            {
-                gameManager.SetClient(this); 
-                Debug.Log("Client(68) Client assigned to GameManager.");
-            }
-            else
-            {
-                Debug.LogError("GameManager not found.");
-            }
+            Debug.LogError("GameManager not found.");
         }
-        
-        networkObject = GetComponent<NetworkObject>();
-        if(GetComponent<NetworkObject>().HasStateAuthority)
+    }
+
+    networkObject = GetComponent<NetworkObject>();
+
+    if (HasStateAuthority)
+    {
+        // ----- FASE B: último héroe -----
+        string accountName = gameManager != null ? gameManager.GetPlayerName() : null;
+        if (string.IsNullOrEmpty(accountName) && SaveLoadSystem.Instance != null)
+            accountName = SaveLoadSystem.Instance.currentPlayerName;
+
+        string lastHero = SaveLoadSystem.Instance != null
+            ? SaveLoadSystem.Instance.GetLastHero(accountName)
+            : "Tres Deseos";
+
+        if (!string.IsNullOrEmpty(lastHero) && characterPrefabs.ContainsKey(lastHero))
         {
-            Debug.Log($"Client(79) networkObject.name: {networkObject.name} has StateAuthority: {networkObject.HasStateAuthority}, Runner.LocalPlayer: {Runner.LocalPlayer}, playerPrefab {playerPrefab}.");
+            playerPrefab = characterPrefabs[lastHero];
+            Debug.Log($"F B: playerPrefab = último héroe '{lastHero}'");
+        }
+        else if (characterPrefabs.ContainsKey("Tres Deseos"))
+        {
+            playerPrefab = characterPrefabs["Tres Deseos"];
+            lastHero = "Tres Deseos";
+            Debug.Log("Fase B: fallback playerPrefab = Tres Deseos");
         }
 
-        if(HasStateAuthority)
+        if (playerPrefab != null)
         {
-            if (playerPrefab != null)
-            {                
-                // Obtener la posición guardada
-                Vector3 savedPosition = SaveLoadSystem.Instance.GetSavedPosition();
+            // ----- FASE A: posición de ESE héroe -----
+            Vector3 savedPosition = SaveLoadSystem.Instance != null
+                ? SaveLoadSystem.Instance.GetSavedPosition(accountName, lastHero)
+                : new Vector3(0, 1, 0);
 
-                Runner.Spawn(
+            Debug.Log($"Fase A: spawn '{lastHero}' en {savedPosition}");
+
+            Runner.Spawn(
                 playerPrefab,
                 savedPosition,
                 Quaternion.identity,
                 Runner.LocalPlayer,
                 (runner, obj) =>
                 {
-                    Debug.Log($"✅ Runner.Spawn() - Personaje spawneado: {obj.name} en {savedPosition}");
+                    Debug.Log($"✅ Runner.Spawn() - {obj.name} en {savedPosition}");
                     SetActivePlayer(obj.GetComponent<Player>());
-                    InitializeCharacterBeforeSpawn(runner, obj);  // ✅ Inicializamos después del spawn
-                    
+                    InitializeCharacterBeforeSpawn(runner, obj);
                 }
-            ); 
-            }
-            else
-            {
-                Debug.LogError("playerPrefab is null.");
-            }
-
-        // if (HasStateAuthority)
-        // {
-        //     Debug.Log("ANDRES Client(84) if(HasStateAuthority): " + HasStateAuthority + ". DEBE SER TRUE!");
-
-        //     if (playerPrefab != null)
-        //     {                
-        //         Debug.Log("ANDRES Client(87) if(playerPrefab != null): " + (playerPrefab != null) + ". DEBE SER TRUE!");
-
-        //         // 🔥 Aquí reemplazamos Runner.Spawn() con nuestra función personalizada 🔥
-        //         ForceSpawnPlayer();
-        //     }
-        //     else
-        //     {
-        //         Debug.LogError("ANDRES Client(116) playerPrefab is null.");
-        //     }
-        // }
-
-
-            Debug.LogWarning("✔️✔️✔️✔️✔️ Client(99) - Player Spawned Successfully - Running gameManager.MaximumVerification().");
-            gameManager.MaximumVerification();
-
+            );
         }
+        else
+        {
+            Debug.LogError("playerPrefab is null.");
+        }
+
+        Debug.LogWarning("✔️ Client - Player Spawned - MaximumVerification()");
+        if (gameManager != null)
+            gameManager.MaximumVerification();
     }
+}
     
 
     private void InitializeCharacterBeforeSpawn(NetworkRunner runner, NetworkObject obj)
@@ -229,13 +228,20 @@ public class Client : NetworkBehaviour
     Debug.Log("Client(167)ChangePlayerPrefab(string characterName) called. VARIABLES: characterName: " + characterName);
     if (characterPrefabs.ContainsKey(characterName))
     {
+        // Guardar héroe actual antes de destruirlo (Fase A)
+        if (activePlayer != null && SaveLoadSystem.Instance != null)
+        {
+            SaveLoadSystem.Instance.SetCurrentPlayer(activePlayer);
+            if (GameManager.Instance != null)
+                SaveLoadSystem.Instance.SetServer(GameManager.Instance.GetServerName());
+            SaveLoadSystem.Instance.SaveGame();
+        }
+
         playerPrefab = characterPrefabs[characterName];
         Debug.Log($"Client(171) Player prefab changed to playerPrefab: {playerPrefab}");
 
-        // Imprime las instancias de personajes antes de destruir las anteriores
         PrintCharacterInstances();
 
-        // Destruir la instancia anterior si existe
         if (characterInstances.Count > 0)
         {
             foreach (var kvp in characterInstances)
@@ -247,27 +253,33 @@ public class Client : NetworkBehaviour
                     Destroy(instance);
                 }
             }
-            characterInstances.Clear(); // Limpia el diccionario de instancias
+            characterInstances.Clear();
         }
 
-        // Imprime las instancias de personajes después de destruir las anteriores
         PrintCharacterInstances();
 
         NetworkRunner networkRunner = FindObjectOfType<NetworkRunner>();
         Debug.Log("Client(195) AFTER assigning NetworkRunner networkRunner = FindObjectOfType<NetworkRunner>(). VARIABLES: (should be Client A) networkRunner: " + networkRunner);
 
-        // Instanciar y activar el nuevo personaje
-        Debug.LogWarning($"Client(198)(Should be same values as Client(67)) networkObject.name: {networkObject.name} has StateAuthority: {networkObject.HasStateAuthority}, Runner.LocalPlayer: {Runner.LocalPlayer}, playerPrefab: {playerPrefab}.");        
-        if(HasStateAuthority)
+        Debug.LogWarning($"Client(198)(Should be same values as Client(67)) networkObject.name: {networkObject.name} has StateAuthority: {networkObject.HasStateAuthority}, Runner.LocalPlayer: {Runner.LocalPlayer}, playerPrefab: {playerPrefab}.");
+
+        if (HasStateAuthority)
         {
             if (playerPrefab != null)
-            {                
+            {
+                Vector3 spawnPos = new Vector3(0, 1, 0);
+                if (SaveLoadSystem.Instance != null && GameManager.Instance != null)
+                {
+                    string accountName = GameManager.Instance.GetPlayerName();
+                    spawnPos = SaveLoadSystem.Instance.GetSavedPosition(accountName, characterName);
+                }
+
                 newNetworkObject = Runner.Spawn(
-                playerPrefab, 
-                new Vector3(0, 1, 0), 
-                Quaternion.identity, 
-                Runner.LocalPlayer,
-                InitializeCharacterBeforeSpawn
+                    playerPrefab,
+                    spawnPos,
+                    Quaternion.identity,
+                    Runner.LocalPlayer,
+                    InitializeCharacterBeforeSpawn
                 );
 
                 if (newNetworkObject == null)
@@ -277,16 +289,21 @@ public class Client : NetworkBehaviour
                 else
                 {
                     Debug.Log("Client(217) Successfully spawned the player prefab newNetworkObject: " + newNetworkObject);
-                    InitializeCharacterBeforeSpawn(Runner, newNetworkObject); 
+                    InitializeCharacterBeforeSpawn(Runner, newNetworkObject);
                 }
             }
             else
             {
                 Debug.LogError("playerPrefab is null.");
-            }               
+            }
         }
 
-        // NetworkObject newNetworkObject = Runner.Spawn(playerPrefab, new Vector3(0, 1, 0), Quaternion.identity, Runner.LocalPlayer, InitializeCharacterBeforeSpawn);
+        if (newNetworkObject == null)
+        {
+            Debug.LogError("newNetworkObject is null after spawn attempt.");
+            return;
+        }
+
         Debug.Log("Client(228) Before assigning GameObject newInstance = newNetworkObject.gameObject. VARIABLES: newNetworkObject.gameObject: " + newNetworkObject.gameObject);
         GameObject newInstance = newNetworkObject.gameObject;
         Debug.Log("Client(230) After assigning GameObject newInstance = newNetworkObject.gameObject. VARIABLES: newInstance: " + newInstance);
@@ -295,27 +312,39 @@ public class Client : NetworkBehaviour
         Debug.Log("Client(233) Despues de instanciar el personaje y nombrarlo - newInstance.name: " + newInstance.name);
         newInstance.SetActive(true);
         Debug.Log("Client(235) Despues de activar el personaje y nombrarlo - newInstance.name: " + newInstance.name);
-    
-            if (networkRunner != null)
+
+        // Fase A: asegurar posición del héroe
+        if (SaveLoadSystem.Instance != null && GameManager.Instance != null)
+        {
+            string accountName = GameManager.Instance.GetPlayerName();
+            Vector3 heroPos = SaveLoadSystem.Instance.GetSavedPosition(accountName, characterName);
+            newInstance.transform.position = heroPos;
+            var rb = newInstance.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.position = heroPos;
+            Debug.Log($"Fase A: {characterName} movido a posición guardada {heroPos}");
+        }
+
+        if (SaveLoadSystem.Instance != null && GameManager.Instance != null)
+            SaveLoadSystem.Instance.SetLastHero(GameManager.Instance.GetPlayerName(), characterName);
+
+        if (networkRunner != null)
+        {
+            var clientWithAuthority = FindObjectsOfType<Client>().FirstOrDefault(c => c.GetComponent<NetworkObject>().HasStateAuthority);
+            Debug.Log("Client(241) After the assignation var clientWithAuthority = FindObjectsOfType<Client>().FirstOrDefault(c => c.GetComponent<NetworkObject>().HasStateAuthority). VARIABLES: clientWithAuthority: " + clientWithAuthority);
+            if (clientWithAuthority != null)
             {
-                // Encuentra el objeto del cliente con autoridad de estado
-                var clientWithAuthority = FindObjectsOfType<Client>().FirstOrDefault(c => c.GetComponent<NetworkObject>().HasStateAuthority);
-                Debug.Log("Client(241) After the assignation var clientWithAuthority = FindObjectsOfType<Client>().FirstOrDefault(c => c.GetComponent<NetworkObject>().HasStateAuthority). VARIABLES: clientWithAuthority: " + clientWithAuthority);
-                if (clientWithAuthority != null)
-                {
-                    Debug.Log($"Client(244) Client with StateAuthority found. VARIABLES: clientWithAuthority: {clientWithAuthority}, (should be True) clientWithAuthority.HasStateAuthority: {clientWithAuthority.HasStateAuthority}");
-                }
-                else
-                {
-                    Debug.LogError("Client(248) clientWithAuthority is null.");
-                }
+                Debug.Log($"Client(244) Client with StateAuthority found. VARIABLES: clientWithAuthority: {clientWithAuthority}, (should be True) clientWithAuthority.HasStateAuthority: {clientWithAuthority.HasStateAuthority}");
             }
             else
             {
-                Debug.LogError("Client(253) networkRunner is null.");
+                Debug.LogError("Client(248) clientWithAuthority is null.");
             }
+        }
+        else
+        {
+            Debug.LogError("Client(253) networkRunner is null.");
+        }
 
-        // Asignar el nombre del prefab al nuevo objeto
         PrefabInfo prefabInfo = newInstance.GetComponent<PrefabInfo>();
         if (prefabInfo == null)
         {
@@ -323,13 +352,10 @@ public class Client : NetworkBehaviour
         }
         prefabInfo.prefabName = characterName;
 
-        // Antes de añadir la nueva instancia al diccionario, imprime información sobre la instancia
         Debug.Log($"Client(265) Antes de agregar nueva instancia al diccionario. (Nombre) newInstance.name: {newInstance.name}, (Instancia) newInstance: {newInstance}");
-        // Añadir la nueva instancia al diccionario
         characterInstances[newInstance.name] = newInstance;
         Debug.Log($"Client(268) Despues de agregar nueva instancia al diccionario. (Nombre) newInstance.name: {newInstance.name}, (Instancia) newInstance: {newInstance}");
 
-        // Después de añadir, verifica que la instancia se haya agregado correctamente
         if (characterInstances.ContainsKey(newInstance.name))
         {
             Debug.Log($"Client(273) Instancia agregada correctamente al diccionario. (Nombre) newInstance.name: {newInstance.name}, (Instancia) characterInstances[newInstance.name]: {characterInstances[newInstance.name]}");
@@ -339,10 +365,7 @@ public class Client : NetworkBehaviour
             Debug.LogError($"Client(277) Error al agregar la instancia al diccionario. (Nombre) newInstance.name: {newInstance.name}");
         }
 
-        // Imprimir las instancias de personajes después de añadir la nueva instancia
         PrintCharacterInstances();
-
-        // Opcional: Configura la nueva instancia según sea necesario
     }
     else
     {
