@@ -11506,7 +11506,7 @@ MonoBehaviour:
   initialMovementSpeed: 0
   initialCriticalChance: 0
   initialCriticalBonus: 0
-  initialPhysicalAttack: 1
+  initialPhysicalAttack: 2
   initialDemonAttack: 0
   initialHollyAttack: 0
   initialPhysicalDefense: 2

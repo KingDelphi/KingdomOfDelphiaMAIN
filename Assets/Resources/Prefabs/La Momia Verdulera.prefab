@@ -15431,8 +15431,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ab7331f16214668aa062511ba2d0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 60
-  currentHealth: 60
+  maxHealth: 65
+  currentHealth: 65
   healthBar: {fileID: 2990276117657386612}
   maxMana: 8
   currentMana: 0
@@ -15441,7 +15441,7 @@ MonoBehaviour:
   experience: 0
   level: 0
   playerNameText: {fileID: 0}
-  initialHp: 60
+  initialHp: 65
   initialMana: 8
   initialMovementSpeed: 0
   initialCriticalChance: 0
@@ -15456,7 +15456,7 @@ MonoBehaviour:
   initialHpRegen: 0
   initialManaRegen: 0
   initialEffectDuration: 0
-  hp: 60
+  hp: 65
   mana: 0
   movementSpeed: 0
   criticalChance: 0
@@ -15800,7 +15800,7 @@ MonoBehaviour:
   particleSystem1: {fileID: 8584696216277550270}
   particleSystem2: {fileID: 6080493736427860819}
   particleSystem3: {fileID: 1284822933530131357}
-  experienceRequiredPerLevel: 0a0000001e0000003c0000006400000096000000d20000001801000004010000c2010000i
+  experienceRequiredPerLevel: 0a0000001e0000003c0000006400000096000000d20000001801000068010000c2010000i
 --- !u!114 &7346027775973822643
 MonoBehaviour:
   m_ObjectHideFlags: 0

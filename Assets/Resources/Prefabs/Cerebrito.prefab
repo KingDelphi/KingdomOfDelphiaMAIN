@@ -9641,8 +9641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ab7331f16214668aa062511ba2d0df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
+  maxHealth: 50
+  currentHealth: 50
   healthBar: {fileID: 3456772554191495050}
   maxMana: 16
   currentMana: 0
@@ -9651,13 +9651,13 @@ MonoBehaviour:
   experience: 0
   level: 0
   playerNameText: {fileID: 0}
-  initialHp: 40
+  initialHp: 50
   initialMana: 16
   initialMovementSpeed: 0
   initialCriticalChance: 0
   initialCriticalBonus: 0
   initialPhysicalAttack: 0
-  initialDemonAttack: 2
+  initialDemonAttack: 3
   initialHollyAttack: 0
   initialPhysicalDefense: 0
   initialDemonDefense: 0
@@ -9666,18 +9666,18 @@ MonoBehaviour:
   initialHpRegen: 0
   initialManaRegen: 0
   initialEffectDuration: 0
-  hp: 40
+  hp: 50
   mana: 16
   movementSpeed: 0
-  criticalChance: 0.01
-  criticalBonus: 0.01
-  physicalAttack: 1
-  demonAttack: 2
+  criticalChance: 0
+  criticalBonus: 0
+  physicalAttack: 0
+  demonAttack: 0
   hollyAttack: 0
-  physicalDefense: 5
+  physicalDefense: 0
   demonDefense: 0
   hollyDefense: 0
-  weight: -62.9
+  weight: 0
   hpRegen: 0
   manaRegen: 0
   effectDuration: 0
