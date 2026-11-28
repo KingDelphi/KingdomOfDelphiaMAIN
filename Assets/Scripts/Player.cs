@@ -115,20 +115,44 @@ public class Player : NetworkBehaviour
         currentMana = mana;
         manaBar.color = Color.blue;
 
-        // Buscar el panel en la UI
-        if (bloodEffectPanel == null)
+                // Referencia al inventario (las pociones Q/E la usan)
+        if (inventory == null) inventory = GetComponent<PlayerInventory>();
+
+        // Panel de sangre en la UI. Si la UI aún no está activa (primer spawn), no falla:
+        // se reintenta más tarde, al recibir daño.
+        EnsureBloodEffectPanel();
+    }
+
+        // Crea el panel de sangre dentro del Canvas de la UI. Si todavía no hay Canvas, no hace nada.
+    private void EnsureBloodEffectPanel()
+    {
+        if (bloodEffectPanel != null) return;
+
+        GameObject prefab = Resources.Load<GameObject>("BloodEffectPanel");
+        if (prefab == null)
         {
-            GameObject prefab = Resources.Load<GameObject>("BloodEffectPanel");
-            if (prefab != null)
-            {
-                bloodEffectPanel = Instantiate(prefab);
-                bloodEffectPanel.transform.SetParent(GameObject.Find("Canvas").transform, false);
-            }
-            else
-            {
-                Debug.Log("bloodEffectPanel prefab no encontrado...");
-            }
+            Debug.Log("bloodEffectPanel prefab no encontrado...");
+            return;
         }
+
+        Transform canvasTransform = FindUICanvasTransform();
+        if (canvasTransform == null) return; // se reintenta después
+
+        bloodEffectPanel = Instantiate(prefab);
+        bloodEffectPanel.transform.SetParent(canvasTransform, false);
+    }
+
+    private Transform FindUICanvasTransform()
+    {
+        // Busca incluyendo objetos inactivos: la UI puede estar apagada en el primer spawn
+        if (GameManager.Instance != null && GameManager.Instance.UI != null)
+        {
+            Canvas canvas = GameManager.Instance.UI.GetComponentInChildren<Canvas>(true);
+            if (canvas != null) return canvas.transform;
+        }
+
+        GameObject found = GameObject.Find("Canvas");
+        return found != null ? found.transform : null;
     }
 
 
@@ -151,6 +175,7 @@ public class Player : NetworkBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        EnsureBloodEffectPanel();   // <-- línea nueva
         currentHealth -= damageAmount;
         healthBar.fillAmount = (float)currentHealth / hp;
 

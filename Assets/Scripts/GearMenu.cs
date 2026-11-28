@@ -11,6 +11,7 @@ public class GearMenu : MonoBehaviour
     [Header("Stat Texts")]
     public TMP_Text moveSpeed, critChance, critBonus, physAtt, demAtt, holAtt, physDef, demDef, holDef;
     public TMP_Text hpText, manaText, capacityText; // Asígnalos en el Inspector para ver HP, Mana y Capacity
+    public TMP_Text levelText; // Asígnalo en el Inspector (el texto "Level" del panel) para ver el nivel
 
     private static readonly GearItem.ItemType[] SlotTypes = new GearItem.ItemType[]
     {
@@ -31,6 +32,13 @@ public class GearMenu : MonoBehaviour
     private PlayerInventory subscribedInventory;
     private bool isRefreshingUI = false;
 
+    // Personaje que se está mirando en el selector (null = no se eligió ninguno: se asume el activo)
+    private string viewedCharacterName = null;
+    // true cuando se mira a un personaje que NO es el activo (solo lectura, datos leídos del guardado)
+    private bool previewMode = false;
+    // Datos del personaje que se está previsualizando (equipo guardado + stats)
+    private SavedCharacterPreview currentPreview = null;
+
     private void Awake()
     {
         EnsureEquippedListSize();
@@ -46,12 +54,69 @@ public class GearMenu : MonoBehaviour
     private void OnDisable()
     {
         Unsubscribe();
+        viewedCharacterName = null; // al cerrar el panel se olvida a quién se miraba
+        currentPreview = null;
     }
 
     private void OnDestroy()
     {
         Unsubscribe();
     }
+
+    // ------------------------------------------------------------------
+    // Selector de personajes: indicar a qué personaje se está mirando
+    // ------------------------------------------------------------------
+
+    /// <summary>
+    /// Lo llama CharacterClickHandler al elegir una silueta.
+    /// Si es el personaje activo: equipo real, editable.
+    /// Si no: se lee su equipo y stats del guardado y se muestran en solo lectura.
+    /// </summary>
+    public void ShowCharacter(string characterName)
+    {
+        viewedCharacterName = characterName;
+        UpdateGearMenu();
+    }
+
+    private bool IsViewingActivePlayer(Player activePlayer)
+    {
+        if (string.IsNullOrEmpty(viewedCharacterName)) return true;
+
+        // Nombre estable del héroe, igual que lo usa el guardado (PrefabInfo o nombre del objeto)
+        if (SaveLoadSystem.GetHeroNameFromObject(activePlayer.gameObject) == viewedCharacterName) return true;
+
+        // Respaldo: nombre del objeto sin sufijos
+        return StripObjectName(activePlayer.gameObject.name) == viewedCharacterName;
+    }
+
+    // "Tres Deseos [Id:525312]" o "Tres Deseos(Clone)" -> "Tres Deseos"
+    private static string StripObjectName(string objectName)
+    {
+        string n = objectName.Trim();
+
+        int idIndex = n.IndexOf(" [Id:");
+        if (idIndex >= 0) n = n.Substring(0, idIndex);
+
+        if (n.EndsWith("(Clone)")) n = n.Substring(0, n.Length - "(Clone)".Length).Trim();
+
+        return n.Trim();
+    }
+
+    // Cuenta y servidor con los que SaveLoadSystem arma las llaves de guardado
+    private void ResolveSaveContext(Player activePlayer, out string accountName, out string cleanServerName)
+    {
+        SaveLoadSystem saveSystem = SaveLoadSystem.Instance;
+
+        accountName = activePlayer != null ? activePlayer.playerName : null;
+        if (string.IsNullOrEmpty(accountName) && saveSystem != null) accountName = saveSystem.currentPlayerName;
+        if (string.IsNullOrEmpty(accountName) && GameManager.Instance != null) accountName = GameManager.Instance.GetPlayerName();
+
+        cleanServerName = saveSystem != null ? SaveLoadSystem.CleanServerName(saveSystem.serverName) : "";
+        if (string.IsNullOrEmpty(cleanServerName) && GameManager.Instance != null)
+            cleanServerName = SaveLoadSystem.CleanServerName(GameManager.Instance.serverName);
+    }
+
+    // ------------------------------------------------------------------
 
     private void EnsureEquippedListSize()
     {
@@ -122,12 +187,28 @@ public class GearMenu : MonoBehaviour
         isRefreshingUI = true;
         try
         {
-            EnsureEquippedListSize();
-            SyncEquippedListFromPlayer(activePlayer);
+            previewMode = !IsViewingActivePlayer(activePlayer);
 
-            for (int i = 0; i < SlotTypes.Length && i < dropdownList.Count; i++)
+            if (previewMode)
             {
-                PopulateSlotDropdown(activePlayer, SlotTypes[i], i);
+                string accountName;
+                string cleanServerName;
+                ResolveSaveContext(activePlayer, out accountName, out cleanServerName);
+
+                currentPreview = SavedCharacterPreview.Build(viewedCharacterName, accountName, cleanServerName);
+                ShowPreviewDropdowns(currentPreview);
+            }
+            else
+            {
+                currentPreview = null;
+
+                EnsureEquippedListSize();
+                SyncEquippedListFromPlayer(activePlayer);
+
+                for (int i = 0; i < SlotTypes.Length && i < dropdownList.Count; i++)
+                {
+                    PopulateSlotDropdown(activePlayer, SlotTypes[i], i);
+                }
             }
         }
         finally
@@ -136,6 +217,27 @@ public class GearMenu : MonoBehaviour
         }
 
         UpdateStatTexts();
+    }
+
+    // Personaje que no es el activo: cada dropdown muestra su pieza guardada (o None) y queda bloqueado.
+    private void ShowPreviewDropdowns(SavedCharacterPreview preview)
+    {
+        for (int i = 0; i < dropdownList.Count && i < SlotTypes.Length; i++)
+        {
+            TMP_Dropdown dropdown = dropdownList[i];
+            if (dropdown == null) continue;
+
+            GearItem item = (preview != null && i < preview.equipped.Length) ? preview.equipped[i] : null;
+            string label = item != null ? item.itemName : "None";
+
+            optionItems[i] = null;
+
+            dropdown.ClearOptions();
+            dropdown.AddOptions(new List<string> { label });
+            dropdown.SetValueWithoutNotify(0);
+            dropdown.RefreshShownValue();
+            dropdown.interactable = false;
+        }
     }
 
     private void SyncEquippedListFromPlayer(Player activePlayer)
@@ -203,11 +305,13 @@ public class GearMenu : MonoBehaviour
 
         dropdown.SetValueWithoutNotify(selectedIndex);
         dropdown.RefreshShownValue();
+        dropdown.interactable = true;
     }
 
     private void OnDropdownChanged(int slotIndex, int optionIndex)
     {
         if (isRefreshingUI) return;
+        if (previewMode) return; // vista previa: solo lectura
 
         Player activePlayer = GetActivePlayer();
         if (activePlayer == null || playerInventory == null) return;
@@ -258,23 +362,74 @@ public class GearMenu : MonoBehaviour
         activePlayer.gear.EquipmentChanged();
     }
 
+    private static void SetText(TMP_Text target, string value)
+    {
+        if (target != null) target.text = value;
+    }
+
+    private void ApplyStatTexts(int level, int hp, int mana, float speed, float critC, float critB,
+                                int pAtk, int dAtk, int hAtk, int pDef, int dDef, int hDef, float weight)
+    {
+        SetText(levelText, "Level: " + level);
+        SetText(hpText, "HP: " + hp);
+        SetText(manaText, "Mana: " + mana);
+        SetText(moveSpeed, "Movement Speed: " + speed);
+        SetText(critChance, "Critical Chance: " + critC);
+        SetText(critBonus, "Critical Bonus: " + critB);
+        SetText(physAtt, "Physical Attack: " + pAtk);
+        SetText(demAtt, "Demon Attack: " + dAtk);
+        SetText(holAtt, "Holy Attack: " + hAtk);
+        SetText(physDef, "Physical Def: " + pDef);
+        SetText(demDef, "Demon Def: " + dDef);
+        SetText(holDef, "Holy Def: " + hDef);
+        SetText(capacityText, "Capacity: " + weight);
+    }
+
+    // Solo se usa si no hay forma de calcular los stats (personaje sin prefab registrado)
+    private void ApplyStatDashes()
+    {
+        SetText(levelText, "Level: -");
+        SetText(hpText, "HP: -");
+        SetText(manaText, "Mana: -");
+        SetText(moveSpeed, "Movement Speed: -");
+        SetText(critChance, "Critical Chance: -");
+        SetText(critBonus, "Critical Bonus: -");
+        SetText(physAtt, "Physical Attack: -");
+        SetText(demAtt, "Demon Attack: -");
+        SetText(holAtt, "Holy Attack: -");
+        SetText(physDef, "Physical Def: -");
+        SetText(demDef, "Demon Def: -");
+        SetText(holDef, "Holy Def: -");
+        SetText(capacityText, "Capacity: -");
+    }
+
     public void UpdateStatTexts()
     {
         Player activePlayer = GetActivePlayer();
         if (activePlayer == null) return;
 
-        // Stats totales calculados en Player (base + equipo)
-        if (hpText != null) hpText.text = "HP: " + activePlayer.hp;
-        if (manaText != null) manaText.text = "Mana: " + activePlayer.mana;
-        if (moveSpeed != null) moveSpeed.text = "Movement Speed: " + activePlayer.movementSpeed;
-        if (critChance != null) critChance.text = "Critical Chance: " + activePlayer.criticalChance;
-        if (critBonus != null) critBonus.text = "Critical Bonus: " + activePlayer.criticalBonus;
-        if (physAtt != null) physAtt.text = "Physical Attack: " + activePlayer.physicalAttack;
-        if (demAtt != null) demAtt.text = "Demon Attack: " + activePlayer.demonAttack;
-        if (holAtt != null) holAtt.text = "Holy Attack: " + activePlayer.hollyAttack;
-        if (physDef != null) physDef.text = "Physical Def: " + activePlayer.physicalDefense;
-        if (demDef != null) demDef.text = "Demon Def: " + activePlayer.demonDefense;
-        if (holDef != null) holDef.text = "Holy Def: " + activePlayer.hollyDefense;
-        if (capacityText != null) capacityText.text = "Capacity: " + activePlayer.weight;
+        // Personaje que no es el activo: stats calculados desde su prefab + su equipo guardado
+        if (previewMode)
+        {
+            SavedCharacterPreview p = currentPreview;
+            if (p != null && p.hasStats)
+            {
+                ApplyStatTexts(p.level, p.hp, p.mana, p.movementSpeed, p.criticalChance, p.criticalBonus,
+                               p.physicalAttack, p.demonAttack, p.hollyAttack,
+                               p.physicalDefense, p.demonDefense, p.hollyDefense, p.weight);
+            }
+            else
+            {
+                ApplyStatDashes();
+            }
+            return;
+        }
+
+        // Personaje activo: stats totales calculados en Player (base + equipo)
+        ApplyStatTexts(activePlayer.level, activePlayer.hp, activePlayer.mana, activePlayer.movementSpeed,
+                       activePlayer.criticalChance, activePlayer.criticalBonus,
+                       activePlayer.physicalAttack, activePlayer.demonAttack, activePlayer.hollyAttack,
+                       activePlayer.physicalDefense, activePlayer.demonDefense, activePlayer.hollyDefense,
+                       activePlayer.weight);
     }
 }

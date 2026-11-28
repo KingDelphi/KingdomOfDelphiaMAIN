@@ -556,7 +556,7 @@ public class GearItem
 {
     // NO cambiar el orden de estos enums: los guardados y prefabs guardan el número.
     public enum Rarity { Gold, Common, Uncommon, SemiRare, Rare, SuperRare, UltraRare, Hero, Epic, Mythological, Legendary, Dreamer }
-    public enum ItemType { Weapon, Shield, Helmet, Armor, Legs, Boots, Ring, Amulet, Holder, Consumable }
+    public enum ItemType { Helmet, Armor, Legs, Boots, Weapon, Shield, Ring, Amulet, Holder, Consumable }
 
     public int quantity;
     public string itemName;

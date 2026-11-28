@@ -21,6 +21,9 @@ public class CharacterClickHandler : MonoBehaviour
 
     public void OnClick()
     {
+        // Nombre del personaje al que se le dio click (se llena más abajo)
+        string clickedCharacterName = null;
+
         // Desactiva el canvas de selección de personaje
         characterSelectionCanvas.gameObject.SetActive(false);
 
@@ -43,6 +46,7 @@ public class CharacterClickHandler : MonoBehaviour
                 // Obtiene el nombre y la vocación del CharacterInformation
                 string characterName = characterInformation.characterName;
                 string characterVocation = characterInformation.vocation.ToString().Replace("_", " ");
+                clickedCharacterName = characterName;
 
                 // Busca el componente TextMeshProUGUI en el objeto "CharacterNameText" si no se ha asignado antes
                 if (characterNameText == null)
@@ -81,12 +85,13 @@ public class CharacterClickHandler : MonoBehaviour
                 }
             }
         }
-        characterSelectorButton.gearMenu.UpdateGearMenu();
-          foreach(DropdownBehaviour dropdownItem in characterSelectorButton.dropdownList) {
-            dropdownItem.UpdateInventory();
-            
-        }
 
-        
+        // Avisa al panel de equipo a qué personaje se está mirando.
+        // Si es el activo, se muestra su equipo real y es editable.
+        // Si no, el panel queda en vista previa (todo en None, solo lectura).
+        if (characterSelectorButton != null && characterSelectorButton.gearMenu != null)
+        {
+            characterSelectorButton.gearMenu.ShowCharacter(clickedCharacterName);
+        }
     }
 }
