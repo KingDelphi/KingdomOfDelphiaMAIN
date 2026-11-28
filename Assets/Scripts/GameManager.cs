@@ -203,41 +203,62 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(characterHolder);
     }
 
-    private void Update() 
-{
-    if (Input.GetKeyDown(KeyCode.V)) {
-        playerInventory = FindObjectOfType<PlayerInventory>();
-        
-        // Verificar que gearMenu.equippedGear no esté vacío
-        if (gearMenu.equippedGear.Count > 0) {
-            int newIndex = 0;
-            foreach (GearItem item in playerInventory.inventory) {
-                if (gearMenu.equippedGear[0].itemName == item.itemName) {
-                    playerInventory.inventory.RemoveAt(newIndex);
-                    break;
-                }
-                newIndex += 1;
-            }
-        } else {
-            Debug.LogWarning("gearMenu.equippedGear está vacío.");
-        }
-
-        if (inventoryCanvas.activeInHierarchy) {
-            // Destruir los objetos hijos del inventario
-            foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
-                Destroy(t.gameObject);
-            }
-            inventoryCanvas.SetActive(false);
-        } else {
-            inventoryCanvas.SetActive(true);
-            // Asegurar que el inventario esté limpio antes de listar los ítems
-            foreach (Transform t in inventoryCanvas.transform.GetChild(0)) {
-                Destroy(t.gameObject);
-            }
-            playerInventory.ListItems(playerInventory.inventory, slot, inventoryCanvas.transform.GetChild(0).gameObject);
+        private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ToggleInventory();
         }
     }
-}
+
+    public void ToggleInventory()
+    {
+        if (inventoryCanvas == null || inventoryCanvas.transform.childCount == 0)
+        {
+            Debug.LogWarning("GameManager: inventoryCanvas no está asignado o no tiene contenedor (hijo 0).");
+            return;
+        }
+
+        Transform content = inventoryCanvas.transform.GetChild(0);
+
+        if (inventoryCanvas.activeInHierarchy)
+        {
+            ClearChildren(content);
+            inventoryCanvas.SetActive(false);
+            return;
+        }
+
+        PlayerInventory inv = GetLocalInventory();
+        if (inv == null)
+        {
+            Debug.LogWarning("GameManager: no hay un inventario de jugador activo.");
+            return;
+        }
+
+        playerInventory = inv;
+        inventoryCanvas.SetActive(true);
+        ClearChildren(content);
+        inv.ListItems(inv.inventory, slot, content.gameObject);
+    }
+
+    // Inventario del jugador local activo (antes se usaba FindObjectOfType, que podía devolver otro personaje)
+    private PlayerInventory GetLocalInventory()
+    {
+        if (player != null)
+        {
+            PlayerInventory inv = player.GetComponent<PlayerInventory>();
+            if (inv != null) return inv;
+        }
+        return playerInventory;
+    }
+
+    private static void ClearChildren(Transform parent)
+    {
+        for (int i = parent.childCount - 1; i >= 0; i--)
+        {
+            Destroy(parent.GetChild(i).gameObject);
+        }
+    }
 
     public void ChangeScene(int targetSceneIndex, Vector3 entryPosition)
     {
