@@ -5647,6 +5647,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1747506373}
   - {fileID: 1731244821}
   - {fileID: 1899850423}
   - {fileID: 1822465029}
@@ -5655,7 +5656,6 @@ RectTransform:
   - {fileID: 1839076318}
   - {fileID: 1694418897}
   - {fileID: 431355648}
-  - {fileID: 1747506373}
   - {fileID: 1091299792}
   - {fileID: 1147941433}
   - {fileID: 132724987}
@@ -25632,6 +25632,8 @@ GameObject:
   - component: {fileID: 1147941435}
   - component: {fileID: 1147941434}
   - component: {fileID: 1147941437}
+  - component: {fileID: 1147941439}
+  - component: {fileID: 1147941438}
   m_Layer: 0
   m_Name: CharacterSelectorCanvas
   m_TagString: Untagged
@@ -25980,6 +25982,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d9b39fde66e40478b4bd6577117d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1147941438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147941432}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &1147941439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147941432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebaeaa06a29e94b919e8a73558f7a2bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSelectorLayoutFixer
+  columns: 16
+  cellSize: 100
+  spacing: 6
+  maxWidthPercent: 0.85
+  maxHeightPercent: 0.85
+  maxScale: 2
+  windowPadding: 30
+  windowColor: {r: 0.15, g: 0.15, b: 0.15, a: 0.75}
 --- !u!1 &1148387434
 GameObject:
   m_ObjectHideFlags: 0
@@ -28194,6 +28240,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212625554}
   m_CullTransparentMesh: 1
+--- !u!1 &1214532335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214532336}
+  - component: {fileID: 1214532337}
+  m_Layer: 0
+  m_Name: ClearPlayerPrefsTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1214532336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214532335}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214532337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214532335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5e04dd0f35f4c348e38cc601363a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClearPlayerPrefsTool
 --- !u!1 &1220940196
 GameObject:
   m_ObjectHideFlags: 0
@@ -50093,3 +50183,4 @@ SceneRoots:
   - {fileID: 200152049}
   - {fileID: 1905429521}
   - {fileID: 1411392291}
+  - {fileID: 1214532336}

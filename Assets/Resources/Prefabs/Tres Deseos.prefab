@@ -3673,7 +3673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8431431295e4d0d8d38cb4570083f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 6
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0
@@ -3689,6 +3689,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  accelerationTime: 0.1
+  decelerationTime: 0.08
   rb: {fileID: 0}
   mapObject: {fileID: 0}
   animator: {fileID: 477711131231856846}
@@ -4173,7 +4175,7 @@ MonoBehaviour:
   SyncScale: 0
   SyncParent: 0
   _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
+  DisableSharedModeInterpolation: 1
 --- !u!114 &-4239188214774983619
 MonoBehaviour:
   m_ObjectHideFlags: 0
